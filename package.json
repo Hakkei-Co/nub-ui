@@ -53,5 +53,8 @@
     "three-elements": "^0.3.0"
   },
   "author": "jlau <jonathan@torr.email>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
