@@ -1,0 +1,5 @@
+# place any directories created by the Stencil compilation process here
+dist
+loader
+www
+stencil.config.ts

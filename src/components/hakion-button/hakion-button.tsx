@@ -25,6 +25,14 @@ export class HakionButton {
           <ion-ripple-effect>
             <ion-button color="primary">{this.label}</ion-button>
           </ion-ripple-effect>
+          <ion-app>
+            <ion-content>
+              <div class="ion-activatable ripple-parent">
+                A plain div with a bounded ripple effect
+                <ion-ripple-effect></ion-ripple-effect>
+              </div>
+            </ion-content>
+          </ion-app>
         </div>
       </Host>
     );

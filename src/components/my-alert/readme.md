@@ -9,7 +9,7 @@
 
 | Property | Attribute | Description    | Type     | Default                         |
 | -------- | --------- | -------------- | -------- | ------------------------------- |
-| `text`   | `text`    | The first name | `string` | `"This is an important alert!"` |
+| `text`   | `text`    | The first name | `string` | `'This is an important alert!'` |
 
 
 ----------------------------------------------
