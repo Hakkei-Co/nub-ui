@@ -55,6 +55,6 @@
   "author": "jlau <jonathan@torr.email>",
   "license": "UNLICENSED",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@hakkei-co:registry": "https://npm.pkg.github.com"
   }
 }
