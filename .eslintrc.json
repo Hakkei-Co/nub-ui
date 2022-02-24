@@ -3,7 +3,6 @@
     "project": "./tsconfig.json"
   },
   "extends": [
-    "plugin:@stencil/recommended",
-    "plugin:prettier/recommended"
+    "plugin:@stencil/recommended"
   ]
 }

@@ -5,7 +5,7 @@ export function format(first: string, middle: string, last: string): string {
 }
 
 export const AddClass: FunctionalComponent = (_, children, utils) =>
-  utils.map(children, child => ({
+  utils.map(children, (child) => ({
     ...child,
     vattrs: {
       ...child.vattrs,

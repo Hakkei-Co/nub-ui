@@ -5,7 +5,7 @@ import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
-  namespace: 'ui-kit',
+  namespace: 'hakion-ui',
   outputTargets: [
     {
       type: 'dist',
@@ -28,6 +28,7 @@ export const config: Config = {
       plugins: [autoprefixer()],
     }),
   ],
+  globalStyle: 'src/global.scss',
   devServer: {
     reloadStrategy: 'pageReload',
     port: 4444,

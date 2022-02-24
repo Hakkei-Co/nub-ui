@@ -5,9 +5,21 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AcknowledgeEvent } from "./components/hakion-button/hakion-button";
 export namespace Components {
     interface HakionButton {
-        "label": string;
+        /**
+          * Documentation is required
+         */
+        "color": 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark';
+        /**
+          * Set to "block" for a full-width button or to "full" for a full-width button without left and right borders.
+         */
+        "expand": 'block' | 'full' | 'default';
+        /**
+          * Documentation is required
+         */
+        "text": string;
     }
     interface HakionDarkModeToggle {
     }
@@ -84,7 +96,22 @@ declare global {
 }
 declare namespace LocalJSX {
     interface HakionButton {
-        "label"?: string;
+        /**
+          * Documentation is required
+         */
+        "color"?: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark';
+        /**
+          * Set to "block" for a full-width button or to "full" for a full-width button without left and right borders.
+         */
+        "expand"?: 'block' | 'full' | 'default';
+        /**
+          * Define interface for argument type. You can access Props() in detail. eg: event.details.when
+         */
+        "onAcknowledge"?: (event: CustomEvent<AcknowledgeEvent>) => void;
+        /**
+          * Documentation is required
+         */
+        "text"?: string;
     }
     interface HakionDarkModeToggle {
     }

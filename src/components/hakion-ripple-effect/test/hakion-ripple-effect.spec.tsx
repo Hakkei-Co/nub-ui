@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { HakionButton } from '../hakion-button';
+import { HakionRippleEffect } from '../hakion-ripple-effect';
 
-describe('hakion-button', () => {
+describe('hakion-ripple-effect', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [HakionButton],
-      html: `<hakion-button></hakion-button>`,
+      components: [HakionRippleEffect],
+      html: `<hakion-ripple-effect></hakion-ripple-effect>`,
     });
     expect(page.root).toEqualHtml(`
-      <hakion-button>
+      <hakion-ripple-effect>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </hakion-button>
+      </hakion-ripple-effect>
     `);
   });
 });

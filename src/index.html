@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
-
-  <script type="module" src="/build/ui-kit.esm.js"></script>
-  <script nomodule src="/build/ui-kit.js"></script>
-  <!-- <script type="module">
+    <script type="module" src="/build/hakion-ui.esm.js"></script>
+    <script nomodule src="/build/hakion-ui.js"></script>
+    <!-- <script type="module">
     import "https://cdn.skypack.dev/three-elements"
   </script> -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="/build/hakion-ui.css" />
+    <script>
+      // If `prefers-color-scheme` is not supported, fall back to light mode.
+      // In this case, light.css will be downloaded with `highest` priority.
+      if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
+        document.documentElement.style.display = 'none';
+        document.head.insertAdjacentHTML(
+          'beforeend',
+          '<link rel="stylesheet" href="light.css" onload="document.documentElement.style.display = ``">'
+        );
+      }
+    </script>
+  </head>
 
-</head>
+  <body>
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <my-alert text="example text"></my-alert>
+    <p>
+      Open a chrome dev console. Observe how clicking on "acknowledge" will differ from clicking on the "Clicked"
+      button.
+    </p>
+    <button>acknowledge</button>
+    <three-element-example></three-element-example>
+    <ion-button color="primary">Primary</ion-button>
+    <ion-button color="secondary">Secondary</ion-button>
+    <!-- <hakion-button>test</hakion-button> -->
+    <ion-icon name="heart"></ion-icon>
+    <hakion-button></hakion-button>
+    <dark-mode-toggle
+      id="dark-mode-toggle-1"
+      legend="Theme Switcher"
+      appearance="switch"
+      dark="Dark"
+      light="Light"
+      remember="Remember this"
+      ><hakion-button text="Toggle">Toggle</hakion-button></dark-mode-toggle
+    >
+    <script>
+      var button = document.querySelector('button');
+      function handleAcknowledgeClick(e) {
+        var alert = document.querySelector('my-alert');
+        alert.text = 'This is a very important alert!';
+        console.log(e.target.text, e.detail.when);
+      }
+      button.addEventListener('click', handleAcknowledgeClick);
 
-<body>
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <my-alert text="example text"></my-alert>
-  <ion-button size="small">acknowledge</ion-button>
-  <three-element-example></three-element-example>
-  <ion-button color="primary">Primary</ion-button>
-  <ion-button color="secondary">Secondary</ion-button>
-  <hakion-button>test</hakion-button>
-  <script>
-    var button = document.querySelector("button");
-    function handleAcknowledgeClick() {
-      var alert = document.querySelector("my-alert");
-      alert.text = "This is a very important alert!";
-    }
-    button.addEventListener("click", handleAcknowledgeClick);
+      document.addEventListener('acknowledge', handleAcknowledgeClick);
 
-    document.addEventListener('colorschemechange', (e) => {
-      console.log(`Color scheme changed to ${e.detail.colorScheme}.`);
-    });
-  </script>
-</body>
+      const toggle = document.getElementById('dark-mode-toggle-1');
+      console.log(toggle);
+      const body = document.body;
 
+      // Set or remove the `dark` class the first time.
+      toggle.mode === 'dark' ? body.classList.add('dark') : body.classList.remove('dark');
+      // Listen for toggle changes (which includes `prefers-color-scheme` changes)
+      // and toggle the `dark` class accordingly.
+      toggle.addEventListener('colorschemechange', () => {
+        console.log('color scheme change');
+        body.classList.toggle('dark', toggle.mode === 'dark');
+      });
+    </script>
+  </body>
 </html>

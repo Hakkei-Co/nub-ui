@@ -1,7 +1,7 @@
 {
-  "name": "ui-kit",
+  "name": "hakion-ui",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "hakion-ui component library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,10 +9,10 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/ui-kit/ui-kit.esm.js",
+  "unpkg": "dist/hakion-ui/hakion-ui.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/hakkei-co/hakion-ui.git"
   },
   "files": [
     "dist/",
@@ -26,8 +26,8 @@
     "generate": "stencil generate",
     "lint": "eslint src/**/*{.ts,.tsx}",
     "prettier": "npm run prettier.base -- --write",
-    "prettier.base": "prettier \"./{src,test}/**/*.{ts,tsx,js,jsx}\"",
-    "prettier.dry-run": "npm run prettier.base -- --list-different"
+    "prettier:base": "prettier \"./{src,test}/**/*.{ts,tsx,js,jsx}\"",
+    "prettier:dry-run": "npm run prettier.base -- --list-different"
   },
   "dependencies": {
     "@ionic/core": "^6.0.9",
@@ -52,5 +52,6 @@
     "three": "^0.138.0",
     "three-elements": "^0.3.0"
   },
-  "license": "MIT"
+  "author": "jlau <jonathan@torr.email>",
+  "license": "UNLICENSED"
 }

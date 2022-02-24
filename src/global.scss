@@ -1,7 +1,7 @@
 :root {
   --ion-color-primary: #4977ad;
   --ion-color-primary-rgb: 73, 119, 173;
-  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast: #000000;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #406998;
   --ion-color-primary-tint: #5b85b5;
@@ -56,14 +56,14 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   // Ionic Variables and Theming. For more info, please see:
   // http://ionicframework.com/docs/theming/
 
   /** Ionic CSS Variables **/
   :root {
     /** primary **/
-    --ion-color-primary: #3880ff;
+    --ion-color-primary: pink;
     --ion-color-primary-rgb: 56, 128, 255;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255, 255, 255;
