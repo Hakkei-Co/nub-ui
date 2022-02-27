@@ -16,9 +16,15 @@
     "jsx": "react",
     "jsxFactory": "h"
   },
-  "include": ["src", "types/jsx.d.ts"],
+  "include": [
+    "src"
+  ],
   "exclude": [
-    "node_modules",
-    "stencil.config.ts"
-  ]
+    "node_modules"
+  ],
+  "paths": {
+    "@hakion-ui/core": [
+      "src/index.ts"
+    ]
+  }
 }

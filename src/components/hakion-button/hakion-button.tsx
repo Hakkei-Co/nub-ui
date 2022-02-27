@@ -1,5 +1,5 @@
-import { Component, Element, Event, EventEmitter, Prop, h, Listen, State } from '@stencil/core';
-import '@ionic/core';
+import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host } from '@stencil/core';
+import { Color, Expand, Fill } from '../../interface';
 
 export interface AcknowledgeEvent {
   when: Date;
@@ -8,17 +8,16 @@ export interface AcknowledgeEvent {
 @Component({
   tag: 'hakion-button',
   styleUrl: 'hakion-button.css',
-  shadow: true,
+  shadow: false,
 })
 export class HakionButton {
   @State() open: boolean = false;
   @Element() btn: HTMLHakionButtonElement;
-
-   /**
+  /**
    * Documentation is required
    */
-  @Prop() color: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark' =
-    'primary';
+  @Prop() color: Color = 'primary';
+
   /**
    * Documentation is required
    */
@@ -28,7 +27,10 @@ export class HakionButton {
    * Set to "block" for a full-width button or to "full" for a
    * full-width button without left and right borders.
    */
-  @Prop() expand: 'block' | 'full' | 'default' = 'default';
+  @Prop() expand: Expand = 'block';
+
+  // eslint-disable-next-line @stencil/required-jsdoc
+  @Prop() fill: Fill = 'solid';
 
   @State() acknowledged: boolean = false;
 
@@ -40,6 +42,14 @@ export class HakionButton {
   @Event() acknowledge: EventEmitter<AcknowledgeEvent>;
 
   /**
+   * Called every time the component is connected to the DOM.
+   * When the component is first connected, this method is called before componentWillLoad.
+   */
+  connectedCallback() {
+    console.log(this.color, this.expand);
+  }
+
+  /**
    * Event is dispatched during "capture" phase
    */
   @Listen('click', { capture: true })
@@ -49,6 +59,12 @@ export class HakionButton {
   }
 
   render() {
-    return <ion-button color={this.color} expand={this.expand}>{this.acknowledged ? this.text : 'Click!'}</ion-button>;
+    return (
+      <Host>
+        <ion-button expand={this.expand} fill={this.fill} color={this.color}>
+          <ion-text>{this.acknowledged ? this.text : 'Click!'}</ion-text>
+        </ion-button>
+      </Host>
+    );
   }
 }

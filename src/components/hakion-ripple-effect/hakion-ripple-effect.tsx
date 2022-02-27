@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-
+import '@ionic/core';
 @Component({
   tag: 'hakion-ripple-effect',
   styleUrl: 'hakion-ripple-effect.css',

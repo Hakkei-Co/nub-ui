@@ -6,6 +6,7 @@ import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
   namespace: 'hakion-ui',
+  taskQueue: 'async',
   outputTargets: [
     {
       type: 'dist',
@@ -23,12 +24,15 @@ export const config: Config = {
     },
   ],
   plugins: [
-    sass(),
+    sass({
+      includePaths: ['./node_modules/'],
+    }),
     postcss({
       plugins: [autoprefixer()],
     }),
   ],
-  globalStyle: 'src/global.scss',
+  globalStyle: 'src/global/app.scss',
+  globalScript: 'src/global/app.ts',
   devServer: {
     reloadStrategy: 'pageReload',
     port: 4444,

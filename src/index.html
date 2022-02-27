@@ -2,17 +2,17 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#16161d" />
+    <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+
+    <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
     <script type="module" src="/build/hakion-ui.esm.js"></script>
     <script nomodule src="/build/hakion-ui.js"></script>
-    <!-- <script type="module">
-    import "https://cdn.skypack.dev/three-elements"
-  </script> -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <link rel="stylesheet" href="/build/hakion-ui.css" />
     <script>
       // If `prefers-color-scheme` is not supported, fall back to light mode.
@@ -21,7 +21,7 @@
         document.documentElement.style.display = 'none';
         document.head.insertAdjacentHTML(
           'beforeend',
-          '<link rel="stylesheet" href="light.css" onload="document.documentElement.style.display = ``">'
+          '<link rel="stylesheet" href="/build/hakion-ui.css" onload="document.documentElement.style.display = ``">'
         );
       }
     </script>
@@ -35,21 +35,7 @@
       button.
     </p>
     <button>acknowledge</button>
-    <three-element-example></three-element-example>
-    <ion-button color="primary">Primary</ion-button>
-    <ion-button color="secondary">Secondary</ion-button>
-    <!-- <hakion-button>test</hakion-button> -->
-    <ion-icon name="heart"></ion-icon>
-    <hakion-button></hakion-button>
-    <dark-mode-toggle
-      id="dark-mode-toggle-1"
-      legend="Theme Switcher"
-      appearance="switch"
-      dark="Dark"
-      light="Light"
-      remember="Remember this"
-      ><hakion-button text="Toggle">Toggle</hakion-button></dark-mode-toggle
-    >
+    <hakion-ui-root></hakion-ui-root>
     <script>
       var button = document.querySelector('button');
       function handleAcknowledgeClick(e) {
@@ -61,18 +47,22 @@
 
       document.addEventListener('acknowledge', handleAcknowledgeClick);
 
-      const toggle = document.getElementById('dark-mode-toggle-1');
-      console.log(toggle);
-      const body = document.body;
+      // const toggle = document.querySelector('hakion-dark-mode-toggle');
+      // const body = document.body;
+      // const themeColor = document.querySelector('meta[name="theme-color"]');
+      // const colorScheme = document.querySelector('meta[name="color-scheme"]');
 
       // Set or remove the `dark` class the first time.
-      toggle.mode === 'dark' ? body.classList.add('dark') : body.classList.remove('dark');
+      // toggle.mode === 'dark' ? body.classList.add('dark') : body.classList.remove('dark');
       // Listen for toggle changes (which includes `prefers-color-scheme` changes)
       // and toggle the `dark` class accordingly.
-      toggle.addEventListener('colorschemechange', () => {
-        console.log('color scheme change');
-        body.classList.toggle('dark', toggle.mode === 'dark');
-      });
+      // toggle.addEventListener('colorschemechange', () => {
+      //   themeColor.content = getComputedStyle(body).color;
+      //   colorScheme.content = e.detail.colorScheme;
+      //   icon.href = e.detail.colorScheme === 'dark' ? 'moon.png' : 'sun.png';
+      //   console.log(`${e.target.id} changed the color scheme to ${e.detail.colorScheme}`);
+      //   body.classList.toggle('dark', toggle.mode === 'dark');
+      // });
     </script>
   </body>
 </html>

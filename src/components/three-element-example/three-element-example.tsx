@@ -1,5 +1,6 @@
 import { Component, Host, h } from '@stencil/core';
 import 'three-elements';
+
 @Component({
   tag: 'three-element-example',
   styleUrl: 'three-element-example.css',

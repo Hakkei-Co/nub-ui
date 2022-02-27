@@ -5,25 +5,30 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Color, Expand, Fill } from "./interface";
 import { AcknowledgeEvent } from "./components/hakion-button/hakion-button";
 export namespace Components {
     interface HakionButton {
         /**
           * Documentation is required
          */
-        "color": 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark';
+        "color": Color;
         /**
           * Set to "block" for a full-width button or to "full" for a full-width button without left and right borders.
          */
-        "expand": 'block' | 'full' | 'default';
+        "expand": Expand;
+        "fill": Fill;
         /**
           * Documentation is required
          */
         "text": string;
     }
     interface HakionDarkModeToggle {
+        "mode": string;
     }
     interface HakionRippleEffect {
+    }
+    interface HakionUiRoot {
     }
     interface MyAlert {
         /**
@@ -67,6 +72,12 @@ declare global {
         prototype: HTMLHakionRippleEffectElement;
         new (): HTMLHakionRippleEffectElement;
     };
+    interface HTMLHakionUiRootElement extends Components.HakionUiRoot, HTMLStencilElement {
+    }
+    var HTMLHakionUiRootElement: {
+        prototype: HTMLHakionUiRootElement;
+        new (): HTMLHakionUiRootElement;
+    };
     interface HTMLMyAlertElement extends Components.MyAlert, HTMLStencilElement {
     }
     var HTMLMyAlertElement: {
@@ -89,6 +100,7 @@ declare global {
         "hakion-button": HTMLHakionButtonElement;
         "hakion-dark-mode-toggle": HTMLHakionDarkModeToggleElement;
         "hakion-ripple-effect": HTMLHakionRippleEffectElement;
+        "hakion-ui-root": HTMLHakionUiRootElement;
         "my-alert": HTMLMyAlertElement;
         "my-component": HTMLMyComponentElement;
         "three-element-example": HTMLThreeElementExampleElement;
@@ -99,11 +111,12 @@ declare namespace LocalJSX {
         /**
           * Documentation is required
          */
-        "color"?: 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning' | 'danger' | 'light' | 'medium' | 'dark';
+        "color"?: Color;
         /**
           * Set to "block" for a full-width button or to "full" for a full-width button without left and right borders.
          */
-        "expand"?: 'block' | 'full' | 'default';
+        "expand"?: Expand;
+        "fill"?: Fill;
         /**
           * Define interface for argument type. You can access Props() in detail. eg: event.details.when
          */
@@ -114,8 +127,11 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface HakionDarkModeToggle {
+        "mode"?: string;
     }
     interface HakionRippleEffect {
+    }
+    interface HakionUiRoot {
     }
     interface MyAlert {
         /**
@@ -143,6 +159,7 @@ declare namespace LocalJSX {
         "hakion-button": HakionButton;
         "hakion-dark-mode-toggle": HakionDarkModeToggle;
         "hakion-ripple-effect": HakionRippleEffect;
+        "hakion-ui-root": HakionUiRoot;
         "my-alert": MyAlert;
         "my-component": MyComponent;
         "three-element-example": ThreeElementExample;
@@ -155,6 +172,7 @@ declare module "@stencil/core" {
             "hakion-button": LocalJSX.HakionButton & JSXBase.HTMLAttributes<HTMLHakionButtonElement>;
             "hakion-dark-mode-toggle": LocalJSX.HakionDarkModeToggle & JSXBase.HTMLAttributes<HTMLHakionDarkModeToggleElement>;
             "hakion-ripple-effect": LocalJSX.HakionRippleEffect & JSXBase.HTMLAttributes<HTMLHakionRippleEffectElement>;
+            "hakion-ui-root": LocalJSX.HakionUiRoot & JSXBase.HTMLAttributes<HTMLHakionUiRootElement>;
             "my-alert": LocalJSX.MyAlert & JSXBase.HTMLAttributes<HTMLMyAlertElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "three-element-example": LocalJSX.ThreeElementExample & JSXBase.HTMLAttributes<HTMLThreeElementExampleElement>;
