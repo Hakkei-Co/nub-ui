@@ -12,7 +12,8 @@ export type Color =
   | 'success'
   | 'light'
   | 'medium'
-  | 'dark';
+  | 'dark'
+  | undefined;
 
 export type Fill = 'clear' | 'outline' | 'solid';
 
@@ -21,4 +22,7 @@ export type Size = 'default' | 'small' | 'large';
 export type Disabled = 'false' | 'true';
 
 export type Expand = 'block' | 'full';
+
+
+export type Mode = 'ios' | 'md';
 

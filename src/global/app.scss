@@ -15,7 +15,9 @@
 @import '~@ionic/core/css/text-transformation.css';
 @import '~@ionic/core/css/flex-utils.css';
 
-/* Custom styles */
+@import "../theme/variables.scss";/* Custom styles */
+@import "../theme/dark-theme.scss";/* Custom styles */
+
 [tabindex='-1']:focus {
   outline: none !important;
 }

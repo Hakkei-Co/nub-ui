@@ -17,9 +17,9 @@ export class HakionDarkModeToggle {
   @Element() el: HTMLHakionDarkModeToggleElement;
 
   componentWillLoad() {
-    this.el.shadowRoot.addEventListener('load', () => {
-      console.log('LOAD');
-    });
+    // this.el.shadowRoot.addEventListener('load', () => {
+    //   console.log('LOAD');
+    // });
   }
 
   /**
@@ -75,7 +75,7 @@ export class HakionDarkModeToggle {
           dark="Dark"
           light="Light"
           remember="Remember this"
-        ></dark-mode-toggle>
+        ><slot></slot></dark-mode-toggle>
     );
   }
 }

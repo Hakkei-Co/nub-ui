@@ -1,4 +1,4 @@
-import { Component, h, Listen, State } from '@stencil/core';
+import { Component, Host, h, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'hakion-ui-root',
@@ -10,28 +10,30 @@ export class AppRoot {
 
   @Listen('click', { capture: true })
   private handleMouseEnter() {
-    console.log('click', this.show);
+    console.log('root-click', this.show);
     this.show = !this.show;
   }
   render() {
     return (
-      <div>
-
-        <main onClick={this.handleMouseEnter} >
+      <Host>
+        <main>
           <h4>{!this.show ? '.......' : 'Boo!'}</h4>
           <three-element-example></three-element-example>
-          <hakion-button>test</hakion-button>
-          <hakion-button color="success" text="Success"></hakion-button>
-          <hakion-button color="secondary" text="Toggle"></hakion-button>
+          <hakion-button iconSlot="end" text="text" iconName="star" textColor="warning">
+            slot
+          </hakion-button>
+          <hakion-button iconSlot="start" shape="round" iconName="heart" color="success" textColor="secondary">
+            <p>GOGO</p>
+          </hakion-button>
           {/* <hakion-dark-mode-toggle>Dark MOde Toggle</hakion-dark-mode-toggle> */}
-          <ion-list inset={true}>
+          <ion-list inset={true} onClick={this.handleMouseEnter}>
             <ion-list-header>Basic</ion-list-header>
             <ion-accordion-group>
               <ion-accordion value="colors">
                 <ion-item slot="header" color="primary">
                   <ion-label>Colors</ion-label>
+                  <hakion-button>hello world</hakion-button>
                 </ion-item>
-
                 <ion-list slot="content">
                   <ion-item>
                     <ion-label>Red</ion-label>
@@ -48,7 +50,6 @@ export class AppRoot {
                 <ion-item slot="header" color="success">
                   <ion-label>Shapes</ion-label>
                 </ion-item>
-
                 <ion-list slot="content">
                   <ion-item>
                     <ion-label>Circle</ion-label>
@@ -65,7 +66,6 @@ export class AppRoot {
                 <ion-item slot="header" color="danger">
                   <ion-label>Numbers</ion-label>
                 </ion-item>
-
                 <ion-list slot="content">
                   <ion-item>
                     <ion-label>1</ion-label>
@@ -81,7 +81,7 @@ export class AppRoot {
             </ion-accordion-group>
           </ion-list>
         </main>
-      </div>
+      </Host>
     );
   }
 }

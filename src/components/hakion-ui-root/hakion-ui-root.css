@@ -1,3 +1,8 @@
 :host {
   display: block;
+  overflow:scroll;
+}
+
+main {
+  border: 2px solid var(--ion-color-primary, yellow);
 }

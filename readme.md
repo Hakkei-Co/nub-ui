@@ -4,7 +4,7 @@
 
 Stencil is a compiler for building fast web apps using Web Components.
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
+Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool. Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
 
 Stencil components are just Web Components, so they work in any major framework or with no framework at all.
 
@@ -13,9 +13,8 @@ Stencil components are just Web Components, so they work in any major framework 
 To start building a new web component using Stencil, clone this repo to a new directory:
 
 ```bash
-git clone https://github.com/ionic-team/stencil-component-starter.git my-component
-cd my-component
-git remote rm origin
+git clone https://github.com/hakkei-co/hakion-ui.git
+cd hakion-ui
 ```
 
 and run:
@@ -39,43 +38,156 @@ npm test
 
 Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
 
-
 ## Naming Components
 
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
+> Create new components as a last resort. You should review what components are available and decide whether adding properties to an existing one will work first.
 
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the Ionic generated web components use the prefix `ion`.
+New components satisfy these properties:
 
+1. Hyphen-case
+1. Prefixed with `hakion-*`.
 
-## Using this component
+For example, a suitable name for a button web component is `hakion-button`.
 
-There are three strategies we recommend for using web components built with Stencil.
+### Code Generator
 
-The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+Use Stencil to generate components.
 
-### Script tag
+```
+npm run generate
+```
 
-- Put a script tag similar to this `<script type='module' src='https://unpkg.com/my-component@0.0.1/dist/my-component.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+Input a name when prompted. Stencil is configured to create a folder with your component name with three files: `file.tsx`, `file.css`, and `readme.md`.
+It will also add a folder `test` with two files: `test/file.e2e.ts` and `test/file.spec.tsx` inside.
+
+You can update the generated `readme.md` by running the build command:
+
+```
+npm run build
+```
+
+## Quickstart
+
+The `Host` element is a virtual component which means that it will never be rendered in the DOM but it can be used to set attributes and event listeners on the Host element itself (I.e. the component tag that is displayed).
+
+```jsx
+import { Component, Host, h, Prop } from '@stencil/core';
+
+@Component({
+  tag: 'my-component',
+  styleUrl: 'my-component.css',
+  shadow: true,
+})
+export class MyComponent {
+  @Prop() focus = false;
+
+  render() {
+    return (
+      <Host
+        aria-hidden={this.focus ? 'false' : 'true'}
+        class={{
+          'app-data': true,
+          'is-active': this.focus,
+        }}
+      >
+        <slot></slot>
+      </Host>
+    );
+  }
+}
+```
+
+A `slot` element allows for child elements to be supplied for rendering within specific locations in the component tree.
+
+```jsx
+import { Component, Host, h } from '@stencil/core';
+
+@Component({
+  tag: 'my-component',
+  styleUrl: 'my-component.css',
+  shadow: true,
+})
+export class MyComponent {
+  render() {
+    return (
+      <Host>
+        <slot></slot>
+      </Host>
+    );
+  }
+}
+```
+
+We can also provide named slots to specify where the child content will be output in the rendered component tree:
+
+```jsx
+import { Component, Host, h } from '@stencil/core';
+
+@Component({
+  tag: 'my-component',
+  styleUrl: 'my-component.css',
+  shadow: true,
+})
+export class MyComponent {
+  render() {
+    return (
+      <Host>
+        <h1>Heading</h1>
+        <slot name="first" />
+        <slot name="second" />
+      </Host>
+    );
+  }
+}
+
+// Usage
+<my-component>
+  <div>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph</p>
+    <ul>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+  </div>
+</my-component>;
+```
+
+## Style Guide
+
+### Icons
+
+#### Usage
+
+V5 documentation: [Link](https://ionic.io/ionicons/usage)
+Properties: [Link](https://github.com/ionic-team/ionicons/tree/main/src/components/icon)
+
+- [Style Guide](https://stenciljs.com/docs/style-guide)
+- [State Management](https://stenciljs.com/docs/stencil-store)
+
 
 ### Node Modules
+
+How to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+
 - Run `npm install my-component --save`
 - Put a script tag similar to this `<script type='module' src='node_modules/my-component/dist/my-component.esm.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
-### Style Guide
-- [Style Guide](https://stenciljs.com/docs/style-guide)
-- [State Management](https://stenciljs.com/docs/stencil-store)
 
 ### Testing
+
 - [Unit Testing in Stenciljs](https://eliteionic.com/tutorials/the-basics-of-unit-testing-in-stencil-js/)
 
 ### Import from App
+
 - Run `npm install my-component --save`
 - Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Additional Guides
+
 - [Ionic Components](https://ionicframework.com/docs/components)
 - [Three-elements](https://three-elements.hmans.co/guide/getting-started.html#prerequisites)
 - [Example Projects](https://github.com/djabif/Awesome-Ionic)
@@ -85,4 +197,3 @@ The first step for all three of these strategies is to [publish to NPM](https://
 - [Local Assets](https://stenciljs.com/docs/local-assets)
 - [Service Workers](https://stenciljs.com/docs/service-workers)
 - [Stencil Store](https://stenciljs.com/docs/stencil-store)
-

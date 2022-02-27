@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#16161d" />
-    <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
 
-    <meta http-equiv="x-ua-compatible" content="IE=Edge">
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
@@ -46,7 +46,17 @@
       button.addEventListener('click', handleAcknowledgeClick);
 
       document.addEventListener('acknowledge', handleAcknowledgeClick);
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
+      toggleDarkTheme(prefersDark.matches);
+
+      // Listen for changes to the prefers-color-scheme media query
+      prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
+
+      // Add or remove the "dark" class based on if the media query matches
+      function toggleDarkTheme(shouldAdd) {
+        document.body.classList.toggle('dark', shouldAdd);
+      }
       // const toggle = document.querySelector('hakion-dark-mode-toggle');
       // const body = document.body;
       // const themeColor = document.querySelector('meta[name="theme-color"]');

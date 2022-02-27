@@ -5,23 +5,76 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Color, Expand, Fill } from "./interface";
-import { AcknowledgeEvent } from "./components/hakion-button/hakion-button";
+import { AcknowledgeEvent, IonButtonType, IonIconSlot, IonIconVariant } from "./components/hakion-button/hakion-button";
+import { Color, Expand, Fill, Mode } from "./interface";
 export namespace Components {
     interface HakionButton {
         /**
-          * Documentation is required
+          * The color to use from your application's color palette. Default options are: "primary", "secondary", "tertiary", "success", "warning", "danger", "light", "medium", and "dark".
          */
         "color": Color;
         /**
-          * Set to "block" for a full-width button or to "full" for a full-width button without left and right borders.
+          * If true, the user cannot interact with the button.
+         */
+        "disabled": boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download": string | undefined;
+        /**
+          * This attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
          */
         "expand": Expand;
         "fill": Fill;
         /**
-          * Documentation is required
+          * If this property is set, an anchor tag will be rendered.
          */
+        "href": string;
+        /**
+          * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
+         */
+        "iconName": string;
+        /**
+          * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
+         */
+        "iconSize": 'small' | 'large' | undefined;
+        /**
+          * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
+         */
+        "iconSlot": IonIconSlot;
+        /**
+          * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
+         */
+        "iconSrc": string;
+        /**
+          * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
+         */
+        "iconVariant": IonIconVariant;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode": Mode;
+        /**
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of link types.
+         */
+        "rel": string | undefined;
+        /**
+          * The button shape.
+         */
+        "shape": string | undefined;
+        /**
+          * If true, activates a button with a heavier font weight.
+         */
+        "strong": boolean;
         "text": string;
+        /**
+          * The color to use for the text if the attribute `text` is set. Will not affect anything between <slot>
+         */
+        "textColor": Color;
+        /**
+          * The type of the button.
+         */
+        "type": IonButtonType;
     }
     interface HakionDarkModeToggle {
         "mode": string;
@@ -109,22 +162,72 @@ declare global {
 declare namespace LocalJSX {
     interface HakionButton {
         /**
-          * Documentation is required
+          * The color to use from your application's color palette. Default options are: "primary", "secondary", "tertiary", "success", "warning", "danger", "light", "medium", and "dark".
          */
         "color"?: Color;
         /**
-          * Set to "block" for a full-width button or to "full" for a full-width button without left and right borders.
+          * If true, the user cannot interact with the button.
+         */
+        "disabled"?: boolean;
+        /**
+          * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
+         */
+        "download"?: string | undefined;
+        /**
+          * This attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
          */
         "expand"?: Expand;
         "fill"?: Fill;
         /**
-          * Define interface for argument type. You can access Props() in detail. eg: event.details.when
+          * If this property is set, an anchor tag will be rendered.
          */
+        "href"?: string;
+        /**
+          * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
+         */
+        "iconName"?: string;
+        /**
+          * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
+         */
+        "iconSize"?: 'small' | 'large' | undefined;
+        /**
+          * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
+         */
+        "iconSlot"?: IonIconSlot;
+        /**
+          * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
+         */
+        "iconSrc"?: string;
+        /**
+          * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
+         */
+        "iconVariant"?: IonIconVariant;
+        /**
+          * The mode determines which platform styles to use.
+         */
+        "mode"?: Mode;
         "onAcknowledge"?: (event: CustomEvent<AcknowledgeEvent>) => void;
         /**
-          * Documentation is required
+          * Specifies the relationship of the target object to the link object. The value is a space-separated list of link types.
          */
+        "rel"?: string | undefined;
+        /**
+          * The button shape.
+         */
+        "shape"?: string | undefined;
+        /**
+          * If true, activates a button with a heavier font weight.
+         */
+        "strong"?: boolean;
         "text"?: string;
+        /**
+          * The color to use for the text if the attribute `text` is set. Will not affect anything between <slot>
+         */
+        "textColor"?: Color;
+        /**
+          * The type of the button.
+         */
+        "type"?: IonButtonType;
     }
     interface HakionDarkModeToggle {
         "mode"?: string;
