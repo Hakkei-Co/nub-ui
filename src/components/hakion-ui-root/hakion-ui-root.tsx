@@ -22,8 +22,15 @@ export class AppRoot {
           <hakion-button iconSlot="end" text="text" iconName="star" textColor="warning">
             slot
           </hakion-button>
-          <hakion-button iconSlot="start" shape="round" iconName="heart" color="success" textColor="secondary">
-            <p>GOGO</p>
+          <hakion-button
+            mode="ios"
+            iconSlot="start"
+            shape="round"
+            iconName="heart"
+            color="success"
+            textColor="secondary"
+          >
+            <p>Hello World</p>
           </hakion-button>
           {/* <hakion-dark-mode-toggle>Dark MOde Toggle</hakion-dark-mode-toggle> */}
           <ion-list inset={true} onClick={this.handleMouseEnter}>

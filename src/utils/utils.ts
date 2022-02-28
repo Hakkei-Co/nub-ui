@@ -13,7 +13,7 @@ export function formatPropsToConsole(value: any, name: string): FormatPropsToCon
   return {
     value: value,
     name: name,
-  }
+  };
 }
 
 export const AddClass: FunctionalComponent = (_, children, utils) =>

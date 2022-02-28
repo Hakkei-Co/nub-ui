@@ -1,5 +1,5 @@
 /* eslint-disable @stencil/required-jsdoc */
-import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host, Watch } from '@stencil/core';
 import { Color, Expand, Fill, Mode } from '../../interface';
 import { formatPropsToConsole } from '../../utils/utils';
 
@@ -19,10 +19,10 @@ export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
 export class HakionButton {
   // TEMP -
   @State() open: boolean = false;
-  @State() acknowledged: boolean = false;
   @Prop() text: string;
   @Event() acknowledge: EventEmitter<AcknowledgeEvent>;
 
+  @State() ready: boolean = false;
   /**
    * The @Element() decorator is how to get access to the host element within the class instance. \
    * This returns an instance of an HTMLElement, so standard DOM methods/events can be used here.
@@ -119,6 +119,8 @@ export class HakionButton {
    */
   @Prop({ reflect: true }) rel: string | undefined;
 
+  @State() textSlotElement!: HTMLIonTextElement;
+
   /**
    * Called every time the component is connected to the DOM.
    * When the component is first connected, this method is called before componentWillLoad.
@@ -160,24 +162,14 @@ export class HakionButton {
     var arr = props.map((el, i) => {
       return formatPropsToConsole(el, propNames[i]);
     });
-
     console.table(arr);
   }
 
   componentWillLoad() {
     // Inject config in all Slotted elements
     this.host.childNodes.forEach((element) => {
-      console.log('ELEMENT', element);
       element['textColor'] = this.textColor;
     });
-  }
-
-  constructElements() {
-    const slotElement = (
-      <ion-text size={this.iconSize} slot={this.iconSlot} color={this.textColor}>
-        <slot></slot>
-      </ion-text>
-    );
   }
 
   /**
@@ -185,8 +177,6 @@ export class HakionButton {
    */
   @Listen('click', { capture: true })
   handleClick() {
-    // this.acknowledged = !this.acknowledged;
-    // this.acknowledge.emit({ when: new Date() });
     console.info('click-event');
   }
 
@@ -205,11 +195,21 @@ export class HakionButton {
           disabled={this.disabled}
           shape={this.shape}
         >
+          {this.iconSlot === 'start' && (
+            <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
+          )}
           {this.iconSlot !== 'icon-only' && <ion-text color={this.textColor}>{this.text}</ion-text>}
-          <ion-text size={this.iconSize} slot={this.iconSlot} color={this.textColor}>
+          <ion-text
+            size={this.iconSize}
+            ref={(el) => (this.textSlotElement = el as HTMLIonTextElement)}
+            slot={this.iconSlot}
+            color={this.textColor}
+          >
             <slot></slot>
           </ion-text>
-          <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
+          {this.iconSlot === 'end' && (
+            <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
+          )}
         </ion-button>
       </Host>
     );

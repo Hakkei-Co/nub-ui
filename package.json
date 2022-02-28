@@ -25,9 +25,9 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "lint": "eslint src/**/*{.ts,.tsx}",
-    "prettier": "npm run prettier.base -- --write",
+    "prettier": "npm run prettier:base -- --write",
     "prettier:base": "prettier \"./{src,test}/**/*.{ts,tsx,js,jsx}\"",
-    "prettier:dry-run": "npm run prettier.base -- --list-different"
+    "prettier:dry-run": "npm run prettier:base -- --list-different"
   },
   "dependencies": {
     "@ionic/core": "^6.0.9",

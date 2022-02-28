@@ -68,14 +68,16 @@ export class HakionDarkModeToggle {
 
   render() {
     return (
-        <dark-mode-toggle
-          id="dark-mode-toggle-1"
-          legend="Theme Switcher"
-          appearance="switch"
-          dark="Dark"
-          light="Light"
-          remember="Remember this"
-        ><slot></slot></dark-mode-toggle>
+      <dark-mode-toggle
+        id="dark-mode-toggle-1"
+        legend="Theme Switcher"
+        appearance="switch"
+        dark="Dark"
+        light="Light"
+        remember="Remember this"
+      >
+        <slot></slot>
+      </dark-mode-toggle>
     );
   }
 }

@@ -23,6 +23,4 @@ export type Disabled = 'false' | 'true';
 
 export type Expand = 'block' | 'full';
 
-
 export type Mode = 'ios' | 'md';
-
