@@ -80,7 +80,6 @@ export namespace Components {
         "type": IonButtonType;
     }
     interface HakionDarkModeToggle {
-        "mode": string;
     }
     interface HakionRippleEffect {
     }
@@ -236,7 +235,6 @@ declare namespace LocalJSX {
         "type"?: IonButtonType;
     }
     interface HakionDarkModeToggle {
-        "mode"?: string;
     }
     interface HakionRippleEffect {
     }

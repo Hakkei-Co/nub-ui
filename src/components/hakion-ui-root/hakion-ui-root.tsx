@@ -31,7 +31,9 @@ export class AppRoot {
           >
             <p>Hello World</p>
           </hakion-button>
-          {/* <hakion-dark-mode-toggle>Dark MOde Toggle</hakion-dark-mode-toggle> */}
+          {/* Why does this break?
+            <dark-mode-toggle></dark-mode-toggle>
+            */}
           <ion-list inset={true} onClick={this.handleMouseEnter}>
             <ion-list-header>Basic</ion-list-header>
             <ion-accordion-group>
@@ -86,6 +88,7 @@ export class AppRoot {
               </ion-accordion>
             </ion-accordion-group>
           </ion-list>
+          <slot></slot>
         </main>
       </Host>
     );

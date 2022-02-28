@@ -36,7 +36,7 @@ To run the unit tests for the components, run:
 npm test
 ```
 
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
+Need help? Check out the documentation [here](https://stackoverflow.com/questions/59970043/custom-element-setup-constructor-vs-connectedcallback).
 
 ## Naming Components
 

@@ -128,7 +128,7 @@ export class HakionButton {
    * Called every time the component is connected to the DOM.
    * When the component is first connected, this method is called before componentWillLoad.
    */
-  connectedCallback() {
+  connectedCallback(): void {
     const props = [
       this.color,
       this.text,

@@ -1,2 +1,8 @@
 import '@ionic/core';
-import 'dark-mode-toggle';
+// import { setupConfig } from '@ionic/core';
+
+export default () => {
+  // setupConfig({
+  //   mode: 'ios'
+  // });
+};

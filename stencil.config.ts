@@ -3,10 +3,18 @@ import { sass } from '@stencil/sass';
 import { readFileSync } from 'fs';
 import { postcss } from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
+
 
 export const config: Config = {
   namespace: 'hakion-ui',
-  taskQueue: 'async',
+  extras: {
+    cssVarsShim: true,
+    dynamicImportShim: true,
+    safari10: true,
+    scriptDataOpts: true,
+    shadowDomShim: true,
+  },
   outputTargets: [
     {
       type: 'dist',
@@ -21,8 +29,19 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null, // disable service workers
+      copy: [
+        {
+          src: '../node_modules/dark-mode-toggle/src/dark-mode-toggle.mjs',
+          dest: 'lib/dark-mode-toggle.min.js'
+        }
+      ]
     },
   ],
+  rollupPlugins: {
+    after: [
+      nodePolyfills(),
+    ]
+  },
   plugins: [
     sass({
       includePaths: ['./node_modules/'],

@@ -2,6 +2,11 @@
  * Types based on custom elements from Ionic
  * See https://ionicframework.com/docs/api
  */
+ import DarkModeToggle from 'dark-mode-toggle';
+
+ declare global {
+     const darkModeToggle: typeof DarkModeToggle;
+ }
 
 export type Color =
   | 'primary'
