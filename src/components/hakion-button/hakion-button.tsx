@@ -3,7 +3,7 @@ import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host }
 import { Color, Expand, Fill, Mode } from '../../interface';
 import { formatPropsToConsole } from '../../utils/utils';
 
-export interface AcknowledgeEvent {
+interface AcknowledgeEvent {
   when: Date;
 }
 
@@ -14,89 +14,110 @@ export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
 @Component({
   tag: 'hakion-button',
   styleUrl: 'hakion-button.css',
-  shadow: false,
 })
 export class HakionButton {
   // TEMP
   @State() open: boolean = false;
-  @Prop() text: string;
-  @Event() acknowledge: EventEmitter<AcknowledgeEvent>;
+  @Event()
+  acknowledge: EventEmitter<AcknowledgeEvent> | undefined;
 
   @State() ready: boolean = false;
+
+  @Prop()
+  text: string | undefined;
+
   /**
    * The @Element() decorator is how to get access to the host element within the class instance. \
    * This returns an instance of an HTMLElement, so standard DOM methods/events can be used here.
    */
-  @Element() host: HTMLHakionButtonElement;
+  @Element()
+  host: HTMLHakionButtonElement | undefined;
 
   /**
    * The type of the button.
    */
-  @Prop() type: IonButtonType;
+
+  @Prop() type: IonButtonType | undefined;
 
   /**
    * The color to use from your application's color palette.
    * Default options are: "primary", "secondary", "tertiary", "success",
    * "warning", "danger", "light", "medium", and "dark".
    */
+
   @Prop() color: Color = 'primary';
 
   /**
    * The color to use for the text if the attribute `text` is set.
    * Will not affect anything between <slot>
    */
+
   @Prop() textColor: Color = undefined;
 
   /**
    * The mode determines which platform styles to use.
    */
-  @Prop() mode: Mode;
+
+  @Prop()
+  mode: Mode = 'ios';
 
   /**
    * This attribute lets you specify how wide the button should be.
    * By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
    */
-  @Prop() expand: Expand;
 
-   /**
+  @Prop()
+  expand: Expand = 'inline-block';
+
+  /**
    * Set to "clear" for a transparent button, to "outline" for a transparent
    * button with a border, or to "solid". The default style is "solid" except inside of
    */
+
   @Prop() fill: Fill = 'solid';
 
   /**
    * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute
    * has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
    */
+
   @Prop({ reflect: true }) download: string | undefined;
 
   /**
    * If this property is set, an anchor tag will be rendered.
    */
-  @Prop({ reflect: true }) href: string;
+
+  @Prop({ reflect: true })
+  href: string | undefined;
 
   /**
    * If this property is set, an anchor tag will be rendered.
    * If set to "icon-only," all other content will be ignored.
    */
-  @Prop() iconSlot: IonIconSlot;
+
+  @Prop()
+  iconSlot: IonIconSlot = '';
 
   /**
    * If this property is set, an anchor tag will be rendered.
    * If set to "icon-only," all other content will be ignored.
    */
-  @Prop() iconName: string;
+  @Prop() iconName: string | undefined = undefined;
 
   /**
    * If this property is set, an anchor tag will be rendered.
    * If set to "icon-only," all other content will be ignored.
    */
-  @Prop() iconVariant: IonIconVariant;
+
+  @Prop()
+  iconVariant: IonIconVariant = ``;
 
   /**
    * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
    */
-  @Prop() iconSrc: string;
+
+  @Prop()
+  iconSrc: string | undefined;
 
   /**
    * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
@@ -106,7 +127,9 @@ export class HakionButton {
   /**
    * If true, the user cannot interact with the button.
    */
-  @Prop({ reflect: true }) disabled: boolean;
+
+  @Prop({ reflect: true })
+  disabled: boolean = false;
 
   /**
    * The button shape.
@@ -164,7 +187,7 @@ export class HakionButton {
     var arr = props.map((el, i) => {
       return formatPropsToConsole(el, propNames[i]);
     });
-    arr = [{componentName: this.host.nodeName}, ...arr, ]
+    arr = [{ componentName: String(this?.host?.nodeName).length > 0 && this?.host?.nodeName }, ...arr];
     console.table(arr);
   }
 
@@ -196,16 +219,17 @@ export class HakionButton {
             <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
           )}
           {this.iconSlot !== 'icon-only' && <ion-text color={this.textColor}>{this.text}</ion-text>}
-          <ion-text
-            part="button-text"
-            size={this.iconSize}
-            slot={this.iconSlot}
-            color={this.textColor}
-          >
+          <ion-text part="button-text" size={this.iconSize} slot={this.iconSlot} color={this.textColor}>
             <slot></slot>
           </ion-text>
           {this.iconSlot === 'end' && (
-            <ion-icon part="button-icon" size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
+            <ion-icon
+              part="button-icon"
+              size={this.iconSize}
+              slot={this.iconSlot}
+              name={this.iconName}
+              src={this.iconSrc}
+            ></ion-icon>
           )}
         </ion-button>
       </Host>

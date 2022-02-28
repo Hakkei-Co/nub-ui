@@ -7,7 +7,7 @@ import { Component, Element, h, Host, State } from '@stencil/core';
   shadow: false,
 })
 export class HakionDarkModeToggle {
-  @Element() host: HTMLHakionDarkModeToggleElement;
+  @Element() host!: HTMLHakionDarkModeToggleElement;
   @State() ready: boolean = false;
   connectedCallback() {}
 

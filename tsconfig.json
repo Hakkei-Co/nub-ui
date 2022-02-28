@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "declaration": false,
@@ -17,14 +18,10 @@
     "jsxFactory": "h"
   },
   "include": [
-    "src"
+    "src",
+    "types/jsx.d.ts"
   ],
   "exclude": [
     "node_modules"
-  ],
-  "paths": {
-    "@hakion-ui/core": [
-      "src/index.ts"
-    ]
-  }
+  ]
 }

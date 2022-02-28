@@ -1,4 +1,4 @@
-import { Component, Host, h, Listen, State } from '@stencil/core';
+import { Component, h, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'hakion-ui-root',
@@ -14,13 +14,17 @@ export class AppRoot {
   }
   render() {
     return (
-      <Host>
-        <main>
+      <site-root>
+      <ion-app>
+        <ion-content>
           <h4>{!this.show ? '.......' : 'Boo!'}</h4>
           <three-element-example></three-element-example>
-          <hakion-button iconSlot="end" text="text" iconName="star" textColor="dark">
+          <hakion-button color="secondary" iconSlot="end" text="text" iconName="star" textColor="dark">
             slot
           </hakion-button>
+          <hakion-button text="MY ONLY TEXT" color="tertiary" iconSlot="start"  iconName="heart" textColor="dark">
+          </hakion-button>
+
           <hakion-button
             mode="ios"
             iconSlot="start"
@@ -89,8 +93,9 @@ export class AppRoot {
             </ion-accordion-group>
           </ion-list>
           <slot></slot>
-        </main>
-      </Host>
+        </ion-content>
+      </ion-app>
+      </site-root>
     );
   }
 }

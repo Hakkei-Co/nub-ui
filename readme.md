@@ -160,6 +160,7 @@ export class MyComponent {
 
 #### Usage
 
+PWA Components: [Link](https://github.com/ionic-team/pwa-elements/blob/master/src/index.html)
 V5 documentation: [Link](https://ionic.io/ionicons/usage)
 Properties: [Link](https://github.com/ionic-team/ionicons/tree/main/src/components/icon)
 

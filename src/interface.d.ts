@@ -26,6 +26,6 @@ export type Size = 'default' | 'small' | 'large';
 
 export type Disabled = 'false' | 'true';
 
-export type Expand = 'block' | 'full';
+export type Expand = 'block' | 'full' | 'inline-block';
 
 export type Mode = 'ios' | 'md';

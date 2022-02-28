@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AcknowledgeEvent, IonButtonType, IonIconSlot, IonIconVariant } from "./components/hakion-button/hakion-button";
+import { IonButtonType, IonIconSlot, IonIconVariant } from "./components/hakion-button/hakion-button";
 import { Color, Expand, Fill, Mode } from "./interface";
 export namespace Components {
     interface HakionButton {
@@ -32,11 +32,11 @@ export namespace Components {
         /**
           * If this property is set, an anchor tag will be rendered.
          */
-        "href": string;
+        "href": string | undefined;
         /**
           * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
          */
-        "iconName": string;
+        "iconName": string | undefined;
         /**
           * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
          */
@@ -48,7 +48,7 @@ export namespace Components {
         /**
           * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
          */
-        "iconSrc": string;
+        "iconSrc": string | undefined;
         /**
           * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
          */
@@ -69,7 +69,7 @@ export namespace Components {
           * If true, activates a button with a heavier font weight.
          */
         "strong": boolean;
-        "text": string;
+        "text": string | undefined;
         /**
           * The color to use for the text if the attribute `text` is set. Will not affect anything between <slot>
          */
@@ -77,7 +77,7 @@ export namespace Components {
         /**
           * The type of the button.
          */
-        "type": IonButtonType;
+        "type": IonButtonType | undefined;
     }
     interface HakionDarkModeToggle {
     }
@@ -177,11 +177,11 @@ declare namespace LocalJSX {
         /**
           * If this property is set, an anchor tag will be rendered.
          */
-        "href"?: string;
+        "href"?: string | undefined;
         /**
           * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
          */
-        "iconName"?: string;
+        "iconName"?: string | undefined;
         /**
           * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
          */
@@ -193,7 +193,7 @@ declare namespace LocalJSX {
         /**
           * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
          */
-        "iconSrc"?: string;
+        "iconSrc"?: string | undefined;
         /**
           * If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.
          */
@@ -202,7 +202,7 @@ declare namespace LocalJSX {
           * The mode determines which platform styles to use.
          */
         "mode"?: Mode;
-        "onAcknowledge"?: (event: CustomEvent<AcknowledgeEvent>) => void;
+        "onAcknowledge"?: (event: CustomEvent<any>) => void;
         /**
           * Specifies the relationship of the target object to the link object. The value is a space-separated list of link types.
          */
@@ -215,7 +215,7 @@ declare namespace LocalJSX {
           * If true, activates a button with a heavier font weight.
          */
         "strong"?: boolean;
-        "text"?: string;
+        "text"?: string | undefined;
         /**
           * The color to use for the text if the attribute `text` is set. Will not affect anything between <slot>
          */
@@ -223,7 +223,7 @@ declare namespace LocalJSX {
         /**
           * The type of the button.
          */
-        "type"?: IonButtonType;
+        "type"?: IonButtonType | undefined;
     }
     interface HakionDarkModeToggle {
     }
@@ -239,15 +239,15 @@ declare namespace LocalJSX {
         /**
           * The first name
          */
-        "first"?: string;
+        "first": string;
         /**
           * The last name
          */
-        "last"?: string;
+        "last": string;
         /**
           * The middle name
          */
-        "middle"?: string;
+        "middle": string;
     }
     interface ThreeElementExample {
     }

@@ -1,8 +1,9 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import { readFileSync } from 'fs';
-import { postcss } from '@stencil/postcss';
-import autoprefixer from 'autoprefixer';
+// import { postcss } from '@stencil/postcss';
+// import autoprefixer from 'autoprefixer';
+import dotenvPlugin from 'rollup-plugin-dotenv';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 
@@ -28,12 +29,14 @@ export const config: Config = {
     },
     {
       type: 'www',
+      baseUrl: 'https://ui.hakkei.org/',
+      prerenderConfig: './prerender.config.ts',
       serviceWorker: null, // disable service workers
       copy: [
         {
           src: '../node_modules/dark-mode-toggle/src/dark-mode-toggle.mjs',
           dest: 'lib/dark-mode-toggle.min.js'
-        }
+        },
       ]
     },
   ],
@@ -43,12 +46,13 @@ export const config: Config = {
     ]
   },
   plugins: [
+    dotenvPlugin(),
     sass({
       includePaths: ['./node_modules/'],
     }),
-    postcss({
-      plugins: [autoprefixer()],
-    }),
+    // postcss({
+    //   plugins: [autoprefixer()],
+    // }),
   ],
   globalStyle: 'src/global/app.scss',
   globalScript: 'src/global/app.ts',
