@@ -1,3 +1,22 @@
 :host {
   display: block;
 }
+
+hakion-button::part(button) {
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 244, 244;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+  --ion-border-color: var(--ion-color-dark-shade);
+  --ion-background-color: var(--ion-color-light);
+  --ion-background-color-rgb: var(--ion-color-light-rgb);
+  --ion-text-color: var(--ion-color-light);
+  --ion-text-color-rgb: var(--ion-color-light-rgb);
+}
+
+hakion-button::part(button-text) {
+  color: blue;
+  opacity: 1;
+}

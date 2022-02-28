@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="green" />
+    <meta name="theme-color" content="#1e2023" />
     <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
 
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
@@ -12,6 +12,8 @@
     <title>Stencil Component Starter</title>
 
     <script type="module" src="/build/hakion-ui.esm.js"></script>
+    <!-- <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script> -->
+    <script type="module" src="/lib/dark-mode-toggle.min.js"></script>
     <script nomodule src="/build/hakion-ui.js"></script>
     <link rel="stylesheet" href="/build/hakion-ui.css" />
     <script>
@@ -25,7 +27,6 @@
           );
         }
         </script>
-        <script type="module" src="/lib/dark-mode-toggle.min.js"></script>
   </head>
 
   <body>
@@ -58,6 +59,6 @@
         console.log(`${e.target.id} changed the color scheme to ${e.detail.colorScheme}`);
         body.classList.toggle('dark', toggle.mode === 'dark');
       });
-      </script>
+    </script>
   </body>
 </html>

@@ -18,7 +18,7 @@ export class AppRoot {
         <main>
           <h4>{!this.show ? '.......' : 'Boo!'}</h4>
           <three-element-example></three-element-example>
-          <hakion-button iconSlot="end" text="text" iconName="star" textColor="warning">
+          <hakion-button iconSlot="end" text="text" iconName="star" textColor="dark">
             slot
           </hakion-button>
           <hakion-button

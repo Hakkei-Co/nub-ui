@@ -180,6 +180,7 @@ export class HakionButton {
     return (
       <Host>
         <ion-button
+          part="button"
           mode={this.mode}
           strong={this.strong}
           button-type={this.type}
@@ -196,6 +197,7 @@ export class HakionButton {
           )}
           {this.iconSlot !== 'icon-only' && <ion-text color={this.textColor}>{this.text}</ion-text>}
           <ion-text
+            part="button-text"
             size={this.iconSize}
             slot={this.iconSlot}
             color={this.textColor}
@@ -203,7 +205,7 @@ export class HakionButton {
             <slot></slot>
           </ion-text>
           {this.iconSlot === 'end' && (
-            <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
+            <ion-icon part="button-icon" size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
           )}
         </ion-button>
       </Host>

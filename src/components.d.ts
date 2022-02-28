@@ -81,8 +81,6 @@ export namespace Components {
     }
     interface HakionDarkModeToggle {
     }
-    interface HakionRippleEffect {
-    }
     interface HakionUiRoot {
     }
     interface MyAlert {
@@ -121,12 +119,6 @@ declare global {
         prototype: HTMLHakionDarkModeToggleElement;
         new (): HTMLHakionDarkModeToggleElement;
     };
-    interface HTMLHakionRippleEffectElement extends Components.HakionRippleEffect, HTMLStencilElement {
-    }
-    var HTMLHakionRippleEffectElement: {
-        prototype: HTMLHakionRippleEffectElement;
-        new (): HTMLHakionRippleEffectElement;
-    };
     interface HTMLHakionUiRootElement extends Components.HakionUiRoot, HTMLStencilElement {
     }
     var HTMLHakionUiRootElement: {
@@ -154,7 +146,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "hakion-button": HTMLHakionButtonElement;
         "hakion-dark-mode-toggle": HTMLHakionDarkModeToggleElement;
-        "hakion-ripple-effect": HTMLHakionRippleEffectElement;
         "hakion-ui-root": HTMLHakionUiRootElement;
         "my-alert": HTMLMyAlertElement;
         "my-component": HTMLMyComponentElement;
@@ -236,8 +227,6 @@ declare namespace LocalJSX {
     }
     interface HakionDarkModeToggle {
     }
-    interface HakionRippleEffect {
-    }
     interface HakionUiRoot {
     }
     interface MyAlert {
@@ -265,7 +254,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "hakion-button": HakionButton;
         "hakion-dark-mode-toggle": HakionDarkModeToggle;
-        "hakion-ripple-effect": HakionRippleEffect;
         "hakion-ui-root": HakionUiRoot;
         "my-alert": MyAlert;
         "my-component": MyComponent;
@@ -278,7 +266,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "hakion-button": LocalJSX.HakionButton & JSXBase.HTMLAttributes<HTMLHakionButtonElement>;
             "hakion-dark-mode-toggle": LocalJSX.HakionDarkModeToggle & JSXBase.HTMLAttributes<HTMLHakionDarkModeToggleElement>;
-            "hakion-ripple-effect": LocalJSX.HakionRippleEffect & JSXBase.HTMLAttributes<HTMLHakionRippleEffectElement>;
             "hakion-ui-root": LocalJSX.HakionUiRoot & JSXBase.HTMLAttributes<HTMLHakionUiRootElement>;
             "my-alert": LocalJSX.MyAlert & JSXBase.HTMLAttributes<HTMLMyAlertElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
