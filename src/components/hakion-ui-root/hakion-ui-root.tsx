@@ -3,7 +3,6 @@ import { Component, Host, h, Listen, State } from '@stencil/core';
 @Component({
   tag: 'hakion-ui-root',
   styleUrl: 'hakion-ui-root.css',
-  shadow: false,
 })
 export class AppRoot {
   @State() show: boolean = false;

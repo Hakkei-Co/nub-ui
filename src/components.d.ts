@@ -25,6 +25,9 @@ export namespace Components {
           * This attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
          */
         "expand": Expand;
+        /**
+          * Set to "clear" for a transparent button, to "outline" for a transparent button with a border, or to "solid". The default style is "solid" except inside of
+         */
         "fill": Fill;
         /**
           * If this property is set, an anchor tag will be rendered.
@@ -177,6 +180,9 @@ declare namespace LocalJSX {
           * This attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
          */
         "expand"?: Expand;
+        /**
+          * Set to "clear" for a transparent button, to "outline" for a transparent button with a border, or to "solid". The default style is "solid" except inside of
+         */
         "fill"?: Fill;
         /**
           * If this property is set, an anchor tag will be rendered.

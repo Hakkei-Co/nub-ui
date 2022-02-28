@@ -1,8 +1,9 @@
 import { FunctionalComponent } from '@stencil/core';
 
 interface FormatPropsToConsole {
-  value: string;
-  name: string;
+  propReceived?: string;
+  propName?: string;
+  componentName?: string | any;
 }
 
 export function format(first: string, middle: string, last: string): string {
@@ -11,8 +12,8 @@ export function format(first: string, middle: string, last: string): string {
 
 export function formatPropsToConsole(value: any, name: string): FormatPropsToConsole {
   return {
-    value: value,
-    name: name,
+    propReceived: value,
+    propName: name,
   };
 }
 

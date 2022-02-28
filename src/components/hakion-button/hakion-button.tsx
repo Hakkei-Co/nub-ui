@@ -1,5 +1,5 @@
 /* eslint-disable @stencil/required-jsdoc */
-import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host } from '@stencil/core';
 import { Color, Expand, Fill, Mode } from '../../interface';
 import { formatPropsToConsole } from '../../utils/utils';
 
@@ -17,7 +17,7 @@ export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
   shadow: false,
 })
 export class HakionButton {
-  // TEMP -
+  // TEMP
   @State() open: boolean = false;
   @Prop() text: string;
   @Event() acknowledge: EventEmitter<AcknowledgeEvent>;
@@ -57,6 +57,11 @@ export class HakionButton {
    * By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
    */
   @Prop() expand: Expand;
+
+   /**
+   * Set to "clear" for a transparent button, to "outline" for a transparent
+   * button with a border, or to "solid". The default style is "solid" except inside of
+   */
   @Prop() fill: Fill = 'solid';
 
   /**
@@ -119,14 +124,12 @@ export class HakionButton {
    */
   @Prop({ reflect: true }) rel: string | undefined;
 
-  @State() textSlotElement!: HTMLIonTextElement;
-
   /**
    * Called every time the component is connected to the DOM.
    * When the component is first connected, this method is called before componentWillLoad.
    */
   connectedCallback() {
-    var props = [
+    const props = [
       this.color,
       this.text,
       this.type,
@@ -142,7 +145,7 @@ export class HakionButton {
       this.strong,
       this.rel,
     ];
-    var propNames = [
+    const propNames = [
       'color',
       'text',
       'type',
@@ -158,18 +161,11 @@ export class HakionButton {
       'strong',
       'rel',
     ];
-
     var arr = props.map((el, i) => {
       return formatPropsToConsole(el, propNames[i]);
     });
+    arr = [{componentName: this.host.nodeName}, ...arr, ]
     console.table(arr);
-  }
-
-  componentWillLoad() {
-    // Inject config in all Slotted elements
-    this.host.childNodes.forEach((element) => {
-      element['textColor'] = this.textColor;
-    });
   }
 
   /**
@@ -201,7 +197,6 @@ export class HakionButton {
           {this.iconSlot !== 'icon-only' && <ion-text color={this.textColor}>{this.text}</ion-text>}
           <ion-text
             size={this.iconSize}
-            ref={(el) => (this.textSlotElement = el as HTMLIonTextElement)}
             slot={this.iconSlot}
             color={this.textColor}
           >

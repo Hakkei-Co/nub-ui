@@ -9,6 +9,8 @@
 
 ### Depends on
 
+- [three-element-example](../three-element-example)
+- [hakion-button](../hakion-button)
 - ion-list
 - ion-list-header
 - ion-accordion-group
@@ -19,12 +21,18 @@
 ### Graph
 ```mermaid
 graph TD;
+  hakion-ui-root --> three-element-example
+  hakion-ui-root --> hakion-button
   hakion-ui-root --> ion-list
   hakion-ui-root --> ion-list-header
   hakion-ui-root --> ion-accordion-group
   hakion-ui-root --> ion-accordion
   hakion-ui-root --> ion-item
   hakion-ui-root --> ion-label
+  hakion-button --> ion-button
+  hakion-button --> ion-icon
+  hakion-button --> ion-text
+  ion-button --> ion-ripple-effect
   ion-accordion --> ion-icon
   ion-item --> ion-icon
   ion-item --> ion-ripple-effect

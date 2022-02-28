@@ -13,7 +13,6 @@ export class HakionRippleEffect {
           <ion-content>
             <div class="ion-activatable ripple-parent">
               <ion-ripple-effect>
-                {' '}
                 <slot></slot>
               </ion-ripple-effect>
             </div>
