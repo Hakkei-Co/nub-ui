@@ -24,30 +24,33 @@
         document.head.insertAdjacentHTML(
           'beforeend',
           '<link rel="stylesheet" href="/build/hakion-ui.css" onload="document.documentElement.style.display = ``">'
-          );
-        }
-        </script>
+        );
+      }
+    </script>
   </head>
 
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <ion-app>
+      <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
     <my-alert text="example text"></my-alert>
     <p>
       Open a chrome dev console. Observe how clicking on "acknowledge" will differ from clicking on the "Clicked"
       button.
-    </p>
-    <button>acknowledge</button>
-    <hakion-ui-root>
+    </p> -->
+      <button>acknowledge</button>
+      <hakion-ui-root> </hakion-ui-root>
       <dark-mode-toggle></dark-mode-toggle>
-    </hakion-ui-root>
+      <hakion-button>test</hakion-button>
+    </ion-app>
     <script>
-      var button = document.querySelector('button');
-      function handleAcknowledgeClick(e) {
-        var alert = document.querySelector('my-alert');
-        alert.text = 'This is a very important alert!';
-      }
-      button.addEventListener('click', handleAcknowledgeClick);
-      document.addEventListener('acknowledge', handleAcknowledgeClick);
+
+      // var button = document.querySelector('button');
+      // function handleAcknowledgeClick(e) {
+      //   var alert = document.querySelector('my-alert');
+      //   alert.text = 'This is a very important alert!';
+      // }
+      // button.addEventListener('click', handleAcknowledgeClick);
+      // document.addEventListener('acknowledge', handleAcknowledgeClick);
       const toggle = document.querySelector('dark-mode-toggle');
       const body = document.body;
       const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -56,7 +59,6 @@
         // icon.href = e.detail.colorScheme === 'dark' ? 'moon.png' : 'sun.png';
         themeColor.content = getComputedStyle(body).color;
         colorScheme.content = e.detail.colorScheme;
-        console.log(`${e.target.id} changed the color scheme to ${e.detail.colorScheme}`);
         body.classList.toggle('dark', toggle.mode === 'dark');
       });
     </script>

@@ -9,7 +9,6 @@
 
 ### Depends on
 
-- ion-app
 - ion-content
 - [three-element-example](../three-element-example)
 - [hakion-button](../hakion-button)
@@ -23,7 +22,6 @@
 ### Graph
 ```mermaid
 graph TD;
-  hakion-ui-root --> ion-app
   hakion-ui-root --> ion-content
   hakion-ui-root --> three-element-example
   hakion-ui-root --> hakion-button

@@ -14,6 +14,7 @@ export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
 @Component({
   tag: 'hakion-button',
   styleUrl: 'hakion-button.css',
+  shadow: true,
 })
 export class HakionButton {
   // TEMP

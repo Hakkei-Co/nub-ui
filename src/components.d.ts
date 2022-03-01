@@ -81,6 +81,12 @@ export namespace Components {
     }
     interface HakionDarkModeToggle {
     }
+    interface HakionSearchInput {
+        "debounce"?: number;
+        "handleInput"?: (ev: any) => void;
+        "placeholder"?: string;
+        "searchTerm"?: string;
+    }
     interface HakionUiRoot {
     }
     interface MyAlert {
@@ -119,6 +125,12 @@ declare global {
         prototype: HTMLHakionDarkModeToggleElement;
         new (): HTMLHakionDarkModeToggleElement;
     };
+    interface HTMLHakionSearchInputElement extends Components.HakionSearchInput, HTMLStencilElement {
+    }
+    var HTMLHakionSearchInputElement: {
+        prototype: HTMLHakionSearchInputElement;
+        new (): HTMLHakionSearchInputElement;
+    };
     interface HTMLHakionUiRootElement extends Components.HakionUiRoot, HTMLStencilElement {
     }
     var HTMLHakionUiRootElement: {
@@ -146,6 +158,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "hakion-button": HTMLHakionButtonElement;
         "hakion-dark-mode-toggle": HTMLHakionDarkModeToggleElement;
+        "hakion-search-input": HTMLHakionSearchInputElement;
         "hakion-ui-root": HTMLHakionUiRootElement;
         "my-alert": HTMLMyAlertElement;
         "my-component": HTMLMyComponentElement;
@@ -227,6 +240,12 @@ declare namespace LocalJSX {
     }
     interface HakionDarkModeToggle {
     }
+    interface HakionSearchInput {
+        "debounce"?: number;
+        "handleInput"?: (ev: any) => void;
+        "placeholder"?: string;
+        "searchTerm"?: string;
+    }
     interface HakionUiRoot {
     }
     interface MyAlert {
@@ -254,6 +273,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "hakion-button": HakionButton;
         "hakion-dark-mode-toggle": HakionDarkModeToggle;
+        "hakion-search-input": HakionSearchInput;
         "hakion-ui-root": HakionUiRoot;
         "my-alert": MyAlert;
         "my-component": MyComponent;
@@ -266,6 +286,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "hakion-button": LocalJSX.HakionButton & JSXBase.HTMLAttributes<HTMLHakionButtonElement>;
             "hakion-dark-mode-toggle": LocalJSX.HakionDarkModeToggle & JSXBase.HTMLAttributes<HTMLHakionDarkModeToggleElement>;
+            "hakion-search-input": LocalJSX.HakionSearchInput & JSXBase.HTMLAttributes<HTMLHakionSearchInputElement>;
             "hakion-ui-root": LocalJSX.HakionUiRoot & JSXBase.HTMLAttributes<HTMLHakionUiRootElement>;
             "my-alert": LocalJSX.MyAlert & JSXBase.HTMLAttributes<HTMLMyAlertElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
