@@ -1,0 +1,6 @@
+@import './hakion-button.common.css';
+
+:host {
+  background: var(--ion-background-color);
+  color: var(--ion-text-color);
+}

@@ -36,6 +36,13 @@ To run the unit tests for the components, run:
 npm test
 ```
 
+**If you are not using the shadowDOM then you need to replace :host by the tag name like:**
+```
+tab-header {
+  display: contents;
+}
+```
+
 Need help? Check out the documentation [here](https://stackoverflow.com/questions/59970043/custom-element-setup-constructor-vs-connectedcallback).
 
 ## Naming Components

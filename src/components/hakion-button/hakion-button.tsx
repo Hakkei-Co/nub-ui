@@ -1,5 +1,5 @@
 /* eslint-disable @stencil/required-jsdoc */
-import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host, Method } from '@stencil/core';
 import { Color, Expand, Fill, Mode } from '../../interface';
 import { formatPropsToConsole } from '../../utils/utils';
 
@@ -13,19 +13,19 @@ export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
 
 @Component({
   tag: 'hakion-button',
-  styleUrl: 'hakion-button.css',
-  shadow: true,
+  styleUrls: {
+    default: './hakion-button.css',
+    dark: './hakion-button-dark.css',
+  },
 })
 export class HakionButton {
   // TEMP
   @State() open: boolean = false;
   @Event()
-  acknowledge: EventEmitter<AcknowledgeEvent> | undefined;
+  acknowledge: EventEmitter<AcknowledgeEvent>;
 
   @State() ready: boolean = false;
-
-  @Prop()
-  text: string | undefined;
+  @Prop() text: string | undefined;
 
   /**
    * The @Element() decorator is how to get access to the host element within the class instance. \
@@ -59,16 +59,14 @@ export class HakionButton {
    * The mode determines which platform styles to use.
    */
 
-  @Prop()
-  mode: Mode = 'ios';
+  @Prop() mode: Mode = 'ios';
 
   /**
    * This attribute lets you specify how wide the button should be.
    * By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
    */
 
-  @Prop()
-  expand: Expand = 'inline-block';
+  @Prop() expand: Expand = 'inline-block';
 
   /**
    * Set to "clear" for a transparent button, to "outline" for a transparent
@@ -103,22 +101,20 @@ export class HakionButton {
    * If this property is set, an anchor tag will be rendered.
    * If set to "icon-only," all other content will be ignored.
    */
-  @Prop() iconName: string | undefined = undefined;
+  @Prop({ mutable: true }) iconName: string | undefined;
 
   /**
    * If this property is set, an anchor tag will be rendered.
    * If set to "icon-only," all other content will be ignored.
    */
 
-  @Prop()
-  iconVariant: IonIconVariant = ``;
+  @Prop() iconVariant: IonIconVariant = ``;
 
   /**
    * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
    */
 
-  @Prop()
-  iconSrc: string | undefined;
+  @Prop() iconSrc: string | undefined;
 
   /**
    * Use custom icon by specifying a path. If set, any value set on `ionIcon` will be ignored.
@@ -129,8 +125,7 @@ export class HakionButton {
    * If true, the user cannot interact with the button.
    */
 
-  @Prop({ reflect: true })
-  disabled: boolean = false;
+  @Prop({ reflect: true }) disabled: boolean = false;
 
   /**
    * The button shape.
@@ -148,6 +143,11 @@ export class HakionButton {
    */
   @Prop({ reflect: true }) rel: string | undefined;
 
+  @Method()
+  async setIconName(iconName: string): Promise<void> {
+    this.iconName = iconName;
+  }
+
   /**
    * Called every time the component is connected to the DOM.
    * When the component is first connected, this method is called before componentWillLoad.
@@ -162,6 +162,7 @@ export class HakionButton {
       this.fill,
       this.download,
       this.iconSlot,
+      this.iconName,
       this.iconVariant,
       this.iconSize,
       this.disabled,
@@ -178,6 +179,7 @@ export class HakionButton {
       'fill',
       'download',
       'iconSlot',
+      'iconName',
       'iconVariant',
       'iconSize',
       'disabled',
@@ -189,7 +191,7 @@ export class HakionButton {
       return formatPropsToConsole(el, propNames[i]);
     });
     arr = [{ componentName: String(this?.host?.nodeName).length > 0 && this?.host?.nodeName }, ...arr];
-    console.table(arr);
+    // console.table(arr);
   }
 
   /**
@@ -198,6 +200,27 @@ export class HakionButton {
   @Listen('click', { capture: true })
   handleClick() {
     console.info('click-event');
+  }
+
+  componentWillLoad() {
+    customElements.whenDefined('hakion-button').then((res) => {
+      console.log('app.ts', res);
+    });
+    this.host.setIconName('heart').then((res) => {
+      console.log('componentWillLoad after setIcon', res);
+    });
+    // })
+  }
+
+  componentDidLoad() {
+    customElements.whenDefined('hakion-button').then((res) => {
+      console.log('componentDidRender', res);
+    });
+    const iconElement = document.querySelector('hakion-button');
+    console.log(iconElement, 'componentDidRender');
+    this.host.setIconName('cash').then((res) => {
+      console.log('componentDidRender after setIcon', res);
+    });
   }
 
   render() {
@@ -216,14 +239,21 @@ export class HakionButton {
           disabled={this.disabled}
           shape={this.shape}
         >
-          {this.iconSlot === 'start' && (
-            <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
+          {this.iconSlot === 'start' && this.iconName && (
+            <ion-icon
+              size={this.iconSize}
+              slot={this.iconSlot}
+              name={String(this.iconName)}
+              src={this.iconSrc}
+            ></ion-icon>
           )}
+          <slot name="start"></slot>
           {this.iconSlot !== 'icon-only' && <ion-text color={this.textColor}>{this.text}</ion-text>}
+          <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
           <ion-text part="button-text" size={this.iconSize} slot={this.iconSlot} color={this.textColor}>
             <slot></slot>
           </ion-text>
-          {this.iconSlot === 'end' && (
+          {this.iconSlot === 'end' && this.iconName && (
             <ion-icon
               part="button-icon"
               size={this.iconSize}
@@ -232,6 +262,7 @@ export class HakionButton {
               src={this.iconSrc}
             ></ion-icon>
           )}
+          <slot name="end"></slot>
         </ion-button>
       </Host>
     );

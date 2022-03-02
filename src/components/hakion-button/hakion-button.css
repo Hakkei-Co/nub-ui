@@ -1,5 +1,7 @@
+@import './hakion-button.common.css';
+
 :host {
-  display: block;
+  color: black;
 }
 
 hakion-button::part(button) {
@@ -14,9 +16,4 @@ hakion-button::part(button) {
   --ion-background-color-rgb: var(--ion-color-light-rgb);
   --ion-text-color: var(--ion-color-light);
   --ion-text-color-rgb: var(--ion-color-light-rgb);
-}
-
-hakion-button::part(button-text) {
-  color: blue;
-  opacity: 1;
 }

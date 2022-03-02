@@ -1,66 +1,115 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#1e2023" />
-    <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
 
-    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#1e2023" />
+  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+  <meta http-equiv="x-ua-compatible" content="IE=Edge" />
 
-    <script type="module" src="/build/hakion-ui.esm.js"></script>
-    <!-- <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script> -->
-    <script type="module" src="/lib/dark-mode-toggle.min.js"></script>
-    <script nomodule src="/build/hakion-ui.js"></script>
-    <link rel="stylesheet" href="/build/hakion-ui.css" />
-    <script>
-      // If `prefers-color-scheme` is not supported, fall back to light mode.
-      // In this case, light.css will be downloaded with `highest` priority.
-      if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
-        document.documentElement.style.display = 'none';
-        document.head.insertAdjacentHTML(
-          'beforeend',
-          '<link rel="stylesheet" href="/build/hakion-ui.css" onload="document.documentElement.style.display = ``">'
-        );
-      }
-    </script>
-  </head>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
 
-  <body>
-    <ion-app>
-      <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-    <my-alert text="example text"></my-alert>
-    <p>
-      Open a chrome dev console. Observe how clicking on "acknowledge" will differ from clicking on the "Clicked"
-      button.
-    </p> -->
-      <button>acknowledge</button>
-      <hakion-ui-root> </hakion-ui-root>
-      <dark-mode-toggle></dark-mode-toggle>
-      <hakion-button>test</hakion-button>
-    </ion-app>
-    <script>
-
-      // var button = document.querySelector('button');
-      // function handleAcknowledgeClick(e) {
-      //   var alert = document.querySelector('my-alert');
-      //   alert.text = 'This is a very important alert!';
-      // }
-      // button.addEventListener('click', handleAcknowledgeClick);
-      // document.addEventListener('acknowledge', handleAcknowledgeClick);
-      const toggle = document.querySelector('dark-mode-toggle');
-      const body = document.body;
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      const colorScheme = document.querySelector('meta[name="color-scheme"]');
-      toggle.addEventListener('colorschemechange', (e) => {
-        // icon.href = e.detail.colorScheme === 'dark' ? 'moon.png' : 'sun.png';
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <link rel="stylesheet" href="/build/hakion-ui.css" />
+  <script>
+    // If `prefers-color-scheme` is not supported, fall back to light mode.
+    // In this case, light.css will be downloaded with `highest` priority.
+    if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
+      document.documentElement.style.display = 'none';
+      document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="light.css" onload="document.documentElement.style.display = ``">'
+      );
+    }
+  </script>
+  <script type="module">
+    ((doc) => {
+      const themeColor = doc.querySelector('meta[name="theme-color"]');
+      const icon = doc.querySelector('link[rel="icon"]');
+      const colorScheme = doc.querySelector('meta[name="color-scheme"]');
+      const body = doc.body;
+      doc.addEventListener('colorschemechange', (e) => {
+        // The event fires right before the color scheme goes into effect,
+        // so we need the `color` value.
         themeColor.content = getComputedStyle(body).color;
         colorScheme.content = e.detail.colorScheme;
-        body.classList.toggle('dark', toggle.mode === 'dark');
+        body.setAttribute('mode', e.detail.colorScheme)
+        icon.href = e.detail.colorScheme === 'dark' ? 'moon.png' : 'sun.png';
+        console.log(`${e.target.id} changed the color scheme to ${e.detail.colorScheme}`);
       });
-    </script>
-  </body>
+
+      doc.addEventListener('permanentcolorscheme', (e) => {
+        const permanent = e.detail.permanent;
+        console.log(
+          `${permanent ? 'R' : 'Not r'}emembering the last selected mode.`);
+      });
+    })(document);
+  </script>
+  <script type="module" src="/build/hakion-ui.esm.js"></script>
+  <script type="module" src="/lib/dark-mode-toggle.min.js"></script>
+  <script nomodule src="/build/hakion-ui.js"></script>
+</head>
+
+<body>
+  <hakion-dark-mode-toggle></hakion-dark-mode-toggle>
+
+  <app-root>
+    <hakion-dark-mode-toggle></hakion-dark-mode-toggle>
+    <hakion-button mode="md" color="danger" iconSize="small" iconSize="small" iconSlot="end">
+      <p slot="start">Start</p>
+      <p slot="end">End</p>
+    </hakion-button>
+    <example-scene></example-scene>
+  </app-root>
+
+  <a-scene>
+    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+  </a-scene>
+  <dark-mode-toggle></dark-mode-toggle>
+  <script>
+    window.customElements.define(
+      'hakion-dark-mode-toggle',
+      class extends HTMLElement {
+        constructor() {
+          super().attachShadow({ mode: 'open' }).innerHTML = `<style>::slotted(span){background:gold}</style>
+                               <dark-mode-toggle legend="switch" light="on" dark="off"></dark-mode-toggle>`;
+        }
+        connectedCallback() {
+          setTimeout(() => {
+            // make sure innerHTML is parsed!
+            if (this.hasAttribute('appearance')) {
+              this.append(this.firstElementChild);
+            }
+          });
+        }
+      }
+    );
+
+    // window.customElements.define(
+    //   'example-scene',
+    //   class extends HTMLElement {
+    //     constructor() {
+    //       super().attachShadow({ mode: 'open' }).innerHTML = `<style>::slotted(span){background:gold}</style>
+    //                            <dark-mode-toggle legend="switch" light="on" dark="off"></dark-mode-toggle>`;
+    //     }
+    //     connectedCallback() {
+    //       setTimeout(() => {
+    //         // make sure innerHTML is parsed!
+    //         if (this.hasAttribute('appearance')) {
+    //           this.append(this.firstElementChild);
+    //         }
+    //       });
+    //     }
+    //   }
+    // );
+  </script>
+</body>
+
 </html>

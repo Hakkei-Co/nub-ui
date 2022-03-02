@@ -1,3 +1,15 @@
+@import './hakion-dark-mode-toggle.common.css';
+
 :host {
   display: block;
+}
+/* hakion-dark-mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+} */
+
+.dark {
+  color: white;
+  background-color: black;
 }

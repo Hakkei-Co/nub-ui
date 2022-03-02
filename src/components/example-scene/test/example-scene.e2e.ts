@@ -1,11 +1,11 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('hakion-ui-root', () => {
+describe('example-scene', () => {
   it('renders', async () => {
     const page = await newE2EPage();
-    await page.setContent('<hakion-ui-root></hakion-ui-root>');
+    await page.setContent('<example-scene></example-scene>');
 
-    const element = await page.find('hakion-ui-root');
+    const element = await page.find('example-scene');
     expect(element).toHaveClass('hydrated');
   });
 });

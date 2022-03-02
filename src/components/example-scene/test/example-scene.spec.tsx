@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { HakionUiRoot } from '../hakion-ui-root';
+import { ExampleScene } from '../example-scene';
 
-describe('hakion-ui-root', () => {
+describe('example-scene', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [HakionUiRoot],
-      html: `<hakion-ui-root></hakion-ui-root>`,
+      components: [ExampleScene],
+      html: `<example-scene></example-scene>`,
     });
     expect(page.root).toEqualHtml(`
-      <hakion-ui-root>
+      <example-scene>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </hakion-ui-root>
+      </example-scene>
     `);
   });
 });

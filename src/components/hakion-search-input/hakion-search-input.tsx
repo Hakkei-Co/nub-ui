@@ -3,6 +3,7 @@ import { Component, ComponentInterface, h, Prop, Host } from '@stencil/core';
 @Component({
   tag: 'hakion-search-input',
   styleUrl: 'hakion-search-input.css',
+  shadow: true,
 })
 export class HakionSearchInput implements ComponentInterface {
   @Prop() placeholder?: string = 'Search';
