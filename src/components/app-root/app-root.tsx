@@ -24,11 +24,23 @@ export class AppRoot {
   @Prop() dark: 'on' | 'off' = 'off';
 
   connectedCallback() {
-    let toggle = document.querySelector('hakion-dark-mode-toggle');
+    let toggle = document.querySelector('example-scene');
+    let body = document.body;
+
+    toggle.append(toggle.firstChild);
     console.log('TOGGLE', toggle.shadowRoot.querySelector('dark-mode-toggle'));
   }
   _enabled: boolean;
   _enabledOverride: boolean | null = null;
+
+  componentWillMount() {
+    let toggle = document.querySelector('example-scene');
+    let body = document.body;
+
+    toggle.append(toggle.firstChild);
+    body.append(toggle);
+    console.log('TOGGLE', toggle.shadowRoot.querySelector('dark-mode-toggle'));
+  }
 
   @Prop() enabled: boolean;
 

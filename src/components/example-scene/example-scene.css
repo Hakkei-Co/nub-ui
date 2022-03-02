@@ -2,3 +2,11 @@
   display: block;
   border: 5px solid orange;
 }
+
+/* :root {
+  border: 5px solid orange;
+}
+
+html:not(.hydrated) body {
+  display: none !important;
+} */

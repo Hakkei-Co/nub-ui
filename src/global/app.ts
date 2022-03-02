@@ -20,7 +20,8 @@ setMode((elm) => {
     console.log('app.ts', res);
   });
   const todoListElement = document.querySelector('example-scene');
-  await todoListElement.hydrateSomething('-1 0.5 -3').then((res) => {
-    console.log('componentDidRender after setIcon', res);
-  });
+  console.log('TODOLIST', todoListElement);
+  // await todoListElement.hydrateSomething('-1 0.5 -3').then((res) => {
+  //   console.log('componentDidRender after setIcon', res);
+  // });
 })();

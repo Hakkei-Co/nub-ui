@@ -23,10 +23,6 @@ export namespace Components {
     interface DarkMode {
     }
     interface ExampleScene {
-        "aBoxPosition": string;
-        "aBoxScene": string;
-        "hydrateSomething": (val: any) => Promise<void>;
-        "hydrateSomething2": (val: any) => Promise<void>;
     }
     interface HakionButton {
         /**
@@ -225,8 +221,6 @@ declare namespace LocalJSX {
     interface DarkMode {
     }
     interface ExampleScene {
-        "aBoxPosition"?: string;
-        "aBoxScene"?: string;
     }
     interface HakionButton {
         /**

@@ -1,35 +1,11 @@
-import { Component, Host, h, Prop, Method } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'example-scene',
   styleUrl: 'example-scene.css',
-  shadow: true,
+  shadow: false,
 })
 export class ExampleScene {
-  connectedCallback() {
-    let toggle = document.querySelector('hakion-dark-mode-toggle');
-    console.log('TOGGLE', toggle.shadowRoot.querySelector('dark-mode-toggle'));
-  }
-  componentWillLoad() {}
-
-  componentDidLoad() {}
-
-  @Prop() aBoxPosition: string;
-  @Prop() aBoxScene: string;
-  // @Prop() aBoxPosition: string;
-  // @Prop() aBoxPosition: string;
-  // @Prop() aBoxPosition: string;
-  // @Prop() aBoxPosition: string;
-
-  @Method()
-  async hydrateSomething(val) {
-    this.aBoxPosition = val;
-  }
-  @Method()
-  async hydrateSomething2(val) {
-    this.aBoxScene = val;
-  }
-
   render() {
     return (
       <Host>
