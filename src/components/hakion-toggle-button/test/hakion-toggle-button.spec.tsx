@@ -9,9 +9,9 @@ describe('hakion-toggle-button', () => {
     });
     expect(page.root).toEqualHtml(`
       <hakion-toggle-button>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+       <ion-button aria-pressed="false" class="button">
+        OFF
+        </ion-button>
       </hakion-toggle-button>
     `);
   });

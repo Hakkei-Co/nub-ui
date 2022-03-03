@@ -12,10 +12,10 @@ describe('hakion-button', () => {
 
     expect(page.root).toEqualHtml(`
     <hakion-button color="primary">
-      <ion-button color="primary" expand="inline-block" fill="solid" mode="ios" part="button">
+      <ion-button color="primary" expand="inline-block" fill="solid" mode="ios" part="ui">
         <ion-text></ion-text>
           <ion-icon slot=""></ion-icon>
-        <ion-text part="button-text" slot="">
+        <ion-text part="ui__ion-text" slot="">
           Hello World
         </ion-text>
         </mock:shadow-root>
