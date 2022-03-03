@@ -43,7 +43,7 @@ export class AppRoot {
 
   render() {
     return (
-      <Host>
+      <section>
         <hakion-button iconSlot="icon-only" iconName="star">
           Button inside of app-root will fetch icon
         </hakion-button>
@@ -51,7 +51,7 @@ export class AppRoot {
           Button inside of app-root will fetch icon
         </hakion-button>
         <slot></slot>
-      </Host>
+      </section>
     );
   }
 }
