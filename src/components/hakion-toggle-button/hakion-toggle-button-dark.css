@@ -1,0 +1,13 @@
+:root {
+  display: block;
+  border: 1px solid royalblue;
+}
+
+hakion-toggle-button .button {
+  border: 1px solid var(--ion-color-primary);
+  padding: 10px 4px;
+}
+
+button {
+  border: 2px solid blueviolet;
+}

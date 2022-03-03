@@ -1,6 +1,11 @@
 /* eslint-disable @stencil/required-jsdoc */
 import { Component, Element, h, Host, Method, Prop, State } from '@stencil/core';
 
+type ToggleOtions = {
+  dark: string;
+  light: string;
+};
+
 @Component({
   tag: 'hakion-dark-mode-toggle',
   styleUrl: 'hakion-dark-mode-toggle.css',
@@ -10,7 +15,25 @@ export class HakionDarkModeToggle {
   @Element() host: HTMLHakionDarkModeToggleElement | undefined;
   @State() ready: boolean = false;
   timer: number;
-  @State() time: number = Date.now();
+
+  @Prop() defaultPressed = false;
+  @Prop() unactive: string = 'OFF';
+
+  @State() active: string = 'ON';
+  /**
+   * Any string value that represents the label for the "light" and "dark" mode.
+   */
+  @State() label: ToggleOtions = {
+    dark: 'dark',
+    light: 'light',
+  };
+
+  @State() pressed: boolean;
+
+  @Method()
+  async handlePressEvent(e: MouseEvent) {
+    console.log(e);
+  }
 
   // Set the legend to "Dark Mode"
   @Prop({ mutable: true }) legend: string = 'Dark Mode';
@@ -23,18 +46,23 @@ export class HakionDarkModeToggle {
 
   // Set the appearnace toggle or switch
   @Prop({ mutable: true }) appearance: 'toggle' | 'switch' = 'switch';
+
   connectedCallback() {
-    this.timer = window.setInterval(() => {
-      if (this.host.hasAttribute('mode')) {
-        console.log('hakion-dark-mode-toggle', this.host);
-        this.host.append(this.host.firstElementChild);
-      }
-      this.time = Date.now();
-    }, 1000);
+    console.log(`Custom ${this.host.nodeName} element added to page.`);
   }
 
-  disconnectedCallback() {
-    window.clearInterval(this.timer);
+  componentWillLoad() {
+    customElements.whenDefined('dark-mode-toggle').then((res) => {
+      console.log(`${this.host.nodeName} componentWillLoad`, res);
+    });
+  }
+
+  componentDidLoad() {
+    customElements.whenDefined('dark-mode-toggle').then((res) => {
+      console.log('dark-mode-toggle', res);
+    });
+    this.host.innerHTML = `<style>::slotted(span){background:gold}</style>
+                               <dark-mode-toggle legend="switch" light="on" dark="off"></dark-mode-toggle>`;
   }
 
   @Prop() enabled: boolean;
@@ -48,12 +76,18 @@ export class HakionDarkModeToggle {
   async setAppearance(str: 'toggle' | 'switch' = 'toggle'): Promise<void> {
     this.appearance = str;
   }
-
+  //  appearance={this.appearance} legend={this.legend}
   render() {
     return (
       <Host>
-        <dark-mode-toggle appearance={this.appearance} legend={this.legend}></dark-mode-toggle>
+        <slot></slot>
       </Host>
     );
   }
 }
+
+// doc.addEventListener('permanentcolorscheme', (e) => {
+//   const permanent = e.detail.permanent;
+//   console.log(
+//     `${permanent ? 'R' : 'Not r'}emembering the last selected mode.`);
+// });

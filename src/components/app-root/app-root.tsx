@@ -1,5 +1,6 @@
 /* eslint-disable @stencil/required-jsdoc */
-import { Component, Element, h, Host, Method, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, State } from '@stencil/core';
+// import { updateStyle } from '../../utils/utils';
 
 enum INPUT_STATE {
   DISABLED = 'OFF',
@@ -7,7 +8,10 @@ enum INPUT_STATE {
 }
 @Component({
   tag: 'app-root',
-  styleUrl: 'app-root.css',
+  styleUrls: {
+    default: 'app-root.css',
+    dark: 'app-root-dark.css',
+  },
 })
 export class AppRoot {
   @Element() host: HTMLAppRootElement | undefined;
@@ -24,47 +28,28 @@ export class AppRoot {
   @Prop() dark: 'on' | 'off' = 'off';
 
   connectedCallback() {
-    let toggle = document.querySelector('example-scene');
-    let body = document.body;
-
-    toggle.append(toggle.firstChild);
-    console.log('TOGGLE', toggle.shadowRoot.querySelector('dark-mode-toggle'));
-  }
-  _enabled: boolean;
-  _enabledOverride: boolean | null = null;
-
-  componentWillMount() {
-    let toggle = document.querySelector('example-scene');
-    let body = document.body;
-
-    toggle.append(toggle.firstChild);
-    body.append(toggle);
-    console.log('TOGGLE', toggle.shadowRoot.querySelector('dark-mode-toggle'));
+    console.log(`Custom ${this.host.nodeName} element added to page.`);
   }
 
-  @Prop() enabled: boolean;
-
-  @Method()
-  async getEnabled() {
-    return this._enabledOverride == null ? this._getDefaultEnabled() : this._enabledOverride;
+  componentWillLoad() {
+    customElements.whenDefined('hakion-dark-mode-toggle').then((res) => {
+      console.log('componentWillLoad', 'dark-mode-toggle', res);
+    });
+    const buttons = document.querySelectorAll('hakion-button');
+    for (const button in buttons) {
+      console.log(button);
+    }
   }
-
-  @Method()
-  async _getDefaultEnabled(): Promise<string> {
-    return this.legend;
-  }
-
-  @Method()
-  async setDarkModeLegend(str: string): Promise<void> {
-    this.legend = str;
-  }
-
-  @Watch('inputState')
-  handleInputStateChange() {}
 
   render() {
     return (
       <Host>
+        <hakion-button iconSlot="icon-only" iconName="star">
+          Button inside of app-root will fetch icon
+        </hakion-button>
+        <hakion-button iconSlot="icon-only" iconName="star">
+          Button inside of app-root will fetch icon
+        </hakion-button>
         <slot></slot>
       </Host>
     );

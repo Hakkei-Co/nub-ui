@@ -1,12 +1,17 @@
-:host {
+:root {
   display: block;
   border: 5px solid orange;
+  z-index: 9999;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-/* :root {
-  border: 5px solid orange;
+example-scene {
+  border: 2px solid pink;
 }
 
 html:not(.hydrated) body {
   display: none !important;
-} */
+}

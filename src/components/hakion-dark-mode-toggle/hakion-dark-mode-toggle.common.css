@@ -1,5 +1,5 @@
 :host {
   display: block;
   border: 2px solid black;
-  background: var(--ion-background-color);
+  background-color: var(--ion-background-color);
 }

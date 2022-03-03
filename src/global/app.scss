@@ -25,6 +25,3 @@
 * {
   transition: var(--transition);
 }
-html:not(.hydrated) body {
-  display: block;
-}

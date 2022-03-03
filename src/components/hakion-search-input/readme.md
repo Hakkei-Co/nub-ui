@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                               | Default     |
-| ------------- | ------------- | ----------- | ---------------------------------- | ----------- |
-| `debounce`    | `debounce`    |             | `number \| undefined`              | `0`         |
-| `handleInput` | --            |             | `((ev: any) => void) \| undefined` | `undefined` |
-| `placeholder` | `placeholder` |             | `string \| undefined`              | `'Search'`  |
-| `searchTerm`  | `search-term` |             | `string \| undefined`              | `''`        |
+| Property      | Attribute     | Description | Type                | Default     |
+| ------------- | ------------- | ----------- | ------------------- | ----------- |
+| `debounce`    | `debounce`    |             | `number`            | `0`         |
+| `handleInput` | --            |             | `(ev: any) => void` | `undefined` |
+| `placeholder` | `placeholder` |             | `string`            | `'Search'`  |
+| `searchTerm`  | `search-term` |             | `string`            | `''`        |
 
 
 ----------------------------------------------

@@ -1,7 +1,6 @@
 /* eslint-disable @stencil/required-jsdoc */
 import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host, Method } from '@stencil/core';
 import { Color, Expand, Fill, Mode } from '../../interface';
-import { formatPropsToConsole } from '../../utils/utils';
 
 interface AcknowledgeEvent {
   when: Date;
@@ -14,13 +13,12 @@ export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
 @Component({
   tag: 'hakion-button',
   styleUrls: {
-    default: './hakion-button.css',
-    dark: './hakion-button-dark.css',
+    default: 'hakion-button.css',
+    dark: 'hakion-button-dark.css',
   },
 })
 export class HakionButton {
   // TEMP
-  @State() open: boolean = false;
   @Event()
   acknowledge: EventEmitter<AcknowledgeEvent>;
 
@@ -149,85 +147,42 @@ export class HakionButton {
   }
 
   /**
-   * Called every time the component is connected to the DOM.
-   * When the component is first connected, this method is called before componentWillLoad.
-   */
-  connectedCallback(): void {
-    const props = [
-      this.color,
-      this.text,
-      this.type,
-      this.textColor,
-      this.expand,
-      this.fill,
-      this.download,
-      this.iconSlot,
-      this.iconName,
-      this.iconVariant,
-      this.iconSize,
-      this.disabled,
-      this.shape,
-      this.strong,
-      this.rel,
-    ];
-    const propNames = [
-      'color',
-      'text',
-      'type',
-      'textColor',
-      'expand',
-      'fill',
-      'download',
-      'iconSlot',
-      'iconName',
-      'iconVariant',
-      'iconSize',
-      'disabled',
-      'shape',
-      'strong',
-      'rel',
-    ];
-    var arr = props.map((el, i) => {
-      return formatPropsToConsole(el, propNames[i]);
-    });
-    arr = [{ componentName: String(this?.host?.nodeName).length > 0 && this?.host?.nodeName }, ...arr];
-    // console.table(arr);
-  }
-
-  /**
    * Event is dispatched during "capture" phase
    */
   @Listen('click', { capture: true })
   handleClick() {
     console.info('click-event');
   }
-
-  componentWillLoad() {
-    customElements.whenDefined('hakion-button').then((res) => {
-      console.log('app.ts', res);
-    });
-    this.host.setIconName('heart').then((res) => {
-      console.log('componentWillLoad after setIcon', res);
-    });
-    // })
+  connectedCallback() {
+    console.log(`Custom ${this.host.nodeName} element added to page.`);
+    console.log('available props', this.iconName, this.iconSize, this.iconSlot, this.color);
   }
 
+  componentWillLoad() {
+    console.log(customElements);
+    customElements.whenDefined('ion-icon').then((res) => {
+      console.log('hakion-button:componentWillLoad', this.host);
+    });
+    const icons = this.host.querySelectorAll('ion-icon');
+    console.log(icons);
+    this.setIconName(this.iconName).then((res) => {
+      console.log(`${this.host.nodeName} componentWillLoad after setIconName`, res);
+    });
+  }
   componentDidLoad() {
-    customElements.whenDefined('hakion-button').then((res) => {
-      console.log('componentDidRender', res);
-    });
-    const iconElement = document.querySelector('hakion-button');
-    console.log(iconElement, 'componentDidRender');
-    this.host.setIconName('cash').then((res) => {
-      console.log('componentDidRender after setIcon', res);
-    });
+    console.log(`Custom ${this.host.nodeName} element loaded.`);
+    if (this.iconName) {
+      this.setIconName(this.iconName).then((res) => {
+        console.log(`${this.host.nodeName} componentDidLoad after setIconName`, res);
+      });
+    }
   }
 
   render() {
     return (
       <Host>
         <ion-button
-          part="button"
+          part="ui"
           mode={this.mode}
           strong={this.strong}
           button-type={this.type}
@@ -250,9 +205,11 @@ export class HakionButton {
           <slot name="start"></slot>
           {this.iconSlot !== 'icon-only' && <ion-text color={this.textColor}>{this.text}</ion-text>}
           <ion-icon size={this.iconSize} slot={this.iconSlot} name={this.iconName} src={this.iconSrc}></ion-icon>
-          <ion-text part="button-text" size={this.iconSize} slot={this.iconSlot} color={this.textColor}>
-            <slot></slot>
-          </ion-text>
+          {this.iconSlot !== 'icon-only' && (
+            <ion-text part="ui__ion-text" size={this.iconSize} slot={this.iconSlot} color={this.textColor}>
+              <slot></slot>
+            </ion-text>
+          )}
           {this.iconSlot === 'end' && this.iconName && (
             <ion-icon
               part="button-icon"

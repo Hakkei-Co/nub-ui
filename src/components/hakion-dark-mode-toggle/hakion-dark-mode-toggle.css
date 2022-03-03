@@ -1,7 +1,11 @@
 @import './hakion-dark-mode-toggle.common.css';
 
 :host {
-  display: block;
+  display: inline;
+  background: var(--ion-background-color-rgb);
+  position: abolute;
+  top: 10;
+  right: 40;
 }
 /* hakion-dark-mode-toggle {
   position: absolute;

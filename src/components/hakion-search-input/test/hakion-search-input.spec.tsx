@@ -8,9 +8,12 @@ describe('hakion-search-input', () => {
       html: `<hakion-search-input></hakion-search-input>`,
     });
     expect(page.root).toEqualHtml(`
-      <hakion-search-input>
-        <mock:shadow-root>
-          <slot></slot>
+      <hakion-search-input id="algolia-search">
+       <mock:shadow-root>
+        <div class="form-group">
+          <input aria-label="Search" autocomplete="off" name="search" placeholder="Search" required="" type="search" value=""/>
+            <slot></slot>
+          </div>
         </mock:shadow-root>
       </hakion-search-input>
     `);

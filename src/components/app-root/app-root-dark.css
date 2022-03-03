@@ -1,0 +1,7 @@
+:root {
+  --background-color: var(--ion-background-color);
+}
+
+app-root {
+  border: 5px solid var(--ion-color-secondary, yellow);
+}

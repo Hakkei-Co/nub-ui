@@ -9,7 +9,9 @@ import dotenvPlugin from 'rollup-plugin-dotenv';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
+  taskQueue: 'async',
   namespace: 'hakion-ui',
+  globalScript: 'src/global/app.ts',
   outputTargets: [
     {
       type: 'dist',
@@ -57,15 +59,12 @@ export const config: Config = {
     }),
   ],
   globalStyle: 'src/global/app.scss',
-  globalScript: 'src/global/app.ts',
-  buildEs5: true,
+  devServer: {
+    reloadStrategy: 'pageReload',
+    // port: 4444,
+    // https: {
+    //   cert: readFileSync('cert.crt', 'utf8'),
+    //   key: readFileSync('cert.key', 'utf8'),
+    // },
+  },
 };
-
-// devServer: {
-//   reloadStrategy: 'pageReload',
-//   port: 4444,
-//   https: {
-//     cert: readFileSync('cert.crt', 'utf8'),
-//     key: readFileSync('cert.key', 'utf8'),
-//   },
-// },

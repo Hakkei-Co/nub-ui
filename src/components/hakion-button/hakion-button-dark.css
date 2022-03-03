@@ -1,6 +1,17 @@
 @import './hakion-button.common.css';
 
-:host {
-  background: var(--ion-background-color);
+:root {
+  /* background: var(--ion-color-success); */
   color: var(--ion-text-color);
+}
+
+hakion-button .button {
+  color: var(--ion-text-color);
+
+  border: 3px solid rgb(0, 183, 255);
+}
+
+ion-button .button {
+  width: 500px;
+  background-color: var(--ion-background-color-rgb);
 }

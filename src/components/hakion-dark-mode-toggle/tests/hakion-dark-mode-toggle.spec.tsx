@@ -10,9 +10,9 @@ describe('hakion-dark-mode-toggle', () => {
     });
     expect(page.root).toEqualHtml(`
       <hakion-dark-mode-toggle>
-        <mock:shadow-root>
+        <dark-mode-toggle appearance="switch" legend="Dark Mode">
           Plain Text
-        </mock:shadow-root>
+        </dark-mode-toggle>
       </hakion-dark-mode-toggle>
     `);
   });

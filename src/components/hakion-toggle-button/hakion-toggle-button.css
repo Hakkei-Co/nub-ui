@@ -1,0 +1,15 @@
+:root {
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+hakion-toggle-button {
+  border: 3px solid yellow;
+  margin: 30%;
+}
+
+button {
+  border: 2px solid blueviolet;
+}

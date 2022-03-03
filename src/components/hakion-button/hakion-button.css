@@ -1,19 +1,23 @@
 @import './hakion-button.common.css';
 
-:host {
-  color: black;
+:root {
+  padding: 0 12px;
 }
 
-hakion-button::part(button) {
-  --ion-color-light: #f4f5f8;
-  --ion-color-light-rgb: 244, 244, 244;
-  --ion-color-light-contrast: #000000;
-  --ion-color-light-contrast-rgb: 0, 0, 0;
-  --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
-  --ion-border-color: var(--ion-color-dark-shade);
-  --ion-background-color: var(--ion-color-light);
-  --ion-background-color-rgb: var(--ion-color-light-rgb);
-  --ion-text-color: var(--ion-color-light);
-  --ion-text-color-rgb: var(--ion-color-light-rgb);
+hakion-button ion-text {
+  box-shadow: 10px 5px 5px red;
+  color: var(--ion-color-primary);
+}
+
+hakion-button .button {
+  float: right;
+  margin: 400px;
+  top: 10;
+  right: 500px;
+  border: 12px solid black;
+  margin: 30px;
+}
+
+button {
+  box-shadow: 10px 5px 5px rgb(0, 255, 64);
 }

@@ -8,19 +8,11 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IonButtonType, IonIconSlot, IonIconVariant } from "./components/hakion-button/hakion-button";
 import { Color, Expand, Fill, Mode } from "./interface";
 export namespace Components {
-    interface AppDetail {
-    }
     interface AppRoot {
-        "_getDefaultEnabled": () => Promise<string>;
         "dark": 'on' | 'off';
-        "enabled": boolean;
-        "getEnabled": () => Promise<string | boolean>;
         "inputState": INPUT_STATE;
         "legend": string;
         "light": 'on' | 'off';
-        "setDarkModeLegend": (str: string) => Promise<void>;
-    }
-    interface DarkMode {
     }
     interface ExampleScene {
     }
@@ -99,11 +91,14 @@ export namespace Components {
     interface HakionDarkModeToggle {
         "appearance": 'toggle' | 'switch';
         "dark": 'on' | 'off';
+        "defaultPressed": boolean;
         "enabled": boolean;
+        "handlePressEvent": (e: MouseEvent) => Promise<void>;
         "legend": string;
         "light": 'on' | 'off';
         "setAppearance": (str?: 'toggle' | 'switch') => Promise<void>;
         "setDarkModeLegend": (str: string) => Promise<void>;
+        "unactive": string;
     }
     interface HakionSearchInput {
         "debounce"?: number;
@@ -111,47 +106,20 @@ export namespace Components {
         "placeholder"?: string;
         "searchTerm"?: string;
     }
-    interface MyAlert {
-        /**
-          * The first name
-         */
-        "text": string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface HakionToggleButton {
+        "defaultPressed": boolean;
+        "pressedText": string;
+        "unpressedText": string;
     }
     interface ThreeElementExample {
     }
 }
 declare global {
-    interface HTMLAppDetailElement extends Components.AppDetail, HTMLStencilElement {
-    }
-    var HTMLAppDetailElement: {
-        prototype: HTMLAppDetailElement;
-        new (): HTMLAppDetailElement;
-    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
-    };
-    interface HTMLDarkModeElement extends Components.DarkMode, HTMLStencilElement {
-    }
-    var HTMLDarkModeElement: {
-        prototype: HTMLDarkModeElement;
-        new (): HTMLDarkModeElement;
     };
     interface HTMLExampleSceneElement extends Components.ExampleScene, HTMLStencilElement {
     }
@@ -177,17 +145,11 @@ declare global {
         prototype: HTMLHakionSearchInputElement;
         new (): HTMLHakionSearchInputElement;
     };
-    interface HTMLMyAlertElement extends Components.MyAlert, HTMLStencilElement {
+    interface HTMLHakionToggleButtonElement extends Components.HakionToggleButton, HTMLStencilElement {
     }
-    var HTMLMyAlertElement: {
-        prototype: HTMLMyAlertElement;
-        new (): HTMLMyAlertElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLHakionToggleButtonElement: {
+        prototype: HTMLHakionToggleButtonElement;
+        new (): HTMLHakionToggleButtonElement;
     };
     interface HTMLThreeElementExampleElement extends Components.ThreeElementExample, HTMLStencilElement {
     }
@@ -196,29 +158,21 @@ declare global {
         new (): HTMLThreeElementExampleElement;
     };
     interface HTMLElementTagNameMap {
-        "app-detail": HTMLAppDetailElement;
         "app-root": HTMLAppRootElement;
-        "dark-mode": HTMLDarkModeElement;
         "example-scene": HTMLExampleSceneElement;
         "hakion-button": HTMLHakionButtonElement;
         "hakion-dark-mode-toggle": HTMLHakionDarkModeToggleElement;
         "hakion-search-input": HTMLHakionSearchInputElement;
-        "my-alert": HTMLMyAlertElement;
-        "my-component": HTMLMyComponentElement;
+        "hakion-toggle-button": HTMLHakionToggleButtonElement;
         "three-element-example": HTMLThreeElementExampleElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppDetail {
-    }
     interface AppRoot {
         "dark"?: 'on' | 'off';
-        "enabled"?: boolean;
         "inputState"?: INPUT_STATE;
         "legend"?: string;
         "light"?: 'on' | 'off';
-    }
-    interface DarkMode {
     }
     interface ExampleScene {
     }
@@ -297,9 +251,11 @@ declare namespace LocalJSX {
     interface HakionDarkModeToggle {
         "appearance"?: 'toggle' | 'switch';
         "dark"?: 'on' | 'off';
+        "defaultPressed"?: boolean;
         "enabled"?: boolean;
         "legend"?: string;
         "light"?: 'on' | 'off';
+        "unactive"?: string;
     }
     interface HakionSearchInput {
         "debounce"?: number;
@@ -307,38 +263,20 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "searchTerm"?: string;
     }
-    interface MyAlert {
-        /**
-          * The first name
-         */
-        "text"?: string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface HakionToggleButton {
+        "defaultPressed"?: boolean;
+        "pressedText"?: string;
+        "unpressedText"?: string;
     }
     interface ThreeElementExample {
     }
     interface IntrinsicElements {
-        "app-detail": AppDetail;
         "app-root": AppRoot;
-        "dark-mode": DarkMode;
         "example-scene": ExampleScene;
         "hakion-button": HakionButton;
         "hakion-dark-mode-toggle": HakionDarkModeToggle;
         "hakion-search-input": HakionSearchInput;
-        "my-alert": MyAlert;
-        "my-component": MyComponent;
+        "hakion-toggle-button": HakionToggleButton;
         "three-element-example": ThreeElementExample;
     }
 }
@@ -346,15 +284,12 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-detail": LocalJSX.AppDetail & JSXBase.HTMLAttributes<HTMLAppDetailElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-            "dark-mode": LocalJSX.DarkMode & JSXBase.HTMLAttributes<HTMLDarkModeElement>;
             "example-scene": LocalJSX.ExampleScene & JSXBase.HTMLAttributes<HTMLExampleSceneElement>;
             "hakion-button": LocalJSX.HakionButton & JSXBase.HTMLAttributes<HTMLHakionButtonElement>;
             "hakion-dark-mode-toggle": LocalJSX.HakionDarkModeToggle & JSXBase.HTMLAttributes<HTMLHakionDarkModeToggleElement>;
             "hakion-search-input": LocalJSX.HakionSearchInput & JSXBase.HTMLAttributes<HTMLHakionSearchInputElement>;
-            "my-alert": LocalJSX.MyAlert & JSXBase.HTMLAttributes<HTMLMyAlertElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "hakion-toggle-button": LocalJSX.HakionToggleButton & JSXBase.HTMLAttributes<HTMLHakionToggleButtonElement>;
             "three-element-example": LocalJSX.ThreeElementExample & JSXBase.HTMLAttributes<HTMLThreeElementExampleElement>;
         }
     }
