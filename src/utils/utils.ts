@@ -6,6 +6,34 @@ interface FormatPropsToConsole {
   componentName?: string | any;
 }
 
+export function format(first: string, middle: string, last: string): string {
+  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
+}
+
+export function bindProps(el: any, props: any, args: any) {
+  Object.keys(args)
+    .filter((x) => props.includes(x))
+    .forEach((x) => el.setAttribute(x, args[x]));
+}
+
+export function bindEvents(el: any, events: any, args: any) {
+  Object.keys(args)
+    .filter((x) => events.includes(x))
+    .forEach((x) => el.addEventListener(x, args[x]));
+}
+
+export function bindStyles(el: any, styles: any, args: any) {
+  Object.keys(args)
+    .filter((x) => styles.includes(x))
+    .forEach((x) => el.style.setProperty(x, args[x]));
+}
+
+export function bindSlots(el, slots, args) {
+  Object.keys(args)
+    .filter((x) => slots.includes(x))
+    .forEach((x) => (el.innerHTML = el.innerHTML + args[x]));
+}
+
 export function updateStyle(elem: HTMLElement): void {
   const shadow = elem.shadowRoot;
   const childNodes = Array.from(shadow.childNodes);

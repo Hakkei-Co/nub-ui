@@ -22,16 +22,15 @@ const theme = document.documentElement.getAttribute('custom') || 'default';
  */
 setMode(() => (themes.includes(theme) ? theme : 'default'));
 
-(async () => {
-  customElements.whenDefined('example-scene').then((res) => {
-    console.log('app.ts', 'hakion-dark-mode-toggle', res);
-  });
-  const toggle = document.querySelector('example-scene');
-  // const body = document.body;
-  // console.log(!!toggle?.shadowRoot);
-  if (toggle.hasAttribute('embedded')) {
-    toggle.style.position = 'absolute';
+// (async () => {
+//   customElements.whenDefined('example-scene').then((res) => {
+//     console.log('app.ts', 'hakion-dark-mode-toggle', res);
+//   });
+//   const toggle = document.querySelector('example-scene');
 
-    toggle.style.zIndex = '-9999';
-  }
-})();
+//   if (toggle.hasAttribute('embedded')) {
+//     toggle.style.position = 'absolute';
+
+//     toggle.style.zIndex = '-9999';
+//   }
+// })();

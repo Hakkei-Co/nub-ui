@@ -7,47 +7,30 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                          | Default       |
-| ------------ | ------------- | ----------- | --------------------------------------------- | ------------- |
-| `dark`       | `dark`        |             | `"off" \| "on"`                               | `'off'`       |
-| `enabled`    | `enabled`     |             | `boolean`                                     | `undefined`   |
-| `inputState` | `input-state` |             | `INPUT_STATE.DEFAULT \| INPUT_STATE.DISABLED` | `undefined`   |
-| `legend`     | `legend`      |             | `string`                                      | `'Dark Mode'` |
-| `light`      | `light`       |             | `"off" \| "on"`                               | `'on'`        |
+| Property     | Attribute     | Description | Type            | Default       |
+| ------------ | ------------- | ----------- | --------------- | ------------- |
+| `dark`       | `dark`        |             | `"off" \| "on"` | `'off'`       |
+| `inputState` | `input-state` |             | `"OFF" \| "ON"` | `undefined`   |
+| `legend`     | `legend`      |             | `string`        | `'Dark Mode'` |
+| `light`      | `light`       |             | `"off" \| "on"` | `'on'`        |
 
 
-## Methods
+## Dependencies
 
-### `_getDefaultEnabled() => Promise<string>`
+### Depends on
 
+- [hakion-button](../hakion-button)
 
-
-#### Returns
-
-Type: `Promise<string>`
-
-
-
-### `getEnabled() => Promise<string | boolean>`
-
-
-
-#### Returns
-
-Type: `Promise<string | boolean>`
-
-
-
-### `setDarkModeLegend(str: string) => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
+### Graph
+```mermaid
+graph TD;
+  app-root --> hakion-button
+  hakion-button --> ion-button
+  hakion-button --> ion-icon
+  hakion-button --> ion-text
+  ion-button --> ion-ripple-effect
+  style app-root fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

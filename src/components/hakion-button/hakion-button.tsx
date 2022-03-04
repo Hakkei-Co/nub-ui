@@ -2,13 +2,14 @@
 import { Component, Element, Event, EventEmitter, Prop, h, Listen, State, Host, Method } from '@stencil/core';
 import { Color, Expand, Fill, Mode } from '../../interface';
 
-interface AcknowledgeEvent {
+export interface AcknowledgeEvent {
   when: Date;
 }
 
 export type IonButtonType = 'button' | 'reset' | 'submit' | string;
 export type IonIconSlot = 'end' | 'icon-only' | 'start' | ``;
 export type IonIconVariant = 'outline' | 'filled' | 'sharp' | ``;
+export type IonShapeState = 'default' | 'round';
 
 @Component({
   tag: 'hakion-button',
@@ -128,7 +129,7 @@ export class HakionButton {
   /**
    * The button shape.
    */
-  @Prop() shape: string | undefined;
+  @Prop() shape: IonShapeState = 'default';
 
   /**
    * If true, activates a button with a heavier font weight.
@@ -160,11 +161,10 @@ export class HakionButton {
 
   componentWillLoad() {
     console.log(customElements);
-    customElements.whenDefined('ion-icon').then((res) => {
+    customElements.whenDefined('ion-icon').then((_res) => {
       console.log('hakion-button:componentWillLoad', this.host);
     });
-    const icons = this.host.querySelectorAll('ion-icon');
-    console.log(icons);
+    // const icons = this.host.querySelectorAll('ion-icon');
     this.setIconName(this.iconName).then((res) => {
       console.log(`${this.host.nodeName} componentWillLoad after setIconName`, res);
     });

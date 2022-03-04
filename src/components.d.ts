@@ -5,12 +5,12 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IonButtonType, IonIconSlot, IonIconVariant } from "./components/hakion-button/hakion-button";
+import { AcknowledgeEvent, IonButtonType, IonIconSlot, IonIconVariant, IonShapeState } from "./components/hakion-button/hakion-button";
 import { Color, Expand, Fill, Mode } from "./interface";
 export namespace Components {
     interface AppRoot {
         "dark": 'on' | 'off';
-        "inputState": INPUT_STATE;
+        "inputState": 'ON' | 'OFF';
         "legend": string;
         "light": 'on' | 'off';
     }
@@ -73,7 +73,7 @@ export namespace Components {
         /**
           * The button shape.
          */
-        "shape": string | undefined;
+        "shape": IonShapeState;
         /**
           * If true, activates a button with a heavier font weight.
          */
@@ -170,7 +170,7 @@ declare global {
 declare namespace LocalJSX {
     interface AppRoot {
         "dark"?: 'on' | 'off';
-        "inputState"?: INPUT_STATE;
+        "inputState"?: 'ON' | 'OFF';
         "legend"?: string;
         "light"?: 'on' | 'off';
     }
@@ -233,7 +233,7 @@ declare namespace LocalJSX {
         /**
           * The button shape.
          */
-        "shape"?: string | undefined;
+        "shape"?: IonShapeState;
         /**
           * If true, activates a button with a heavier font weight.
          */

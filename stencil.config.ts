@@ -1,15 +1,14 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
-import { readFileSync } from 'fs';
 import { postcss } from '@stencil/postcss';
 import cssnano from 'cssnano';
+import { getComponentNameSelectorVariableFromStencil } from './src/utils/stencil/get-component-name-selector-from-stencil-importer';
 
 // import autoprefixer from 'autoprefixer';
 import dotenvPlugin from 'rollup-plugin-dotenv';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
-  taskQueue: 'async',
   namespace: 'hakion-ui',
   globalScript: 'src/global/app.ts',
   outputTargets: [
@@ -42,7 +41,9 @@ export const config: Config = {
   plugins: [
     dotenvPlugin(),
     sass({
-      includePaths: ['./node_modules/'],
+      includePaths: ['./src/theme/variables.scss'],
+      importer: getComponentNameSelectorVariableFromStencil,
+
     }),
     postcss({
       plugins: [
@@ -60,7 +61,7 @@ export const config: Config = {
   ],
   globalStyle: 'src/global/app.scss',
   devServer: {
-    reloadStrategy: 'pageReload',
+    reloadStrategy: 'hmr',
     // port: 4444,
     // https: {
     //   cert: readFileSync('cert.crt', 'utf8'),

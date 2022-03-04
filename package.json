@@ -1,6 +1,6 @@
 {
-  "name": "hakion-ui",
-  "version": "0.0.1",
+  "name": "@hakkei-co/hakion-ui",
+  "version": "0.0.2",
   "description": "hakion-ui component library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -12,15 +12,11 @@
   "unpkg": "dist/hakion-ui/hakion-ui.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hakkei-co/hakion-ui.git"
+    "url": "git://github.com/hakkei-co/hakion-ui.git"
   },
   "bugs": {
     "url": "https://github.com/hakkei-co/hakion-ui"
   },
-  "files": [
-    "dist/",
-    "loader/"
-  ],
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
@@ -32,30 +28,37 @@
     "prettier:base": "prettier \"./{src,test}/**/*.{ts,tsx,js,jsx}\"",
     "prettier:dry-run": "npm run prettier:base -- --list-different",
     "watch": "stencil build --docs --watch",
+    "build:stencil": "stencil build --docs",
+    "build:pre:storybook": "node ./scripts/pre-storybook.js",
+    "build:storybook": "npm run build:pre:storybook && build-storybook --quiet --output-dir ./dist-storybook --static-dir node_modules/.storybook-static-dir",
+    "storybook:static:dir": "node ./scripts/storybook-static-dir.js",
+    "stencil:to:storybook": "node ./scripts/stencil-to-storybook.js",
     "storybook:run": "start-storybook --port 9001",
     "storybook": "npm-run-all --parallel watch storybook:run"
   },
   "dependencies": {
     "@ionic/core": "^6.0.9",
     "@stencil/core": "^2.13.0",
+    "@stencil/postcss": "^2.1.0",
     "@stencil/router": "^1.0.1",
-    "dark-mode-toggle": "^0.10.0"
+    "@stencil/sass": "^1.5.2",
+    "@stencil/state-tunnel": "^1.0.1",
+    "@stencil/store": "^1.5.0",
+    "@storybook/web-components": "^6.2.9",
+    "@whitespace/storybook-addon-html": "^5.0.0",
+    "core-util-is": "^1.0.3",
+    "dark-mode-toggle": "^0.10.0",
+    "lit-html": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@ionic-internal/ionic-ds": "^7.1.0",
-    "@stencil/postcss": "^2.1.0",
-    "@stencil/sass": "^1.5.2",
-    "@stencil/state-tunnel": "^1.0.1",
-    "@stencil/store": "^1.5.0",
-    "@storybook/addon-docs": "^6.4.19",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/addon-notes": "^5.3.21",
-    "@storybook/addon-viewport": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.18",
+    "@storybook/addon-links": "^6.4.18",
     "@storybook/html": "^6.4.19",
+    "@storybook/web-components": "^6.4.18",
     "@types/autoprefixer": "^10.2.0",
     "@types/cssnano": "^5.0.0",
     "@types/fs-extra": "^9.0.13",
@@ -75,26 +78,27 @@
     "copy-text-to-clipboard": "^3.0.1",
     "cssnano": "^5.0.17",
     "dotenv": "^16.0.0",
+    "fs-extra": "^10.0.1",
     "glob": "^7.2.0",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "npm-run-all": "^4.1.5",
     "prettier": "2.5.1",
-    "prettier-eslint": "^13.0.0",
     "puppeteer": "^10.0.0",
     "rollup-plugin-dotenv": "^0.3.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-scss": "^3.0.0",
     "storybook": "^6.4.19",
     "three": "^0.138.0",
     "three-elements": "^0.3.0",
     "typescript": "^4.6.2",
-    "webpack": "^4.46.0",
-    "workbox-build": "^6.5.0"
+    "typescript-lit-html-plugin": "^0.9.0"
   },
   "author": "Hakkei-Dev",
   "license": "UNLICENSED",
   "publishConfig": {
-    "@hakkei-co:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/hakkei-co",
+    "access": "restricted"
   },
   "homepage": "https://ui.hakkei.org/"
 }

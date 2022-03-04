@@ -1,5 +1,6 @@
 import path from 'path';
 import Case from 'case';
+import { html } from 'lit-html';
 import { storiesOf } from '@storybook/html';
 import * as KNOBS from '@storybook/addon-knobs';
 
@@ -17,7 +18,7 @@ const DEFAULT_DATE = new Date();
  * Given a module, iterates over the exports and returns the first
  * one which looks like a stencil component (using duck typing).
  */
-function getComponentFromExports(_module) {
+export function getComponentFromExports(_module) {
   const key = Object.keys(_module).find(exportKey => {
     const _export = _module[exportKey];
     // does it quack like a stencil class component?
@@ -34,7 +35,7 @@ function getComponentFromExports(_module) {
  * knobOptions object generates a knob which can be used to
  * dynamically update the properties of the component.
  */
-function getKnobForProp(prop, knobOptions = {}) {
+export function getKnobForProp(prop, knobOptions = {}) {
   let type = 'text';
   let args = [prop.attribute];
 
@@ -91,7 +92,7 @@ function getKnobForProp(prop, knobOptions = {}) {
  *   container.querySelector('.placeholder').appendChild(component);
  *   ```
  */
-function getStencilTemplate({ title, description, tag, props }) {
+export function getStencilTemplate({ title, description, tag, props }) {
   // build attribute="value" strings
   const attrs = Object.keys(props || {})
     .filter(prop => props[prop] != null)
@@ -101,13 +102,14 @@ function getStencilTemplate({ title, description, tag, props }) {
     .join(' ');
 
   let template =
-    `
+    html`
         <h2>${title}</h2>
         ${description ? '<p>' + description + '</p>' : ''}
         <div class="placeholder">
-        <!-- the component will be inserted here --></div>
+          <!-- the component will be inserted here -->
+        </div>
         <div class="code-block">
-            <pre><code>` +
+          <pre><code>` +
     `&lt;${tag}${attrs ? ' ' + attrs : ''}&gt;&lt;/${tag}&gt;` +
     `</code></pre>
             <a class="select-code">Select Code</a>
@@ -121,7 +123,7 @@ function getStencilTemplate({ title, description, tag, props }) {
  * Given a stencil Component and knob options, returns an dictionary of
  * all the properties and default values.
  */
-function getPropsWithKnobValues(Component, knobOptions = {}) {
+export function getPropsWithKnobValues(Component, knobOptions = {}) {
   return Object.keys(Component.properties || {}).reduce((obj, key) => {
     const property = Component.properties[key];
 
@@ -165,7 +167,7 @@ function getPropsWithKnobValues(Component, knobOptions = {}) {
  *     }
  *   }
  */
-function createStencilStory({ Component, notes, states, knobs }, stories) {
+export function createStencilStory({ Component, notes, states, knobs }, stories) {
   // It is important that the main container element
   // is NOT created inside of the render function below!!
   const mainEl = document.createElement('div');
@@ -230,7 +232,7 @@ function cleanNotes(notes) {
   }
 }
 
-function buildGeneratorConfigs(componentsCtx, storiesCtx) {
+export function buildGeneratorConfigs(componentsCtx, storiesCtx) {
   const componentKeys = componentsCtx.keys();
   const storyKeys = storiesCtx.keys();
 
@@ -279,7 +281,7 @@ function buildGeneratorConfigs(componentsCtx, storiesCtx) {
  * Iterates all of the stencil contexts and build a "config" object
  * which is used to generate the individual stories.
  */
-function buildStencilStories(name, loader, componentsCtx, storiesCtx) {
+export function buildStencilStories(name, loader, componentsCtx, storiesCtx) {
   const configs = buildGeneratorConfigs(componentsCtx, storiesCtx);
 
   // define the custom elements so they are available

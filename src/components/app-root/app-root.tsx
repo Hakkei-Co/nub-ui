@@ -1,11 +1,7 @@
 /* eslint-disable @stencil/required-jsdoc */
-import { Component, Element, h, Host, Prop, State } from '@stencil/core';
+import { Component, Element, h, Prop, State } from '@stencil/core';
 // import { updateStyle } from '../../utils/utils';
 
-enum INPUT_STATE {
-  DISABLED = 'OFF',
-  DEFAULT = 'ON',
-}
 @Component({
   tag: 'app-root',
   styleUrls: {
@@ -16,7 +12,7 @@ enum INPUT_STATE {
 export class AppRoot {
   @Element() host: HTMLAppRootElement | undefined;
   @State() ready: boolean = false;
-  @Prop() inputState: INPUT_STATE;
+  @Prop() inputState: 'ON' | 'OFF';
 
   // Set the legend to "Dark Mode"
   @Prop() legend: string = 'Dark Mode';

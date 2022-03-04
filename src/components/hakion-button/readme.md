@@ -22,7 +22,7 @@
 | `iconVariant` | `icon-variant` | If this property is set, an anchor tag will be rendered. If set to "icon-only," all other content will be ignored.                                                                                                                                                                        | `"" \| "filled" \| "outline" \| "sharp"`                                                                        | ````             |
 | `mode`        | `mode`         | The mode determines which platform styles to use.                                                                                                                                                                                                                                         | `"ios" \| "md"`                                                                                                 | `'ios'`          |
 | `rel`         | `rel`          | Specifies the relationship of the target object to the link object. The value is a space-separated list of link types.                                                                                                                                                                    | `string`                                                                                                        | `undefined`      |
-| `shape`       | `shape`        | The button shape.                                                                                                                                                                                                                                                                         | `string`                                                                                                        | `undefined`      |
+| `shape`       | `shape`        | The button shape.                                                                                                                                                                                                                                                                         | `"default" \| "round"`                                                                                          | `'default'`      |
 | `strong`      | `strong`       | If true, activates a button with a heavier font weight.                                                                                                                                                                                                                                   | `boolean`                                                                                                       | `false`          |
 | `text`        | `text`         |                                                                                                                                                                                                                                                                                           | `string`                                                                                                        | `undefined`      |
 | `textColor`   | `text-color`   | The color to use for the text if the attribute `text` is set. Will not affect anything between <slot>                                                                                                                                                                                     | `"danger" \| "dark" \| "light" \| "medium" \| "primary" \| "secondary" \| "success" \| "tertiary" \| "warning"` | `undefined`      |
@@ -60,6 +60,10 @@ Type: `Promise<void>`
 
 ## Dependencies
 
+### Used by
+
+ - [app-root](../app-root)
+
 ### Depends on
 
 - ion-button
@@ -73,6 +77,7 @@ graph TD;
   hakion-button --> ion-icon
   hakion-button --> ion-text
   ion-button --> ion-ripple-effect
+  app-root --> hakion-button
   style hakion-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -7,16 +7,28 @@
 
 ## Properties
 
-| Property     | Attribute    | Description | Type                   | Default       |
-| ------------ | ------------ | ----------- | ---------------------- | ------------- |
-| `appearance` | `appearance` |             | `"switch" \| "toggle"` | `'switch'`    |
-| `dark`       | `dark`       |             | `"off" \| "on"`        | `'off'`       |
-| `enabled`    | `enabled`    |             | `boolean`              | `undefined`   |
-| `legend`     | `legend`     |             | `string`               | `'Dark Mode'` |
-| `light`      | `light`      |             | `"off" \| "on"`        | `'on'`        |
+| Property         | Attribute         | Description | Type                   | Default       |
+| ---------------- | ----------------- | ----------- | ---------------------- | ------------- |
+| `appearance`     | `appearance`      |             | `"switch" \| "toggle"` | `'switch'`    |
+| `dark`           | `dark`            |             | `"off" \| "on"`        | `'off'`       |
+| `defaultPressed` | `default-pressed` |             | `boolean`              | `false`       |
+| `enabled`        | `enabled`         |             | `boolean`              | `undefined`   |
+| `legend`         | `legend`          |             | `string`               | `'Dark Mode'` |
+| `light`          | `light`           |             | `"off" \| "on"`        | `'on'`        |
+| `unactive`       | `unactive`        |             | `string`               | `'OFF'`       |
 
 
 ## Methods
+
+### `handlePressEvent(e: MouseEvent) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 ### `setAppearance(str?: 'toggle' | 'switch') => Promise<void>`
 
