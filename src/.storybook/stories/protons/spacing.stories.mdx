@@ -23,17 +23,17 @@ import tailwindThemeConfig from '../../../resolved-tailwind-config';
     const spacings = Object.entries(tailwindThemeConfig.spacing).map(
       ([name, value]) => html`
         <tr>
-          <td class="py-2 text-center border-b border-demo-darkGray">
+          <td class="py-2 text-center border-b border-demo-lightGray">
             ${name}
           </td>
-          <td class="py-2 text-center border-b border-demo-darkGray">
+          <td class="py-2 text-center border-b border-demo-lightGray">
             ${value}
           </td>
-          <td class="py-2 text-center border-b border-demo-darkGray">
+          <td class="py-2 text-center border-b border-demo-lightGray">
             ${extractPx(value)}
           </td>
-          <td class="py-2 text-center border-b border-demo-darkGray">
-            <div class="rounded h-6 bg-demo-darkBlue w-${name}"></div>
+          <td class="py-2 text-center border-b border-demo-lightGray">
+            <div class="rounded h-6 bg-demo-darkGray w-${name}"></div>
           </td>
         </tr>
       `
@@ -49,25 +49,25 @@ import tailwindThemeConfig from '../../../resolved-tailwind-config';
         <div class="mt-10"></div>
       </div>
       <table
-        class="w-full rounded-2xl table-auto shadow-lg border bg-demo-lightGray overflow-hidden"
+        class="w-full rounded-sm table-auto shadow-lg bg-demo-darkGray overflow-hidden"
       >
         <thead class="text-xl font-display">
-          <tr class="border border-neutral-gray-700 bg-demo-darkGray">
-            <th scope="col" class="p-3 font-semibold text-neutral-white">
+          <tr class="border-neutral-gray-100 bg-demo-lightGray">
+            <th scope="col" class="p-3 font-semibold text-neutral-black">
               Name
             </th>
-            <th scope="col" class="p-3 font-semibold text-neutral-white">
+            <th scope="col" class="p-3 font-semibold text-neutral-black">
               Size
             </th>
-            <th scope="col" class="p-3 font-semibold text-neutral-white">
+            <th scope="col" class="p-3 font-semibold text-neutral-black">
               Pixels
             </th>
-            <th scope="col" class="p-3 font-semibold text-neutral-white">
+            <th scope="col" class="p-3 font-semibold text-neutral-black">
               Example
             </th>
           </tr>
         </thead>
-        <tbody class="font-body">
+        <tbody class="font-body bg-demo-white">
           ${spacings}
         </tbody>
       </table>

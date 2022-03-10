@@ -223,8 +223,9 @@ module.exports = {
         '2-1': '8fr 4fr',
       },
       fontFamily: {
-        display: ['Inter var', 'Helvetica', 'Arial', 'sans-serif'],
-        body: ['Inter var', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['Manrope', 'sans-serif'],
+        serif: ['Urbanist', 'sans-serif'],
+        body: ['Manrope', 'sans-serif'],
       },
       height: {
         ...screenSizes,
