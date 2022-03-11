@@ -7,15 +7,12 @@
 
 .sbdocs-h1 {
   @apply mb-4 border-none font-display text-3xl font-black !important;
-  color: font-black;
 }
 .sbdocs-h2 {
   @apply mb-4 border-none font-display text-2xl font-semibold !important;
-  color: font-black;
 }
 .sbdocs .sbdocs-content {
   max-width: 2240px;
-  color: font-black;
 }
 .sbdocs-p {
   @apply mt-0 !important;

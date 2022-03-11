@@ -1,11 +1,11 @@
 :root {
   /* Brand specific primary colors. */
-  --brand-primary: #27292E;
+  --brand-primary: #27292e;
   --brand-secondary: #474b53;
   --brand-tertiary: #69707b;
-  --brand-quaternary:#8d97a5;
+  --brand-quaternary: #8d97a5;
   --brand-quinary: #b3c1d1;
-  --brand-senary: #FFFFFE;
+  --brand-senary: #fffffe;
   --brand-septenary: #aeccf3;
   --brand-octonary: #87ace6;
   --brand-nonary: #4d6ac7;
@@ -13,7 +13,7 @@
 
   /* Brand specific neutral colors & Generic tones/ */
   --neutral-transparent: transparent;
-  --neutral-white: #FFFFFE;
+  --neutral-white: #fffffe;
   --neutral-grayLight: #c2c2c2;
   --neutral-grayMedium: #949494;
   --neutral-grayDark: #3f3f3f;
@@ -101,7 +101,7 @@
   --green-600: #89de90;
   --green-700: #6ad06c;
   --green-800: #49c043;
-  --green-900: #1DB100;
+  --green-900: #1db100;
   --indigo-50: #c1f1ff;
   --indigo-100: #bbf3ff;
   --indigo-200: #b5f4ff;

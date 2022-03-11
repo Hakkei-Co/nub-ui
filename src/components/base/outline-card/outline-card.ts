@@ -59,7 +59,7 @@ export class OutlineCard extends OutlineElement {
   headerTemplate(headerBackgroundClasses: ClassInfo): TemplateResult | null {
     if (!this.hasHeaderSlot) return null;
 
-    return html` <section class="${classMap(headerBackgroundClasses)}">
+    return html`<section class="${classMap(headerBackgroundClasses)}">
       <slot name="header"></slot>
     </section>`;
   }
@@ -67,7 +67,7 @@ export class OutlineCard extends OutlineElement {
   contentTemplate(contentBackgroundClasses: ClassInfo): TemplateResult | null {
     if (!this.hasContentSlot) return null;
 
-    return html` <section class="${classMap(contentBackgroundClasses)}">
+    return html`<section class="${classMap(contentBackgroundClasses)}">
       <slot name="content"></slot>
     </section>`;
   }
@@ -75,7 +75,7 @@ export class OutlineCard extends OutlineElement {
   footerTemplate(footerBackgroundClasses: ClassInfo): TemplateResult | null {
     if (!this.hasFooterSlot) return null;
 
-    return html` <section class="${classMap(footerBackgroundClasses)}">
+    return html`<section class="${classMap(footerBackgroundClasses)}">
       <slot name="footer"></slot>
     </section>`;
   }
