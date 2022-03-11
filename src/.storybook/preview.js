@@ -21,7 +21,7 @@ addParameters({
         'Templates',
         'Pages',
         'Code Examples',
-        'Utility Components',
+        'Storybook',
       ],
     },
   },

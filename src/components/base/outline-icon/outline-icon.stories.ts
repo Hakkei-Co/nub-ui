@@ -4,7 +4,7 @@ import './outline-icon';
 import outline from '../../../resolved-outline-config';
 
 const configuration = {
-  title: 'Media/Outline Icon',
+  title: 'Media/Icons',
   component: 'outline-icon',
   parameters: {
     docs: {
@@ -12,7 +12,7 @@ const configuration = {
         component: `
 ## Introduction
 
-The \`outline-icon\` component will render all manner of icons for your component(s) and application. 
+The \`outline-icon\` component will render all manner of icons for your component(s) and application.
 
 ## Internal Icon Libraries
 - \`system\`: The default icon library for the Outline core system.
@@ -102,7 +102,7 @@ const DefaultTemplate = (customArguments = {}): TemplateResult => {
   args.size = args.size && args.sizeEnabled ? args.size : null;
 
   return html`
-<outline-icon 
+<outline-icon
   name="${ifDefined(args.icon)}"
   library="${ifDefined(args.library)}"
   size="${ifDefined(args.size)}"
@@ -183,7 +183,7 @@ CustomIcons.parameters = {
 ## The \`custom\` icon library.
 
 The \`custom\` library is a dynamic icon library that can be used to create custom icons.
-It uses the \`src/assets/svg\` directory to store the icons. 
+It uses the \`src/assets/svg\` directory to store the icons.
     `,
   },
 }
@@ -325,7 +325,7 @@ const FaTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="fa" name="fab-edge" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fab-firefox" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fab-opera" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="fa" name="fab-microsoft" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>   
+  <outline-icon library="fa" name="fab-microsoft" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;
 };
@@ -638,7 +638,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="remix" name="business/pie-chart-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="development/bug-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="media/image-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="remix" name="system/alert-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon> 
+  <outline-icon library="remix" name="system/alert-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;
 };
@@ -683,7 +683,7 @@ const UniconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="unicons" name="graph-bar-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="padlock-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="polygon-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="unicons" name="rocket-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>  
+  <outline-icon library="unicons" name="rocket-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="star-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;

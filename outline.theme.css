@@ -1,29 +1,29 @@
 :root {
   /* Brand specific primary colors. */
-  --brand-primary: #2563eb;
-  --brand-secondary: #059669;
-  --brand-tertiary: #dc2626;
-  --brand-quaternary: #d97706;
-  --brand-quinary: #9333ea;
-  --brand-senary: #db2777;
-  --brand-septenary: #4f46e5;
-  --brand-octonary: #525252;
-  --brand-nonary: #1e3a8a;
-  --brand-denary: #171717;
+  --brand-primary: #27292E;
+  --brand-secondary: #474b53;
+  --brand-tertiary: #69707b;
+  --brand-quaternary:#8d97a5;
+  --brand-quinary: #b3c1d1;
+  --brand-senary: #FFFFFE;
+  --brand-septenary: #aeccf3;
+  --brand-octonary: #87ace6;
+  --brand-nonary: #4d6ac7;
+  --brand-denary: #3d47b2;
 
-  /* Brand specific neutral colors & Generic tones/ */
+  /* Brand specific neutral colors & Generic tones. */
   --neutral-transparent: transparent;
-  --neutral-white: #fff;
-  --neutral-grayLight: #f4f4f5;
-  --neutral-grayMedium: #a1a1aa;
-  --neutral-grayDark: #3f3f46;
-  --neutral-black: #000;
+  --neutral-white: #FFFFFE;
+  --neutral-grayLight: #c2c2c2;
+  --neutral-grayMedium: #949494;
+  --neutral-grayDark: #3f3f3f;
+  --neutral-black: #1a1a1a;
 
   /* Colors for UI notification messages. */
-  --status-success: #2f855a;
-  --status-warning: #b64301;
-  --status-error: #c53030;
-  --status-info: #1e3a8a;
+  --status-success: #28ba62;
+  --status-warning: #ffc409;
+  --status-error: #eb445a;
+  --status-info: #3dc2ff;
 
   --ui-infoBackground: var(--demo-white);
   --ui-infoText: var(--status-info);
@@ -42,8 +42,8 @@
   --ui-errorBorder: var(--status-error);
 
   /* Demo colors used for default component demonstrations */
-  --demo-darkBlue: #2563eb;
-  --demo-mediumBlue: #3b82f6;
+  --demo-darkBlue: #3171e0;
+  --demo-mediumBlue: #3880ff;
   --demo-lightBlue: #eff6ff;
   --demo-darkGray: #3f3f46;
   --demo-mediumGray: #e0e0e0;
@@ -52,16 +52,16 @@
   --demo-black: #000;
 
   /* Default Tailwind CSS Colors converted to CSS Variables. */
-  --gray-50: #fafafa;
-  --gray-100: #f5f5f5;
-  --gray-200: #e5e5e5;
-  --gray-300: #d4d4d4;
-  --gray-400: #a3a3a3;
-  --gray-500: #737373;
-  --gray-600: #525252;
-  --gray-700: #404040;
-  --gray-800: #262626;
-  --gray-900: #171717;
+  --gray-50: #d6d9e2;
+  --gray-100: #d1d3d9;
+  --gray-200: #cbcdd0;
+  --gray-300: #c6c6c6;
+  --gray-400: #a5a5a5;
+  --gray-500: #868686;
+  --gray-600: #676767;
+  --gray-700: #4a4a4a;
+  --gray-800: #2f2f2f;
+  --gray-900: #161616;
   --blue-50: #eff6ff;
   --blue-100: #dbeafe;
   --blue-200: #bfdbfe;
@@ -83,55 +83,55 @@
   --red-800: #991b1b;
   --red-900: #7f1d1d;
   --yellow-50: #fffbeb;
-  --yellow-100: #fef3c7;
-  --yellow-200: #fde68a;
-  --yellow-300: #fcd34d;
-  --yellow-400: #fbbf24;
-  --yellow-500: #f59e0b;
-  --yellow-600: #d97706;
-  --yellow-700: #b45309;
-  --yellow-800: #92400e;
-  --yellow-900: #78350f;
+  --yellow-100: #fef6d8;
+  --yellow-200: #fceebc;
+  --yellow-300: #fcf0c5;
+  --yellow-400: #fdeaa1;
+  --yellow-500: #fee686;
+  --yellow-600: #ffe269;
+  --yellow-700: #ffde48;
+  --yellow-800: #feda15;
+  --yellow-900: #f6ba38;
   --green-50: #ecfdf5;
-  --green-100: #d1fae5;
-  --green-200: #a7f3d0;
-  --green-300: #6ee7b7;
-  --green-400: #34d399;
-  --green-500: #10b981;
-  --green-600: #059669;
-  --green-700: #047857;
-  --green-800: #065f46;
-  --green-900: #064e3b;
-  --indigo-50: #eef2ff;
-  --indigo-100: #e0e7ff;
-  --indigo-200: #c7d2fe;
-  --indigo-300: #a5b4fc;
-  --indigo-400: #818cf8;
-  --indigo-500: #6366f1;
-  --indigo-600: #4f46e5;
-  --indigo-700: #4338ca;
-  --indigo-800: #3730a3;
-  --indigo-900: #312e81;
-  --purple-50: #faf5ff;
-  --purple-100: #f3e8ff;
-  --purple-200: #e9d5ff;
-  --purple-300: #d8b4fe;
-  --purple-400: #c084fc;
-  --purple-500: #a855f7;
-  --purple-600: #9333ea;
-  --purple-700: #7e22ce;
-  --purple-800: #6b21a8;
-  --purple-900: #581c87;
-  --pink-50: #fdf2f8;
-  --pink-100: #fce7f3;
-  --pink-200: #fbcfe8;
-  --pink-300: #f9a8d4;
-  --pink-400: #f472b6;
-  --pink-500: #ec4899;
-  --pink-600: #db2777;
-  --pink-700: #be185d;
-  --pink-800: #9d174d;
-  --pink-900: #831843;
+  --green-100: #e4fdf0;
+  --green-200: #dcfcea;
+  --green-300: #d5fbe3;
+  --green-400: #cffbdc;
+  --green-500: #a8ecb3;
+  --green-600: #89de90;
+  --green-700: #6ad06c;
+  --green-800: #49c043;
+  --green-900: #1DB100;
+  --indigo-50: #c1f1ff;
+  --indigo-100: #bbf3ff;
+  --indigo-200: #b5f4ff;
+  --indigo-300: #b0f5ff;
+  --indigo-400: #81d9f2;
+  --indigo-500: #52bce7;
+  --indigo-600: #239fdb;
+  --indigo-700: #0080cc;
+  --indigo-800: #0f61b9;
+  --indigo-900: #303f9f;
+  --purple-50: #deedff;
+  --purple-100: #dcedff;
+  --purple-200: #daedff;
+  --purple-300: #d7edff;
+  --purple-400: #b1d2f5;
+  --purple-500: #8fb8eb;
+  --purple-600: #719ce0;
+  --purple-700: #5981d3;
+  --purple-800: #4764c4;
+  --purple-900: #3d47b2;
+  --pink-50: #ffe6f5;
+  --pink-100: #ffdaf3;
+  --pink-200: #ffd4f2;
+  --pink-300: #ffcef2;
+  --pink-400: #fcb7df;
+  --pink-500: #f9a1c9;
+  --pink-600: #f589b1;
+  --pink-700: #f07296;
+  --pink-800: #e85a79;
+  --pink-900: #de425b;
 
   /* Utitlizing CSS properties here (screens) caused
      the responsive tailwind classes to simply fail.
