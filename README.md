@@ -2,9 +2,12 @@
 
 For quick browser-based development, open this project in Gitpod. It will automatically build an environment and run Storybook.
 
-# Outline Design System
+![alt text](https://i.imgur.com/4t7Svqk.png "Title")
 
-Outline is a [web component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) based design system starter kit. Outline is based on the latest technologies and tools to help your component authoring experience and facilitate adoption in your organization.
+
+# Nub design system
+
+Nub UI is a [web component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) built on top of [Outline](https://github.com/phase2/outline) design system starter kit.
 
 Outline is built with the following tools:
 
@@ -23,6 +26,10 @@ Information regarding how to contribute to Outline development, can be found in 
 ## Local Setup
 
 Run the following steps to ensure your environment is installed and up to date. This assumes you are using [NVM](https://github.com/nvm-sh/nvm) locally to manage your NPM version(s).
+
+### Typescript
+
+**IMPORTANT**: Supported Typescript versions are v4.4.4 to v4.5.0.
 
 ### Checkout the repository
 

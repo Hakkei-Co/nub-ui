@@ -1,6 +1,6 @@
 {
-  "name": "@phase2/outline",
-  "description": "Outline Component Design",
+  "name": "@hakkei-co/nub-ui",
+  "description": "Nub Web Component Design",
   "main": "dist/outline.js",
   "module": "dist/outline.js",
   "es2015": "dist/outline-legacy.js",
@@ -14,12 +14,13 @@
     "outline.theme.css"
   ],
   "author": {
-    "name": "Phase2 Technology",
-    "url": "https://phase2technology.com"
+    "name": "Hakkei Inc",
+    "url": "https://github.com/hakkei-co"
   },
   "license": "BSD-3-Clause",
   "publishConfig": {
-    "registry": "https://us-central1-npm.pkg.dev/phase2-devcloud/phase2-npm/"
+    "registry": "https://npm.pkg.github.com/hakkei-co",
+    "access": "restricted"
   },
   "sbport": 6042,
   "scripts": {
@@ -92,6 +93,10 @@
   "engines": {
     "node": ">=14"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hakkei-co/nub-ui.git"
+  },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-decorators": "^7.14.2",
@@ -160,5 +165,6 @@
     "wait-on": "^5.3.0",
     "web-component-analyzer": "^1.0.3",
     "webpack": "^5.38.1"
-  }
+  },
+  "homepage": "https://ui.hakkei.org"
 }

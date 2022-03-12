@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 const screenSizes = {
   'full-screen-w': '100vw',
   'half-screen-w': '50vw',
@@ -223,8 +225,9 @@ module.exports = {
         '2-1': '8fr 4fr',
       },
       fontFamily: {
-        display: ['Inter var', 'Helvetica', 'Arial', 'sans-serif'],
-        body: ['Inter var', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['Manrope', 'sans-serif'],
+        body: ['Manrope', ...defaultTheme.fontFamily.serif],
+        urbanist: ['Urbanist', ...defaultTheme.fontFamily.sans],
       },
       height: {
         ...screenSizes,

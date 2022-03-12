@@ -11,15 +11,11 @@ const configuration = {
       description: {
         component: `
 ## Introduction
-
-The \`outline-icon\` component will render all manner of icons for your component(s) and application. 
-
+The \`outline-icon\` component will render all manner of icons for your component(s) and application.
 ## Internal Icon Libraries
 - \`system\`: The default icon library for the Outline core system.
 - \`custom\`: A custom icon library of SVGs provided to the \`src/assets/svg\` directory.
-
 ## Custom CDN Library Integrations
-
 [Bootstrap](#bootstrap), [Boxicons](#boxicons), [Font Awesome (Free)](#font-awesome-free),
 [Heroicons](#heroicons), [Iconoir](#iconoir), [Ionicons](#ionicons),
 [Jam](#jam), [Lucide](#lucide), [Material](#material), [Remix](#remix),
@@ -102,7 +98,7 @@ const DefaultTemplate = (customArguments = {}): TemplateResult => {
   args.size = args.size && args.sizeEnabled ? args.size : null;
 
   return html`
-<outline-icon 
+<outline-icon
   name="${ifDefined(args.icon)}"
   library="${ifDefined(args.library)}"
   size="${ifDefined(args.size)}"
@@ -145,10 +141,8 @@ SystemIcons.parameters = {
   docs: {
     storyDescription: `
 ## The \`system\` icon library.
-
 The system library contains only the icons used by Outline components.
 The icons are hard-coded as data URIs into the icon resolver to ensure their availability.
-
 This method is ideal for a small library of icons where you prefer to ensure "hard coded" availability of the icons.
 `,
   },
@@ -181,9 +175,8 @@ CustomIcons.parameters = {
   docs: {
     storyDescription: `
 ## The \`custom\` icon library.
-
 The \`custom\` library is a dynamic icon library that can be used to create custom icons.
-It uses the \`src/assets/svg\` directory to store the icons. 
+It uses the \`src/assets/svg\` directory to store the icons.
     `,
   },
 }
@@ -230,7 +223,6 @@ Bootstrap.parameters = {
   docs: {
     storyDescription: `
 ## The \`bootstrap\` icon library.
-
 The \`bootstrap\` library uses the jsDelivr CDN to implement the [Bootstrap Icons library](https://icons.getbootstrap.com/).
 Please see the icon list on their site for the list of available icons.
     `,
@@ -244,7 +236,6 @@ const BoxiconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-
 <outline-heading level="h2" level-size="2xl" level-style="thin">Outline</outline-heading>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="boxicons" name="bx-bot" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -286,7 +277,6 @@ Boxicons.parameters = {
   docs: {
     storyDescription: `
 ## The \`boxicons\` icon library.
-
 The \`boxicons\` library uses the jsDelivr CDN to implement [Boxicons](https://boxicons.com/).
 Please see the icon list on their site for the list of available icons.
     `,
@@ -325,7 +315,7 @@ const FaTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="fa" name="fab-edge" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fab-firefox" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fab-opera" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="fa" name="fab-microsoft" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>   
+  <outline-icon library="fa" name="fab-microsoft" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;
 };
@@ -341,7 +331,6 @@ FontAwesomeFree.parameters = {
   docs: {
     storyDescription: `
 ## The \`fa\` icon library.
-
 The \`fa\` library uses the jsDelivr CDN to implement [Font Awesome (free)](https://fontawesome.com).
 Please see the [icon list](https://fontawesome.com/icons) on their site for the list of available icons.
     `,
@@ -378,7 +367,6 @@ Heroicons.parameters = {
   docs: {
     storyDescription: `
 ## The \`heroicons\` icon library.
-
 The \`heroicons\` library uses the jsDelivr CDN to implement [Heroicons](https://heroicons.com/).
 Please see the icon list on their site for the list of available icons.
     `,
@@ -415,7 +403,6 @@ Iconoir.parameters = {
   docs: {
     storyDescription: `
 ## The \`iconoir\` icon library.
-
 The \`iconoir\` library uses the jsDelivr CDN to implement [Iconoir](https://iconoir.com/).
 Please see the icon list on their site for the list of available icons.
     `,
@@ -431,21 +418,21 @@ const IonIconsTemplate = (customArguments = {}): TemplateResult => {
   return html`
 <outline-heading level="h2" level-size="2xl" level-style="thin">Regular</outline-heading>
 <div class="flex flex-row flex-wrap mb-10">
-  <outline-icon library="ionicons" name="alarm" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="american-football" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="bug" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="chatbubble" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="settings" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="warning" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="layers" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="link" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="git-compare" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="options" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="server" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="today" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 <outline-heading level="h2" level-size="2xl" level-style="thin">Outline</outline-heading>
 <div class="flex flex-row flex-wrap mb-10">
-  <outline-icon library="ionicons" name="alarm-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="american-football-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="bug-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="chatbubble-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="settings-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="ionicons" name="warning-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="checkmark-circle-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="checkmark-done-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="checkmark-done-circle-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="cloud-done-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="cloud-download-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="ionicons" name="copy-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 <outline-heading level="h2" level-size="2xl" level-style="thin">Sharp</outline-heading>
 <div class="flex flex-row flex-wrap mb-10">
@@ -470,7 +457,6 @@ Ionicons.parameters = {
   docs: {
     storyDescription: `
 ## The \`ionicons\` icon library.
-
 The \`ionicons\` library uses the jsDelivr CDN to implement [Ionicons](https://ionic.io/ionicons).
 Please see the icon list on their site for the list of available icons.
     `,
@@ -638,7 +624,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="remix" name="business/pie-chart-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="development/bug-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="media/image-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="remix" name="system/alert-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon> 
+  <outline-icon library="remix" name="system/alert-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;
 };
@@ -683,7 +669,7 @@ const UniconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="unicons" name="graph-bar-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="padlock-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="polygon-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="unicons" name="rocket-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>  
+  <outline-icon library="unicons" name="rocket-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="star-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;
@@ -700,7 +686,6 @@ Unicons.parameters = {
   docs: {
     storyDescription: `
 ## The \`unicons\` icon library.
-
 The \`unicons\` library uses the jsDelivr CDN to implement [Unicons](https://iconscout.com/unicons).
 Please see the icon list on their site for the list of available icons.
     `,

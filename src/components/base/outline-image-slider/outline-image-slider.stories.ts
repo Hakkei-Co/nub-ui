@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit';
-import sampleImage from '../../../.storybook/static/media/color/Code_color.jpg';
+import sampleImage from '../../../.storybook/static/media/color/desk-keyboard.png';
 import './outline-image-slider';
 import '../outline-image/outline-image';
 
