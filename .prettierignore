@@ -20,3 +20,6 @@ docs/
 .octane-ci/
 .bin/
 .docksal/
+src/.storybook/tailwind.css
+.vscode/settings.json
+outline.theme.css
