@@ -5,6 +5,8 @@ import { OutlineElement } from '../outline-element/outline-element';
 
 export const alertSizes = ['small', 'large'] as const;
 export type AlertSize = typeof alertSizes[number];
+export const alertSpan = ['float', 'full'] as const;
+export type AlertSpan = typeof alertSpan[number];
 
 export const alertStatusTypes = [
   'information',
@@ -12,11 +14,13 @@ export const alertStatusTypes = [
   'error',
   'success',
 ] as const;
+
 export type AlertStatusType = typeof alertStatusTypes[number];
 
 // This can be useful for testing.
 export interface OutlineAlertInterface extends HTMLElement {
   statusType: AlertStatusType;
+  spanType: AlertSpan;
   size: AlertSize;
   isInteractive: boolean;
   shouldShowIcon: boolean;
@@ -39,6 +43,9 @@ export class OutlineAlert
   @property({ type: String })
   statusType: AlertStatusType = 'information';
 
+  @property({ type: String })
+  spanType: AlertSpan = 'full';
+
   /**
    * This is important context for screen readers.
    */
@@ -52,10 +59,12 @@ export class OutlineAlert
   size: AlertSize = 'large';
 
   render(): TemplateResult {
+    const span = this.spanType === 'full' ? 'full' : 'float';
     // The `body` wrapper is used to avoid styles (like border) that are preventing us from styling `:host`.
     return html`
       <div
         id="body"
+        class="${span}"
         role="${this.isInteractive ? 'alertdialog' : 'alert'}"
         aria-labelledby="${this.isInteractive ? 'message' : null}"
       >

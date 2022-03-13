@@ -1,17 +1,42 @@
 /* The default is information. */
 #body {
-  @apply block border-0 border-l-8 border-solid bg-ui-info p-4 text-ui-infoText;
+  @apply flex h-16 bg-gray-300 px-8 w-full bg-ui-info text-ui-infoText;
+  border-radius: 3px;
 
-  border-color: var(--ui-infoText);
+}
+
+#body .float {
+  @apply flex flex flex-col justify-start h-16 bg-gray-300 px-8 w-full bg-ui-info text-ui-infoText max-w-md shadow-lg;
 }
 
 #header {
-  @apply text-lg font-bold capitalize;
+  @apply px-4 text-lg font-bold capitalize;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#message {
+  @apply px-4 flex flex-col justify-start text-sm;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+:host([spanType='float']) #message {
+  @apply text-sm pb-2;
+}
+
+:host([spanType='float']) #body {
+  @apply px-4 max-w-md shadow-xl flex flex-col justify-start;
+}
+
+:host([spanType='full']) #body {
+  @apply px-4 w-full items-center;
 }
 
 :host([statusType='warning']) #body {
-  @apply bg-ui-warning text-ui-warningText;
-
+  @apply text-ui-warningText;
+  background-color: var(--ui-warningBackground);
   border-color: var(--ui-warningText);
 }
 

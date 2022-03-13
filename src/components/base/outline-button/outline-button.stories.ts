@@ -8,7 +8,7 @@ import './outline-button';
 
 const buttonOptions: ButtonVariant[] = ['none', 'primary', 'secondary'];
 const buttonSizes: ButtonSize[] = ['small', 'medium', 'large'];
-
+const link = "https://hakkei-co.github.io/nub-ui/";
 export default {
   title: 'Navigation/Button',
   component: 'outline-button',
@@ -114,7 +114,7 @@ const Template = ({
 export const Link = Template.bind({});
 Link.args = {
   defaultSlot: 'Link Button',
-  url: 'https://outline.phase2tech.com',
+  url: `${process.env.NODE_ENV === 'production' ? link : '#'}`,
   target: '_blank',
   variant: 'primary',
   isDisabled: false,
@@ -129,26 +129,26 @@ ${Story()}
 
 const PrimaryButtonsTemplate = (): TemplateResult =>
   html`
-  <outline-heading level-size="xl" level-style="semibold">Default, Hover & Focus States</outline-heading>  
+  <outline-heading level-size="xl" level-style="semibold">Default, Hover & Focus States</outline-heading>
   <p>This section of primary buttons demonstrates various configurations, and can be navigated to test hover/focus states.</p>
   <div class="my-6">
     <outline-button class="mr-2" button-url="#" button-size="large" button-label="Large Button">Large Button</outline-button>
     <outline-button class="mr-2" button-url="#" button-label="Button">Button</outline-button>
     <outline-button class="mr-2" button-url="#" button-size="small" button-label="Small Button">Small Button</outline-button>
   </div>
-  
-  <outline-heading level-size="xl" level-style="semibold">Disabled States</outline-heading>  
+
+  <outline-heading level-size="xl" level-style="semibold">Disabled States</outline-heading>
   <p>This section of primary buttons demonstrates the disabled version of the same buttons as the previous example.</p>
-  
+
   <div class="my-6">
     <outline-button class="mr-2" button-url="#" button-size="large" button-label="Large Button" is-disabled>Large Button</outline-button>
     <outline-button class="mr-2" button-url="#" button-label="Button" is-disabled>Button</outline-button>
     <outline-button class="mr-2" button-url="#" button-size="small" button-label="Small Button" is-disabled>Small Button</outline-button>
   </div>
 
-  <outline-heading level-size="xl" level-style="semibold">Including Icons</outline-heading>  
+  <outline-heading level-size="xl" level-style="semibold">Including Icons</outline-heading>
   <p>This section highlights using icons in the primary button.</p>
-  
+
   <div class="my-6">
     <outline-button class="mr-2" button-url="#" button-size="large" button-label="Large Button">
       Large Button
@@ -161,7 +161,7 @@ const PrimaryButtonsTemplate = (): TemplateResult =>
     <outline-button class="mr-2" button-url="#" button-size="small" button-label="Small Button">
       Small Button
       <outline-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></outline-icon>
-    </outline-button>  
+    </outline-button>
   </div>
 `;
 
@@ -186,23 +186,23 @@ PrimaryButtons.parameters = {
 
 const SecondaryButtonsTemplate = (): TemplateResult =>
   html`
-<outline-heading level-size="xl" level-style="semibold">Default, Hover & Focus States</outline-heading>  
+<outline-heading level-size="xl" level-style="semibold">Default, Hover & Focus States</outline-heading>
 <p>This section of primary buttons demonstrates various configurations, and can be navigated to test hover/focus states.</p>
 <div class="my-6">
   <outline-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button">Large Button</outline-button>
   <outline-button class="mr-2" button-variant="secondary" button-url="#" button-label="Button">Button</outline-button>
   <outline-button class="mr-2" button-variant="secondary" button-url="#" button-size="small" button-label="Small Button">Small Button</outline-button>
 </div>
-<outline-heading level-size="xl" level-style="semibold">Disabled States</outline-heading>  
+<outline-heading level-size="xl" level-style="semibold">Disabled States</outline-heading>
 <p>This section of primary buttons demonstrates the disabled version of the same buttons as the previous example.</p>
 <div class="my-6">
   <outline-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button" is-disabled>Large Button</outline-button>
   <outline-button class="mr-2" button-variant="secondary" button-url="#" button-label="Button" is-disabled>Button</outline-button>
   <outline-button class="mr-2" button-variant="secondary" button-url="#" button-size="small" button-label="Small Button" is-disabled>Small Button</outline-button>
 </div>
-<outline-heading level-size="xl" level-style="semibold">Including Icons</outline-heading>  
+<outline-heading level-size="xl" level-style="semibold">Including Icons</outline-heading>
   <p>This section highlights using icons in the primary button.</p>
-  
+
   <div class="my-6">
     <outline-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button">
       Large Button
@@ -215,7 +215,7 @@ const SecondaryButtonsTemplate = (): TemplateResult =>
     <outline-button class="mr-2" button-variant="secondary" button-url="#" button-size="small" button-label="Small Button">
       Small Button
       <outline-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></outline-icon>
-    </outline-button>  
+    </outline-button>
   </div>
 `;
 
@@ -240,7 +240,7 @@ SecondaryButtonsTemplate.parameters = {
 };
 
 const LinkButtonsTemplate = (): TemplateResult =>
-  html`  
+  html`
   <outline-button class="mr-2" button-variant="none" button-url="#">Link Button</outline-button>
   <outline-button class="mr-2" button-variant="none" button-url="#" icon-right="chevron-down">Link Button</outline-button>
   <outline-button class="mr-2" button-variant="none" button-url="#" is-disabled>Disabled Link Button</outline-button>

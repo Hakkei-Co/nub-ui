@@ -6,7 +6,13 @@ import { OutlineElement } from '../outline-element/outline-element';
 import { SlotController } from '../../controllers/slot-controller';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
-export type ButtonVariant = 'none' | 'primary' | 'secondary';
+export type ButtonVariant =
+  | 'none'
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'warning'
+  | 'disabled';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 

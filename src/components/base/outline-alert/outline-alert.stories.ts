@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypeSlotContent } from '../../base/outline-element/utils/utils';
-import { alertSizes, alertStatusTypes } from './outline-alert';
+import { alertSizes, alertStatusTypes, alertSpan } from './outline-alert';
 import './outline-alert';
 
 export default {
@@ -32,6 +32,11 @@ export default {
     size: {
       description: 'The size of the alert.',
       options: alertSizes,
+      control: { type: 'select' },
+    },
+    spanType: {
+      description: 'The width relative to viewport of the alert.',
+      options: alertSpan,
       control: { type: 'select' },
     },
     shouldShowIcon: {
@@ -70,6 +75,7 @@ If the alert has an interaction, you should indicate this with \`isInteractive\`
 <outline-alert
   statusType="{{ statusType }}"
   size="{{ size }}"
+  spanType="{{ spanType }}"
   {{ shouldShowIcon }}
   {{ isInteractive }}
 >
@@ -87,12 +93,15 @@ const Template = ({
   defaultSlot,
   statusType,
   size,
+  spanType,
+  span,
   shouldShowIcon,
   isInteractive,
 }): TemplateResult => {
   return html`
     <outline-alert
       statusType="${ifDefined(statusType)}"
+      spanType="${ifDefined(spanType)}"
       size="${ifDefined(size)}"
       ?shouldShowIcon="${shouldShowIcon}"
       ?isInteractive="${isInteractive}"
@@ -124,6 +133,20 @@ export const Success = Template.bind({});
 Success.args = {
   defaultSlot: html`Here is a success message.`,
   statusType: 'success',
+};
+
+export const InformationFloat = Template.bind({});
+InformationFloat.args = {
+  defaultSlot: html`Here is a float informational message.`,
+  statusType: 'information',
+  spanType: 'float',
+};
+
+export const WarningFloat = Template.bind({});
+WarningFloat.args = {
+  defaultSlot: html`Here is a warning message.`,
+  statusType: 'warning',
+  spanType: 'float',
 };
 
 export const Small = Template.bind({});

@@ -29,7 +29,7 @@ export default {
     },
   },
   args: {
-    linkHref: 'https://outline.phase2tech.com',
+    linkHref: 'https://hakkei-co.github.io/nub-ui/',
     linkRel: 'external',
     linkTarget: '_blank',
     linkText: 'Sample Link',
@@ -46,11 +46,11 @@ The \`outline-link\` component allows the ultimate flexibility in how you want t
 
 - Providing a \`link-text\` attribute negates the need or usage of any slotted content.
 - Providing a \`link-href\` without the \`link-text\` attribute will then use the slotted content as the content of the link.
-- Providing neither the \`link-href\` nor the \`link-text\` attributes will make the link assume the entire link, including \`<a></a>\` portions of the link be passed into the slot. 
+- Providing neither the \`link-href\` nor the \`link-text\` attributes will make the link assume the entire link, including \`<a></a>\` portions of the link be passed into the slot.
 
 ## CSS Variables
 
-The primary coloring of the \`outline-link\` component is handled by the following CSS Variables. 
+The primary coloring of the \`outline-link\` component is handled by the following CSS Variables.
 
 > Any consumer application that includes \`outline.theme.css\` can simply overwrite any relevant CSS Variables in a subsequent include to affect change on the element styling.
 
@@ -107,7 +107,7 @@ Link.parameters = {
 };
 export const PropsAndSlottedText = (): TemplateResult =>
   html`
-<outline-link link-href="https://outline.phase2tech.com">
+<outline-link link-href='https://hakkei-co.github.io/nub-ui/'>
   Link using properties, with slotted link text
 </outline-link>
   `;
@@ -115,7 +115,7 @@ export const PropsAndSlottedText = (): TemplateResult =>
 export const PropertiesOnly = (): TemplateResult =>
   html`
 <outline-link
-  link-href="https://outline.phase2tech.com"
+  link-href='https://hakkei-co.github.io/nub-ui/'
   link-text="Link using properties, including the link text"
 ></outline-link>
   `;
@@ -123,7 +123,7 @@ export const PropertiesOnly = (): TemplateResult =>
 export const FullySlotted = (): TemplateResult =>
   html`
 <outline-link>
-  <a href="https://outline.phase2tech.com" target="_blank">
+  <a href='https://hakkei-co.github.io/nub-ui/' target="_blank">
     Link using fully slotted link element
   </a>
 </outline-link>
@@ -132,7 +132,7 @@ export const FullySlotted = (): TemplateResult =>
 export const SlottedImageLink = (): TemplateResult =>
   html`
 <outline-link>
-  <a href="https://outline.phase2tech.com" target="_blank">
+  <a href='https://hakkei-co.github.io/nub-ui/' target="_blank">
     <img src="${sampleImage}" alt="Creative" />
   </a>
 </outline-link>

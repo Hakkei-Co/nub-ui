@@ -36,14 +36,14 @@ describe('outline-button', () => {
   it('renders as a link', async () => {
     const el = await fixture(
       html`<outline-button
-        button-url="https://outline.phase2tech.com"
+        button-url="https://hakkei-co.github.io/nub-ui/"
         button-target="_blank"
       ></outline-button>`
     );
     assert.shadowDom.equal(
       el,
       `
-      <a aria-disabled="false" class="btn medium primary" href="https://outline.phase2tech.com" target="_blank">
+      <a aria-disabled="false" class="btn medium primary" href='https://hakkei-co.github.io/nub-ui/' target="_blank">
         <slot></slot>
       </a>
     `

@@ -1,14 +1,16 @@
+@charset "UTF-8";
+
 :root {
   /* Brand specific primary colors. */
-  --brand-primary: #27292E;
+  --brand-primary: #4d6ac7;
   --brand-secondary: #474b53;
   --brand-tertiary: #69707b;
-  --brand-quaternary:#8d97a5;
+  --brand-quaternary: #8d97a5;
   --brand-quinary: #b3c1d1;
   --brand-senary: #FFFFFE;
   --brand-septenary: #aeccf3;
   --brand-octonary: #87ace6;
-  --brand-nonary: #4d6ac7;
+  --brand-nonary: #20315C;
   --brand-denary: #3d47b2;
 
   /* Brand specific neutral colors & Generic tones/ */
@@ -23,22 +25,22 @@
   --status-success: #28ba62;
   --status-warning: #ffc409;
   --status-error: #eb445a;
-  --status-info: #3dc2ff;
+  --status-info: var(--brand-nonary);
 
-  --ui-infoBackground: var(--demo-white);
-  --ui-infoText: var(--status-info);
+  --ui-infoBackground: var(--status-info);
+  --ui-infoText: var(--neutral-white);
   --ui-infoBorder: var(--status-info);
 
-  --ui-successBackground: var(--demo-white);
-  --ui-successText: var(--status-success);
+  --ui-successBackground: var(--status-success);
+  --ui-successText: var(--neutral-white);
   --ui-successBorder: var(--status-success);
 
-  --ui-warningBackground: var(--demo-white);
-  --ui-warningText: var(--status-warning);
-  --ui-warningBorder: var(--status-warning);
+  --ui-warningBackground: var(--status-warning);
+  --ui-warningText: var(--neutral-white);
+  --ui-warningBorder: var(--neutral-white);
 
-  --ui-errorBackground: var(--demo-white);
-  --ui-errorText: var(--status-error);
+  --ui-errorBackground: var(--status-error);
+  --ui-errorText: var(--neutral-white);
   --ui-errorBorder: var(--status-error);
 
   /* Demo colors used for default component demonstrations */
@@ -257,4 +259,68 @@
   --outline-admin-links-y-spacing: var(--spacing-4);
   --outline-admin-links-link-y-spacing: var(--spacing-4);
   --outline-admin-links-link-x-spacing: var(--spacing-6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Brand specific primary colors. */
+    --brand-primary: #4d6ac7;
+    --brand-secondary: #FFFFFE;
+    --brand-tertiary: #69707b;
+    --brand-quaternary: #8d97a5;
+    --brand-nonary: #20315C;
+    --brand-quinary: #b3c1d1;
+    --brand-septenary: #aeccf3;
+    --brand-octonary: #87ace6;
+    --brand-denary: #3d47b2;
+    --brand-senary: #474b53;
+
+    /* Brand specific neutral colors & Generic tones/ */
+    --neutral-transparent: transparent;
+    --neutral-white: #FFFFFE;
+    --neutral-grayLight: #c2c2c2;
+    --neutral-grayMedium: #949494;
+    --neutral-grayDark: #3f3f3f;
+    --neutral-black: #1a1a1a;
+
+
+    /* Colors for UI notification messages. */
+    --status-success: #28ba62;
+    --status-warning: #ffc409;
+    --status-error: #eb445a;
+    --status-info: var(--brand-primary);
+
+    --ui-infoBackground: var(--status-info);
+    --ui-infoText: var(--neutral-white);
+    --ui-infoBorder: var(--status-info);
+
+    --ui-successBackground: var(--status-success);
+    --ui-successText: var(--neutral-white);
+    --ui-successBorder: var(--status-success);
+
+    --ui-warningBackground: var(--status-warning);
+    --ui-warningText: var(--neutral-white);
+    --ui-warningBorder: var(--neutral-white);
+
+    --ui-errorBackground: var(--status-error);
+    --ui-errorText: var(--neutral-white);
+    --ui-errorBorder: var(--status-error);
+
+    /* Demo colors used for default component demonstrations */
+    --demo-darkBlue: #3171e0;
+    --demo-mediumBlue: #3880ff;
+    --demo-lightBlue: #eff6ff;
+    --demo-darkGray: #3f3f46;
+    --demo-mediumGray: #e0e0e0;
+    --demo-lightGray: #f4f4f5;
+    --demo-white: #fff;
+    --demo-black: #000;
+
+    /*
+   * Configuration values for `outline-link`.
+   */
+    --outline-link-color-default: var(--demo-lightBlue);
+    --outline-link-color-hover: var(--demo-lightGray);
+    --outline-link-color-focus: var(--demo-lightGray);
+  }
 }

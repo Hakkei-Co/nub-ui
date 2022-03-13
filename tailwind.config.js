@@ -13,6 +13,7 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
+  darkMode: 'media',
   mode: 'jit',
   content: [
     './src/**/*.{ts,tsx,mdx,html,txt,css}',
@@ -39,6 +40,7 @@ module.exports = {
       xl: '1280px',
       xxl: '1440px',
       xxxl: '2180px',
+      dark: { raw: '(prefers-color-scheme: dark)' },
     },
     colors: {
       // Custom Brand colors can be added/edited here.
