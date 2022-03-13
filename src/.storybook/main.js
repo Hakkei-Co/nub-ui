@@ -1,6 +1,5 @@
 const path = require('path');
 const outlineConfig = require('../../outline.config');
-const addons = require('@storybook/addons');
 
 const excludedStories = outlineConfig.excludedStories;
 function getExcluded() {
@@ -40,6 +39,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     'storybook-tailwind-dark-mode',
+    'storybook-dark-mode',
   ],
   webpackFinal: async config => {
     /**
@@ -72,15 +72,3 @@ module.exports = {
     return config;
   },
 };
-
-// get an instance to the communication channel for the manager and preview
-const channel = addons.getChannel();
-
-// switch body class for story along with interface theme
-channel.on('DARK_MODE', isDark => {
-  if (isDark) {
-    document.body.classList.add('dark');
-  } else {
-    document.body.classList.remove('dark');
-  }
-});

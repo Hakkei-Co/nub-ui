@@ -225,7 +225,7 @@
   /*
    * Configuration values for `outline-link`.
    */
-  --outline-link-color-default: var(--demo-darkBlue);
+  --outline-link-color-default: var(--ui-infoText);
   --outline-link-color-hover: var(--demo-darkGray);
   --outline-link-color-focus: var(--demo-darkGray);
 

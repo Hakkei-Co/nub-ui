@@ -1,12 +1,12 @@
-/* The default is information. */
+/* The default is notice. */
 #body {
-  @apply flex h-16 bg-gray-300 px-8 w-full bg-ui-info text-ui-infoText;
+  @apply relative flex w-full px-8 py-4 text-ui-infoText;
+  background-color: var(--brand-primary);
   border-radius: 3px;
-
 }
 
 #body .float {
-  @apply flex flex flex-col justify-start h-16 bg-gray-300 px-8 w-full bg-ui-info text-ui-infoText max-w-md shadow-lg;
+  @apply flex h-14 w-full max-w-md flex-col justify-start bg-ui-info px-8 text-ui-infoText shadow-lg;
 }
 
 #header {
@@ -16,27 +16,34 @@
 }
 
 #message {
-  @apply px-4 flex flex-col justify-start text-sm;
+  @apply flex flex-col justify-start px-4 text-sm;
 
   margin-top: auto;
   margin-bottom: auto;
 }
 
+#alert-link {
+  @apply text-sm;
+  color: var(--outline-link-color-default);
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
 :host([spanType='float']) #message {
-  @apply text-sm pb-2;
+  @apply pb-2 text-sm;
 }
 
 :host([spanType='float']) #body {
-  @apply px-4 max-w-md shadow-xl flex flex-col justify-start;
+  @apply flex max-w-md flex-col justify-start px-4 shadow-xl;
 }
 
 :host([spanType='full']) #body {
-  @apply px-4 w-full items-center;
+  @apply w-full items-center px-4;
 }
 
 :host([statusType='warning']) #body {
-  @apply text-ui-warningText;
-  background-color: var(--ui-warningBackground);
+  @apply bg-ui-warning text-ui-warningText;
   border-color: var(--ui-warningText);
 }
 

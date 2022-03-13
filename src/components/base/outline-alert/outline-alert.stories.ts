@@ -3,7 +3,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypeSlotContent } from '../../base/outline-element/utils/utils';
 import { alertSizes, alertStatusTypes, alertSpan } from './outline-alert';
 import './outline-alert';
-
+// import { detectColorScheme } from "../../../.storybook/detectColorScheme";
 export default {
   title: 'Content/Alert',
   component: 'outline-alert',
@@ -23,9 +23,16 @@ export default {
         category: 'Slots',
       },
     },
+    linkSlot: {
+      name: 'slot="nub-alert--link"',
+      description: 'The link slot. For example an external link.',
+      table: {
+        category: 'Slots',
+      },
+    },
     statusType: {
       description:
-        'The status type of the alert. Such as `information` or `warning`.',
+        'The status type of the alert. Such as `notice` or `warning`.',
       options: alertStatusTypes,
       control: { type: 'select' },
     },
@@ -81,6 +88,7 @@ If the alert has an interaction, you should indicate this with \`isInteractive\`
 >
   <span slot="outline-alert--header">{{ headerSlot }}</span>
   {{ defaultSlot }}
+  {{ linkSlot }}
 </outline-alert>
         `,
       },
@@ -91,10 +99,10 @@ If the alert has an interaction, you should indicate this with \`isInteractive\`
 const Template = ({
   headerSlot,
   defaultSlot,
+  linkSlot,
   statusType,
   size,
   spanType,
-  span,
   shouldShowIcon,
   isInteractive,
 }): TemplateResult => {
@@ -106,15 +114,15 @@ const Template = ({
       ?shouldShowIcon="${shouldShowIcon}"
       ?isInteractive="${isInteractive}"
     >
-      ${ifDefined(headerSlot)} ${ifDefined(defaultSlot)}
+      ${ifDefined(headerSlot)} ${ifDefined(defaultSlot)} ${ifDefined(linkSlot)}
     </outline-alert>
   `;
 };
 
-export const Information = Template.bind({});
-Information.args = {
-  defaultSlot: html`Here is an informational message.`,
-  statusType: 'information',
+export const Notice = Template.bind({});
+Notice.args = {
+  defaultSlot: html`Here is an notice message.`,
+  statusType: 'notice',
 };
 
 export const Warning = Template.bind({});
@@ -135,10 +143,10 @@ Success.args = {
   statusType: 'success',
 };
 
-export const InformationFloat = Template.bind({});
-InformationFloat.args = {
-  defaultSlot: html`Here is a float informational message.`,
-  statusType: 'information',
+export const NoticeFloat = Template.bind({});
+NoticeFloat.args = {
+  defaultSlot: html`Here is a float noticeal message.`,
+  statusType: 'notice',
   spanType: 'float',
 };
 
@@ -169,13 +177,12 @@ export const NoIcon = Template.bind({});
 NoIcon.args = {
   defaultSlot: html`Here is an alert with no icon.`,
   shouldShowIcon: false,
+  headingSlotContent: '<h5 slot="nub-alert--link">Panel the First</h5>',
 };
 
 export const InteractiveAlert = Template.bind({});
 InteractiveAlert.args = {
-  defaultSlot: html`
-    Here is an alert with an interaction.
-    <outline-link link-href="#">Click here</outline-link>
-  `,
+  defaultSlot: html`Here is an alert with an interaction.`,
+  linkSlot: html`<outline-link link-href="#" slot="nub-alert--link">Click here</outline-link>`,
   isInteractive: true,
 };

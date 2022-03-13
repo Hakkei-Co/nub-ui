@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypeRel, argTypeTarget, argTypeHref } from './config';
 import type { LinkTargetType, LinkRelType } from './config';
-import sampleImage from '../../../.storybook/static/media/color/Creative_Process_color.jpg';
+import sampleImage from '../../../.storybook/static/media/color/keyboard.png';
 // Import the component itself.
 import './outline-link';
 

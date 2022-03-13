@@ -1,6 +1,11 @@
-import customTheme from './CustomTheme';
+import theme from './CustomTheme';
 import { addParameters } from '@storybook/web-components';
 import './storybook-styles.css';
+import { addons } from '@storybook/addons';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs';
+
+// import { detectColorScheme } from './detectColorScheme';
+// import { FORCE_RE_RENDER} from "@storybook/core-events";
 
 addParameters({
   actions: {
@@ -30,7 +35,7 @@ addParameters({
     list: [
       {
         name: 'Light',
-        class: [],
+        class: 'light',
         color: '#FFFFFE',
         default: true,
       },
@@ -43,7 +48,14 @@ addParameters({
     ],
   },
   docs: {
-    theme: customTheme,
+    container: DocsContainer,
+    page: DocsPage,
+  },
+  darkMode: {
+    // Override the default dark theme
+    dark: { ...theme.dark },
+    // Override the default light theme
+    light: { ...theme.light },
   },
 });
 
@@ -51,18 +63,31 @@ const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 colorScheme.addEventListener('change', function (e) {
   console.log('Updated color-scheme');
 });
+
 export const globalTypes = {
-  // theme: {
-  //   name: 'Theme',
-  //   description: 'Global theme for components',
-  //   defaultValue: 'light',
-  //   toolbar: {
-  //     icon: 'circlehollow',
-  //     // Array of plain string values or MenuItem shape (see below)
-  //     items: ['light', 'dark'],
-  //     // Property that specifies if the name of the item will be displayed
-  //     showName: true,
-  //   },
-  // },
-  darkMode: true,
+  darkMode: {
+    dark: { ...theme.dark },
+    light: { ...theme.light },
+    darkClass: {
+      get theme() {
+        let isDarkMode = parent.document.body.classList.contains('dark');
+        return isDarkMode ? theme.dark : theme.light;
+      },
+    },
+  },
 };
+// // // get an instance to the communication channel for the manager and preview
+const channel = addons.getChannel();
+
+// // switch body class for story along with interface theme
+channel.on('DARK_MODE', isDark => {
+  if (isDark) {
+    console.log(document.querySelector('html:not(.style-scope)'));
+    // addons.getChannel().emit(FORCE_RE_RENDER);
+  } else {
+    // document.body.classList.remove('dark');
+    console.log(document.querySelector('html:not(.style-scope)'));
+  }
+  // detectColorScheme();
+  // addons.getChannel().emit(FORCE_RE_RENDER);
+});

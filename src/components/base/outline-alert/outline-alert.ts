@@ -9,7 +9,7 @@ export const alertSpan = ['float', 'full'] as const;
 export type AlertSpan = typeof alertSpan[number];
 
 export const alertStatusTypes = [
-  'information',
+  'notice',
   'warning',
   'error',
   'success',
@@ -41,7 +41,7 @@ export class OutlineAlert
   static styles: CSSResultGroup = [componentStyles];
 
   @property({ type: String })
-  statusType: AlertStatusType = 'information';
+  statusType: AlertStatusType = 'notice';
 
   @property({ type: String })
   spanType: AlertSpan = 'full';
@@ -84,6 +84,9 @@ export class OutlineAlert
           : null}
         <div id="message">
           <slot></slot>
+        </div>
+        <div id="alert-link">
+          <slot name="nub-alert--link"></slot>
         </div>
       </div>
     `;
