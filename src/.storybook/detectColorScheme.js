@@ -1,7 +1,8 @@
 //determines if the user has a set theme
+
+// DO NOT INVOKE FROM IMPORT - @laujonat
 export function detectColorScheme() {
   var theme = 'light'; //default to light
-
   //local storage is used to override OS theme settings
   if (localStorage.getItem('theme')) {
     if (localStorage.getItem('theme') == 'dark') {
@@ -14,11 +15,10 @@ export function detectColorScheme() {
     //OS theme setting detected as dark
     var theme = 'dark';
   }
-
   //dark theme preferred, set document with a `data-theme` attribute
   if (theme == 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
 }
-
+// DO NOT INVOKE FROM IMPORT - @laujonat
 detectColorScheme();

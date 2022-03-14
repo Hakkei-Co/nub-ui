@@ -1,12 +1,14 @@
+@charset "utf-8";
+
 :host {
   /* flex and border-radius constrain the actual boundaries of the element,
    preventing literal edge cases where a user can click on the edge or corner of the button and defeat states like disabled */
-  @apply inline-flex rounded-lg align-middle;
+  @apply inline-flex rounded-md align-middle;
 }
 
 .btn {
   @apply flex flex-nowrap items-center;
-  @apply cursor-pointer rounded-lg;
+  @apply cursor-pointer rounded-md;
   @apply transition-colors duration-300;
   @apply font-semibold no-underline outline-none;
   @apply leading-normal !important;
@@ -36,8 +38,9 @@
 }
 
 .btn.secondary {
-  @apply bg-demo-white text-demo-darkBlue;
+  @apply bg-demo-white;
   border: 1px solid var(--demo-darkBlue);
+  color: var(--nub-link-border-color-info);
 
   &:hover,
   &:focus {

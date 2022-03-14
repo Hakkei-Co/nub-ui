@@ -38,8 +38,8 @@ module.exports = {
     },
     '@storybook/addon-links',
     '@storybook/addon-a11y',
-    'storybook-tailwind-dark-mode',
     'storybook-dark-mode',
+    'storybook-tailwind-dark-mode',
   ],
   webpackFinal: async config => {
     /**

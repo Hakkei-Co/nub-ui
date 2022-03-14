@@ -40,7 +40,7 @@ module.exports = {
       xl: '1280px',
       xxl: '1440px',
       xxxl: '2180px',
-      dark: { raw: '(prefers-color-scheme: dark)' },
+      dark: { raw: '(prefers-color-scheme: light)' },
     },
     colors: {
       // Custom Brand colors can be added/edited here.
@@ -227,8 +227,9 @@ module.exports = {
         '2-1': '8fr 4fr',
       },
       fontFamily: {
-        display: ['Manrope', 'sans-serif'],
-        body: ['Manrope', ...defaultTheme.fontFamily.serif],
+        display: ['Manrope', ...defaultTheme.fontFamily.serif],
+        body: ['Open-Sans', ...defaultTheme.fontFamily.serif],
+        header: ['Overpass', ...defaultTheme.fontFamily.sans],
         urbanist: ['Urbanist', ...defaultTheme.fontFamily.sans],
       },
       height: {

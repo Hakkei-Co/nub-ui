@@ -1,6 +1,24 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,600;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
 
-:root {
+/*
+  Important: Theming is enabled and will require users to manually add a `data-theme` attribute on their component's root element html.
+
+  For example:
+
+  if (document.documentElement.getAttribute('class') == 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  wip:
+    - Organize stylesheets for light and dark mode
+    - Use @media (prefers-color-scheme: dark)
+*/
+
+html[data-theme="light"] {
   /* Brand specific primary colors. */
   --brand-primary: #4d6ac7;
   --brand-secondary: #474b53;
@@ -22,21 +40,25 @@
   --neutral-black: #1a1a1a;
 
   /* Colors for UI notification messages. */
-  --status-success: #28ba62;
+  --status-success: #0dbe54;
   --status-warning: #ffc409;
   --status-error: #eb445a;
-  --status-info: var(--brand-nonary);
+  --status-info: #ececece7;
+  --status-success-alt: #153620;
+  --status-warning-alt: #726016;
+  --status-error-alt: #440b01d5;
+  --status-info-alt: #343e44;
 
   --ui-infoBackground: var(--status-info);
-  --ui-infoText: var(--neutral-white);
-  --ui-infoBorder: var(--status-info);
+  --ui-infoText: var(--status-info-alt);
+  --ui-infoBorder: var(--status-info-alt);
 
   --ui-successBackground: var(--status-success);
-  --ui-successText: var(--neutral-white);
+  --ui-successText: var(--status-success-alt);
   --ui-successBorder: var(--status-success);
 
   --ui-warningBackground: var(--status-warning);
-  --ui-warningText: var(--neutral-white);
+  --ui-warningText: var(--status-warning-alt);
   --ui-warningBorder: var(--neutral-white);
 
   --ui-errorBackground: var(--status-error);
@@ -226,7 +248,7 @@
    * Configuration values for `outline-link`.
    */
   --outline-link-color-default: var(--ui-infoText);
-  --outline-link-color-hover: var(--demo-darkGray);
+  --outline-link-color-hover: var(--status-info);
   --outline-link-color-focus: var(--demo-darkGray);
 
   /*
@@ -259,68 +281,168 @@
   --outline-admin-links-y-spacing: var(--spacing-4);
   --outline-admin-links-link-y-spacing: var(--spacing-4);
   --outline-admin-links-link-x-spacing: var(--spacing-6);
+
+
+
+  --nub-link-border-color-info: var(--status-info-alt);
+  --nub-link-border-color-success: var(--status-success-alt);
+  --nub-link-border-color-warning: var(--status-warning-alt);
+  --nub-link-border-color-danger: var(--status-error-alt);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Brand specific primary colors. */
-    --brand-primary: #4d6ac7;
-    --brand-secondary: #FFFFFE;
-    --brand-tertiary: #69707b;
-    --brand-quaternary: #8d97a5;
-    --brand-nonary: #20315C;
-    --brand-quinary: #b3c1d1;
-    --brand-septenary: #aeccf3;
-    --brand-octonary: #87ace6;
-    --brand-denary: #3d47b2;
-    --brand-senary: #474b53;
+/* @media (prefers-color-scheme: dark) { */
 
-    /* Brand specific neutral colors & Generic tones/ */
-    --neutral-transparent: transparent;
-    --neutral-white: #FFFFFE;
-    --neutral-grayLight: #c2c2c2;
-    --neutral-grayMedium: #949494;
-    --neutral-grayDark: #3f3f3f;
-    --neutral-black: #1a1a1a;
+html[data-theme="dark"] {
+  /* Brand specific primary colors. */
+  --brand-primary: #4d6ac7;
+  --brand-secondary: #FFFFFE;
+  --brand-tertiary: #69707b;
+  --brand-quaternary: #8d97a5;
+  --brand-nonary: #20315C;
+  --brand-quinary: #b3c1d1;
+  --brand-septenary: #aeccf3;
+  --brand-octonary: #87ace6;
+  --brand-denary: #3d47b2;
+  --brand-senary: #474b53;
+
+  /* Brand specific neutral colors & Generic tones/ */
+  --neutral-transparent: transparent;
+  --neutral-white: #FFFFFE;
+  --neutral-grayLight: #c2c2c2;
+  --neutral-grayMedium: #949494;
+  --neutral-grayDark: #3f3f3f;
+  --neutral-black: #1a1a1a;
 
 
-    /* Colors for UI notification messages. */
-    --status-success: #28ba62;
-    --status-warning: #ffc409;
-    --status-error: #eb445a;
-    --status-info: var(--brand-primary);
+  /* Colors for UI notification messages. */
+  --status-success: #00d991dc;
+  --status-warning: #FACF23;
+  --status-error: #F72300;
+  --status-info: #397eda;
+  --status-success-alt: #2b7042;
+  --status-warning-alt: #dab628ce;
+  --status-error-alt: #ac1a00d5;
+  --status-info-alt: #2f3a44e0;
 
-    --ui-infoBackground: var(--status-info);
-    --ui-infoText: var(--neutral-white);
-    --ui-infoBorder: var(--status-info);
+  --ui-infoBackground: var(--status-info);
+  --ui-infoText: var(--neutral-white);
+  --ui-infoBorder: var(--status-info);
 
-    --ui-successBackground: var(--status-success);
-    --ui-successText: var(--neutral-white);
-    --ui-successBorder: var(--status-success);
+  --ui-successBackground: var(--status-success);
+  --ui-successText: var(--status-success-alt);
+  --ui-successBorder: var(--status-success);
 
-    --ui-warningBackground: var(--status-warning);
-    --ui-warningText: var(--neutral-white);
-    --ui-warningBorder: var(--neutral-white);
+  --ui-warningBackground: var(--status-warning);
+  --ui-warningText: var(--neutral-black);
+  --ui-warningBorder: var(--neutral-white);
 
-    --ui-errorBackground: var(--status-error);
-    --ui-errorText: var(--neutral-white);
-    --ui-errorBorder: var(--status-error);
+  --ui-errorBackground: var(--status-error);
+  --ui-errorText: var(--neutral-white);
+  --ui-errorBorder: var(--status-error);
 
-    /* Demo colors used for default component demonstrations */
-    --demo-darkBlue: #3171e0;
-    --demo-mediumBlue: #3880ff;
-    --demo-lightBlue: #eff6ff;
-    --demo-darkGray: #3f3f46;
-    --demo-mediumGray: #e0e0e0;
-    --demo-lightGray: #f4f4f5;
-    --demo-white: #fff;
-    --demo-black: #000;
+  /* Demo colors used for default component demonstrations */
+  --demo-darkBlue: #3171e0;
+  --demo-mediumBlue: #3880ff;
+  --demo-lightBlue: #eff6ff;
+  --demo-darkGray: #3f3f46;
+  --demo-mediumGray: #2b2b2b;
+  --demo-lightGray: #f4f4f5;
+  --demo-white: #fff;
+  --demo-black: #000;
 
-    /*
+  /* Utitlizing CSS properties here (screens) caused
+     the responsive tailwind classes to simply fail.
+     @todo: Make screens work with css variables. */
+  /* --screen-xs: 480px;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-xxl: 1440px;
+  --screen-xxxl: 2180px; */
+
+  --spacing-0: 0px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+  --spacing-40: 10rem;
+  --spacing-44: 11rem;
+  --spacing-48: 12rem;
+  --spacing-52: 13rem;
+  --spacing-56: 14rem;
+  --spacing-60: 15rem;
+  --spacing-64: 16rem;
+  --spacing-72: 18rem;
+  --spacing-80: 20rem;
+  --spacing-96: 24rem;
+  --spacing-px: 1px;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3.5rem;
+  --fs-6xl: 4.5rem;
+  --fs-7xl: 5.5rem;
+  --fs-8xl: 6.5rem;
+  --fs-9xl: 7.5rem;
+
+  --lh-xs: 1rem;
+  --lh-sm: 1.25rem;
+  --lh-base: 1.5rem;
+  --lh-lg: 1.75rem;
+  --lh-xl: 1.75rem;
+  --lh-2xl: 2rem;
+  --lh-3xl: 2.25rem;
+  --lh-4xl: 2.5rem;
+  --lh-5xl: 3.75rem;
+  --lh-6xl: 4.75rem;
+  --lh-7xl: 5.75rem;
+  --lh-8xl: 6.75rem;
+  --lh-9xl: 7.75rem;
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+
+  --nub-link-border-color-info: var(--status-info-alt);
+  --nub-link-border-color-success: var(--status-success-alt);
+  --nub-link-border-color-warning: var(--status-warning-alt);
+  --nub-link-border-color-danger: var(--status-error-alt);
+
+  /*
    * Configuration values for `outline-link`.
    */
-    --outline-link-color-default: var(--demo-lightBlue);
-    --outline-link-color-hover: var(--demo-lightGray);
-    --outline-link-color-focus: var(--demo-lightGray);
-  }
+  --outline-link-color-default: var(--demo-lightGray);
+  --outline-link-color-hover: var(--demo-darkGray);
+  --outline-link-color-focus: var(--demo-mediumGray);
 }
+
+/* } */

@@ -1,8 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, query } from 'lit/decorators.js';
 import componentStyles from './outline-alert.css.lit';
 import { OutlineElement } from '../outline-element/outline-element';
-
 export const alertSizes = ['small', 'large'] as const;
 export type AlertSize = typeof alertSizes[number];
 export const alertSpan = ['float', 'full'] as const;
@@ -19,11 +18,13 @@ export type AlertStatusType = typeof alertStatusTypes[number];
 
 // This can be useful for testing.
 export interface OutlineAlertInterface extends HTMLElement {
+  isOpen: boolean;
   statusType: AlertStatusType;
   spanType: AlertSpan;
   size: AlertSize;
   isInteractive: boolean;
   shouldShowIcon: boolean;
+  close: () => void;
 }
 
 /**
@@ -46,6 +47,9 @@ export class OutlineAlert
   @property({ type: String })
   spanType: AlertSpan = 'full';
 
+  @property({ attribute: false })
+  isOpen = false;
+
   /**
    * This is important context for screen readers.
    */
@@ -59,7 +63,7 @@ export class OutlineAlert
   size: AlertSize = 'large';
 
   render(): TemplateResult {
-    const span = this.spanType === 'full' ? 'full' : 'float';
+    const span = this.spanType == 'full' ? 'full' : 'float';
     // The `body` wrapper is used to avoid styles (like border) that are preventing us from styling `:host`.
     return html`
       <div
@@ -68,28 +72,43 @@ export class OutlineAlert
         role="${this.isInteractive ? 'alertdialog' : 'alert'}"
         aria-labelledby="${this.isInteractive ? 'message' : null}"
       >
-        ${this.shouldShowIcon === true
-          ? html`
-              <div id="icon">
-                <!--@todo include icon when we have that ready.-->
-              </div>
-            `
-          : null}
-        ${this.size === 'large'
-          ? html`
-              <div id="header">
-                <slot name="outline-alert--header">${this.statusType}</slot>
-              </div>
-            `
-          : null}
-        <div id="message">
-          <slot></slot>
+        <div class="nub-content--container">
+          ${this.shouldShowIcon === true
+            ? html`
+                <div id="icon">
+                  <!--@todo include icon when we have that ready.-->
+                </div>
+              `
+            : null}
+          ${this.size === 'large'
+            ? html`
+                <div id="header">
+                  <slot name="outline-alert--header">${this.statusType}</slot>
+                </div>
+              `
+            : null}
+          <div id="message">
+            <slot></slot>
+          </div>
         </div>
-        <div id="alert-link">
-          <slot name="nub-alert--link"></slot>
+        <div id="alert-link" @click="${this.close}">
+          <slot part="nub-link" name="nub-alert--link"></slot>
         </div>
       </div>
     `;
+  }
+
+  @query('#trigger')
+  private triggerElement!: HTMLDivElement;
+
+  async close(): Promise<void> {
+    if (this.isOpen) {
+      this.isOpen = false;
+      await this.updateComplete;
+
+      this.dispatchEvent(new CustomEvent('closed'));
+      this.triggerElement.focus();
+    }
   }
 }
 

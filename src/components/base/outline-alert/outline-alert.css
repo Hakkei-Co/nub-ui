@@ -1,60 +1,168 @@
 /* The default is notice. */
+/* ----------------------*/
 #body {
-  @apply relative flex w-full px-8 py-4 text-ui-infoText;
-  background-color: var(--brand-primary);
-  border-radius: 3px;
+  @apply relative rounded-md px-8 py-4 align-middle;
+  @apply font-header;
+  @apply grid grid-flow-col gap-2 bg-ui-info transition-colors duration-75;
+  @apply border border-solid drop-shadow-lg;
+}
+
+#body.nub-content--container {
+  @apply col-span-3 w-full justify-between;
 }
 
 #body .float {
-  @apply flex h-14 w-full max-w-md flex-col justify-start bg-ui-info px-8 text-ui-infoText shadow-lg;
+  @apply flex w-full max-w-md px-8 drop-shadow-lg;
+}
+
+#body .full {
+  @apply drop-shadow-lg;
 }
 
 #header {
-  @apply px-4 text-lg font-bold capitalize;
+  @apply col-span-5 row-span-1 row-start-1 px-4 text-lg font-bold capitalize;
+  font-weight: 600 !important;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 #message {
-  @apply flex flex-col justify-start px-4 text-sm;
-
+  @apply col-span-5 row-span-1 row-start-2 justify-start px-4 text-sm;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-#alert-link {
-  @apply text-sm;
-  color: var(--outline-link-color-default);
+/* ----------------------*/
+/* Supporting text. */
+/* ----------------------*/
+:host([spanType='float']) #message {
+  @apply pb-2 text-sm;
+}
+
+/* ----------------------*/
+/* Component body. */
+/* ----------------------*/
+
+:host([spanType='float']) #body {
+  @apply flex max-w-md flex-col justify-start px-4 drop-shadow-xl;
+}
+
+:host([spanType='full']) #body {
+  @apply w-full items-center border border-solid px-4;
+  border-color: var(--nub-link-border-color-info);
+}
+
+/* ----------------------*/
+/* Slotted and parts. */
+/* ----------------------*/
+
+:host,
+a,
+::slotted() {
+  @apply relative align-middle font-body no-underline drop-shadow-xl;
+}
+
+a:hover,
+::slotted(a:hover) {
+  @apply no-underline;
+}
+
+:host(a:focus),
+a:focus,
+::slotted(a:focus) {
+  @apply no-underline outline-none ring ring-purple-300;
+}
+
+div#alert-link {
+  @apply col-span-1 row-span-2 p-2 text-gray-900 no-underline;
+  @apply align-middle text-sm font-semibold no-underline;
+  @apply rounded-md;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
 }
 
-:host([spanType='float']) #message {
-  @apply pb-2 text-sm;
+/* ----------------------*/
+/* Notice alert styles */
+/* ----------------------*/
+:host([statusType='notice']) #body {
+  @apply border border-solid text-ui-infoText drop-shadow-xl;
+  border-color: var(--nub-link-border-color-info);
 }
 
-:host([spanType='float']) #body {
-  @apply flex max-w-md flex-col justify-start px-4 shadow-xl;
+:host([statusType='notice']) #body:hover {
+  @apply bg-gradient-to-br;
+  @apply opacity-90;
+  @apply drop-shadow-md;
+  border-color: var(--neutral-grayMedium);
 }
 
-:host([spanType='full']) #body {
-  @apply w-full items-center px-4;
+:host([statusType='notice']) #body:focus {
+  @apply ring-4 ring-gray-300;
+  @apply opacity-80;
+  @apply shadow-md drop-shadow-sm;
+  border-color: var(--nub-link-border-color-info);
 }
 
+/* ----------------------*/
+/* Warning alert styles */
+/* ----------------------*/
 :host([statusType='warning']) #body {
-  @apply bg-ui-warning text-ui-warningText;
-  border-color: var(--ui-warningText);
+  @apply border border-solid bg-ui-warning text-ui-warningText;
+  border-color: var(--nub-link-border-color-warning);
 }
 
+:host([statusType='warning']) #body:hover {
+  @apply opacity-95;
+  @apply shadow-md drop-shadow-none;
+}
+
+:host([statusType='warning']) #body:focus {
+  @apply ring-4 ring-yellow-300;
+  @apply opacity-90;
+  @apply drop-shadow-sm;
+  border-color: var(--ui-warningBackground);
+}
+
+/* ----------------------*/
+/* Danger alert styles */
+/* ----------------------*/
 :host([statusType='error']) #body {
-  @apply bg-ui-error text-ui-errorText;
-
-  border-color: var(--ui-errorText);
+  @apply border border-solid bg-ui-error text-ui-errorText;
+  @apply bg-gradient-to-br from-red-500 via-red-400 to-red-500;
+  @apply opacity-100 drop-shadow-xl;
+  border-color: var(--nub-link-border-color-danger);
 }
+
+:host([statusType='error']) #body:hover {
+  @apply opacity-95 drop-shadow-md;
+  border-color: var(--ui-errorBackground);
+}
+
+:host([statusType='error']) #body:focus {
+  @apply ring-4 ring-red-300;
+  @apply opacity-90 drop-shadow-sm;
+  border-color: var(--ui-errorBackground);
+}
+
+/* ----------------------*/
+/* Success alert styles */
+/* ----------------------*/
 
 :host([statusType='success']) #body {
-  @apply bg-ui-success text-ui-successText;
+  @apply border border-solid border-green-800 bg-ui-success bg-gradient-to-r from-green-400 via-green-200 to-green-300 text-ui-successText;
+  @apply drop-shadow-xl;
+  border-color: var(--nub-link-border-color-success);
+}
 
-  border-color: var(--ui-successText);
+:host([statusType='success']) #body:hover {
+  @apply opacity-95;
+  @apply drop-shadow-md;
+  border-color: var(--nub-link-border-color-success);
+}
+
+:host([statusType='success']) #body:focus {
+  @apply ring-4 ring-green-300;
+  @apply opacity-95;
+  @apply drop-shadow-sm;
 }

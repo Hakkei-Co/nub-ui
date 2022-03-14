@@ -161,23 +161,26 @@ export const Small = Template.bind({});
 Small.args = {
   defaultSlot: html`Here is a small alert message.`,
   size: 'small',
+  statusType: 'success',
 };
 
-export const Header = Template.bind({});
-Header.args = {
+export const HeaderInfo = Template.bind({});
+HeaderInfo.args = {
   headerSlot: html`
     <span slot="outline-alert--header">
       Here is an alert with a custom header.
     </span>
   `,
-  defaultSlot: html` Here is a message. `,
+  defaultSlot: html`<span>Here is a message.</span>`,
+  statusType: 'notice',
 };
 
 export const NoIcon = Template.bind({});
 NoIcon.args = {
   defaultSlot: html`Here is an alert with no icon.`,
   shouldShowIcon: false,
-  headingSlotContent: '<h5 slot="nub-alert--link">Panel the First</h5>',
+  headingSlot: `<h5 slot="nub-alert--link">Panel the First</h5>`,
+  statusType: 'notice',
 };
 
 export const InteractiveAlert = Template.bind({});
@@ -185,4 +188,5 @@ InteractiveAlert.args = {
   defaultSlot: html`Here is an alert with an interaction.`,
   linkSlot: html`<outline-link link-href="#" slot="nub-alert--link">Click here</outline-link>`,
   isInteractive: true,
+  statusType: 'notice',
 };

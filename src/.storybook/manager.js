@@ -3,4 +3,8 @@ import customTheme from './CustomTheme';
 
 addons.setConfig({
   theme: customTheme.light,
+  toolbar: {
+    theme: { hidden: true },
+  },
+  enableShortcuts: true,
 });

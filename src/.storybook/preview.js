@@ -2,7 +2,7 @@ import theme from './CustomTheme';
 import { addParameters } from '@storybook/web-components';
 import './storybook-styles.css';
 import { addons } from '@storybook/addons';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs';
+import { DocsContainer } from '@storybook/addon-docs';
 
 // import { detectColorScheme } from './detectColorScheme';
 // import { FORCE_RE_RENDER} from "@storybook/core-events";
@@ -30,64 +30,83 @@ addParameters({
       ],
     },
   },
-  themes: {
-    default: 'light',
-    list: [
-      {
-        name: 'Light',
-        class: 'light',
-        color: '#FFFFFE',
-        default: true,
-      },
-      {
-        name: 'Dark',
-        // The class dark will be added to the body tag
-        class: 'dark',
-        color: '#27292E',
-      },
-    ],
-  },
   docs: {
-    container: DocsContainer,
-    page: DocsPage,
-  },
-  darkMode: {
-    // Override the default dark theme
-    dark: { ...theme.dark },
-    // Override the default light theme
-    light: { ...theme.light },
+    stylePreview: false,
+    theme: docTheme(),
   },
 });
 
+function docTheme() {
+  let isDarkMode = document.documentElement.getAttribute('class') == 'dark';
+  return isDarkMode ? theme.dark : theme.light;
+}
+
+// export const globalTypes = {
+//   theme: {
+//     name: document.documentElement.getAttribute('class'),
+//     description: 'Global theme for components',
+//     defaultValue: 'light',
+//     toolbar: {
+//       icon: 'circlehollow',
+//       // Array of plain string values or MenuItem shape (see below)
+//       items: ['light', 'dark'],
+//       // Property that specifies if the name of the item will be displayed
+//       showName: false,
+//       hidden: true,
+//     },
+//   },
+//   darkMode: {
+//     options: {
+//       hidden: true,
+//     }
+//   }
+// };
+export const parameters = {
+  // automatically create action args for all props that start with "on"
+  actions: { argTypesRegex: '^on.*' },
+  dependencies: {
+    // display only dependencies/dependents that have a story in storybook
+    // by default this is false
+    withStoriesOnly: false,
+    // completely hide a dependency/dependents block if it has no elements
+    // by default this is false
+    hideEmpty: true,
+  },
+};
 const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 colorScheme.addEventListener('change', function (e) {
   console.log('Updated color-scheme');
 });
 
-export const globalTypes = {
-  darkMode: {
-    dark: { ...theme.dark },
-    light: { ...theme.light },
-    darkClass: {
-      get theme() {
-        let isDarkMode = parent.document.body.classList.contains('dark');
-        return isDarkMode ? theme.dark : theme.light;
-      },
-    },
-  },
-};
-// // // get an instance to the communication channel for the manager and preview
+// This will get invoked on import
+function callback(mutationsList, observer) {
+  let html = document.documentElement;
+  mutationsList.forEach(mutation => {
+    // watch changes to classList on root html tag
+    if (mutation.attributeName === 'class') {
+      if (document.documentElement.getAttribute('class') == 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      console.log('changed!', mutation);
+    }
+  });
+}
+
+const mutationObserver = new MutationObserver(callback);
+
+// This set our MutationObserver to look for any changes to the main’s attributes.
+mutationObserver.observe(document.documentElement, { attributes: true });
+
+// get an instance to the communication channel for the manager and preview
 const channel = addons.getChannel();
 
-// // switch body class for story along with interface theme
+// switch body class for story along with interface theme
 channel.on('DARK_MODE', isDark => {
   if (isDark) {
-    console.log(document.querySelector('html:not(.style-scope)'));
-    // addons.getChannel().emit(FORCE_RE_RENDER);
+    document.documentElement.setAttribute('data-theme', 'dark');
   } else {
-    // document.body.classList.remove('dark');
-    console.log(document.querySelector('html:not(.style-scope)'));
+    document.documentElement.setAttribute('data-theme', 'light');
   }
-  // detectColorScheme();
-  // addons.getChannel().emit(FORCE_RE_RENDER);
 });
