@@ -2,7 +2,6 @@ import theme from './CustomTheme';
 import { addParameters } from '@storybook/web-components';
 import './storybook-styles.css';
 import { addons } from '@storybook/addons';
-import { DocsContainer } from '@storybook/addon-docs';
 
 // import { detectColorScheme } from './detectColorScheme';
 // import { FORCE_RE_RENDER} from "@storybook/core-events";
@@ -36,30 +35,13 @@ addParameters({
 });
 
 function docTheme() {
-  let isDarkMode = document.documentElement.getAttribute('class') == 'dark';
+  let isDarkMode = document.body.getAttribute('class') == 'dark';
   return isDarkMode ? theme.dark : theme.light;
 }
 
-// export const globalTypes = {
-//   theme: {
-//     name: document.documentElement.getAttribute('class'),
-//     description: 'Global theme for components',
-//     defaultValue: 'light',
-//     toolbar: {
-//       icon: 'circlehollow',
-//       // Array of plain string values or MenuItem shape (see below)
-//       items: ['light', 'dark'],
-//       // Property that specifies if the name of the item will be displayed
-//       showName: false,
-//       hidden: true,
-//     },
-//   },
-//   darkMode: {
-//     options: {
-//       hidden: true,
-//     }
-//   }
-// };
+export const globalTypes = {
+  darkMode: document.body.getAttribute('class') == 'dark',
+};
 export const parameters = {
   // automatically create action args for all props that start with "on"
   actions: { argTypesRegex: '^on.*' },

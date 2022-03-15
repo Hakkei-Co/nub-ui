@@ -1,6 +1,5 @@
 const path = require('path');
 const outlineConfig = require('../../outline.config');
-
 const excludedStories = outlineConfig.excludedStories;
 function getExcluded() {
   return excludedStories.join('|');

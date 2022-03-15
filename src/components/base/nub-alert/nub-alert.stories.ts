@@ -69,7 +69,10 @@ You can use a smaller alert with \`size\` of \`small\`.
 
 You can remove the icon with \`shouldShowIcon\` set to \`false\`.
 
-You can customize the header by adding a \`outline-alert--header\` slot.
+You can customize the header by adding a \`nub-alert--header\` slot.
+
+You can customize the CTA by adding a \`nub-alert--link\` slot.
+
 
 ## Accessibility
 
@@ -121,7 +124,7 @@ const Template = ({
 
 export const Notice = Template.bind({});
 Notice.args = {
-  defaultSlot: html`Here is an notice message.`,
+  defaultSlot: html`Explore both dark and light mode options!`,
   statusType: 'notice',
 };
 

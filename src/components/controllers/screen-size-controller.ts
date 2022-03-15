@@ -7,7 +7,7 @@ import tailwindThemeConfig from '../../resolved-tailwind-config';
 export const screenSizeMap = new Map(
   (
     Object.entries(tailwindThemeConfig.screens).map(([screen, sizeString]) => {
-      return [screen, parseInt(sizeString.slice(0, -2))];
+      return [screen, parseInt(String(sizeString).slice(0, -2))];
     }) as [string, number][]
   ).sort(([, sizeA], [, sizeB]) => {
     return sizeA - sizeB;

@@ -8,7 +8,7 @@ import '../outline-grid/outline-grid';
 import '../outline-grid/outline-column/outline-column';
 import '../outline-swatch/outline-swatch';
 
-export const swatchSets = ['brand', 'neutral', 'ui', 'demo'] as const;
+export const swatchSets = ['nubs', 'neutral', 'ui', 'demo'] as const;
 export type SwatchSet = typeof swatchSets[number];
 
 export interface OutlineSwatchSetInterface extends HTMLElement {
@@ -28,7 +28,7 @@ export class OutlineSwatchSet
   static styles: CSSResultGroup = [componentStyles];
 
   @property({ type: String })
-  set: SwatchSet = 'brand';
+  set: SwatchSet = 'nubs';
 
   render(): TemplateResult {
     const colors = Object.entries(tailwindThemeConfig.colors[this.set]).map(

@@ -18,7 +18,7 @@
     - Use @media (prefers-color-scheme: dark)
 */
 
-html[data-theme="light"] {
+[data-theme="light"] {
   /* Brand specific primary colors. */
   --nubs-primary: #4d6ac7;
   --nubs-secondary: #474b53;

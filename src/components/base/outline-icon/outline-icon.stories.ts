@@ -308,7 +308,7 @@ const FaTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="fa" name="fas-pizza-slice" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fas-scroll" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Brands</outline-heading>
+<outline-heading level="h2" level-size="2xl" level-style="thin">Nubs</outline-heading>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="fa" name="fab-apple" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fab-chrome" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -614,7 +614,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="remix" name="design/brush-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="business/pie-chart-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="development/bug-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="remix" name="Base Components/image-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="remix" name="media/image-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="system/alert-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 <outline-heading level="h2" level-size="2xl" level-style="thin">Fill</outline-heading>
