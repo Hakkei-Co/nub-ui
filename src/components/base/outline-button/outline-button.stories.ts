@@ -10,7 +10,7 @@ const buttonOptions: ButtonVariant[] = ['none', 'primary', 'secondary'];
 const buttonSizes: ButtonSize[] = ['small', 'medium', 'large'];
 const link = "https://hakkei-co.github.io/nub-ui/";
 export default {
-  title: 'Navigation/Button',
+  title: 'Outline/Button',
   component: 'outline-button',
   argTypes: {
     ...argTypeSlotContent,

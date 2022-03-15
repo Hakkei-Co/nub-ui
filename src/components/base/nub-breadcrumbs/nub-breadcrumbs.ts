@@ -2,18 +2,18 @@
 import { OutlineElement } from '../outline-element/outline-element';
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import componentStyles from './outline-breadcrumbs.css.lit';
+import componentStyles from './nub-breadcrumbs.css.lit';
 import '../outline-container/outline-container';
 import { SlotController } from '../../controllers/slot-controller';
 /**
  * The Outline  Breadcrumbs component
- * @element Outline-Breadcrumbs
+ * @element nub-breadcrumbs
  * @slot - The default only slot for this element.
  * @todo CONTRIB
  */
 
-@customElement('outline-breadcrumbs')
-export class OutlineBreadcrumbs extends OutlineElement {
+@customElement('nub-breadcrumbs')
+export class NubBreadcrumbs extends OutlineElement {
   slots = new SlotController(
     this, // This, the host element.
     true // To shift or not to shift LightDom nodes to ShadowDOM.
@@ -38,7 +38,7 @@ export class OutlineBreadcrumbs extends OutlineElement {
 
   render(): TemplateResult {
     return html`
-      <section class="outline-breadcrumbs">
+      <section class="nub-breadcrumbs">
         <outline-container>
           <slot></slot>
         </outline-container>
@@ -49,6 +49,6 @@ export class OutlineBreadcrumbs extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-breadcrumbs': OutlineBreadcrumbs;
+    'nub-breadcrumbs': NubBreadcrumbs;
   }
 }

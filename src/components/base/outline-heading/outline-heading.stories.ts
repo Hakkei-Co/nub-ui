@@ -17,7 +17,7 @@ const levelOptions: AllowedHeadingLevels[] = [
 ];
 
 export default {
-  title: 'Content/Heading',
+  title: 'Outline/Heading',
   component: 'outline-heading',
   argTypes: {
     ...argTypeSlotContent,

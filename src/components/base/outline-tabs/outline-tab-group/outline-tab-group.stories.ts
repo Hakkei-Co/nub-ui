@@ -47,7 +47,7 @@ const tabData: TabData[] = [
   },
 ];
 export default {
-  title: 'Navigation/Tabs',
+  title: 'Outline/Tabs',
   component: 'outline-tab-group',
   parameters: {
     viewMode: 'docs',

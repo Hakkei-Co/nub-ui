@@ -9,7 +9,7 @@
 }
 
 .splide__arrows {
-  @apply absolute bottom-0 left-0 z-40 flex w-full justify-center bg-brand-primary;
+  @apply absolute bottom-0 left-0 z-40 flex w-full justify-center bg-nubs-primary;
   border-radius: 0;
 }
 

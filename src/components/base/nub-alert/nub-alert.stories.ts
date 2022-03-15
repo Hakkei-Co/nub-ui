@@ -1,15 +1,15 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { argTypeSlotContent } from '../../base/outline-element/utils/utils';
-import { alertSizes, alertStatusTypes, alertSpan } from './outline-alert';
-import './outline-alert';
+import { argTypeSlotContent } from '../outline-element/utils/utils';
+import { alertSizes, alertStatusTypes, alertSpan } from './nub-alert';
+import './nub-alert';
 // import { detectColorScheme } from "../../../.storybook/detectColorScheme";
 export default {
-  title: 'Content/Alert',
-  component: 'outline-alert',
+  title: 'Nubs/Alert',
+  component: 'nub-alert',
   argTypes: {
     headerSlot: {
-      name: 'slot="outline-alert--header"',
+      name: 'slot="nub-alert--header"',
       description: 'The header slot. For example a header title.',
       table: {
         category: 'Slots',
@@ -79,17 +79,17 @@ If the alert has an interaction, you should indicate this with \`isInteractive\`
       source: {
         // This code sample will be used for every example unless overridden.
         code: `
-<outline-alert
+<nub-alert
   statusType="{{ statusType }}"
   size="{{ size }}"
   spanType="{{ spanType }}"
   {{ shouldShowIcon }}
   {{ isInteractive }}
 >
-  <span slot="outline-alert--header">{{ headerSlot }}</span>
+  <span slot="nub-alert--header">{{ headerSlot }}</span>
   {{ defaultSlot }}
   {{ linkSlot }}
-</outline-alert>
+</nub-alert>
         `,
       },
     },
@@ -107,7 +107,7 @@ const Template = ({
   isInteractive,
 }): TemplateResult => {
   return html`
-    <outline-alert
+    <nub-alert
       statusType="${ifDefined(statusType)}"
       spanType="${ifDefined(spanType)}"
       size="${ifDefined(size)}"
@@ -115,7 +115,7 @@ const Template = ({
       ?isInteractive="${isInteractive}"
     >
       ${ifDefined(headerSlot)} ${ifDefined(defaultSlot)} ${ifDefined(linkSlot)}
-    </outline-alert>
+    </nub-alert>
   `;
 };
 

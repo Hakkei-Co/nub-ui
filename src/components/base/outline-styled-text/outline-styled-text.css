@@ -26,7 +26,7 @@ li {
 
 /* Set a global HR for color purposes. */
 hr {
-  border-color: var(--brand-primary);
+  border-color: var(--nubs-primary);
 }
 
 hr {

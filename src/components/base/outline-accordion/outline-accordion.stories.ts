@@ -4,7 +4,7 @@ import './outline-accordion';
 import '../outline-accordion-panel/outline-accordion-panel';
 
 export default {
-  title: 'Content/Accordion/Accordion',
+  title: 'Outline/Accordion/Accordion',
   component: 'outline-accordion',
   parameters: {
     docs: {

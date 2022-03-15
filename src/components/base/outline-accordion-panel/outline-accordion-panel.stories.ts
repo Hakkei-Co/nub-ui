@@ -3,7 +3,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import './outline-accordion-panel';
 
 export default {
-  title: 'Content/Accordion/Accordion Panel',
+  title: 'Outline/Accordion/Accordion Panel',
   component: 'outline-accordion-panel',
   parameters: {
     docs: {

@@ -20,9 +20,8 @@ addParameters({
         'Getting Started',
         'Documentation',
         'Design Tokens',
-        'Media',
-        'Navigation',
-        'Content',
+        'Nubs',
+        'Outline',
         'Templates',
         'Pages',
         'Code Examples',
@@ -85,9 +84,9 @@ function callback(mutationsList, observer) {
     // watch changes to classList on root html tag
     if (mutation.attributeName === 'class') {
       if (document.documentElement.getAttribute('class') == 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
         document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
       }
       console.log('changed!', mutation);
     }

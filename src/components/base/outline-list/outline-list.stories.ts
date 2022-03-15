@@ -10,7 +10,7 @@ import {
 import './outline-list';
 import '../outline-heading/outline-heading';
 export default {
-  title: 'Content/List',
+  title: 'Outline/List',
   component: 'outline-list',
   parameters: {
     docs: {
@@ -53,7 +53,7 @@ export default {
             <outline-button slot="footer" @click={this.orderBy}>Order by criteria</outline-button>
             <outline-button slot="footer" @click={this.orderByOther}>Order by other criteria</outline-button>
           </outline-list>
-      
+
     `,
       },
     },

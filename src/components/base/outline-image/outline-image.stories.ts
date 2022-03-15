@@ -6,7 +6,7 @@ import './outline-image';
 // import '../outline-heading/outline-heading'
 
 export default {
-  title: 'Media/Image',
+  title: 'Outline/Image',
   component: 'outline-image',
   parameters: {
     layout: 'fullscreen',

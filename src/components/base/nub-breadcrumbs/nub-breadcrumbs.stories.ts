@@ -1,9 +1,9 @@
 import { html, TemplateResult } from 'lit';
-import './outline-breadcrumbs';
+import './nub-breadcrumbs';
 
 const configuration = {
-  title: 'Navigation/Breadcrumb',
-  component: 'outline-breadcrumb',
+  title: 'Nubs/Breadcrumb',
+  component: 'nub-breadcrumb',
   parameters: {
     viewMode: 'docs',
   },
@@ -14,7 +14,7 @@ export default configuration;
 
 const Template = (): TemplateResult => {
   return html`
-<outline-breadcrumbs>
+<nub-breadcrumbs>
   <nav class="breadcrumb">
     <span>
       <a href="#">Home</a>
@@ -27,7 +27,7 @@ const Template = (): TemplateResult => {
     </span>
     <span class="last">The current page title</span>
   </nav>
-</outline-breadcrumbs>
+</nub-breadcrumbs>
 `;
 };
 

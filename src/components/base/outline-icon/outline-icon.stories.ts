@@ -4,7 +4,7 @@ import './outline-icon';
 import outline from '../../../resolved-outline-config';
 
 const configuration = {
-  title: 'Media/Outline Icon',
+  title: 'Design Tokens/Icons',
   component: 'outline-icon',
   parameters: {
     docs: {
@@ -614,7 +614,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="remix" name="design/brush-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="business/pie-chart-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="development/bug-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="remix" name="media/image-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="remix" name="Base Components/image-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="system/alert-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 <outline-heading level="h2" level-size="2xl" level-style="thin">Fill</outline-heading>
@@ -623,7 +623,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="remix" name="design/brush-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="business/pie-chart-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="development/bug-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
-  <outline-icon library="remix" name="media/image-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
+  <outline-icon library="remix" name="Base Components/image-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="system/alert-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
 `;

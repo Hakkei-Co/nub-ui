@@ -1,0 +1,48 @@
+.nub-breadcrumbs {
+  @apply space-x-1 font-display text-sm transition-colors duration-75;
+  color: var(--nub-breadcrumb-text-color-default);
+  background: var(--nub-breadcrumb-bg-color);
+  padding: var(--nub-breadcrumb-bg-padding);
+}
+
+a,
+::slotted(a) {
+  @apply font-display font-medium transition-colors duration-75;
+  @apply min-w-min whitespace-nowrap px-2;
+  text-decoration: var(--nub-breadcrumb-link-decoration-default);
+  color: var(--nub--breadcrumb-link-color-default);
+}
+
+a,
+::slotted(a)::after {
+  display: inline-block;
+  font-weight: 600;
+  height: 1px;
+  margin-bottom: -1px;
+}
+
+:host span.last {
+  @apply font-display text-sm font-medium text-nubs-septenary transition-colors duration-75;
+  text-decoration: var(--nub-breadcrumb-link-decoration-default);
+  /* color: var(--nub-breadcrumb-text-color-default--active); */
+}
+
+a:hover,
+::slotted(a:hover) {
+  @apply font-semibold no-underline opacity-90;
+  text-decoration: var(--nub-breadcrumb-link-decoration-hover);
+  color: var(--nub--breadcrumb-link-color-hover);
+}
+
+a:focus,
+::slotted(a:focus) {
+  @apply no-underline outline-1 ring-nubs-primary;
+  text-decoration: var(--nub-breadcrumb-link-decoration-focus);
+  outline: none;
+  color: var(--outline-breadcrumb-link-color-focus);
+}
+
+.separator {
+  margin-left: var(--nub-breadcrumb-separator-spacing);
+  margin-right: var(--nub-breadcrumb-separator-spacing);
+}

@@ -7,7 +7,7 @@ import sampleImage from '../../../.storybook/static/media/color/keyboard.png';
 import './outline-link';
 
 export default {
-  title: 'Navigation/Link',
+  title: 'Outline/Link',
   component: 'outline-link',
   argTypes: {
     linkHref: {

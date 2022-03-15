@@ -3,7 +3,7 @@ import { html, TemplateResult } from 'lit';
 import './outline-admin-links';
 
 export default {
-  title: 'Navigation/Administrative Links',
+  title: 'Outline/Administrative Links',
   component: 'outline-admin-links',
   argTypes: {},
   args: {},

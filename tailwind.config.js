@@ -44,17 +44,17 @@ module.exports = {
     },
     colors: {
       // Custom Brand colors can be added/edited here.
-      brand: {
-        primary: 'var(--brand-primary)',
-        secondary: 'var(--brand-secondary)',
-        tertiary: 'var(--brand-tertiary)',
-        quaternary: 'var(--brand-quaternary)',
-        quinary: 'var(--brand-quinary)',
-        senary: 'var(--brand-senary)',
-        septenary: 'var(--brand-septenary)',
-        octonary: 'var(--brand-octonary)',
-        nonary: 'var(--brand-nonary)',
-        denary: 'var(--brand-denary)',
+      nubs: {
+        primary: 'var(--nubs-primary)',
+        secondary: 'var(--nubs-secondary)',
+        tertiary: 'var(--nubs-tertiary)',
+        quaternary: 'var(--nubs-quaternary)',
+        quinary: 'var(--nubs-quinary)',
+        senary: 'var(--nubs-senary)',
+        septenary: 'var(--nubs-septenary)',
+        octonary: 'var(--nubs-octonary)',
+        nonary: 'var(--nubs-nonary)',
+        denary: 'var(--nubs-denary)',
       },
       // Custom Neutral colors can be added/edited here.
       neutral: {
@@ -227,10 +227,10 @@ module.exports = {
         '2-1': '8fr 4fr',
       },
       fontFamily: {
-        display: ['Manrope', ...defaultTheme.fontFamily.serif],
-        body: ['Open-Sans', ...defaultTheme.fontFamily.serif],
-        header: ['Overpass', ...defaultTheme.fontFamily.sans],
-        urbanist: ['Urbanist', ...defaultTheme.fontFamily.sans],
+        display: ['Manrope', 'sans-serif', ...defaultTheme.fontFamily.sans],
+        body: ['"Open Sans"', 'sans-serif', ...defaultTheme.fontFamily.serif],
+        header: ['Overpass', 'sans-serif', ...defaultTheme.fontFamily.sans],
+        urbanist: ['Urbanist', 'sans-serif', ...defaultTheme.fontFamily.sans],
       },
       height: {
         ...screenSizes,

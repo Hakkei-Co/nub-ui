@@ -1,6 +1,6 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
-import componentStyles from './outline-alert.css.lit';
+import componentStyles from './nub-alert.css.lit';
 import { OutlineElement } from '../outline-element/outline-element';
 export const alertSizes = ['small', 'large'] as const;
 export type AlertSize = typeof alertSizes[number];
@@ -30,15 +30,13 @@ export interface OutlineAlertInterface extends HTMLElement {
 /**
  * The Outline Alert component
  *
- * @element outline-alert
+ * @element nub-alert
  * @slot default - The alert contents
- * @slot outline-alert--header - The header in the alert
+ * @slot nub-alert--header - The header in the alert
+ * @slot nub-alert--link - The link in the alert
  */
-@customElement('outline-alert')
-export class OutlineAlert
-  extends OutlineElement
-  implements OutlineAlertInterface
-{
+@customElement('nub-alert')
+export class NubAlert extends OutlineElement implements OutlineAlertInterface {
   static styles: CSSResultGroup = [componentStyles];
 
   @property({ type: String })
@@ -83,7 +81,7 @@ export class OutlineAlert
           ${this.size === 'large'
             ? html`
                 <div id="header">
-                  <slot name="outline-alert--header">${this.statusType}</slot>
+                  <slot name="nub-alert--header">${this.statusType}</slot>
                 </div>
               `
             : null}
@@ -114,6 +112,6 @@ export class OutlineAlert
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-alert': OutlineAlert;
+    'nub-alert': NubAlert;
   }
 }

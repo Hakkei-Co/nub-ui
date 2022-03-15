@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import outline from '../../../../outline.config';
 
 const configuration = {
-  title: 'Media/Youtube Video',
+  title: 'Base Components/Youtube Video',
   component: 'outline-video-youtube',
   argTypes: {
     videoID: {

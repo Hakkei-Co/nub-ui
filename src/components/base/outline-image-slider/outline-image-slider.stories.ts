@@ -4,7 +4,7 @@ import './outline-image-slider';
 import '../outline-image/outline-image';
 
 export default {
-  title: 'Media/Image Slider',
+  title: 'Outline/Image Slider',
   component: 'outline-image-slider',
   argTypes: {},
   args: {},

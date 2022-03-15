@@ -20,7 +20,7 @@
 }
 
 .btn.primary {
-  @apply border-none bg-brand-primary text-demo-white;
+  @apply border-none bg-nubs-primary text-demo-white;
 
   &:hover,
   &:focus {

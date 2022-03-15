@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import outline from '../../../../outline.config';
 
 const configuration = {
-  title: 'Media/Vimeo Video',
+  title: 'Base Components/Vimeo Video',
   component: 'outline-video-vimeo',
   argTypes: {
     videoID: {

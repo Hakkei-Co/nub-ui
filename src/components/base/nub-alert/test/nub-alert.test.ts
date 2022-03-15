@@ -1,8 +1,8 @@
-import { OutlineAlert as OutlineComponent } from '../outline-alert';
+import { NubAlert as OutlineComponent } from '../nub-alert';
 import { expect, waitUntil } from '@open-wc/testing';
 
 // We are using these generic names so we can hopefully generalize this process or at least make copy & paste easier.
-const componentElementName = 'outline-alert';
+const componentElementName = 'nub-alert';
 
 describe(componentElementName, () => {
   // We don't get base styles automatically. Is there a better way?
@@ -46,7 +46,7 @@ describe(componentElementName, () => {
     const alertElement = document.createElement(componentElementName);
 
     const headerSlotElement = document.createElement('span');
-    headerSlotElement.setAttribute('slot', 'outline-alert--header');
+    headerSlotElement.setAttribute('slot', 'nub-alert--header');
     headerSlotElement.innerText = 'Test header text';
     alertElement.append(headerSlotElement);
 
