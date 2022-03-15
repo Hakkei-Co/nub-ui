@@ -3,8 +3,13 @@
 #body {
   @apply relative rounded-md px-8 py-4 align-middle;
   @apply font-header;
-  @apply grid grid-flow-col gap-2 bg-ui-info transition-colors duration-75;
-  @apply border border-solid drop-shadow-lg;
+  @apply font-medium text-xs leading-tight shadow-md ease-in-out;
+  @apply grid grid-flow-col gap-2 bg-ui-info duration-75;
+}
+
+#body:focus {
+  @apply border border-solid drop-shadow-lg shadow-lg transition ease-in-out;
+  @apply bg-blue-700 shadow-lg outline-none ring-0
 }
 
 #body.nub-content--container {
@@ -20,7 +25,7 @@
 }
 
 #header {
-  @apply col-span-5 row-span-1 row-start-1 px-4 text-lg font-bold capitalize;
+  @apply col-span-5 row-span-1 row-start-1 px-4 text-lg font-bold;
   font-weight: 600 !important;
   margin-top: auto;
   margin-bottom: auto;
@@ -114,6 +119,7 @@ div#alert-link {
 
 :host([statusType='warning']) #body:hover {
   @apply opacity-95;
+  @apply border-yellow-900;
   @apply shadow-md drop-shadow-none;
 }
 
@@ -129,14 +135,13 @@ div#alert-link {
 /* ----------------------*/
 :host([statusType='error']) #body {
   @apply border border-solid bg-ui-error text-ui-errorText;
-  @apply bg-gradient-to-br from-red-500 via-red-400 to-red-500;
   @apply opacity-100 drop-shadow-xl;
   border-color: var(--nub-link-border-color-danger);
 }
 
 :host([statusType='error']) #body:hover {
   @apply opacity-95 drop-shadow-md;
-  border-color: var(--ui-errorBackground);
+  @apply border-red-800;
 }
 
 :host([statusType='error']) #body:focus {
@@ -156,13 +161,33 @@ div#alert-link {
 }
 
 :host([statusType='success']) #body:hover {
-  @apply opacity-95;
+  @apply opacity-90 border-green-800;
   @apply drop-shadow-md;
-  border-color: var(--nub-link-border-color-success);
 }
 
 :host([statusType='success']) #body:focus {
   @apply ring-4 ring-green-300;
   @apply opacity-95;
   @apply drop-shadow-sm;
+}
+
+/* ----------------------*/
+/* Headers */
+/* ----------------------*/
+
+:host([statusType='notice']) #header {
+  @apply capitalize;
+}
+
+:host([statusType='success']) #header {
+  @apply capitalize;
+}
+
+:host([statusType='warning']) #header {
+  @apply uppercase;
+
+}
+
+:host([statusType='error']) #header {
+  @apply uppercase;
 }

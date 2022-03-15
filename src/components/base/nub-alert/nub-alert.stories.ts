@@ -148,7 +148,7 @@ Success.args = {
 
 export const NoticeFloat = Template.bind({});
 NoticeFloat.args = {
-  defaultSlot: html`Here is a float noticeal message.`,
+  defaultSlot: html`Here is a float notice message.`,
   statusType: 'notice',
   spanType: 'float',
 };
