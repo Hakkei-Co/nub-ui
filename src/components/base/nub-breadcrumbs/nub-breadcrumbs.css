@@ -1,7 +1,7 @@
 .nub-breadcrumbs {
   @apply space-x-1 font-display text-sm transition-colors duration-75;
   color: var(--nub-breadcrumb-text-color-default);
-  background: var(--nub-breadcrumb-bg-color);
+  /* background: var(--nub-breadcrumb-bg-color); */
   padding: var(--nub-breadcrumb-bg-padding);
 }
 

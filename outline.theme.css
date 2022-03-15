@@ -41,12 +41,12 @@
 
   /* Colors for UI notification messages. */
   --status-success: #0dbe54;
-  --status-warning: #ffc409;
-  --status-error: #eb445a;
+  --status-warning: #ffc917ef;
+  --status-error: #EBC8C4;
   --status-info: #ececece7;
   --status-success-alt: #153620;
-  --status-warning-alt: #726016;
-  --status-error-alt: #440b01d5;
+  --status-warning-alt: #5a4800;
+  --status-error-alt: #8a1500;
   --status-info-alt: #343e44;
 
   --ui-infoBackground: var(--status-info);
@@ -327,11 +327,11 @@ html[data-theme="dark"] {
 
   /* Colors for UI notification messages. */
   --status-success: #00d991dc;
-  --status-warning: #FACF23;
-  --status-error: #F72300;
+  --status-warning: #facf23d2;
+  --status-error: #EBC8C4;
   --status-info: #397eda;
   --status-success-alt: #2b7042;
-  --status-warning-alt: #dab628ce;
+  --status-warning-alt: #5c4900ce;
   --status-error-alt: #ac1a00d5;
   --status-info-alt: #2f3a44e0;
 

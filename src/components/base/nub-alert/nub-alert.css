@@ -17,11 +17,12 @@
 }
 
 #body .float {
-  @apply flex w-full max-w-md px-8 drop-shadow-lg;
+  @apply flex w-full max-w-md px-8;
+  @apply shadow-md drop-shadow-sm;
 }
 
 #body .full {
-  @apply drop-shadow-lg;
+  @apply drop-shadow-sm;
 }
 
 #header {
@@ -91,21 +92,21 @@ div#alert-link {
 /* Notice alert styles */
 /* ----------------------*/
 :host([statusType='notice']) #body {
-  @apply border border-solid text-ui-infoText drop-shadow-xl;
+  @apply border border-solid text-ui-infoText drop-shadow-md;
   border-color: var(--nub-link-border-color-info);
 }
 
 :host([statusType='notice']) #body:hover {
   @apply bg-gradient-to-br;
-  @apply opacity-90;
-  @apply drop-shadow-md;
+  @apply opacity-95;
+  @apply drop-shadow-xl;
   border-color: var(--neutral-grayMedium);
 }
 
 :host([statusType='notice']) #body:focus {
   @apply ring-4 ring-gray-300;
   @apply opacity-80;
-  @apply shadow-md drop-shadow-sm;
+  @apply drop-shadow-lg;
   border-color: var(--nub-link-border-color-info);
 }
 
@@ -113,40 +114,38 @@ div#alert-link {
 /* Warning alert styles */
 /* ----------------------*/
 :host([statusType='warning']) #body {
-  @apply border border-solid bg-ui-warning text-ui-warningText;
+  @apply border border-solid bg-ui-warning text-ui-warningText shadow-md drop-shadow-none;
   border-color: var(--nub-link-border-color-warning);
 }
 
 :host([statusType='warning']) #body:hover {
   @apply opacity-95;
   @apply border-yellow-900;
-  @apply shadow-md drop-shadow-none;
+  @apply drop-shadow-lg;
 }
 
 :host([statusType='warning']) #body:focus {
   @apply ring-4 ring-yellow-300;
-  @apply opacity-90;
-  @apply drop-shadow-sm;
-  border-color: var(--ui-warningBackground);
+  @apply drop-shadow-lg;
 }
 
 /* ----------------------*/
 /* Danger alert styles */
 /* ----------------------*/
 :host([statusType='error']) #body {
-  @apply border border-solid bg-ui-error text-ui-errorText;
-  @apply opacity-100 drop-shadow-xl;
+  @apply border border-solid bg-ui-error text-red-900;
+  @apply opacity-100 drop-shadow-sm;
   border-color: var(--nub-link-border-color-danger);
 }
 
 :host([statusType='error']) #body:hover {
-  @apply opacity-95 drop-shadow-md;
+  @apply opacity-95 drop-shadow-xl;
   @apply border-red-800;
 }
 
 :host([statusType='error']) #body:focus {
   @apply ring-4 ring-red-300;
-  @apply opacity-90 drop-shadow-sm;
+  @apply opacity-90 drop-shadow-lg;
   border-color: var(--ui-errorBackground);
 }
 
@@ -156,19 +155,19 @@ div#alert-link {
 
 :host([statusType='success']) #body {
   @apply border border-solid border-green-800 bg-ui-success bg-gradient-to-r from-green-400 via-green-200 to-green-300 text-ui-successText;
-  @apply drop-shadow-xl;
+  @apply drop-shadow-sm;
   border-color: var(--nub-link-border-color-success);
 }
 
 :host([statusType='success']) #body:hover {
   @apply opacity-90 border-green-800;
-  @apply drop-shadow-md;
+  @apply drop-shadow-xl;
 }
 
 :host([statusType='success']) #body:focus {
   @apply ring-4 ring-green-300;
   @apply opacity-95;
-  @apply drop-shadow-sm;
+  @apply drop-shadow-lg;
 }
 
 /* ----------------------*/

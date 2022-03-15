@@ -26,7 +26,7 @@ export const darkTheme = create({
   fontBase: 'Manrope, sans-serif',
   colorPrimary: '#27292E',
   colorSecondary: '#4d6ac7',
-  appBg: '#2f2f2f',
+  appBg: '#111',
   appContentBg: '#1a1a1a',
   appBorderColor: '#949494',
   textColor: '#d6d9e2',

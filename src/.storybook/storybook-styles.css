@@ -27,7 +27,7 @@ html[data-theme='light'],
 
 [data-theme='dark'],
 #docs-root {
-  background-color: var(--demo-black) !important;
+  background-color: #111 !important;
 }
 
 .sb-main-padded .sb-show-main {
