@@ -50,8 +50,8 @@ export default {
                   <outline-link link-href='#' link-text="link 3"></outline-link>
               </li>
             )}
-            <outline-button slot="footer" @click={this.orderBy}>Order by criteria</outline-button>
-            <outline-button slot="footer" @click={this.orderByOther}>Order by other criteria</outline-button>
+            <nub-button slot="footer" @click={this.orderBy}>Order by criteria</nub-button>
+            <nub-button slot="footer" @click={this.orderByOther}>Order by other criteria</nub-button>
           </outline-list>
 
     `,

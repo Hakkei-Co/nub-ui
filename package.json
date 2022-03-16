@@ -89,7 +89,8 @@
   ],
   "dependencies": {
     "@splidejs/splide": "^3.2.1",
-    "lit": "^2.0.0"
+    "lit": "^2.0.0",
+    "tw-elements": "^1.0.0-alpha11"
   },
   "engines": {
     "node": ">=14"

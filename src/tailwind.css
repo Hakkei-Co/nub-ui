@@ -1,3 +1,537 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+@layer utilities {
+  @media (prefers-reduced-motion) {
+    .animation {
+      transition: none !important;
+      animation: unset !important;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation-name: fade-in;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .fade-out {
+    animation-name: fade-out;
+  }
+
+  .animation.infinite {
+    animation-iteration-count: infinite;
+  }
+
+  .animation.delay-1s {
+    animation-delay: 1s;
+  }
+
+  .animation.delay-2s {
+    animation-delay: 2s;
+  }
+
+  .animation.delay-3s {
+    animation-delay: 3s;
+  }
+
+  .animation.delay-4s {
+    animation-delay: 4s;
+  }
+
+  .animation.delay-5s {
+    animation-delay: 5s;
+  }
+
+  .animation.fast {
+    animation-duration: 800ms;
+  }
+
+  .animation.faster {
+    animation-duration: 500ms;
+  }
+
+  .animation.slow {
+    animation-duration: 2s;
+  }
+
+  .animation.slower {
+    animation-duration: 3s;
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fade-in-down {
+    animation-name: fade-in-down;
+  }
+
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fade-in-left {
+    animation-name: fade-in-left;
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fade-in-right {
+    animation-name: fade-in-right;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fade-in-up {
+    animation-name: fade-in-up;
+  }
+
+  @keyframes fade-out-down {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  .fade-out-down {
+    animation-name: fade-out-down;
+  }
+
+  @keyframes fade-out-left {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  .fade-out-left {
+    animation-name: fade-out-left;
+  }
+
+  @keyframes fade-out-right {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  .fade-out-right {
+    animation-name: fade-out-right;
+  }
+
+  @keyframes fade-out-up {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+
+  .fade-out-up {
+    animation-name: fade-out-up;
+  }
+
+  @keyframes slide-in-down {
+    from {
+      visibility: visible;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .slide-in-down {
+    animation-name: slide-in-down;
+  }
+
+  @keyframes slide-in-left {
+    from {
+      visibility: visible;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .slide-in-left {
+    animation-name: slide-in-left;
+  }
+
+  @keyframes slide-in-right {
+    from {
+      visibility: visible;
+      transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .slide-in-right {
+    animation-name: slide-in-right;
+  }
+
+  @keyframes slide-in-up {
+    from {
+      visibility: visible;
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .slide-in-up {
+    animation-name: slide-in-up;
+  }
+
+  @keyframes slide-out-down {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  .slide-out-down {
+    animation-name: slide-out-down;
+  }
+
+  @keyframes slide-out-left {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  .slide-out-left {
+    animation-name: slide-out-left;
+  }
+
+  @keyframes slide-out-right {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  .slide-out-right {
+    animation-name: slide-out-right;
+  }
+
+  @keyframes slide-out-up {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      visibility: hidden;
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+
+  .slide-out-up {
+    animation-name: slide-out-up;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  .slide-down {
+    animation-name: slide-down;
+  }
+
+  @keyframes slide-left {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  .slide-left {
+    animation-name: slide-left;
+  }
+
+  @keyframes slide-right {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  .slide-right {
+    animation-name: slide-right;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+
+  .slide-up {
+    animation-name: slide-up;
+  }
+
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .zoom-in {
+    animation-name: zoom-in;
+  }
+
+  @keyframes zoom-out {
+    from {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .zoom-out {
+    animation-name: zoom-out;
+  }
+
+  @keyframes tada {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+      transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .tada {
+    animation-name: tada;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .pulse {
+    animation-name: pulse;
+  }
+
+  .ripple-surface {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .ripple-surface-unbound {
+    overflow: visible;
+  }
+
+  .ripple-wave {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.5;
+    pointer-events: none;
+    position: absolute;
+    touch-action: none;
+    transform: scale(0);
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0, 0, 0.15, 1), cubic-bezier(0, 0, 0.15, 1);
+    z-index: 999;
+  }
+
+  .ripple-wave.active {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  .btn .ripple-wave {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  .ripple-surface-primary .ripple-wave {
+    background-image: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
+  }
+
+  .ripple-surface-secondary .ripple-wave {
+    background-image: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
+  }
+
+  .ripple-surface-success .ripple-wave {
+    background-image: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
+  }
+
+  .ripple-surface-info .ripple-wave {
+    background-image: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
+  }
+
+  .ripple-surface-warning .ripple-wave {
+    background-image: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
+  }
+
+  .ripple-surface-danger .ripple-wave {
+    background-image: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
+  }
+
+  .ripple-surface-light .ripple-wave {
+    background-image: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
+  }
+
+  .ripple-surface-dark .ripple-wave {
+    background-image: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
+  }
+
+  .ripple-surface-white .ripple-wave {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  .ripple-surface-black .ripple-wave {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
+  }
+}

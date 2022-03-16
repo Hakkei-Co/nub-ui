@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+:host {
+  /* flex and border-radius constrain the actual boundaries of the element,
+   preventing literal edge cases where a user can click on the edge or corner of the button and defeat states like disabled */
+  @apply inline-flex rounded-sm align-middle text-nubs-senary;
+}
+
+.btn {
+  @apply flex flex-nowrap items-center !important;
+  @apply cursor-pointer rounded-md px-4 py-2 !important;
+  @apply font-display outline-none text-neutral-grayDark shadow-lg !important;
+  @apply transition-colors duration-75 !important;
+  @apply text-sm leading-tight no-underline !important;
+  @apply font-medium !important;
+  @apply shadow-md whitespace-nowrap !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.btn.success {
+  @apply bg-ui-success border-ui-successBorder !important;
+
+}
+
+.btn.success:hover,
+.btn.success:focus {
+  @apply outline-none ring-2 shadow-lg drop-shadow-lg !important;
+  @apply transition duration-150 ease-in-out !important;
+}
+
+.btn.success:active {
+  @apply ring-0 shadow-lg transition duration-150 ease-in-out;
+}
+
+.btn.info {
+  @apply bg-ui-info border-ui-infoBorder !important;
+  @apply inline-block px-6 py-2.5 bg-gray-200 text-gray-700 font-medium leading-tight shadow-md !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.btn.info:active {
+  @apply ring-0 shadow-lg transition duration-150 ease-in-out;
+}
+
+.btn.dark {
+  @apply bg-neutral-grayDark text-neutral-white border-demo-darkGray !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.btn.light {
+  @apply bg-demo-lightBlue text-nubs-primary border-demo-darkGray !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.btn.danger {
+  @apply text-neutral-white border-red-700 !important;
+  @apply border-none !important;
+  background-color: var(--ui-errorBackground) !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.btn.warning {
+  @apply bg-yellow-500 border-yellow-500 !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.btn>* :active {
+  @apply ring-0 shadow-lg transition duration-150 ease-in-out;
+}
+
+.btn[aria-disabled='true'] {
+  @apply pointer-events-none cursor-not-allowed select-none !important;
+  @apply shadow-none !important;
+  color: var(--nubs-tertiary) !important;
+  @apply border-none !important;
+}
+
+.btn.primary {
+  @apply border-none bg-nubs-primary text-demo-white !important;
+  @apply shadow-md !important;
+}
+
+.primary[aria-disabled='true'] {
+  @apply font-semibold opacity-90 !important;
+  color: var(--nub-text-color-disabled) !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 ring-demo-darkGray shadow-sm;
+  }
+}
+
+.btn.secondary {
+  @apply border-none bg-nubs-tertiary !important;
+  @apply shadow-md !important;
+  color: var(--nub-text-color-secondary) !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 shadow-lg drop-shadow-lg !important;
+  }
+}
+
+.secondary[aria-disabled='true'] {
+  @apply text-demo-darkGray opacity-80 no-underline !important;
+  color: var(--nub-text-color-disabled-secondary) !important;
+
+  &:hover,
+  &:focus {
+    @apply ring-2 ring-demo-mediumGray;
+  }
+}
+
+.btn.small {
+  @apply text-sm !important;
+}
+
+.btn.medium {
+  @apply text-base !important;
+}
+
+.btn.large {
+  @apply text-lg !important;
+}
+
+.btn.none {
+  @apply text-base font-medium text-demo-darkBlue no-underline !important;
+  @apply shadow-sm !important;
+  border: var(--ui-contrast) !important;
+
+  &:hover,
+  &:focus {
+    @apply text-demo-mediumBlue !important;
+    @apply shadow-lg !important;
+  }
+
+  &[aria-disabled='true'] {
+    @apply text-demo-darkGray !important;
+  }
+}

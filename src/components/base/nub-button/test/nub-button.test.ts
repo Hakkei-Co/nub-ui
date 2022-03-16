@@ -1,14 +1,14 @@
-import { OutlineButton } from '../outline-button';
+import { NubButton } from '../nub-button';
 import { assert, fixture, html } from '@open-wc/testing';
 
-describe('outline-button', () => {
+describe('nub-button', () => {
   it('is defined', () => {
-    const el = document.createElement('outline-button');
-    assert.instanceOf(el, OutlineButton);
+    const el = document.createElement('nub-button');
+    assert.instanceOf(el, NubButton);
   });
 
   it('renders with default values', async () => {
-    const el = await fixture(html`<outline-button></outline-button>`);
+    const el = await fixture(html`<nub-button></nub-button>`);
     assert.shadowDom.equal(
       el,
       `
@@ -21,7 +21,7 @@ describe('outline-button', () => {
 
   it('renders with an aria-label', async () => {
     const el = await fixture(
-      html`<outline-button button-label="Button label"></outline-button>`
+      html`<nub-button button-label="Button label"></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -35,10 +35,10 @@ describe('outline-button', () => {
 
   it('renders as a link', async () => {
     const el = await fixture(
-      html`<outline-button
+      html`<nub-button
         button-url="https://hakkei-co.github.io/nub-ui/"
         button-target="_blank"
-      ></outline-button>`
+      ></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -51,9 +51,7 @@ describe('outline-button', () => {
   });
 
   it('renders as a disabled button', async () => {
-    const el = await fixture(
-      html`<outline-button is-disabled></outline-button>`
-    );
+    const el = await fixture(html`<nub-button is-disabled></nub-button>`);
     assert.shadowDom.equal(
       el,
       `
@@ -66,7 +64,7 @@ describe('outline-button', () => {
 
   it('renders a standard primary button variant', async () => {
     const el = await fixture(
-      html`<outline-button button-variant="primary"></outline-button>`
+      html`<nub-button button-variant="primary"></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -80,10 +78,10 @@ describe('outline-button', () => {
 
   it('renders a small primary button variant', async () => {
     const el = await fixture(
-      html`<outline-button
+      html`<nub-button
         button-variant="primary"
         button-size="small"
-      ></outline-button>`
+      ></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -97,10 +95,10 @@ describe('outline-button', () => {
 
   it('renders a large primary button variant', async () => {
     const el = await fixture(
-      html`<outline-button
+      html`<nub-button
         button-variant="primary"
         button-size="large"
-      ></outline-button>`
+      ></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -114,7 +112,7 @@ describe('outline-button', () => {
 
   it('renders a secondary button variant', async () => {
     const el = await fixture(
-      html`<outline-button button-variant="secondary"></outline-button>`
+      html`<nub-button button-variant="secondary"></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -128,7 +126,7 @@ describe('outline-button', () => {
 
   it('renders a "none" variant', async () => {
     const el = await fixture(
-      html`<outline-button button-variant="none"></outline-button>`
+      html`<nub-button button-variant="none"></nub-button>`
     );
     assert.shadowDom.equal(
       el,
@@ -141,7 +139,7 @@ describe('outline-button', () => {
   });
 
   it('renders with slotted content', async () => {
-    const el = await fixture(html`<outline-button>Test</outline-button>`);
+    const el = await fixture(html`<nub-button>Test</nub-button>`);
     assert.lightDom.equal(el, `Test`);
   });
 });

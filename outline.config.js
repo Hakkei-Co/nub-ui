@@ -82,7 +82,7 @@ module.exports = {
     defaultVideo: '432639001',
   },
   // Exclude stories by adding the directory they can be found in
-  // ex ['outline-button'] this excludes any story in this directory
+  // ex ['nub-button'] this excludes any story in this directory
   excludedStories: ['outline-video-vimeo', 'outline-video-youtube'],
   // @see https://splidejs.com/guides/options
   // @todo: Ensure this config is utilized.

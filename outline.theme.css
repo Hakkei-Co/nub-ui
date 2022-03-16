@@ -22,7 +22,6 @@
   --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
   --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
   --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
-  --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
   --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
   --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
   --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
@@ -57,13 +56,14 @@
   /* Colors for UI notification messages. */
   --status-success: #0dbe54;
   --status-warning: #ffc917ef;
-  --status-error: #EBC8C4;
-  --status-info: #ececece7;
+  --status-error: #ef4444;
+  --status-info: #bcf2ffe7;
   --status-success-alt: #153620;
   --status-warning-alt: #5a4800;
   --status-error-alt: #8a1500;
-  --status-info-alt: #343e44;
+  --status-info-alt: #5f6f79;
 
+  --ui-contrast: transparent;
   --ui-infoBackground: var(--status-info);
   --ui-infoText: var(--status-info-alt);
   --ui-infoBorder: var(--status-info-alt);
@@ -183,6 +183,17 @@
   --screen-xxl: 1440px;
   --screen-xxxl: 2180px; */
 
+  --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
+  --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
+  --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
+  --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
+  --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
+  --radial-gradient-info: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
+  --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
+  --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
+  --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
+
   --spacing-0: 0px;
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -297,23 +308,39 @@
   --outline-admin-links-link-y-spacing: var(--spacing-4);
   --outline-admin-links-link-x-spacing: var(--spacing-6);
 
+  --nub-text-color-default: var(--demo-mediumGray);
+  --nub-text-color-secondary: var(--neutral-white);
+  --nub-text-color-disabled: var(--neutral-grayMedium);
+  --nub-text-color-disabled-secondary: var(--neutral-grayLight);
+
+
+  --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
+  --nub-breadcrumb-text-color-default--active: var(--neutral-black);
+  --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
+  --nub-breadcrumb-link-color-default: var(--neutral-white);
+  --nub-breadcrumb-link-color-focus: var(--demo-mediumGray);
+  --nub-breadcrumb-link-decoration-hover: "no-"+ underline;
+  --nub-breadcrumb-link-decoration-focus: underline;
+  --nub-breadcrumb-link-decoration-default: none;
+  --nub-breadcrumb-link-decoration--uppercase: uppercase;
+  --nub-breadcrumb-bg-color: transparent;
+  --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
+  --nub-breadcrumb-separator-spacing: var(--spacing-2);
+
+  --nub-link-color-hover: var(--neutral-grayDark);
+  --nub-link-color-focus: var(--demo-mediumGray);
+
+  --nub-link-border-color-info: var(--status-info-alt);
+  --nub-link-border-color-success: var(--status-success-alt);
+  --nub-link-border-color-warning: var(--status-warning-alt);
+  --nub-link-border-color-danger: var(--status-error-alt);
 
 
   --nub-link-border-color-info: var(--status-info-alt);
   --nub-link-border-color-success: var(--status-success-alt);
   --nub-link-border-color-warning: var(--status-warning-alt);
   --nub-link-border-color-danger: var(--status-error-alt);
-  --nub-breadcrumb-text-color-default: var(--status-info-alt);
-  --nub-breadcrumb-text-color-default--active: var(--neutral-black);
-  --nub-breadcrumb-link-color-default: var(--neutral-black);
-  --nub-breadcrumb-link-color-hover: var(--neutral-grayDark);
-  --nub-breadcrumb-link-color-focus: var(--neutral-grayDark);
-  --nub-breadcrumb-link-decoration-default: uppercase;
-  --nub-breadcrumb-link-decoration-hover: "no-"+ underline;
-  --nub-breadcrumb-link-decoration-focus: underline;
-  --nub-breadcrumb-bg-color: transparent;
-  --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
-  --nub-breadcrumb-separator-spacing: var(--spacing-2);
+
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -321,7 +348,7 @@
 [data-theme="dark"] {
   /* Brand specific primary colors. */
   --nubs-primary: #4d6ac7;
-  --nubs-secondary: #FFFFFE;
+  --nubs-secondary: #f8f8f8;
   --nubs-tertiary: #69707b;
   --nubs-quaternary: #8d97a5;
   --nubs-nonary: #20315C;
@@ -329,13 +356,13 @@
   --nubs-septenary: #aeccf3;
   --nubs-octonary: #87ace6;
   --nubs-denary: #3d47b2;
-  --nubs-senary: #474b53;
+  --nubs-senary: #33353a;
 
   /* Brand specific neutral colors & Generic tones/ */
   --neutral-transparent: transparent;
   --neutral-white: #FFFFFE;
-  --neutral-grayLight: #c2c2c2;
-  --neutral-grayMedium: #949494;
+  --neutral-grayLight: #c9c9c9;
+  --neutral-grayMedium: #646464;
   --neutral-grayDark: #3f3f3f;
   --neutral-black: #1a1a1a;
 
@@ -343,24 +370,25 @@
   /* Colors for UI notification messages. */
   --status-success: #00d991dc;
   --status-warning: #facf23d2;
-  --status-error: #EBC8C4;
+  --status-error: #ff6251;
   --status-info: #397eda;
   --status-success-alt: #2b7042;
-  --status-warning-alt: #5c4900ce;
+  --status-warning-alt: #9b7c01ce;
   --status-error-alt: #ac1a00d5;
   --status-info-alt: #2f3a44e0;
 
+  --ui-contrast: var(--nubs-septenary);
   --ui-infoBackground: var(--status-info);
   --ui-infoText: var(--neutral-white);
   --ui-infoBorder: var(--status-info);
 
   --ui-successBackground: var(--status-success);
   --ui-successText: var(--status-success-alt);
-  --ui-successBorder: var(--status-success);
+  --ui-successBorder: var(--status-success-alt);
 
   --ui-warningBackground: var(--status-warning);
   --ui-warningText: var(--neutral-black);
-  --ui-warningBorder: var(--neutral-white);
+  --ui-warningBorder: var(--status-warning-alt);
 
   --ui-errorBackground: var(--status-error);
   --ui-errorText: var(--neutral-white);
@@ -541,6 +569,9 @@
   --pink-900: #de425b;
 
   --nub-text-color-default: var(--demo-mediumGray);
+  --nub-text-color-secondary: var(--neutral-white);
+  --nub-text-color-disabled: var(--neutral-grayMedium);
+  --nub-text-color-disabled-secondary: var(--neutral-grayLight);
   --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
   --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
   --nub-breadcrumb-link-color-default: var(--neutral-white);
@@ -567,6 +598,17 @@
   --outline-link-color-default: var(--demo-lightGray);
   --outline-link-color-hover: var(--demo-darkGray);
   --outline-link-color-focus: var(--demo-mediumGray);
+
+  --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
+  --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
+  --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
+  --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
+  --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
+  --radial-gradient-info: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
+  --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
+  --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
+  --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
 
 }
 

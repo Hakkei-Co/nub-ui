@@ -1,6 +1,6 @@
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import componentStyles from './outline-button.css.lit';
+import componentStyles from './nub-button.css.lit';
 import { LinkTargetType } from '../outline-link/config';
 import { OutlineElement } from '../outline-element/outline-element';
 import { SlotController } from '../../controllers/slot-controller';
@@ -10,6 +10,11 @@ export type ButtonVariant =
   | 'none'
   | 'primary'
   | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'info'
+  | 'light'
+  | 'dark'
   | 'danger'
   | 'warning'
   | 'disabled';
@@ -18,15 +23,15 @@ export type ButtonSize = 'small' | 'medium' | 'large';
 
 /**
  * The Outline Button component
- * @element outline-button
+ * @element nub-button
  * @since 1.0.0
  * @slot - default slot, used for button text.
  * @slot left - slot used for left side icon.
  * @slot right - slot used for right side icon.
  * @todo Convert styles to utilize CSS Variables.
  */
-@customElement('outline-button')
-export class OutlineButton extends OutlineElement {
+@customElement('nub-button')
+export class NubButton extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
 
   slots = new SlotController(
@@ -99,7 +104,7 @@ export class OutlineButton extends OutlineElement {
   render(): TemplateResult {
     return this.buttonUrl
       ? html` <a
-          class="btn ${this.buttonVariant} ${this.buttonSize}"
+          class="${this.buttonVariant} ${this.buttonSize} btn"
           href=${this.buttonUrl}
           target=${ifDefined(this.buttonTarget)}
           aria-label="${ifDefined(this.buttonLabel)}"
@@ -110,7 +115,7 @@ export class OutlineButton extends OutlineElement {
           ${this.iconTemplate(this.hasRightIcon, 'right')}
         </a>`
       : html`<button
-          class="btn ${this.buttonVariant} ${this.buttonSize}"
+          class="${this.buttonVariant} ${this.buttonSize} btn"
           aria-label="${ifDefined(this.buttonLabel)}"
           aria-disabled="${ifDefined(this.isDisabled)}"
           .onclick="${this.onClick}"
@@ -135,7 +140,7 @@ export class OutlineButton extends OutlineElement {
   }
 
   updated() {
-    // checks the is-disabled prop and manages aria-disabled attributes on the <outline-button> element itself.
+    // checks the is-disabled prop and manages aria-disabled attributes on the <nub-button> element itself.
     if (this.hasAttribute('is-disabled')) {
       this.setAttribute('aria-disabled', 'true');
     } else {
@@ -146,6 +151,6 @@ export class OutlineButton extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-button': OutlineButton;
+    'nub-button': NubButton;
   }
 }

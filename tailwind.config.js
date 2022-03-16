@@ -16,7 +16,8 @@ module.exports = {
   darkMode: 'media',
   mode: 'jit',
   content: [
-    './src/**/*.{ts,tsx,mdx,html,txt,css}',
+    './src/**/*.{ts,tsx,mdx,html,txt,css,js}',
+    './node_modules/tw-elements/dist/js/**/*.js',
     './src/.storybook/**/*.{ts,tsx,mdx,html,txt,css}',
   ],
   theme: {
@@ -56,6 +57,25 @@ module.exports = {
         nonary: 'var(--nubs-nonary)',
         denary: 'var(--nubs-denary)',
       },
+      ripple: {
+        'surface': {
+          'position': 'relative',
+          'overflow': 'hidden',
+          'display': 'inline-block',
+          'vertical-align': 'bottom',
+        },
+        'surface-unbound': {
+          overflow: 'visible',
+        },
+        'neutral': {
+          'background-image':
+            'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%)',
+        },
+        'wave': {
+          'background-image':
+            'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);',
+        },
+      },
       // Custom Neutral colors can be added/edited here.
       neutral: {
         transparent: 'var(--neutral-transparent)',
@@ -70,11 +90,15 @@ module.exports = {
         error: 'var(--ui-errorBackground)',
         warning: 'var(--ui-warningBackground)',
         info: 'var(--ui-infoBackground)',
+        infoBorder: 'var(--ui-infoBorder)',
         success: 'var(--ui-successBackground)',
         errorText: 'var(--ui-errorText)',
+        errorBorder: 'var(--ui-errorBorder)',
         warningText: 'var(--ui-warningText)',
+        warningBorder: 'var(--ui-warningBorder)',
         infoText: 'var(--ui-infoText)',
         successText: 'var(--ui-successText)',
+        successBorder: 'var(--ui-successBorder)',
       },
       // Demo styles specific to Storybook implementation.
       // Do not remove.
@@ -222,6 +246,16 @@ module.exports = {
         'focus-2': '0 0 0 2px rgb(33, 74, 222)',
         'focus-error': '0 0 0 1px rgb(225, 9, 9)',
       },
+      gradient: {
+        gradientBlack: 'var(--radial-gradient-black)',
+        gradientWhite: 'var(--radial-gradient-white)',
+        gradientDark: 'var(--radial-gradient-dark)',
+        gradientLight: 'var(--radial-gradient-light)',
+        gradientWarning: 'var(--radial-gradient-warning)',
+        gradientInfo: 'var(--radial-gradient-info)',
+        gradientSuccess: 'var(--radial-gradient-success)',
+        gradientSecondary: 'var(--radial-gradient-secondary)',
+      },
       gridTemplateColumns: {
         '1-2': '4fr 8fr',
         '2-1': '8fr 4fr',
@@ -247,26 +281,7 @@ module.exports = {
       opacity: {
         40: '0.4',
       },
-      ripple: {
-        'surface': {
-          'position': 'relative',
-          'overflow': 'hidden',
-          'display': 'inline-block',
-          'vertical-align': 'bottom',
-        },
-        'surface-unbound': {
-          overflow: 'visible',
-        },
-        'neutral': {
-          'background-image':
-            'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%)',
-        },
-        'wave': {
-          'background-image':
-            'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);',
-        },
-      },
     },
   },
-  plugins: [],
+  plugins: [require('tw-elements/dist/plugin')],
 };

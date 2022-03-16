@@ -253,9 +253,9 @@ FullScreen.args = {
 export const ButtonTrigger = Template.bind({});
 ButtonTrigger.args = {
   triggerSlot: html`
-    <outline-button slot="outline-modal--trigger">
+    <nub-button slot="outline-modal--trigger">
       Open modal with button trigger
-    </outline-button>
+    </nub-button>
   `,
   headerSlot: html`
     <outline-heading slot="outline-modal--header">
@@ -318,7 +318,7 @@ AccessibilityDescription.args = {
 };
 
 // This demonstrates an accessibility feature.
-// @todo I could not set focus on the `outline-button` element, but a standard `button` works.
+// @todo I could not set focus on the `nub-button` element, but a standard `button` works.
 export const CustomFocusElement = Template.bind({});
 CustomFocusElement.args = {
   triggerSlot: html`
