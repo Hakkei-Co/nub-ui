@@ -2,27 +2,31 @@
 /* ----------------------*/
 #body {
   @apply relative rounded-md px-8 py-4 align-middle;
-  @apply font-header;
-  @apply font-medium text-xs leading-tight shadow-md ease-in-out;
-  @apply grid grid-flow-col gap-2 bg-ui-info duration-75;
+  @apply font-header text-xs font-medium leading-tight shadow-md ease-in-out;
+  @apply grid grid-flow-col gap-1 bg-ui-info duration-75;
+  grid-template-columns: 0fr 1fr;
 }
 
 #body:focus {
-  @apply border border-solid drop-shadow-lg shadow-lg transition ease-in-out;
-  @apply bg-blue-700 shadow-lg outline-none ring-0
+  @apply border border-solid shadow-lg drop-shadow-lg transition ease-in-out;
+  @apply bg-blue-700 shadow-lg outline-none ring-0;
 }
 
 #body.nub-content--container {
-  @apply col-span-3 w-full justify-between;
+  @apply col-span-5 w-full justify-start;
+}
+
+#body #icon {
+  @apply col-span-1 row-span-2 my-2 h-full w-min align-bottom;
 }
 
 #body .float {
-  @apply flex w-full max-w-md px-8;
+  @apply flex flex-row px-8;
   @apply shadow-md drop-shadow-sm;
 }
 
 #body .full {
-  @apply drop-shadow-sm;
+  @apply flex w-full max-w-md drop-shadow-sm;
 }
 
 #header {
@@ -33,7 +37,8 @@
 }
 
 #message {
-  @apply col-span-5 row-span-1 row-start-2 justify-start px-4 text-sm;
+  @apply col-span-5 row-span-2 row-start-1 justify-start px-4 text-sm;
+  @apply align-middle;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -43,6 +48,7 @@
 /* ----------------------*/
 :host([spanType='float']) #message {
   @apply pb-2 text-sm;
+  grid-template-columns: 0fr 1fr;
 }
 
 /* ----------------------*/
@@ -50,7 +56,7 @@
 /* ----------------------*/
 
 :host([spanType='float']) #body {
-  @apply flex max-w-md flex-col justify-start px-4 drop-shadow-xl;
+  @apply flex max-w-md justify-start px-4 drop-shadow-xl;
 }
 
 :host([spanType='full']) #body {
@@ -127,6 +133,7 @@ div#alert-link {
 :host([statusType='warning']) #body:focus {
   @apply ring-4 ring-yellow-300;
   @apply drop-shadow-lg;
+  border-color: var(--ui-warningBackground);
 }
 
 /* ----------------------*/
@@ -160,7 +167,7 @@ div#alert-link {
 }
 
 :host([statusType='success']) #body:hover {
-  @apply opacity-90 border-green-800;
+  @apply border-green-800 opacity-90;
   @apply drop-shadow-xl;
 }
 
@@ -184,7 +191,6 @@ div#alert-link {
 
 :host([statusType='warning']) #header {
   @apply uppercase;
-
 }
 
 :host([statusType='error']) #header {

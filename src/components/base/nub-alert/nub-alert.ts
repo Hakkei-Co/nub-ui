@@ -2,6 +2,7 @@ import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import componentStyles from './nub-alert.css.lit';
 import { OutlineElement } from '../outline-element/outline-element';
+import infoIcon from '../../assets/outline/Nubs_Info.svg';
 export const alertSizes = ['small', 'large'] as const;
 export type AlertSize = typeof alertSizes[number];
 export const alertSpan = ['float', 'full'] as const;
@@ -70,14 +71,16 @@ export class NubAlert extends OutlineElement implements OutlineAlertInterface {
         role="${this.isInteractive ? 'alertdialog' : 'alert'}"
         aria-labelledby="${this.isInteractive ? 'message' : null}"
       >
+        ${this.shouldShowIcon === true
+          ? html`
+              <span id="icon">
+                <!--@todo include icon when we have that ready.-->
+                ${this.staticIcon()}
+              </span>
+            `
+          : null}
+
         <div class="nub-content--container">
-          ${this.shouldShowIcon === true
-            ? html`
-                <div id="icon">
-                  <!--@todo include icon when we have that ready.-->
-                </div>
-              `
-            : null}
           ${this.size === 'large'
             ? html`
                 <div id="header">
@@ -107,6 +110,39 @@ export class NubAlert extends OutlineElement implements OutlineAlertInterface {
       this.dispatchEvent(new CustomEvent('closed'));
       this.triggerElement.focus();
     }
+  }
+
+  private staticIcon() {
+    let icon;
+    switch (this.statusType) {
+      case 'notice':
+        return html`<outline-icon
+          name="information-circle"
+          library="ionicons"
+          size="24px"
+        ></outline-icon>`;
+      case 'error':
+        return html`<outline-icon
+          name="alert"
+          library="ionicons"
+          size="24px"
+        ></outline-icon>`;
+      case 'warning':
+        return html`<outline-icon
+          name="warning"
+          library="ionicons"
+          size="24px"
+        ></outline-icon>`;
+      case 'success':
+        return html`<outline-icon
+          name="checkmark-circle"
+          library="ionicons"
+          size="24px"
+        ></outline-icon>`;
+      default:
+        break;
+    }
+    return icon;
   }
 }
 

@@ -247,6 +247,25 @@ module.exports = {
       opacity: {
         40: '0.4',
       },
+      ripple: {
+        'surface': {
+          'position': 'relative',
+          'overflow': 'hidden',
+          'display': 'inline-block',
+          'vertical-align': 'bottom',
+        },
+        'surface-unbound': {
+          overflow: 'visible',
+        },
+        'neutral': {
+          'background-image':
+            'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%)',
+        },
+        'wave': {
+          'background-image':
+            'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);',
+        },
+      },
     },
   },
   plugins: [],
