@@ -152,7 +152,7 @@ You can access the boolean \`isOpen\` property to determine if the modal is open
   elementToFocusSelector="{{ elementToFocusSelector }}"
 >
   <outline-link slot="outline-modal--trigger">{{ triggerSlot}}</outline-link>
-  <outline-heading slot="outline-modal--header">{{ headerSlot}}</outline-heading>
+  <nub-header slot="outline-modal--header">{{ headerSlot}}</nub-header>
   <p slot="outline-modal--accessibility-description">{{ accessibilityDescription }}</p>
   {{ defaultSlot }}
 </outline-modal>
@@ -191,9 +191,9 @@ Small.args = {
     </outline-link>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>
@@ -213,9 +213,9 @@ Medium.args = {
       Open medium modal
     </outline-link>
   `,
-  headerSlot: html` <outline-heading slot="outline-modal--header">
+  headerSlot: html` <nub-header slot="outline-modal--header">
     The modal header
-  </outline-heading>`,
+  </nub-header>`,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>
     <p>
@@ -235,9 +235,9 @@ FullScreen.args = {
     </outline-link>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>
@@ -258,9 +258,9 @@ ButtonTrigger.args = {
     </nub-button>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>
@@ -298,9 +298,9 @@ AccessibilityDescription.args = {
     </outline-link>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   accessibilityDescription: html`
     <p slot="outline-modal--accessibility-description">
@@ -327,9 +327,9 @@ CustomFocusElement.args = {
     </outline-link>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>
@@ -377,9 +377,9 @@ AutoFocusedElement.args = {
     </outline-link>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>
@@ -423,9 +423,9 @@ ForceAction.args = {
     </outline-link>
   `,
   headerSlot: html`
-    <outline-heading slot="outline-modal--header">
+    <nub-header slot="outline-modal--header">
       The modal header
-    </outline-heading>
+    </nub-header>
   `,
   defaultSlot: html`
     <p>Here is a first line of the modal.</p>

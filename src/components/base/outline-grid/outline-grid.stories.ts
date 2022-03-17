@@ -126,8 +126,8 @@ RowsAndColumns.args = {
   gapSize: 'small',
   defaultSlot: html`
     <outline-column col-span-default="12" content-align="middle">
-      <outline-heading level="h2" level-style="semibold">
-        Column/Row Spanning</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Column/Row Spanning</nub-header
       >
     </outline-column>
 
@@ -173,8 +173,8 @@ EqualColumns.args = {
   gapSize: 'small',
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Equal Column Grid</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Equal Column Grid</nub-header
       >
     </outline-column>
     <outline-column
@@ -205,8 +205,8 @@ FullBleed.args = {
   fullBleed: true,
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Full Bleed Grid</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Full Bleed Grid</nub-header
       >
     </outline-column>
     <outline-column
@@ -236,8 +236,8 @@ AsymmetricLeft.args = {
   gapSize: 'small',
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Asymmetrical Grid</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Asymmetrical Grid</nub-header
       >
     </outline-column>
     <outline-column
@@ -267,8 +267,8 @@ AsymmetricRight.args = {
   gapSize: 'small',
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Asymmetrical Grid</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Asymmetrical Grid</nub-header
       >
     </outline-column>
     <outline-column
@@ -298,8 +298,8 @@ AsymmetricLeftWithBorder.args = {
   gapSize: '',
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Asymmetrical Grid With Divider</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Asymmetrical Grid With Divider</nub-header
       >
     </outline-column>
     <outline-column col-span-default="12" class="pb-2">
@@ -338,8 +338,8 @@ AsymmetricLeftWithBorder.args = {
     </outline-column>
 
     <outline-column col-span-default="12" class="pb-2 border-t-2 mt-6 pt-4">
-      <outline-heading level="h2" level-style="semibold">
-        Asymmetrical Grid With Divider</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Asymmetrical Grid With Divider</nub-header
       >
     </outline-column>
     <outline-column col-span-default="12" class="pb-2">
@@ -378,8 +378,8 @@ AsymmetricLeftWithBorder.args = {
     </outline-column>
 
     <outline-column col-span-default="12" class="pb-2 border-t-2 mt-6 pt-4">
-      <outline-heading level="h2" level-style="semibold">
-        Asymmetrical Grid With Divider</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Asymmetrical Grid With Divider</nub-header
       >
     </outline-column>
     <outline-column col-span-default="12" class="pb-2">
@@ -424,8 +424,8 @@ OffsetLeft.decorators = DefaultGridDecorators;
 OffsetLeft.args = {
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Offset Left</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Offset Left</nub-header
       >
     </outline-column>
     <outline-column
@@ -445,8 +445,8 @@ OffsetRight.decorators = DefaultGridDecorators;
 OffsetRight.args = {
   defaultSlot: html`
     <outline-column col-span-default="12">
-      <outline-heading level="h2" level-style="semibold">
-        Offset Right</outline-heading
+      <nub-header level="h2" level-style="semibold">
+        Offset Right</nub-header
       >
     </outline-column>
     <outline-column

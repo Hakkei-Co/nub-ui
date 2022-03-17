@@ -63,18 +63,16 @@ This component renders an alert.
 
 ## Variation
 
-You can set the type of alert with \`statusType\`.
-
-You can use a smaller alert with \`size\` of \`small\`.
-
-You can remove the icon with \`shouldShowIcon\` set to \`false\`.
-
-You can customize the header by adding a \`nub-alert--header\` slot.
-
-You can customize the CTA by adding a \`nub-alert--link\` slot.
+* You can set the type of alert with \`statusType\`.
+* You can use a smaller alert with \`size\` of \`small\`.
+* You can remove the icon with \`shouldShowIcon\` set to \`false\`.
+* You can customize the header by adding a \`nub-alert--header\` slot.
+* You can customize the CTA by adding a \`nub-alert--link\` slot.
 
 
-## Accessibility
+### Accessibility
+The \`prefers-color-scheme\` CSS media spec comes default to detect if the user has requested a light or dark color theme and display a dark or light color text.
+
 
 If the alert has an interaction, you should indicate this with \`isInteractive\` set to \`true\`.
 `,

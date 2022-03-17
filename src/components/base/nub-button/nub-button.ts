@@ -22,7 +22,7 @@ export type ButtonVariant =
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 /**
- * The Outline Button component
+ * The button nub
  * @element nub-button
  * @since 1.0.0
  * @slot - default slot, used for button text.

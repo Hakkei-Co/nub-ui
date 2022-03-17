@@ -5,8 +5,9 @@ import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './nub-breadcrumbs.css.lit';
 import '../outline-container/outline-container';
 import { SlotController } from '../../controllers/slot-controller';
+// import OutlineIcon from '../outline-icon/outline-icon';
 /**
- * The Outline  Breadcrumbs component
+ * The breadcrumbs nub
  * @element nub-breadcrumbs
  * @slot - The default only slot for this element.
  * @todo CONTRIB
@@ -25,7 +26,11 @@ export class NubBreadcrumbs extends OutlineElement {
     breadcrumbItems.forEach(item => {
       const sep: HTMLSpanElement = document.createElement('span');
       sep.classList.add('separator');
-      sep.innerHTML = this.stringSeparator;
+      const newScript = document.createElement('outline-icon');
+      newScript.setAttribute('name', 'chevron-right');
+      newScript.setAttribute('library', 'system');
+      newScript.setAttribute('size', '12px');
+      sep.appendChild(newScript);
       item.append(sep);
     });
   }

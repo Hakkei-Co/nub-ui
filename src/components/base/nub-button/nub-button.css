@@ -9,65 +9,64 @@
 .btn {
   @apply flex flex-nowrap items-center !important;
   @apply cursor-pointer rounded-md px-4 py-2 !important;
-  @apply font-display outline-none text-neutral-grayDark shadow-lg !important;
+  @apply font-display text-neutral-grayDark shadow-lg outline-none !important;
   @apply transition-colors duration-75 !important;
   @apply text-sm leading-tight no-underline !important;
   @apply font-medium !important;
-  @apply shadow-md whitespace-nowrap !important;
+  @apply whitespace-nowrap shadow-md !important;
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
 .btn.success {
-  @apply bg-ui-success border-ui-successBorder !important;
-
+  @apply border-ui-successBorder bg-ui-success !important;
 }
 
 .btn.success:hover,
 .btn.success:focus {
-  @apply outline-none ring-2 shadow-lg drop-shadow-lg !important;
+  @apply shadow-lg outline-none ring-2 drop-shadow-lg !important;
   @apply transition duration-150 ease-in-out !important;
 }
 
 .btn.success:active {
-  @apply ring-0 shadow-lg transition duration-150 ease-in-out;
+  @apply shadow-lg ring-0 transition duration-150 ease-in-out;
 }
 
 .btn.info {
-  @apply bg-ui-info border-ui-infoBorder !important;
-  @apply inline-block px-6 py-2.5 bg-gray-200 text-gray-700 font-medium leading-tight shadow-md !important;
+  @apply border-ui-infoBorder bg-ui-info !important;
+  @apply inline-block bg-gray-200 px-6 py-2 font-medium leading-tight text-gray-700 shadow-md !important;
   @apply border-none !important;
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
 .btn.info:active {
-  @apply ring-0 shadow-lg transition duration-150 ease-in-out;
+  @apply shadow-lg ring-0 transition duration-150 ease-in-out;
 }
 
 .btn.dark {
-  @apply bg-neutral-grayDark text-neutral-white border-demo-darkGray !important;
+  @apply border-demo-darkGray bg-neutral-grayDark text-neutral-white !important;
   @apply border-none !important;
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
 .btn.light {
-  @apply bg-demo-lightBlue text-nubs-primary border-demo-darkGray !important;
+  @apply border-demo-darkGray bg-demo-lightBlue text-nubs-primary !important;
   @apply border-none !important;
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
@@ -79,23 +78,23 @@
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
 .btn.warning {
-  @apply bg-yellow-500 border-yellow-500 !important;
+  @apply border-yellow-500 bg-yellow-500 !important;
   @apply border-none !important;
   color: var(--ui-warningText) !important;
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
-.btn>* :active {
-  @apply ring-0 shadow-lg transition duration-150 ease-in-out;
+.btn > * :active {
+  @apply shadow-lg ring-0 transition duration-150 ease-in-out;
 }
 
 .btn[aria-disabled='true'] {
@@ -103,7 +102,6 @@
   @apply shadow-none !important;
   color: var(--nubs-tertiary) !important;
   @apply border-none !important;
-
 }
 
 .btn.primary {
@@ -118,23 +116,23 @@
 
   &:hover,
   &:focus {
-    @apply ring-2 ring-demo-darkGray shadow-sm;
+    @apply shadow-sm ring-2 ring-demo-darkGray;
   }
 }
 
 .btn.secondary {
   @apply border-none bg-nubs-tertiary !important;
   @apply shadow-md !important;
-  color: var(--nub-text-color-secondary) !important;
+  color: var(--nubs-secondary) !important;
 
   &:hover,
   &:focus {
-    @apply ring-2 shadow-lg drop-shadow-lg !important;
+    @apply shadow-lg ring-2 drop-shadow-lg !important;
   }
 }
 
 .secondary[aria-disabled='true'] {
-  @apply text-demo-darkGray opacity-80 no-underline !important;
+  @apply text-demo-darkGray no-underline opacity-80 !important;
   color: var(--nub-text-color-disabled-secondary) !important;
 
   &:hover,

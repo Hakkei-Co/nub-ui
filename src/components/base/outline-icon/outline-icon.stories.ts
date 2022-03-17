@@ -189,7 +189,7 @@ const BootstrapIconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Outline</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Outline</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="bootstrap" name="badge-4k" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="bootstrap" name="badge-8k" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -199,7 +199,7 @@ const BootstrapIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="bootstrap" name="image" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="bootstrap" name="x-square" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Fill</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Fill</nub-header>
 <div class="flex flex-row flex-wrap">
   <outline-icon library="bootstrap" name="badge-4k-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="bootstrap" name="badge-8k-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -236,7 +236,7 @@ const BoxiconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Outline</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Outline</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="boxicons" name="bx-bot" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="boxicons" name="bx-cookie" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -245,7 +245,7 @@ const BoxiconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="boxicons" name="bx-server" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="boxicons" name="bx-wine" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Solid</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Solid</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="boxicons" name="bxs-bot" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="boxicons" name="bxs-cookie" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -254,7 +254,7 @@ const BoxiconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="boxicons" name="bxs-server" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="boxicons" name="bxs-wine" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Brands</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Brands</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="boxicons" name="bxl-apple" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="boxicons" name="bxl-chrome" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -290,7 +290,7 @@ const FaTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Regular</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Regular</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="fa" name="far-bell" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="far-comment" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -299,7 +299,7 @@ const FaTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="fa" name="far-heart" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="far-star" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Solid</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Solid</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="fa" name="fas-archive" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fas-book" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -308,7 +308,7 @@ const FaTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="fa" name="fas-pizza-slice" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fas-scroll" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Nubs</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Nubs</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="fa" name="fab-apple" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="fa" name="fab-chrome" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -344,7 +344,7 @@ const HeroiconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Standard</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Standard</nub-header>
 <div class="flex flex-row flex-wrap">
   <outline-icon library="heroicons" name="chat" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="heroicons" name="cloud" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -380,7 +380,7 @@ const IconoirTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Standard</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Standard</nub-header>
 <div class="flex flex-row flex-wrap">
   <outline-icon library="iconoir" name="check-circled-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="iconoir" name="drawer" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -416,7 +416,7 @@ const IonIconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Regular</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Regular</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="ionicons" name="layers" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="ionicons" name="link" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -425,7 +425,7 @@ const IonIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="ionicons" name="server" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="ionicons" name="today" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Outline</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Outline</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="ionicons" name="checkmark-circle-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="ionicons" name="checkmark-done-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -434,7 +434,7 @@ const IonIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="ionicons" name="cloud-download-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="ionicons" name="copy-outline" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Sharp</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Sharp</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="ionicons" name="alarm-sharp" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="ionicons" name="american-football-sharp" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -470,7 +470,7 @@ const JamIconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Stroke</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Stroke</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="jam" name="calendar" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="jam" name="camera" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -479,7 +479,7 @@ const JamIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="jam" name="picture" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="jam" name="set-square" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Fill</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Fill</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="jam" name="calendar-f" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="jam" name="camera-f" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -516,7 +516,7 @@ const LucideTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Standard</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Standard</nub-header>
 <div class="flex flex-row flex-wrap">
   <outline-icon library="lucide" name="feather" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="lucide" name="pie-chart" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -553,7 +553,7 @@ const MaterialIconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Regular</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Regular</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="material" name="notifications" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="material" name="email" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -562,7 +562,7 @@ const MaterialIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="material" name="settings" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="material" name="shopping_basket" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Round</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Round</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="material" name="notifications_round" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="material" name="email_round" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -571,7 +571,7 @@ const MaterialIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="material" name="settings_round" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="material" name="shopping_basket_round" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Sharp</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Sharp</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="material" name="notifications_sharp" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="material" name="email_sharp" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -608,7 +608,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Line</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Line</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="remix" name="business/cloud-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="design/brush-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -617,7 +617,7 @@ const RemixIconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="remix" name="media/image-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="system/alert-line" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Fill</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Fill</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="remix" name="business/cloud-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="remix" name="design/brush-fill" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -654,7 +654,7 @@ const UniconsTemplate = (customArguments = {}): TemplateResult => {
   };
 
   return html`
-<outline-heading level="h2" level-size="2xl" level-style="thin">Regular</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Regular</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
   <outline-icon library="unicons" name="clock" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="graph-bar" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
@@ -663,7 +663,7 @@ const UniconsTemplate = (customArguments = {}): TemplateResult => {
   <outline-icon library="unicons" name="rocket" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="star" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
 </div>
-<outline-heading level="h2" level-size="2xl" level-style="thin">Solid</outline-heading>
+<nub-header level="h2" level-size="2xl" level-style="thin">Solid</nub-header>
 <div class="flex flex-row flex-wrap mb-10">
 <outline-icon library="unicons" name="clock-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>
   <outline-icon library="unicons" name="graph-bar-s" size="${ifDefined(args.size)}" class="mr-2"></outline-icon>

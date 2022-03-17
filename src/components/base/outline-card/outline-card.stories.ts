@@ -4,7 +4,7 @@ import { argTypeHidden } from '../outline-element/utils/utils';
 import sampleImage1 from '../../../.storybook/static/media/color/Codeworkbench_color.jpg';
 import './outline-card';
 import '../outline-container/outline-container';
-// import '../outline-heading/outline-heading'
+// import '../nub-header/nub-header'
 
 const allowedColors: string[] = [
   'primary',
@@ -63,9 +63,9 @@ export default {
   args: {
     cardContent: html`
       <div slot="content" class="p-4">
-        <outline-heading level="h2" level-size="2xl" level-style="light"
+        <nub-header level="h2" level-size="2xl" level-style="light"
           >This is a sample card. It has content in the content
-          slot.</outline-heading
+          slot.</nub-header
         >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sin
@@ -130,14 +130,14 @@ CardWithImageHeader.args = {
   `,
   cardContent: html`
     <div slot="content" class="p-4">
-      <outline-heading
+      <nub-header
         level="h2"
         level-size="5xl"
         level-style="semibold"
         class="mb-6"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </outline-heading>
+      </nub-header>
       <p class="mb-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Quis istum dolorem timet? Sin laboramus,
@@ -180,14 +180,14 @@ const cleanTemplate = (): TemplateResult =>
         is-rounded
       >
         <div slot="header">
-          <outline-heading
+          <nub-header
             level="h2"
             level-size="2xl"
             level-style="normal"
             class="p-4"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </outline-heading>
+          </nub-header>
         </div>
         <div slot="content" class="p-4 md:p-8 md:flex">
           <p class="text-lg">

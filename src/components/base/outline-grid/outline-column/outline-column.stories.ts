@@ -68,8 +68,8 @@ export default {
   decorators: [
     Story => html`
       <outline-container>
-        <!-- <outline-heading level="h2" level-style="2" class="my-10"
-          >Responsive Grid</outline-heading
+        <!-- <nub-header level="h2" level-style="2" class="my-10"
+          >Responsive Grid</nub-header
         > -->
         <h2>Responsive Grid</h2>
       </outline-container>

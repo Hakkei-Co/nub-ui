@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,600;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Overpass:wght@100;200;300;400;500;600;700;800&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 /*
   Important: Theming is enabled and will require users to manually add a `data-theme` attribute on their component's root element html.
@@ -35,11 +34,11 @@
 [data-theme="light"] {
   /* Brand specific primary colors. */
   --nubs-primary: #4d6ac7;
-  --nubs-secondary: #474b53;
+  --nubs-secondary: #FFFFFE;
+  --nubs-senary: #b3c1d1;
   --nubs-tertiary: #69707b;
   --nubs-quaternary: #8d97a5;
-  --nubs-quinary: #b3c1d1;
-  --nubs-senary: #FFFFFE;
+  --nubs-quinary: #474b53;
   --nubs-septenary: #3d47b2;
   --nubs-octonary: #87ace6;
   --nubs-nonary: #20315C;
@@ -59,7 +58,7 @@
   --status-error: #ffa09b;
   --status-info: #bcf2ffe7;
   --status-success-alt: #256130;
-  --status-warning-alt: #633f00;
+  --status-warning-alt: #ffa406;
   --status-error-alt: #851703;
   --status-info-alt: #157388;
 
@@ -73,20 +72,19 @@
   --ui-successBorder: var(--status-success-alt);
 
   --ui-warningBackground: var(--status-warning);
-  --ui-warningText: var(--status-warning-alt);
+  --ui-warningText: var(--neutral-black);
   --ui-warningBorder: var(--status-warning-alt);
 
   --ui-errorBackground: var(--status-error);
   --ui-errorText: var(--status-error-alt);
   --ui-errorBorder: var(--status-error-alt);
-
   /* Demo colors used for default component demonstrations */
   --demo-darkBlue: #3171e0;
   --demo-mediumBlue: #3376e9;
   --demo-lightBlue: #9baabe;
   --demo-darkGray: #3f3f46;
   --demo-mediumGray: #e0e0e0;
-  --demo-lightGray: #f4f4f5;
+  --demo-lightGray: #f9f9ff;
   --demo-white: #fff;
   --demo-black: #000;
 
@@ -309,6 +307,7 @@
   --outline-admin-links-link-x-spacing: var(--spacing-6);
 
   --nub-text-color-default: var(--demo-mediumGray);
+  --nub-text-color-default-alt: var(--gray-700);
   --nub-text-color-secondary: var(--neutral-white);
   --nub-text-color-disabled: var(--neutral-lightGray);
   --nub-text-color-disabled-secondary: var(--neutral-grayLight);
@@ -336,12 +335,12 @@
   --nub-link-border-color-warning: var(--status-warning-alt);
   --nub-link-border-color-danger: var(--status-error-alt);
 
-
+  --nub-text-color-secondary: var(--nubs-quaternary);
   --nub-link-border-color-info: var(--status-info-alt);
   --nub-link-border-color-success: var(--status-success-alt);
   --nub-link-border-color-warning: var(--status-warning-alt);
   --nub-link-border-color-danger: var(--status-error-alt);
-
+  --nub-header-default: var(--nubs-septenary);
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -376,7 +375,7 @@
   --status-success-alt: #2b7042;
   --status-warning-alt: #e4af00;
   --status-error-alt: #ac1a00d5;
-  --status-info-alt: #fdfbffe0;
+  --status-info-alt: #214574;
 
   --ui-contrast: var(--nubs-septenary);
   --ui-infoBackground: var(--status-info);
@@ -570,7 +569,8 @@
   --pink-900: #de425b;
 
   --nub-text-color-default: var(--demo-mediumGray);
-  --nub-text-color-secondary: var(--neutral-white);
+  --nub-text-color-default-alt: var(--gray-400);
+  --nub-text-color-secondary: var(--nubs-quaternary);
   --nub-text-color-disabled: var(--neutral-grayLight);
   --nub-text-color-disabled-secondary: var(--neutral-grayLight);
   --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
@@ -593,6 +593,7 @@
   --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
   --nub-breadcrumb-separator-spacing: var(--spacing-2);
   --nub-bg-btn-disabled: var(--neutral-grayMedium);
+  --nub-header-default: var(--nubs-septenary);
   /*
    * Configuration values for `outline-link`.
    */

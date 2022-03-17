@@ -76,8 +76,9 @@ export default {
     docs: {
       description: {
         component: `
-This component renders a button that can either be a link or trigger an action.
+This component renders a button that can either be a link or trigger an action. ## Accessibility
 
+The \`prefers-color-scheme\` CSS media spec comes default to detect if the user has requested a light or dark color theme and display a dark or light color text.
 ## Difference from \`button\` element
 
 This is rendered as an \`a\` element if a link and a \`button\` element if not a link. This allows for consistent styling that matches the user expectation of a button while matching the browser expectation for those elements.
@@ -122,17 +123,17 @@ const inlineIconDecorator = [
 
 const PrimaryButtonsTemplate = (): TemplateResult =>
   html`
-  <outline-heading level-size="xl" level-style="semibold">Default, Hover & Focus States</outline-heading>
-  <p>This section of primary buttons demonstrates various configurations, and can be navigated to test hover/focus states.
-  </p>
+  <nub-header level-size="xl" level-style="semibold">Default, Hover & Focus States</nub-header>
+  <nub-header level-size="base" level-style="normal">This section of primary buttons demonstrates various configurations, and can be navigated to test hover/focus states.
+  </nub-header>
   <div class="my-6">
     <nub-button class="mr-2 ripple-wave" button-size="large" button-label="Large Button">Large Button</nub-button>
     <nub-button class="mr-2" button-label="Button">Button</nub-button>
     <nub-button class="mr-2" button-size="small" button-label="Small Button">Small Button</nub-button>
   </div>
 
-  <outline-heading level-size="xl" level-style="semibold">Disabled States</outline-heading>
-  <p>This section of primary buttons demonstrates the disabled version of the same buttons as the previous example.</p>
+  <nub-header level-size="xl" level-style="semibold">Disabled States</nub-header>
+    <nub-header level="h4" level-size="base" level-style="normal">This section of primary buttons demonstrates the disabled version of the same buttons as the previous example.</nub-header>
 
   <div class="my-6">
     <nub-button class="mr-2" button-url="#" button-size="large" button-label="Large Button" is-disabled>Large Button
@@ -142,8 +143,8 @@ const PrimaryButtonsTemplate = (): TemplateResult =>
     </nub-button>
   </div>
 
-  <outline-heading level-size="xl" level-style="semibold">Including Icons</outline-heading>
-  <p>This section highlights using icons in the primary button.</p>
+  <nub-header level-size="xl" level-style="semibold">Including Icons</nub-header>
+  <nub-header level="h4" level-size="base" level-style="normal">This section highlights using icons in the primary button.</nub-header>
 
   <div class="my-6">
     <nub-button class="mr-2" button-url="#" button-size="large" button-label="Large Button">
@@ -182,9 +183,9 @@ PrimaryButtons.parameters = {
 
 const SecondaryButtonsTemplate = (): TemplateResult =>
   html`
-<outline-heading level-size="xl" level-style="semibold">Default, Hover & Focus States</outline-heading>
-<p>This section of primary buttons demonstrates various configurations, and can be navigated to test hover/focus states.
-</p>
+<nub-header level-size="xl" level-style="semibold">Default, Hover & Focus States</nub-header>
+<nub-header level="h4" level-size="base" level-style="normal">This section of primary buttons demonstrates various configurations, and can be navigated to test hover/focus states.
+</nub-header>
 <div class="my-6">
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button">
     Large Button</nub-button>
@@ -192,8 +193,8 @@ const SecondaryButtonsTemplate = (): TemplateResult =>
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="small" button-label="Small Button">
     Small Button</nub-button>
 </div>
-<outline-heading level-size="xl" level-style="semibold">Disabled States</outline-heading>
-<p>This section of primary buttons demonstrates the disabled version of the same buttons as the previous example.</p>
+<nub-header level-size="xl" level-style="semibold">Disabled States</nub-header>
+<nub-header level="h4" level-size="base" level-style="normal">This section of primary buttons demonstrates the disabled version of the same buttons as the previous example.</nub-header>
 <div class="my-6">
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button"
     is-disabled>Large Button</nub-button>
@@ -202,8 +203,8 @@ const SecondaryButtonsTemplate = (): TemplateResult =>
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="small" button-label="Small Button"
     is-disabled>Small Button</nub-button>
 </div>
-<outline-heading level-size="xl" level-style="semibold">Including Icons</outline-heading>
-<p>This section highlights using icons in the primary button.</p>
+<nub-header level-size="xl" level-style="semibold">Including Icons</nub-header>
+<nub-header level="h4" level-size="base" level-style="normal">This section highlights using icons in the primary button.</nub-header>
 
 <div class="my-6">
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button">
@@ -252,7 +253,7 @@ const LinkButtonsTemplate = (): TemplateResult =>
     </section>
     <section>
       <div class="my-6">
-        <p>Small</p>
+        <nub-header level="h4" level-size="base" level-style="normal">Small</nub-header>
         <nub-button class="mr-2" button-variant="success" button-size="small" button-url="#">Success</nub-button>
         <nub-button class="mr-2" button-variant="primary" button-size="small">Primary</nub-button>
         <nub-button class="mr-2" button-variant="secondary" button-size="small"> Secondary</nub-button>
@@ -265,7 +266,7 @@ const LinkButtonsTemplate = (): TemplateResult =>
     </section>
     <section>
       <div class="my-6">
-        <p>Medium</p>
+        <nub-header level="h4" level-size="base" level-style="normal">Medium</nub-header>
         <nub-button class="mr-2" button-variant="success" button-size="medium" button-url="#">Success</nub-button>
         <nub-button class="mr-2" button-variant="primary" button-size="medium">Primary</nub-button>
         <nub-button class="mr-2" button-variant="secondary" button-size="medium"> Secondary</nub-button>

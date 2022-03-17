@@ -167,7 +167,6 @@ div#alert-link {
   @apply drop-shadow-sm;
   border-color: var(--status-success-alt);
   color: var(--ui-successText);
-
 }
 
 :host([statusType='success']) #body:hover {

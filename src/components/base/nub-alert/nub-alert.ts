@@ -29,7 +29,7 @@ export interface OutlineAlertInterface extends HTMLElement {
 }
 
 /**
- * The Outline Alert component
+ * The alert nub.
  *
  * @element nub-alert
  * @slot default - The alert contents

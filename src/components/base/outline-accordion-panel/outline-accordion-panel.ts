@@ -46,10 +46,10 @@ export class OutlineAccordionPanel extends OutlineElement {
     return html` <div class="accordion-panel ${isClean}">
       <h4 class="accordion-heading">
         <button
-          class="accordion-button
-        ${isMobile}
+          class="${isMobile}
         ${isActive}
         ${isClean}
+        accordion-button
         "
           id="${this.id}-button"
           aria-expanded=${this.active}

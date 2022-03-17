@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import './outline-tab-group';
 import '../outline-tab/outline-tab';
 import '../outline-tab-panel/outline-tab-panel';
-import '../../outline-heading/outline-heading';
+import '../../nub-header/nub-header';
 import '../../outline-accordion/outline-accordion';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
@@ -22,21 +22,21 @@ const tabData: TabData[] = [
   {
     title: 'Tab Number One',
     content: `
-      <outline-heading>Content for Tab Number One</outline-heading>
+      <nub-header>Content for Tab Number One</nub-header>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="http://loripsum.net/" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
     `,
   },
   {
     title: 'Tab Number Two',
     content: `
-      <outline-heading>Content for Tab Number Two</outline-heading>
+      <nub-header>Content for Tab Number Two</nub-header>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="http://loripsum.net/" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
     `,
   },
   {
     title: 'Tab Number Three',
     content: `
-      <outline-heading>Content for Tab Number Three</outline-heading>
+      <nub-header>Content for Tab Number Three</nub-header>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="http://loripsum.net/" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
     `,
   },

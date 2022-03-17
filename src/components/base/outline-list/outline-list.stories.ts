@@ -8,7 +8,7 @@ import {
   dividerColors,
 } from './outline-list';
 import './outline-list';
-import '../outline-heading/outline-heading';
+import '../nub-header/nub-header';
 export default {
   title: 'Outline/List',
   component: 'outline-list',
@@ -39,7 +39,7 @@ export default {
             listType="ul"
             orientation="column"
             >
-              <outline-heading slot="heading" level="h3" levelSize="3xl">Links List</outline-heading>
+              <nub-header slot="heading" level="h3" levelSize="3xl">Links List</nub-header>
               <li style=${`padding: 1rem; list-style: none`}>
                   <outline-link link-href='#' link-text="link 1"></outline-link>
               </li>
@@ -148,8 +148,8 @@ const Template = ({
       .columns=${columns}
     >
       ${headingSlotContent ? html`
-      <outline-heading slot="heading" level="h3" levelSize="3xl"
-        >${headingSlotContent}</outline-heading
+      <nub-header slot="heading" level="h3" levelSize="3xl"
+        >${headingSlotContent}</nub-header
       >
       `: ``}
       ${items(itemCount).map(

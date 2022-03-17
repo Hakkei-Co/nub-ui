@@ -9,15 +9,15 @@ import {
   AllowedHeadingStyles,
 } from './config';
 
-import componentStyles from './outline-heading.css.lit';
+import componentStyles from './nub-header.css.lit';
 
 /**
- * The Heading component.
- * @element outline-heading
+ * The header nub
+ * @element nub-header
  * @slot defaultSlot
  */
-@customElement('outline-heading')
-export class OutlineHeading extends OutlineElement {
+@customElement('nub-header')
+export class NubHeader extends OutlineElement {
   static styles = [componentStyles];
 
   /**
@@ -40,9 +40,9 @@ export class OutlineHeading extends OutlineElement {
 
   render(): TemplateResult {
     const classes = {
-      'outline-text': true,
-      [`outline-text--${this.levelSize}`]: true,
-      [`outline-font--${this.levelStyle}`]: true,
+      'nub-text': true,
+      [`nub-text--${this.levelSize}`]: true,
+      [`nub-font--${this.levelStyle}`]: true,
     };
     return html`
       <${unsafeStatic(this.level as string)} class=${classMap(classes)}>
@@ -53,6 +53,6 @@ export class OutlineHeading extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-heading': OutlineHeading;
+    'nub-header': NubHeader;
   }
 }
