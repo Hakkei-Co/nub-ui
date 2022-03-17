@@ -18,12 +18,12 @@ jobs:
       with:
         node-version: '16.x'
         registry-url: https://npm.pkg.github.com
-    - run: npm ci
+    - run: yarn install --frozen-lockfile
     - run: git config --global user.name "hakkei-co"
     - run: git config --global user.email "support@hakkei.co"
     - run: npm version ${{ github.event.release.tag_name }}
-    - run: npm run build
-    - run: npm test
+    - run: yarn storybook:prod
+    - run: yarn test
     - run: npm publish --tag ${{ github.event.release.target_commitish }}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
