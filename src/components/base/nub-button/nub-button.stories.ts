@@ -254,27 +254,27 @@ const LinkButtonsTemplate = (): TemplateResult =>
     <section>
       <div class="my-6">
         <nub-header level="h4" level-size="base" level-style="normal">Small</nub-header>
-        <nub-button class="mr-2" button-variant="success" button-size="small" button-url="#">Success</nub-button>
-        <nub-button class="mr-2" button-variant="primary" button-size="small">Primary</nub-button>
-        <nub-button class="mr-2" button-variant="secondary" button-size="small"> Secondary</nub-button>
-        <nub-button class="mr-2" button-variant="danger" button-size="small">Danger</nub-button>
-        <nub-button class="mr-2" button-variant="warning" button-size="small">Warning</nub-button>
-        <nub-button class="mr-2" button-variant="info" button-size="small">Info</nub-button>
-        <nub-button class="mr-2" button-variant="dark" button-size="small">Dark</nub-button>
-        <nub-button class="mr-2" button-variant="light" button-size="small">Light</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="success" button-size="small" button-url="#">Success</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="primary" button-size="small">Primary</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="secondary" button-size="small"> Secondary</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="danger" button-size="small">Danger</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="warning" button-size="small">Warning</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="info" button-size="small">Info</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="dark" button-size="small">Dark</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="light" button-size="small">Light</nub-button>
       </div>
     </section>
     <section>
       <div class="my-6">
         <nub-header level="h4" level-size="base" level-style="normal">Medium</nub-header>
-        <nub-button class="mr-2" button-variant="success" button-size="medium" button-url="#">Success</nub-button>
-        <nub-button class="mr-2" button-variant="primary" button-size="medium">Primary</nub-button>
-        <nub-button class="mr-2" button-variant="secondary" button-size="medium"> Secondary</nub-button>
-        <nub-button class="mr-2" button-variant="danger" button-size="medium">Danger</nub-button>
-        <nub-button class="mr-2" button-variant="warning" button-size="medium">Warning</nub-button>
-        <nub-button class="mr-2" button-variant="info" button-size="medium">Info</nub-button>
-        <nub-button class="mr-2" button-variant="dark" button-size="medium">Dark</nub-button>
-        <nub-button class="mr-2" button-variant="light" button-size="medium">Light</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="success" button-size="medium" button-url="#">Success</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="primary" button-size="medium">Primary</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="secondary" button-size="medium"> Secondary</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="danger" button-size="medium">Danger</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="warning" button-size="medium">Warning</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="info" button-size="medium">Info</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="dark" button-size="medium">Dark</nub-button>
+        <nub-button class="mr-2 my-2" button-variant="light" button-size="medium">Light</nub-button>
       </div>
     </section>
   </div>

@@ -3,7 +3,7 @@ import './nub-breadcrumbs';
 
 const configuration = {
   title: 'Nubs/Breadcrumb',
-  component: 'nub-breadcrumb',
+  component: 'nub-breadcrumbs',
   parameters: {
     viewMode: 'docs',
   },
