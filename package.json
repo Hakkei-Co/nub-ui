@@ -1,6 +1,6 @@
 {
   "name": "@hakkei-co/nub-ui",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Nub Web Component Design",
   "main": "dist/outline.js",
   "module": "dist/outline.js",
@@ -20,8 +20,8 @@
   },
   "license": "BSD-3-Clause",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/hakkei-co",
-    "access": "restricted"
+    "@hakkei-co/registry": "https://npm.pkg.github.com/hakkei-co",
+    "tag": "v1-latest"
   },
   "sbport": 6042,
   "scripts": {
@@ -88,6 +88,7 @@
     "lit"
   ],
   "dependencies": {
+    "@hakkei-co/nub-ui": "^0.0.8",
     "@splidejs/splide": "^3.2.1",
     "lit": "^2.0.0",
     "tw-elements": "^1.0.0-alpha11"
@@ -171,5 +172,6 @@
     "web-component-analyzer": "^1.0.3",
     "webpack": "^5.38.1"
   },
-  "homepage": "https://ui.hakkei.org"
+  "homepage": "https://ui.hakkei.org",
+  "package-name": "git+ssh://git@github.com:hakkei-co/nub-ui.git"
 }

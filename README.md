@@ -34,7 +34,7 @@ Run the following steps to ensure your environment is installed and up to date. 
 ### Checkout the repository
 
 ```bash
-git clone git@github.com:phase2/outline.git && cd outline
+git clone git@github.com:hakkei-co/nub-ui.git && cd nub-ui
 ```
 
 ---

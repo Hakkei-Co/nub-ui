@@ -343,71 +343,70 @@
   --nub-header-default: var(--nubs-septenary);
 }
 
-/* @media (prefers-color-scheme: dark) { */
+@media (prefers-color-scheme: dark) {
+  [data-theme="dark"] {
+    /* Brand specific primary colors. */
+    --nubs-primary: #4d6ac7;
+    --nubs-secondary: #f8f8f8;
+    --nubs-tertiary: #4A82B5;
+    --nubs-quaternary: #8d97a5;
+    --nubs-nonary: #20315C;
+    --nubs-quinary: #b3c1d1;
+    --nubs-septenary: #aeccf3;
+    --nubs-octonary: #87ace6;
+    --nubs-denary: #3d47b2;
+    --nubs-senary: #33353a;
 
-[data-theme="dark"] {
-  /* Brand specific primary colors. */
-  --nubs-primary: #4d6ac7;
-  --nubs-secondary: #f8f8f8;
-  --nubs-tertiary: #4A82B5;
-  --nubs-quaternary: #8d97a5;
-  --nubs-nonary: #20315C;
-  --nubs-quinary: #b3c1d1;
-  --nubs-septenary: #aeccf3;
-  --nubs-octonary: #87ace6;
-  --nubs-denary: #3d47b2;
-  --nubs-senary: #33353a;
-
-  /* Brand specific neutral colors & Generic tones/ */
-  --neutral-transparent: transparent;
-  --neutral-white: #FFFFFE;
-  --neutral-grayLight: #c9c9c9;
-  --neutral-grayMedium: #646464;
-  --neutral-grayDark: #3f3f3f;
-  --neutral-black: #1a1a1a;
+    /* Brand specific neutral colors & Generic tones/ */
+    --neutral-transparent: transparent;
+    --neutral-white: #FFFFFE;
+    --neutral-grayLight: #c9c9c9;
+    --neutral-grayMedium: #646464;
+    --neutral-grayDark: #3f3f3f;
+    --neutral-black: #1a1a1a;
 
 
-  /* Colors for UI notification messages. */
-  --status-success: #00d991dc;
-  --status-warning: #FFBB38;
-  --status-error: #FF3F6D;
-  --status-info: #397eda;
-  --status-success-alt: #2b7042;
-  --status-warning-alt: #e4af00;
-  --status-error-alt: #ac1a00d5;
-  --status-info-alt: #214574;
+    /* Colors for UI notification messages. */
+    --status-success: #00d991dc;
+    --status-warning: #FFBB38;
+    --status-error: #FF3F6D;
+    --status-info: #397eda;
+    --status-success-alt: #2b7042;
+    --status-warning-alt: #e4af00;
+    --status-error-alt: #ac1a00d5;
+    --status-info-alt: #214574;
 
-  --ui-contrast: var(--nubs-septenary);
-  --ui-infoBackground: var(--status-info);
-  --ui-infoText: var(--neutral-white);
-  --ui-infoBorder: var(--nubs-nonary);
+    --ui-contrast: var(--nubs-septenary);
+    --ui-infoBackground: var(--status-info);
+    --ui-infoText: var(--neutral-white);
+    --ui-infoBorder: var(--nubs-nonary);
 
-  --ui-successBackground: var(--status-success);
-  --ui-successText: var(--status-success-alt);
-  --ui-successBorder: var(--status-success-alt);
+    --ui-successBackground: var(--status-success);
+    --ui-successText: var(--status-success-alt);
+    --ui-successBorder: var(--status-success-alt);
 
-  --ui-warningBackground: var(--status-warning);
-  --ui-warningText: var(--neutral-black);
-  --ui-warningBorder: var(--status-warning-alt);
+    --ui-warningBackground: var(--status-warning);
+    --ui-warningText: var(--neutral-black);
+    --ui-warningBorder: var(--status-warning-alt);
 
-  --ui-errorBackground: var(--status-error);
-  --ui-errorText: var(--neutral-white);
-  --ui-errorBorder: var(--status-error);
+    --ui-errorBackground: var(--status-error);
+    --ui-errorText: var(--neutral-white);
+    --ui-errorBorder: var(--status-error);
 
-  /* Demo colors used for default component demonstrations */
-  --demo-darkBlue: #3171e0;
-  --demo-mediumBlue: #3880ff;
-  --demo-lightBlue: #eff6ff;
-  --demo-darkGray: #3f3f46;
-  --demo-mediumGray: #2b2b2b;
-  --demo-lightGray: #f4f4f5;
-  --demo-white: #fff;
-  --demo-black: #000;
+    /* Demo colors used for default component demonstrations */
+    --demo-darkBlue: #3171e0;
+    --demo-mediumBlue: #3880ff;
+    --demo-lightBlue: #eff6ff;
+    --demo-darkGray: #3f3f46;
+    --demo-mediumGray: #2b2b2b;
+    --demo-lightGray: #f4f4f5;
+    --demo-white: #fff;
+    --demo-black: #000;
 
-  /* Utitlizing CSS properties here (screens) caused
+    /* Utitlizing CSS properties here (screens) caused
      the responsive tailwind classes to simply fail.
      @todo: Make screens work with css variables. */
-  /* --screen-xs: 480px;
+    /* --screen-xs: 480px;
   --screen-sm: 640px;
   --screen-md: 768px;
   --screen-lg: 1024px;
@@ -415,203 +414,201 @@
   --screen-xxl: 1440px;
   --screen-xxxl: 2180px; */
 
-  --spacing-0: 0px;
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-7: 1.75rem;
-  --spacing-8: 2rem;
-  --spacing-9: 2.25rem;
-  --spacing-10: 2.5rem;
-  --spacing-11: 2.75rem;
-  --spacing-12: 3rem;
-  --spacing-14: 3.5rem;
-  --spacing-16: 4rem;
-  --spacing-20: 5rem;
-  --spacing-24: 6rem;
-  --spacing-28: 7rem;
-  --spacing-32: 8rem;
-  --spacing-36: 9rem;
-  --spacing-40: 10rem;
-  --spacing-44: 11rem;
-  --spacing-48: 12rem;
-  --spacing-52: 13rem;
-  --spacing-56: 14rem;
-  --spacing-60: 15rem;
-  --spacing-64: 16rem;
-  --spacing-72: 18rem;
-  --spacing-80: 20rem;
-  --spacing-96: 24rem;
-  --spacing-px: 1px;
+    --spacing-0: 0px;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-7: 1.75rem;
+    --spacing-8: 2rem;
+    --spacing-9: 2.25rem;
+    --spacing-10: 2.5rem;
+    --spacing-11: 2.75rem;
+    --spacing-12: 3rem;
+    --spacing-14: 3.5rem;
+    --spacing-16: 4rem;
+    --spacing-20: 5rem;
+    --spacing-24: 6rem;
+    --spacing-28: 7rem;
+    --spacing-32: 8rem;
+    --spacing-36: 9rem;
+    --spacing-40: 10rem;
+    --spacing-44: 11rem;
+    --spacing-48: 12rem;
+    --spacing-52: 13rem;
+    --spacing-56: 14rem;
+    --spacing-60: 15rem;
+    --spacing-64: 16rem;
+    --spacing-72: 18rem;
+    --spacing-80: 20rem;
+    --spacing-96: 24rem;
+    --spacing-px: 1px;
 
-  --fs-xs: 0.75rem;
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
-  --fs-lg: 1.125rem;
-  --fs-xl: 1.25rem;
-  --fs-2xl: 1.5rem;
-  --fs-3xl: 1.875rem;
-  --fs-4xl: 2.25rem;
-  --fs-5xl: 3.5rem;
-  --fs-6xl: 4.5rem;
-  --fs-7xl: 5.5rem;
-  --fs-8xl: 6.5rem;
-  --fs-9xl: 7.5rem;
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.875rem;
+    --fs-4xl: 2.25rem;
+    --fs-5xl: 3.5rem;
+    --fs-6xl: 4.5rem;
+    --fs-7xl: 5.5rem;
+    --fs-8xl: 6.5rem;
+    --fs-9xl: 7.5rem;
 
-  --lh-xs: 1rem;
-  --lh-sm: 1.25rem;
-  --lh-base: 1.5rem;
-  --lh-lg: 1.75rem;
-  --lh-xl: 1.75rem;
-  --lh-2xl: 2rem;
-  --lh-3xl: 2.25rem;
-  --lh-4xl: 2.5rem;
-  --lh-5xl: 3.75rem;
-  --lh-6xl: 4.75rem;
-  --lh-7xl: 5.75rem;
-  --lh-8xl: 6.75rem;
-  --lh-9xl: 7.75rem;
+    --lh-xs: 1rem;
+    --lh-sm: 1.25rem;
+    --lh-base: 1.5rem;
+    --lh-lg: 1.75rem;
+    --lh-xl: 1.75rem;
+    --lh-2xl: 2rem;
+    --lh-3xl: 2.25rem;
+    --lh-4xl: 2.5rem;
+    --lh-5xl: 3.75rem;
+    --lh-6xl: 4.75rem;
+    --lh-7xl: 5.75rem;
+    --lh-8xl: 6.75rem;
+    --lh-9xl: 7.75rem;
 
-  --fw-thin: 100;
-  --fw-extralight: 200;
-  --fw-light: 300;
-  --fw-normal: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-extrabold: 800;
-  --fw-black: 900;
-
-
-  /* Nubs colors extends Tailwind CSS Colors converted to CSS Variables. */
-  --gray-50: #d6d9e2;
-  --gray-100: #d1d3d9;
-  --gray-200: #cbcdd0;
-  --gray-300: #c6c6c6;
-  --gray-400: #a5a5a5;
-  --gray-500: #868686;
-  --gray-600: #676767;
-  --gray-700: #4a4a4a;
-  --gray-800: #2f2f2f;
-  --gray-900: #161616;
-  --blue-50: #eff6ff;
-  --blue-100: #dbeafe;
-  --blue-200: #bfdbfe;
-  --blue-300: #93c5fd;
-  --blue-400: #60a5fa;
-  --blue-500: #3b82f6;
-  --blue-600: #2563eb;
-  --blue-700: #1d4ed8;
-  --blue-800: #1e40af;
-  --blue-900: #1e3a8a;
-  --red-50: #fef2f2;
-  --red-100: #fee2e2;
-  --red-200: #fecaca;
-  --red-300: #fca5a5;
-  --red-400: #f87171;
-  --red-500: #ef4444;
-  --red-600: #dc2626;
-  --red-700: #b91c1c;
-  --red-800: #991b1b;
-  --red-900: #7f1d1d;
-  --yellow-50: #fffbeb;
-  --yellow-100: #fef6d8;
-  --yellow-200: #fceebc;
-  --yellow-300: #fcf0c5;
-  --yellow-400: #fdeaa1;
-  --yellow-500: #fee686;
-  --yellow-600: #ffe269;
-  --yellow-700: #ffde48;
-  --yellow-800: #feda15;
-  --yellow-900: #f6ba38;
-  --green-50: #ecfdf5;
-  --green-100: #e4fdf0;
-  --green-200: #dcfcea;
-  --green-300: #d5fbe3;
-  --green-400: #cffbdc;
-  --green-500: #a8ecb3;
-  --green-600: #89de90;
-  --green-700: #6ad06c;
-  --green-800: #49c043;
-  --green-900: #1DB100;
-  --indigo-50: #c1f1ff;
-  --indigo-100: #bbf3ff;
-  --indigo-200: #b5f4ff;
-  --indigo-300: #b0f5ff;
-  --indigo-400: #81d9f2;
-  --indigo-500: #52bce7;
-  --indigo-600: #239fdb;
-  --indigo-700: #0080cc;
-  --indigo-800: #0f61b9;
-  --indigo-900: #303f9f;
-  --purple-50: #deedff;
-  --purple-100: #dcedff;
-  --purple-200: #daedff;
-  --purple-300: #d7edff;
-  --purple-400: #b1d2f5;
-  --purple-500: #8fb8eb;
-  --purple-600: #719ce0;
-  --purple-700: #5981d3;
-  --purple-800: #4764c4;
-  --purple-900: #3d47b2;
-  --pink-50: #ffe6f5;
-  --pink-100: #ffdaf3;
-  --pink-200: #ffd4f2;
-  --pink-300: #ffcef2;
-  --pink-400: #fcb7df;
-  --pink-500: #f9a1c9;
-  --pink-600: #f589b1;
-  --pink-700: #f07296;
-  --pink-800: #e85a79;
-  --pink-900: #de425b;
-
-  --nub-text-color-default: var(--demo-mediumGray);
-  --nub-text-color-default-alt: var(--gray-400);
-  --nub-text-color-secondary: var(--nubs-quaternary);
-  --nub-text-color-disabled: var(--neutral-grayLight);
-  --nub-text-color-disabled-secondary: var(--neutral-grayLight);
-  --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
-  --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
-  --nub-breadcrumb-link-color-default: var(--neutral-white);
-  --nub-breadcrumb-link-color-focus: var(--demo-mediumGray);
-  --nub-link-color-hover: var(--neutral-grayDark);
-  --nub-link-color-focus: var(--demo-mediumGray);
-  --nub-link-border-color-info: var(--status-info-alt);
-  --nub-link-border-color-success: var(--status-success-alt);
-  --nub-link-border-color-warning: var(--status-warning-alt);
-  --nub-link-border-color-danger: var(--status-error-alt);
-  --nub-breadcrumb-link-decoration-default: none;
-  --nub-breadcrumb-link-decoration--uppercase: uppercase;
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
 
 
-  --nub-breadcrumb-link-decoration-hover: "no-"+ underline;
-  --nub-breadcrumb-link-decoration-focus: underline;
-  --nub-breadcrumb-bg-color: var(--demo-darkGray);
-  --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
-  --nub-breadcrumb-separator-spacing: var(--spacing-2);
-  --nub-bg-btn-disabled: var(--neutral-grayMedium);
-  --nub-header-default: var(--nubs-septenary);
-  /*
+    /* Nubs colors extends Tailwind CSS Colors converted to CSS Variables. */
+    --gray-50: #d6d9e2;
+    --gray-100: #d1d3d9;
+    --gray-200: #cbcdd0;
+    --gray-300: #c6c6c6;
+    --gray-400: #a5a5a5;
+    --gray-500: #868686;
+    --gray-600: #676767;
+    --gray-700: #4a4a4a;
+    --gray-800: #2f2f2f;
+    --gray-900: #161616;
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-800: #1e40af;
+    --blue-900: #1e3a8a;
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
+    --yellow-50: #fffbeb;
+    --yellow-100: #fef6d8;
+    --yellow-200: #fceebc;
+    --yellow-300: #fcf0c5;
+    --yellow-400: #fdeaa1;
+    --yellow-500: #fee686;
+    --yellow-600: #ffe269;
+    --yellow-700: #ffde48;
+    --yellow-800: #feda15;
+    --yellow-900: #f6ba38;
+    --green-50: #ecfdf5;
+    --green-100: #e4fdf0;
+    --green-200: #dcfcea;
+    --green-300: #d5fbe3;
+    --green-400: #cffbdc;
+    --green-500: #a8ecb3;
+    --green-600: #89de90;
+    --green-700: #6ad06c;
+    --green-800: #49c043;
+    --green-900: #1DB100;
+    --indigo-50: #c1f1ff;
+    --indigo-100: #bbf3ff;
+    --indigo-200: #b5f4ff;
+    --indigo-300: #b0f5ff;
+    --indigo-400: #81d9f2;
+    --indigo-500: #52bce7;
+    --indigo-600: #239fdb;
+    --indigo-700: #0080cc;
+    --indigo-800: #0f61b9;
+    --indigo-900: #303f9f;
+    --purple-50: #deedff;
+    --purple-100: #dcedff;
+    --purple-200: #daedff;
+    --purple-300: #d7edff;
+    --purple-400: #b1d2f5;
+    --purple-500: #8fb8eb;
+    --purple-600: #719ce0;
+    --purple-700: #5981d3;
+    --purple-800: #4764c4;
+    --purple-900: #3d47b2;
+    --pink-50: #ffe6f5;
+    --pink-100: #ffdaf3;
+    --pink-200: #ffd4f2;
+    --pink-300: #ffcef2;
+    --pink-400: #fcb7df;
+    --pink-500: #f9a1c9;
+    --pink-600: #f589b1;
+    --pink-700: #f07296;
+    --pink-800: #e85a79;
+    --pink-900: #de425b;
+
+    --nub-text-color-default: var(--demo-mediumGray);
+    --nub-text-color-default-alt: var(--gray-400);
+    --nub-text-color-secondary: var(--nubs-quaternary);
+    --nub-text-color-disabled: var(--neutral-grayLight);
+    --nub-text-color-disabled-secondary: var(--neutral-grayLight);
+    --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
+    --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
+    --nub-breadcrumb-link-color-default: var(--neutral-white);
+    --nub-breadcrumb-link-color-focus: var(--demo-mediumGray);
+    --nub-link-color-hover: var(--neutral-grayDark);
+    --nub-link-color-focus: var(--demo-mediumGray);
+    --nub-link-border-color-info: var(--status-info-alt);
+    --nub-link-border-color-success: var(--status-success-alt);
+    --nub-link-border-color-warning: var(--status-warning-alt);
+    --nub-link-border-color-danger: var(--status-error-alt);
+    --nub-breadcrumb-link-decoration-default: none;
+    --nub-breadcrumb-link-decoration--uppercase: uppercase;
+
+
+    --nub-breadcrumb-link-decoration-hover: "no-"+ underline;
+    --nub-breadcrumb-link-decoration-focus: underline;
+    --nub-breadcrumb-bg-color: var(--demo-darkGray);
+    --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
+    --nub-breadcrumb-separator-spacing: var(--spacing-2);
+    --nub-bg-btn-disabled: var(--neutral-grayMedium);
+    --nub-header-default: var(--nubs-septenary);
+    /*
    * Configuration values for `outline-link`.
    */
-  --outline-link-color-default: var(--demo-lightGray);
-  --outline-link-color-hover: var(--demo-darkGray);
-  --outline-link-color-focus: var(--demo-mediumGray);
+    --outline-link-color-default: var(--demo-lightGray);
+    --outline-link-color-hover: var(--demo-darkGray);
+    --outline-link-color-focus: var(--demo-mediumGray);
 
-  --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
-  --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-  --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
-  --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
-  --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
-  --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
-  --radial-gradient-info: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
-  --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
-  --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
-  --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
-
+    --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
+    --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+    --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
+    --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
+    --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
+    --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
+    --radial-gradient-info: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
+    --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
+    --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
+    --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
+  }
 }
-
-/* } */

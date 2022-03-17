@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import './nub-breadcrumbs';
 
 const configuration = {
-  title: 'Nubs/Breadcrumb',
+  title: 'Nubs/Breadcrumbs',
   component: 'nub-breadcrumbs',
   parameters: {
     viewMode: 'docs',
