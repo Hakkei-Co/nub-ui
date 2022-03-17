@@ -1,0 +1,33 @@
+name: NPM publish CD workflow
+
+on:
+  release:
+    # This specifies that the build will be triggered when we publish a release
+    types: [published]
+
+jobs:
+  build:
+    # Run on latest version of ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.release.target_commitish }}
+    - name: Use Node.js 16
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16.x'
+        registry-url: https://npm.pkg.github.com
+    - run: npm ci
+    - run: git config --global user.name "hakkei-co"
+    - run: git config --global user.email "support@hakkei.co"
+    - run: npm version ${{ github.event.release.tag_name }}
+    - run: npm run build
+    - run: npm test
+    - run: npm publish --tag ${{ github.event.release.target_commitish }}
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    # push the version changes to GitHub
+    - run: git push
+      env:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
