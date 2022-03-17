@@ -98,22 +98,22 @@ div#alert-link {
 /* Notice alert styles */
 /* ----------------------*/
 :host([statusType='notice']) #body {
-  @apply border border-solid text-ui-infoText drop-shadow-md;
-  border-color: var(--nub-link-border-color-info);
+  @apply border border-solid drop-shadow-md;
+  border-color: var(--status-info-alt);
+  color: var(--ui-infoText);
 }
 
 :host([statusType='notice']) #body:hover {
   @apply bg-gradient-to-br;
   @apply opacity-95;
   @apply drop-shadow-xl;
-  border-color: var(--neutral-grayMedium);
+  border-color: var(--status-info-alt);
 }
 
 :host([statusType='notice']) #body:focus {
   @apply ring-4 ring-gray-300;
   @apply opacity-80;
   @apply drop-shadow-lg;
-  border-color: var(--nub-link-border-color-info);
 }
 
 /* ----------------------*/
@@ -121,7 +121,8 @@ div#alert-link {
 /* ----------------------*/
 :host([statusType='warning']) #body {
   @apply border border-solid bg-ui-warning text-ui-warningText shadow-md drop-shadow-none;
-  border-color: var(--nub-link-border-color-warning);
+  border-color: var(--status-warning-alt);
+  color: var(--ui-warningText);
 }
 
 :host([statusType='warning']) #body:hover {
@@ -142,7 +143,8 @@ div#alert-link {
 :host([statusType='error']) #body {
   @apply border border-solid bg-ui-error text-red-900;
   @apply opacity-100 drop-shadow-sm;
-  border-color: var(--nub-link-border-color-danger);
+  border-color: var(--status-error-alt);
+  color: var(--ui-errorText);
 }
 
 :host([statusType='error']) #body:hover {
@@ -163,7 +165,9 @@ div#alert-link {
 :host([statusType='success']) #body {
   @apply border border-solid border-green-800 bg-ui-success bg-gradient-to-r from-green-400 via-green-200 to-green-300 text-ui-successText;
   @apply drop-shadow-sm;
-  border-color: var(--nub-link-border-color-success);
+  border-color: var(--status-success-alt);
+  color: var(--ui-successText);
+
 }
 
 :host([statusType='success']) #body:hover {

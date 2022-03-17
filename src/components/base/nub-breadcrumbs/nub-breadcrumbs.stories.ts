@@ -17,15 +17,18 @@ const Template = (): TemplateResult => {
 <nub-breadcrumbs>
   <nav class="breadcrumb">
     <span>
-      <a href="#">Home</a>
+      <p>Home</p>
     </span>
     <span>
-      <a href="#">About Us</a>
+      <p>About Us</p>
     </span>
     <span>
-      <a href="#">Our History</a>
+      <p>Our History</p>
     </span>
-    <span class="last">The current page title</span>
+    <span class="last">
+      <p>The current page title</p>
+    </span>
+    </nav>
   </nav>
 </nub-breadcrumbs>
 `;

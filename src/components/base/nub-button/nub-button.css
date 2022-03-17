@@ -72,9 +72,10 @@
 }
 
 .btn.danger {
-  @apply text-neutral-white border-red-700 !important;
+  @apply border-red-700 !important;
   @apply border-none !important;
   background-color: var(--ui-errorBackground) !important;
+  color: var(--ui-errorText) !important;
 
   &:hover,
   &:focus {
@@ -85,6 +86,7 @@
 .btn.warning {
   @apply bg-yellow-500 border-yellow-500 !important;
   @apply border-none !important;
+  color: var(--ui-warningText) !important;
 
   &:hover,
   &:focus {
@@ -101,6 +103,7 @@
   @apply shadow-none !important;
   color: var(--nubs-tertiary) !important;
   @apply border-none !important;
+
 }
 
 .btn.primary {
@@ -111,6 +114,7 @@
 .primary[aria-disabled='true'] {
   @apply font-semibold opacity-90 !important;
   color: var(--nub-text-color-disabled) !important;
+  background-color: var(--nub-bg-btn-disabled) !important;
 
   &:hover,
   &:focus {

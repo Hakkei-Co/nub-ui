@@ -49,19 +49,19 @@
   --neutral-transparent: transparent;
   --neutral-white: #FFFFFE;
   --neutral-grayLight: #c2c2c2;
-  --neutral-grayMedium: #949494;
-  --neutral-grayDark: #3f3f3f;
+  --neutral-grayMedium: #525252;
+  --neutral-grayDark: #272727;
   --neutral-black: #1a1a1a;
 
   /* Colors for UI notification messages. */
-  --status-success: #0dbe54;
+  --status-success: #62CA76;
   --status-warning: #ffc917ef;
-  --status-error: #ef4444;
+  --status-error: #ffa09b;
   --status-info: #bcf2ffe7;
-  --status-success-alt: #153620;
-  --status-warning-alt: #5a4800;
-  --status-error-alt: #8a1500;
-  --status-info-alt: #5f6f79;
+  --status-success-alt: #256130;
+  --status-warning-alt: #633f00;
+  --status-error-alt: #851703;
+  --status-info-alt: #157388;
 
   --ui-contrast: transparent;
   --ui-infoBackground: var(--status-info);
@@ -70,20 +70,20 @@
 
   --ui-successBackground: var(--status-success);
   --ui-successText: var(--status-success-alt);
-  --ui-successBorder: var(--status-success);
+  --ui-successBorder: var(--status-success-alt);
 
   --ui-warningBackground: var(--status-warning);
   --ui-warningText: var(--status-warning-alt);
-  --ui-warningBorder: var(--neutral-white);
+  --ui-warningBorder: var(--status-warning-alt);
 
   --ui-errorBackground: var(--status-error);
-  --ui-errorText: var(--neutral-white);
-  --ui-errorBorder: var(--status-error);
+  --ui-errorText: var(--status-error-alt);
+  --ui-errorBorder: var(--status-error-alt);
 
   /* Demo colors used for default component demonstrations */
   --demo-darkBlue: #3171e0;
-  --demo-mediumBlue: #3880ff;
-  --demo-lightBlue: #eff6ff;
+  --demo-mediumBlue: #3376e9;
+  --demo-lightBlue: #9baabe;
   --demo-darkGray: #3f3f46;
   --demo-mediumGray: #e0e0e0;
   --demo-lightGray: #f4f4f5;
@@ -310,8 +310,9 @@
 
   --nub-text-color-default: var(--demo-mediumGray);
   --nub-text-color-secondary: var(--neutral-white);
-  --nub-text-color-disabled: var(--neutral-grayMedium);
+  --nub-text-color-disabled: var(--neutral-lightGray);
   --nub-text-color-disabled-secondary: var(--neutral-grayLight);
+  --nub-bg-btn-disabled: var(--demo-lightBlue);
 
 
   --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
@@ -349,7 +350,7 @@
   /* Brand specific primary colors. */
   --nubs-primary: #4d6ac7;
   --nubs-secondary: #f8f8f8;
-  --nubs-tertiary: #69707b;
+  --nubs-tertiary: #4A82B5;
   --nubs-quaternary: #8d97a5;
   --nubs-nonary: #20315C;
   --nubs-quinary: #b3c1d1;
@@ -369,18 +370,18 @@
 
   /* Colors for UI notification messages. */
   --status-success: #00d991dc;
-  --status-warning: #facf23d2;
-  --status-error: #ff6251;
+  --status-warning: #FFBB38;
+  --status-error: #FF3F6D;
   --status-info: #397eda;
   --status-success-alt: #2b7042;
-  --status-warning-alt: #9b7c01ce;
+  --status-warning-alt: #e4af00;
   --status-error-alt: #ac1a00d5;
-  --status-info-alt: #2f3a44e0;
+  --status-info-alt: #fdfbffe0;
 
   --ui-contrast: var(--nubs-septenary);
   --ui-infoBackground: var(--status-info);
   --ui-infoText: var(--neutral-white);
-  --ui-infoBorder: var(--status-info);
+  --ui-infoBorder: var(--nubs-nonary);
 
   --ui-successBackground: var(--status-success);
   --ui-successText: var(--status-success-alt);
@@ -570,7 +571,7 @@
 
   --nub-text-color-default: var(--demo-mediumGray);
   --nub-text-color-secondary: var(--neutral-white);
-  --nub-text-color-disabled: var(--neutral-grayMedium);
+  --nub-text-color-disabled: var(--neutral-grayLight);
   --nub-text-color-disabled-secondary: var(--neutral-grayLight);
   --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
   --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
@@ -591,7 +592,7 @@
   --nub-breadcrumb-bg-color: var(--demo-darkGray);
   --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
   --nub-breadcrumb-separator-spacing: var(--spacing-2);
-
+  --nub-bg-btn-disabled: var(--neutral-grayMedium);
   /*
    * Configuration values for `outline-link`.
    */

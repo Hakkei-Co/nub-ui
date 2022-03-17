@@ -31,7 +31,7 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * @todo Convert styles to utilize CSS Variables.
  */
 @customElement('nub-button')
-export class NubButton extends OutlineElement {
+export class OutlineButton extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
 
   slots = new SlotController(
@@ -151,6 +151,6 @@ export class NubButton extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'nub-button': NubButton;
+    'nub-button': OutlineButton;
   }
 }

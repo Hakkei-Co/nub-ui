@@ -5,16 +5,22 @@
   padding: var(--nub-breadcrumb-bg-padding);
 }
 
+p,
 a,
-::slotted(a) {
+span,
+div,
+::slotted(*) {
   @apply font-display font-medium transition-colors duration-75;
-  @apply min-w-min whitespace-nowrap px-2;
+  @apply min-w-min whitespace-nowrap;
   text-decoration: var(--nub-breadcrumb-link-decoration-default);
   color: var(--nub--breadcrumb-link-color-default);
 }
 
+p,
 a,
-::slotted(a)::after {
+span,
+div,
+::slotted(*)::after {
   display: inline-block;
   font-weight: 600;
   height: 1px;
@@ -27,16 +33,17 @@ a,
   /* color: var(--nub-breadcrumb-text-color-default--active); */
 }
 
-a:hover,
-::slotted(a:hover) {
-  @apply font-semibold no-underline opacity-90;
+*:hover,
+::slotted(*:hover) {
+  @apply font-semibold;
+  cursor: pointer !important;
   text-decoration: var(--nub-breadcrumb-link-decoration-hover);
-  color: var(--nub--breadcrumb-link-color-hover);
+  /* color: var(--nub--breadcrumb-link-color-hover); */
 }
 
-a:focus,
-::slotted(a:focus) {
-  @apply no-underline outline-1 ring-nubs-primary;
+*:focus,
+::slotted(*:focus) {
+  @apply outline-1 ring-nubs-primary;
   text-decoration: var(--nub-breadcrumb-link-decoration-focus);
   outline: none;
   color: var(--outline-breadcrumb-link-color-focus);
