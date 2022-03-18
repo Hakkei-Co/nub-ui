@@ -17,7 +17,6 @@ module.exports = {
   mode: 'jit',
   content: [
     './src/**/*.{ts,tsx,mdx,html,txt,css,js}',
-    './node_modules/tw-elements/dist/js/**/*.js',
     './src/.storybook/**/*.{ts,tsx,mdx,html,txt,css}',
   ],
   theme: {
@@ -283,5 +282,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tw-elements/dist/plugin')],
+  plugins: [],
 };

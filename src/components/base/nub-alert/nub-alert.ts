@@ -2,7 +2,6 @@ import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import componentStyles from './nub-alert.css.lit';
 import { OutlineElement } from '../outline-element/outline-element';
-import infoIcon from '../../assets/outline/Nubs_Info.svg';
 export const alertSizes = ['small', 'large'] as const;
 export type AlertSize = typeof alertSizes[number];
 export const alertSpan = ['float', 'full'] as const;

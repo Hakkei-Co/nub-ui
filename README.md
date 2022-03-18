@@ -57,14 +57,48 @@ yarn install
 
 ### To with another project
 
-**IMPORTANT**
+Create environment variables `NPM_TOKEN_PRIVATE` and `NPM_TOKEN_DEFAULT` and export them to your shell environment.  Place them in your `.bashrc` file for convenience.
 
-Create an `.npmrc` file using the following details:
-
+```bash
+export NPM_TOKEN_PRIVATE=xxxxxxxxxxxxxxxx
+export NPM_TOKEN_DEFAULT=yyyyyyyyyyyyyyyy
 ```
+
+Create an `.npmrc` file using the following details.
+
+```bash
 @hakkei-co:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+//npm.pkg.github.com/:_authToken=${NPM_TOKEN_PRIVATE}
+//registry.npmjs.org/:_authToken=${NPM_TOKEN_DEFAULT}
 ```
+
+Install in an external project like so:
+
+```bash
+$ yarn add @hakkei-co/nub-ui@latest
+```
+
+## Managing Registries
+
+You need to update your registry to access this private organization node package.
+
+```bash
+$ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
+```
+
+Login using the access tokens provided for you. You can verify which registry you are using by running
+```
+$ yarn config list
+
+# or for npm
+$ npm config list
+
+# you will need to manually specify which registry you are installing packages from if you override the default npm registry
+$ npm i <some-package> --registry=https://npm.pkg.github.com
+```
+
+
+
 
 ---
 
