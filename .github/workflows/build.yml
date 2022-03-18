@@ -24,7 +24,9 @@ on:
       - /^task/
       - /^feature/
       - /^bug/
-
+env:
+  NPM_TOKEN_PRIVATE:  ${{ secrets.NPM_TOKEN_PRIVATE }}
+  NPM_TOKEN_DEFAULT:  ${{ secrets.NPM_TOKEN_DEFAULT }}
 # The jobs for the build workflow.
 jobs:
   # Basic setup job to prepare codebase.
