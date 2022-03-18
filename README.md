@@ -57,7 +57,7 @@ yarn install
 
 ### To with another project
 
-Create environment variables `NPM_TOKEN_PRIVATE` and `NPM_TOKEN_DEFAULT` and export them to your shell environment.  Place them in your `.bashrc` file for convenience.
+Fill in values for `NPM_TOKEN_PRIVATE` and `NPM_TOKEN_DEFAULT` in the file `.env`.
 
 ```bash
 export NPM_TOKEN_PRIVATE=xxxxxxxxxxxxxxxx
