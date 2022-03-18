@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.1.6](https://github.com/hakkei-co/nub-ui/compare/v0.1.5...v0.1.6) (2022-03-18)
+
 # [1.2.0](https://gitlab.com/phase2tech/frontend/tooling/outline/compare/v1.1.0...v1.2.0) (2021-06-24)
 
 
