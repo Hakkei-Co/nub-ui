@@ -1,6 +1,6 @@
 {
   "name": "@hakkei-co/nub-ui",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Nub Web Component Design",
   "main": "dist/outline.js",
   "module": "dist/outline.js",
