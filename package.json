@@ -1,6 +1,6 @@
 {
   "name": "@hakkei-co/nub-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Nub Web Component Design",
   "main": "dist/outline.js",
   "module": "dist/outline.js",
@@ -81,7 +81,7 @@
     "reboot": "yarn clean && yarn install && yarn start",
     "watch:css": "node scripts/styles.js --watch",
     "test": "yarn build && wtr",
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "release": "yarn storybook:prod && standard-version && git push --follow-tags && npm publish"
   },
   "keywords": [
     "web-components",
