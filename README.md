@@ -55,6 +55,17 @@ If you need to update your node version, see the [usage documentation](https://g
 yarn install
 ```
 
+### To with another project
+
+**IMPORTANT**
+
+Create an `.npmrc` file using the following details:
+
+```
+@hakkei-co:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+```
+
 ---
 
 ## Storybook Development

@@ -1,6 +1,6 @@
 {
   "name": "@hakkei-co/nub-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Nub Web Component Design",
   "main": "dist/outline.js",
   "module": "dist/outline.js",
@@ -88,7 +88,7 @@
     "lit"
   ],
   "dependencies": {
-    "@hakkei-co/nub-ui": "^0.0.8",
+    "@hakkei-co/nub-ui": "^0.1.0",
     "@splidejs/splide": "^3.2.1",
     "lit": "^2.0.0",
     "tw-elements": "^1.0.0-alpha11"
