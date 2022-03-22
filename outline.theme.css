@@ -306,7 +306,10 @@
   --outline-admin-links-link-y-spacing: var(--spacing-4);
   --outline-admin-links-link-x-spacing: var(--spacing-6);
 
-  --nub-text-color-default: var(--demo-mediumGray);
+  --nub-bg-body-default: var(--neutral-white);
+  --nub-bg-tab-select-default: var(--demo-lightGray);
+
+  --nub-text-color-default: var(--demo-darkGray);
   --nub-text-color-default-alt: var(--gray-700);
   --nub-text-color-secondary: var(--neutral-white);
   --nub-text-color-disabled: var(--neutral-lightGray);
@@ -567,7 +570,10 @@
     --pink-800: #e85a79;
     --pink-900: #de425b;
 
-    --nub-text-color-default: var(--demo-mediumGray);
+    --nub-bg-body-default: var(--nubs-senary);
+    --nub-bg-tab-select-default: var(--neutral-white);
+
+    --nub-text-color-default: var(--gray-50);
     --nub-text-color-default-alt: var(--gray-400);
     --nub-text-color-secondary: var(--nubs-quaternary);
     --nub-text-color-disabled: var(--neutral-grayLight);

@@ -9,8 +9,8 @@ let id = 0;
  *
  * @csspart base - The component's base wrapper.
  */
-@customElement('outline-tab-panel')
-export default class OutlineTabPanel extends OutlineElement {
+@customElement('nub-tab-panel')
+export default class NubTabPanel extends OutlineElement {
   private componentId = `tab-panel-${++id}`;
 
   /** The tab panel's name. */
@@ -43,6 +43,6 @@ export default class OutlineTabPanel extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-tab-panel': OutlineTabPanel;
+    'nub-tab-panel': NubTabPanel;
   }
 }

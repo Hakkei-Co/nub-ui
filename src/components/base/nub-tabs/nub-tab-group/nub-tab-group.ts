@@ -6,18 +6,18 @@ import { emit } from '../../../../internal/event';
 import { watch } from '../../../../internal/watch';
 import { getOffset } from '../../../../internal/offset';
 import { scrollIntoView } from '../../../../internal/scroll';
-import type OutlineTab from '../outline-tab/outline-tab';
-import type OutlineTabPanel from '../outline-tab-panel/outline-tab-panel';
+import type NubTab from '../nub-tab/nub-tab';
+import type NubTabPanel from '../nub-tab-panel/nub-tab-panel';
 import '../../outline-container/outline-container';
-import componentStyles from './outline-tab-group.css.lit';
+import componentStyles from './nub-tab-group.css.lit';
 import { MobileController } from '../../../controllers/mobile-controller';
 
 /**
  * @slot - Used for grouping tab panels in the tab group.
  * @slot nav - Used for grouping tabs in the tab group.
  *
- * @event {{ name: String }} outline-tab-show - Emitted when a tab is shown.
- * @event {{ name: String }} outline-tab-hide - Emitted when a tab is hidden.
+ * @event {{ name: String }} nub-tab-show - Emitted when a tab is shown.
+ * @event {{ name: String }} nub-tab-hide - Emitted when a tab is hidden.
  *
  * @csspart base - The component's base wrapper.
  * @csspart nav - The tab group navigation container.
@@ -25,8 +25,8 @@ import { MobileController } from '../../../controllers/mobile-controller';
  * @csspart active-tab-indicator - An element that displays the currently selected tab. This is a child of the tabs container.
  * @csspart body - The tab group body where tab panels are slotted in.
  */
-@customElement('outline-tab-group')
-export default class OutlineTabGroup extends OutlineElement {
+@customElement('nub-tab-group')
+export default class NubTabGroup extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
 
   @query('.tab-group') tabGroup: HTMLElement;
@@ -35,11 +35,11 @@ export default class OutlineTabGroup extends OutlineElement {
   @query('.tab-group__indicator') indicator: HTMLElement;
 
   private mobileController = new MobileController(this);
-  private activeTab: OutlineTab;
+  private activeTab: NubTab;
   private mutationObserver: MutationObserver;
   private resizeObserver: ResizeObserver;
-  private tabs: OutlineTab[] = [];
-  private panels: OutlineTabPanel[] = [];
+  private tabs: NubTab[] = [];
+  private panels: NubTabPanel[] = [];
 
   /** The placement of the tabs. */
   @property({ type: String, reflect: true, attribute: 'placement' }) placement:
@@ -130,7 +130,7 @@ export default class OutlineTabGroup extends OutlineElement {
 
   /** Shows the specified tab panel. */
   show(panel: string) {
-    const tab = this.tabs.find(el => el.panel === panel) as OutlineTab;
+    const tab = this.tabs.find(el => el.panel === panel) as NubTab;
 
     if (tab) {
       this.setActiveTab(tab, { scrollBehavior: 'smooth' });
@@ -145,17 +145,17 @@ export default class OutlineTabGroup extends OutlineElement {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return [...slot.assignedElements()].filter((el: any) => {
       return includeDisabled
-        ? el.tagName.toLowerCase() === 'outline-tab'
-        : el.tagName.toLowerCase() === 'outline-tab' && !el.disabled;
-    }) as OutlineTab[];
+        ? el.tagName.toLowerCase() === 'nub-tab'
+        : el.tagName.toLowerCase() === 'nub-tab' && !el.disabled;
+    }) as NubTab[];
   }
 
   getAllPanels() {
     const slot = this.body.querySelector('slot')!;
     return [...slot.assignedElements()].filter(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (el: any) => el.tagName.toLowerCase() === 'outline-tab-panel'
-    ) as [OutlineTabPanel];
+      (el: any) => el.tagName.toLowerCase() === 'nub-tab-panel'
+    ) as [NubTabPanel];
   }
 
   getActiveTab() {
@@ -164,8 +164,8 @@ export default class OutlineTabGroup extends OutlineElement {
 
   handleClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    const tab = target.closest('outline-tab') as OutlineTab;
-    const tabGroup = tab?.closest('outline-tab-group');
+    const tab = target.closest('nub-tab') as NubTab;
+    const tabGroup = tab?.closest('nub-tab-group');
 
     // Ensure the target tab is in this tab group
     if (tabGroup !== this) {
@@ -179,8 +179,8 @@ export default class OutlineTabGroup extends OutlineElement {
 
   handleKeyDown(event: KeyboardEvent) {
     const target = event.target as HTMLElement;
-    const tab = target.closest('outline-tab') as OutlineTab;
-    const tabGroup = tab?.closest('outline-tab-group');
+    const tab = target.closest('nub-tab') as NubTab;
+    const tabGroup = tab?.closest('nub-tab-group');
 
     // Ensure the target tab is in this tab group
     if (tabGroup !== this) {
@@ -209,7 +209,7 @@ export default class OutlineTabGroup extends OutlineElement {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const activeEl = document.activeElement as any;
 
-      if (activeEl && activeEl.tagName.toLowerCase() === 'outline-tab') {
+      if (activeEl && activeEl.tagName.toLowerCase() === 'nub-tab') {
         let index = this.tabs.indexOf(activeEl);
 
         if (event.key === 'Home') {
@@ -261,7 +261,7 @@ export default class OutlineTabGroup extends OutlineElement {
   }
 
   setActiveTab(
-    tab: OutlineTab,
+    tab: NubTab,
     options?: { emitEvents?: boolean; scrollBehavior?: 'auto' | 'smooth' }
   ) {
     options = Object.assign(
@@ -293,12 +293,12 @@ export default class OutlineTabGroup extends OutlineElement {
       // Emit events
       if (options.emitEvents) {
         if (previousTab) {
-          emit(this, 'outline-tab-hide', {
+          emit(this, 'nub-tab-hide', {
             detail: { name: previousTab.panel },
           });
         }
 
-        emit(this, 'outline-tab-show', {
+        emit(this, 'nub-tab-show', {
           detail: { name: this.activeTab.panel },
         });
       }
@@ -310,7 +310,7 @@ export default class OutlineTabGroup extends OutlineElement {
     this.tabs.map(tab => {
       const panel = this.panels.find(
         el => el.name === tab.panel
-      ) as OutlineTabPanel;
+      ) as NubTabPanel;
       if (panel) {
         tab.setAttribute('aria-controls', panel.getAttribute('id') as string);
         panel.setAttribute('aria-labelledby', tab.getAttribute('id') as string);
@@ -347,18 +347,17 @@ export default class OutlineTabGroup extends OutlineElement {
     const offsetLeft = offset.left + this.nav.scrollLeft;
 
     switch (this.placement) {
-      case 'top':
-      case 'bottom':
-        this.indicator.style.width = `${width}px`;
-        this.indicator.style.height = 'auto';
-        this.indicator.style.transform = `translateX(${offsetLeft}px)`;
-        break;
-
       case 'start':
       case 'end':
         this.indicator.style.width = 'auto';
         this.indicator.style.height = `${height}px`;
         this.indicator.style.transform = `translateY(${offsetTop}px)`;
+        break;
+      case 'top':
+      case 'bottom':
+        this.indicator.style.width = `${width}px`;
+        this.indicator.style.height = 'auto';
+        this.indicator.style.transform = `translateX(${offsetLeft}px)`;
         break;
     }
   }
@@ -427,6 +426,6 @@ export default class OutlineTabGroup extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-tab-group': OutlineTabGroup;
+    'nub-tab-group': NubTabGroup;
   }
 }

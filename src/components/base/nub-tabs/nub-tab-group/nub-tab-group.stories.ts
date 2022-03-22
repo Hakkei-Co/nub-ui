@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
-import './outline-tab-group';
-import '../outline-tab/outline-tab';
-import '../outline-tab-panel/outline-tab-panel';
+import './nub-tab-group';
+import '../nub-tab/nub-tab';
+import '../nub-tab-panel/nub-tab-panel';
 import '../../nub-header/nub-header';
 import '../../outline-accordion/outline-accordion';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
@@ -30,14 +30,14 @@ const tabData: TabData[] = [
     title: 'Tab Number Two',
     content: `
       <nub-header>Content for Tab Number Two</nub-header>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="http://loripsum.net/" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="#" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
     `,
   },
   {
     title: 'Tab Number Three',
     content: `
       <nub-header>Content for Tab Number Three</nub-header>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="http://loripsum.net/" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non minor, inquit, voluptas percipitur ex vilissimis rebus quam ex pretiosissimis. Quae cum essent dicta, discessimus. Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur? <a href="#" target="_blank">Hoc ipsum elegantius poni meliusque potuit.</a> Duo Reges: constructio interrete. Apparet statim, quae sint officia, quae actiones. Qua tu etiam inprudens utebare non numquam. Huic mori optimum esse propter desperationem sapientiae, illi propter spem vivere. Quae est igitur causa istarum angustiarum? Dic in quovis conventu te omnia facere, ne doleas. Igitur ne dolorem quidem. </p>
     `,
   },
   {
@@ -47,8 +47,8 @@ const tabData: TabData[] = [
   },
 ];
 export default {
-  title: 'Outline/Tabs',
-  component: 'outline-tab-group',
+  title: 'Nubs/Tabs',
+  component: 'nub-tab-group',
   parameters: {
     viewMode: 'docs',
   },
@@ -65,17 +65,17 @@ export default {
 };
 
 const Template = ({ placement }): TemplateResult =>
-  html`<outline-tab-group placement=${placement}>
+  html`<nub-tab-group placement=${placement}>
     ${tabData.map(panel => {
-      return html`<outline-tab
+      return html`<nub-tab
           slot="nav"
           ?disabled=${panel.disabled}
           panel="${formatTitle(panel.title)}"
-          >${panel.title}</outline-tab
+          ><outline-icon slot="tab-icon" library="bootstrap" name="emoji-smile"></outline-icon><span>${panel.title}</span></nub-tab
         >
-        <outline-tab-panel name="${formatTitle(panel.title)}">
+        <nub-tab-panel name="${formatTitle(panel.title)}">
           ${unsafeHTML(`${panel.content}`)}
-        </outline-tab-panel> `;
+        </nub-tab-panel> `;
     })}
     <div slot="accordion-wrapper">
       <outline-accordion ?clean=${true} ?single-panel=${true}>
@@ -90,7 +90,7 @@ const Template = ({ placement }): TemplateResult =>
         })}
       </outline-accordion>
     </div>
-  </outline-tab-group> `;
+  </nub-tab-group> `;
 
 export const TabGroup = Template.bind({});
 TabGroup.args = {

@@ -1,5 +1,5 @@
 :host {
-  @apply block;
+  @apply block rounded-md;
 }
 
 .tab-group {
@@ -37,7 +37,7 @@
 }
 
 .tab-group--start .tab-group__body {
-  @apply order-2 py-4 px-6;
+  @apply order-2 py-4 px-2;
   flex: 1 1 auto;
 }
 

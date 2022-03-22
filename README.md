@@ -55,13 +55,14 @@ If you need to update your node version, see the [usage documentation](https://g
 yarn install
 ```
 
-### To with another project
+### To use nubs in another project
 
 Fill in values for `NPM_TOKEN_PRIVATE` and `NPM_TOKEN_DEFAULT` in the file `.env`.
 
 ```bash
-export NPM_TOKEN_PRIVATE=xxxxxxxxxxxxxxxx
-export NPM_TOKEN_DEFAULT=yyyyyyyyyyyyyyyy
+# .env
+NPM_TOKEN_PRIVATE=xxxxxxxxxxxxxxxx
+NPM_TOKEN_DEFAULT=yyyyyyyyyyyyyyyy
 ```
 
 Create an `.npmrc` file using the following details.
@@ -80,7 +81,7 @@ $ yarn add @hakkei-co/nub-ui@latest
 
 ## Managing Registries
 
-You need to update your registry to access this private organization node package.
+Point registry to Github registry
 
 ```bash
 $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com

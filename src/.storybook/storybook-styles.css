@@ -18,16 +18,23 @@
 
 .sbdocs-p {
   @apply mt-0 !important;
+  color: var(--nub-text-color-default) !important;
+}
+
+#storybook-preview-wrapper {
+  background-color: var(--nub-bg-body-default) !important;
 }
 
 html[data-theme='light'],
-#docs-root {
-  background-color: var(--demo-lightGray) !important;
+#docs-root .docs-story {
+  background-color: var(--nub-bg-body-default) !important;
+  color: var(--nub-text-color-default) !important;
 }
 
 [data-theme='dark'],
-#docs-root {
-  background-color: #111 !important;
+#docs-root .docs-story {
+  background-color: var(--nub-bg-body-default) !important;
+  color: var(--nub-text-color-default) !important;
 }
 
 .sb-main-padded .sb-show-main {
