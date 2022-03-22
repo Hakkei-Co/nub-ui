@@ -91,6 +91,7 @@
   "dependencies": {
     "@hakkei-co/nub-ui": "^0.1.0",
     "@splidejs/splide": "^3.2.1",
+    "@storybook/storybook-deployer": "^2.8.11",
     "lit": "^2.0.0"
   },
   "engines": {
