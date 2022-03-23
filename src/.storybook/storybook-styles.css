@@ -18,8 +18,13 @@
 
 .sbdocs-p {
   @apply mt-0 !important;
-  color: var(--nub-text-color-default) !important;
+  /* color: var(--nub-text-color-default) !important; */
 }
+
+.sbdocs .sbdocs-wrapper {
+  background-color: var(--nub-bg-body-default) !important;
+}
+
 
 #storybook-preview-wrapper {
   background-color: var(--nub-bg-body-default) !important;
@@ -37,6 +42,6 @@ html[data-theme='light'],
   color: var(--nub-text-color-default) !important;
 }
 
-.sb-main-padded .sb-show-main {
-  color: var(--demo-lightGray) !important;
-}
+/* .sb-main-padded .sb-show-main { */
+/* color: var(--demo-lightGray) !important; */
+/* } */
