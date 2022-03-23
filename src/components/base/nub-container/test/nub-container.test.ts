@@ -1,14 +1,14 @@
-import { OutlineContainer } from '../outline-container';
+import { NubContainer } from '../nub-container';
 import { assert, fixture, html } from '@open-wc/testing';
 
-describe('outline-container', () => {
+describe('nub-container', () => {
   it('is defined', () => {
-    const el = document.createElement('outline-container');
-    assert.instanceOf(el, OutlineContainer);
+    const el = document.createElement('nub-container');
+    assert.instanceOf(el, NubContainer);
   });
 
   it('renders with default values', async () => {
-    const el = await fixture(html`<outline-container></outline-container>`);
+    const el = await fixture(html`<nub-container></nub-container>`);
     assert.shadowDom.equal(
       el,
       `
@@ -20,7 +20,7 @@ describe('outline-container', () => {
 
   it('renders with named slotted content', async () => {
     const el = await fixture(
-      html`<outline-container><p>Testing the container</p></outline-container>`
+      html`<nub-container><p>Testing the container</p></nub-container>`
     );
     assert.lightDom.equal(
       el,

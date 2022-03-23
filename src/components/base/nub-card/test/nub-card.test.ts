@@ -1,14 +1,14 @@
-import { OutlineCard } from '../outline-card';
+import { NubCard } from '../nub-card';
 import { assert, fixture, html } from '@open-wc/testing';
 
-describe('outline-card', () => {
+describe('nub-card', () => {
   it('is defined', () => {
-    const el = document.createElement('outline-card');
-    assert.instanceOf(el, OutlineCard);
+    const el = document.createElement('nub-card');
+    assert.instanceOf(el, NubCard);
   });
 
   it('renders with default values', async () => {
-    const el = await fixture(html`<outline-card></outline-card>`);
+    const el = await fixture(html`<nub-card></nub-card>`);
     assert.shadowDom.equal(
       el,
       `
@@ -20,9 +20,9 @@ describe('outline-card', () => {
 
   it('renders with named slotted content', async () => {
     const el = await fixture(
-      html`<outline-card
+      html`<nub-card
         ><p slot="header">Test Header</p>
-        <p slot="content">Test Content</p></outline-card
+        <p slot="content">Test Content</p></nub-card
       >`
     );
     assert.lightDom.equal(

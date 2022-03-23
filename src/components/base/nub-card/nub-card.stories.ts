@@ -2,8 +2,8 @@ import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypeHidden } from '../outline-element/utils/utils';
 import sampleImage1 from '../../../.storybook/static/media/color/Codeworkbench_color.jpg';
-import './outline-card';
-import '../outline-container/outline-container';
+import './nub-card';
+import '../nub-container/nub-container';
 // import '../nub-header/nub-header'
 
 const allowedColors: string[] = [
@@ -25,8 +25,8 @@ const argTypeColors = {
 };
 
 export default {
-  title: 'Outline/Card',
-  component: 'outline-card',
+  title: 'Nubs/Card',
+  component: 'nub-card',
   argTypes: {
     bgColorHeader: {
       ...argTypeColors,
@@ -93,8 +93,8 @@ const Template = ({
   cardFooter,
 }): TemplateResult =>
   html`
-    <outline-container>
-      <outline-card
+    <nub-container>
+      <nub-card
         bgcolorheader="${ifDefined(bgColorHeader)}"
         bgcolorcontent="${ifDefined(bgColorContent)}"
         bgcolorfooter="${ifDefined(bgColorFooter)}"
@@ -105,8 +105,8 @@ const Template = ({
           ${cardContent}
           ${cardFooter}
         </section>
-      </outline-card>
-    </outline-container>
+      </nub-card>
+    </nub-container>
   `;
 
 export const CardWithImageHeader = Template.bind({});
@@ -171,11 +171,8 @@ CardWithImageHeader.args = {
 
 const cleanTemplate = (): TemplateResult =>
   html`
-    <outline-container>
-      <outline-card
-        bgcolorheader="white"
-        bgcolorcontent="white"
-        bgcolorfooter="white"
+    <nub-container>
+      <nub-card
         has-shadow
         is-rounded
       >
@@ -208,8 +205,8 @@ const cleanTemplate = (): TemplateResult =>
           <outline-link link-href="#">Read More</outline-link>
           </p>
         </div>
-      </outline-card>
-    </outline-container>
+      </nub-card>
+    </nub-container>
   `;
 
 export const CardWithTitleHeader = cleanTemplate.bind({});

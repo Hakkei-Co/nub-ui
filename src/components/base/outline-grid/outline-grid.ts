@@ -4,13 +4,13 @@ import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-grid.css.lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import type { HorizontalAlignment, Size } from '../outline-element/utils/types';
-import '../outline-container/outline-container';
+import '../nub-container/nub-container';
 /**
  * The Outline Grid component
- * @attr x-padding - passed to outline-container wrapper.
- * @attr y-padding - passed to outline-container wrapper.
- * @attr full-bleed - passed to outline-container wrapper.
- * @attr container-align - passed to outline-container wrapper.
+ * @attr x-padding - passed to nub-container wrapper.
+ * @attr y-padding - passed to nub-container wrapper.
+ * @attr full-bleed - passed to nub-container wrapper.
+ * @attr container-align - passed to nub-container wrapper.
  * @slot - The default, and only slot for this element.
  */
 @customElement('outline-grid')
@@ -101,14 +101,14 @@ export class OutlineGrid extends OutlineElement {
 
   render(): TemplateResult {
     return html`
-      <outline-container
+      <nub-container
         ?x-padding="${this.xPadding}"
         ?y-padding="${this.yPadding}"
         ?full-bleed="${this.fullBleed}"
         container-align="${ifDefined(this.containerAlign)}"
       >
         <slot></slot>
-      </outline-container>
+      </nub-container>
     `;
   }
 }

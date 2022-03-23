@@ -6,7 +6,7 @@ import multi from '@rollup/plugin-multi-entry';
 import typescript from 'rollup-plugin-typescript2';
 import svg from 'rollup-plugin-svg';
 import json from '@rollup/plugin-json';
-const outline = require('./outline.config');
+const nubs = require('./outline.config');
 
 const sharedConfig = {
   onwarn(warning) {
@@ -51,8 +51,8 @@ const defaultOutput = {
   },
   output: [
     {
-      // file: `${outline.destBasePath}/outline.js`,
-      file: `${outline.destBasePath}/outline.js`,
+      // file: `${nubs.destBasePath}/nubs.js`,
+      file: `${nubs.destBasePath}/nubs.js`,
       format: 'esm',
     },
   ],
@@ -61,11 +61,11 @@ const defaultOutput = {
 
 const lazyOutput = {
   input: {
-    include: ['src/outline-lazy.ts'],
+    include: ['src/nubs-lazy.ts'],
   },
   output: [
     {
-      file: `${outline.destBasePath}/outline-lazy.js`,
+      file: `${nubs.destBasePath}/nubs-lazy.js`,
       format: 'esm',
     },
   ],
@@ -74,11 +74,11 @@ const lazyOutput = {
 
 const dynamicOutput = {
   input: {
-    include: ['src/outline-dynamic.ts'],
+    include: ['src/nubs-dynamic.ts'],
   },
   output: [
     {
-      file: `${outline.destBasePath}/outline-dynamic.js`,
+      file: `${nubs.destBasePath}/nubs-dynamic.js`,
       format: 'esm',
     },
   ],
@@ -91,16 +91,16 @@ const dataOutput = {
   },
   output: [
     {
-      file: `${outline.destBasePath}/data.js`,
+      file: `${nubs.destBasePath}/data.js`,
       format: 'esm',
     },
   ],
   ...sharedConfig,
 };
 
-outline.js.output.full ? outputs.push(defaultOutput) : null;
-outline.js.output.lazy ? outputs.push(lazyOutput) : null;
-outline.js.output.dynamic ? outputs.push(dynamicOutput) : null;
-outline.js.output.data ? outputs.push(dataOutput) : null;
+nubs.js.output.full ? outputs.push(defaultOutput) : null;
+nubs.js.output.lazy ? outputs.push(lazyOutput) : null;
+nubs.js.output.dynamic ? outputs.push(dynamicOutput) : null;
+nubs.js.output.data ? outputs.push(dataOutput) : null;
 
 export default outputs;

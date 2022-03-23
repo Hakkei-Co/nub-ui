@@ -2,14 +2,14 @@ import { CSSResultGroup, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import componentStyles from './outline-icon.css.lit';
+import componentStyles from './nub-icon.css.lit';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import { emit } from '../../../internal/event';
 import { watch } from '../../../internal/watch';
 import { OutlineElement } from '../outline-element/outline-element';
 import { getIconLibrary, unwatchIcon, watchIcon } from './library';
 import { requestIcon } from './request';
-import outline from '../../../resolved-outline-config';
+import outline from '../../../resolved-nubs-config';
 
 const parser = new DOMParser();
 
@@ -22,7 +22,7 @@ const parser = new DOMParser();
  *
  * @csspart base - The component's base wrapper.
  */
-@customElement('outline-icon')
+@customElement('nub-icon')
 export default class OutlineIcon extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
 
@@ -161,6 +161,6 @@ export default class OutlineIcon extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-icon': OutlineIcon;
+    'nub-icon': OutlineIcon;
   }
 }

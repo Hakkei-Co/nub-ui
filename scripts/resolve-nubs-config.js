@@ -9,7 +9,7 @@ resolvePrettierConfig('.prettierrc')
     return format(
       `
 /**
- * This file is auto generated via npm run generate.resolved-outline
+ * This file is auto generated via npm run generate.resolved-nubs
  */
 export default ${JSON.stringify(outlineConfig)}
   `,
@@ -18,7 +18,7 @@ export default ${JSON.stringify(outlineConfig)}
   })
   .then(formatted =>
     fs.writeFileSync(
-      path.join(__dirname, '../src/resolved-outline-config.ts'),
+      path.join(__dirname, '../src/resolved-nubs-config.ts'),
       formatted
     )
   );

@@ -25,7 +25,6 @@
   background-color: var(--nub-bg-body-default) !important;
 }
 
-
 #storybook-preview-wrapper {
   background-color: var(--nub-bg-body-default) !important;
 }
@@ -37,9 +36,14 @@ html[data-theme='light'],
 }
 
 [data-theme='dark'],
-#docs-root .docs-story {
+#docs-root {
+  background-color: var(--neutral-grayDark) !important;
+  /* color: var(--nub-text-color-default) !important; */
+}
+
+.docs-story {
   background-color: var(--nub-bg-body-default) !important;
-  color: var(--nub-text-color-default) !important;
+  /* color: var(--nub-text-color-default) !important; */
 }
 
 /* .sb-main-padded .sb-show-main { */

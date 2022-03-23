@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { classMap, ClassInfo } from 'lit/directives/class-map.js';
 import { OutlineElement } from '../outline-element/outline-element';
-import componentStyles from './outline-card.css.lit';
+import componentStyles from './nub-card.css.lit';
 
 type AllowedColors =
   | 'primary'
@@ -15,13 +15,13 @@ type AllowedColors =
 
 /**
  * The Card component.
- * @element outline-card
+ * @element nub-card
  * @slot header - The header slot.
  * @slot content - The primary slot to render the card content.
  * @slot footer - The footer slot.
  */
-@customElement('outline-card')
-export class OutlineCard extends OutlineElement {
+@customElement('nub-card')
+export class NubCard extends OutlineElement {
   static styles = [componentStyles];
 
   /**
@@ -111,6 +111,6 @@ export class OutlineCard extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-card': OutlineCard;
+    'nub-card': NubCard;
   }
 }

@@ -2,7 +2,7 @@
  * @file Bundles a lazy loading Outline loader for consumer applciations.
  * @todo Ensure this utilizes the customizable `dist` directory.
  */
-import outline from './resolved-outline-config';
+import nubs from './resolved-nubs-config';
 import customElements from './component-list.json';
 
 // keep a record of the components we've loaded in this way
@@ -57,7 +57,7 @@ const components = [];
 
 elements.forEach((el, i) => {
   const tagName = el.tagName.toLowerCase();
-  outline.components.bundle.forEach(bundle => {
+  nubs.components.bundle.forEach(bundle => {
     const element = customElements.tags.filter(obj => {
       return obj.name === tagName;
     });
@@ -65,7 +65,7 @@ elements.forEach((el, i) => {
 
     if (tagName.indexOf(`${bundle}-`) == 0) {
       // @ts-expect-error - manually added property
-      elements[i].outlineBundle = bundle == 'outline' ? 'base' : bundle;
+      elements[i].outlineBundle = bundle == 'nubs' ? 'base' : bundle;
       // @ts-expect-error - manually added property
       elements[i].outlinePath = element[0].path;
       // console.log(elements[i])

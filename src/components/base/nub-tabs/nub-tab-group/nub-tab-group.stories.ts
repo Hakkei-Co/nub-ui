@@ -71,7 +71,7 @@ const Template = ({ placement }): TemplateResult =>
           slot="nav"
           ?disabled=${panel.disabled}
           panel="${formatTitle(panel.title)}"
-          ><outline-icon slot="tab-icon" library="bootstrap" name="emoji-smile"></outline-icon><span>${panel.title}</span></nub-tab
+          ><nub-icon slot="tab-icon" library="bootstrap" name="emoji-smile"></nub-icon><span>${panel.title}</span></nub-tab
         >
         <nub-tab-panel name="${formatTitle(panel.title)}">
           ${unsafeHTML(`${panel.content}`)}

@@ -2,11 +2,11 @@ import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import type { HorizontalAlignment } from '../outline-element/utils/types';
 import { argTypeHorizontalAlign } from '../outline-element/utils/utils';
-import './outline-container';
+import './nub-container';
 
 export default {
   title: 'Templates/Container',
-  component: 'outline-container',
+  component: 'nub-container',
   parameters: {
     layout: 'fullscreen',
   },
@@ -65,8 +65,8 @@ export const Container = ({
   containerAlign,
 }: Options): TemplateResult =>
   html`
-    <outline-container
-      class="text-left rounded-xl border-2 border-dashed bg-demo-lightBlue border-demo-darkBlue my-10 md:my-20"
+    <nub-container
+      class="text-left rounded-sm border-2 border-ui-warning my-10 md:my-20"
       ?x-padding="${xPadding}"
       ?y-padding="${yPadding}"
       ?full-bleed="${fullBleed}"
@@ -81,5 +81,5 @@ export const Container = ({
         The left and right padding are in fact representative of the final
         display.
       </p>
-    </outline-container>
+    </nub-container>
   `;

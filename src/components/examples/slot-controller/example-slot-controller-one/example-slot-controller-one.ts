@@ -1,6 +1,6 @@
 import { customElement } from 'lit/decorators.js';
 import { SlotController } from '../../../controllers/slot-controller';
-import '../../../base/outline-container/outline-container';
+import '../../../base/nub-container/nub-container';
 import { ExampleSlotControllerBase } from '../example-slot-controller-base/example-slot-controller-base';
 
 /**

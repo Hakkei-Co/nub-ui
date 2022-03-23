@@ -149,15 +149,15 @@ const PrimaryButtonsTemplate = (): TemplateResult =>
   <div class="my-6">
     <nub-button class="mr-2" button-url="#" button-size="large" button-label="Large Button">
       Large Button
-      <outline-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></outline-icon>
+      <nub-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></nub-icon>
     </nub-button>
     <nub-button class="mr-2" button-url="#" button-label="Button">
       Button
-      <outline-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></outline-icon>
+      <nub-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></nub-icon>
     </nub-button>
     <nub-button class="mr-2" button-url="#" button-size="small" button-label="Small Button">
       Small Button
-      <outline-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></outline-icon>
+      <nub-icon slot="right" name="chevron-right" library="system" size="1em" class="ml-2"></nub-icon>
     </nub-button>
   </div>
 `;
@@ -209,15 +209,15 @@ const SecondaryButtonsTemplate = (): TemplateResult =>
 <div class="my-6">
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="large" button-label="Large Button">
     Large Button
-    <outline-icon slot="left" name="chevron-right" library="system" size="1em" class="mr-2"></outline-icon>
+    <nub-icon slot="left" name="chevron-right" library="system" size="1em" class="mr-2"></nub-icon>
   </nub-button>
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-label="Button">
     Button
-    <outline-icon slot="left" name="chevron-right" library="system" size="1em" class="mr-2"></outline-icon>
+    <nub-icon slot="left" name="chevron-right" library="system" size="1em" class="mr-2"></nub-icon>
   </nub-button>
   <nub-button class="mr-2" button-variant="secondary" button-url="#" button-size="small" button-label="Small Button">
     Small Button
-    <outline-icon slot="left" name="chevron-right" library="system" size="1em" class="mr-2"></outline-icon>
+    <nub-icon slot="left" name="chevron-right" library="system" size="1em" class="mr-2"></nub-icon>
   </nub-button>
 </div>
 `;

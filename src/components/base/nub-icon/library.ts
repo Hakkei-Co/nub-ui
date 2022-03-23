@@ -1,4 +1,4 @@
-import type OutlineIcon from '../outline-icon/outline-icon';
+import type OutlineIcon from './nub-icon';
 
 import systemLibrary from './libraries/library.system';
 import bootstrapLibrary from './libraries/library.bootstrap';

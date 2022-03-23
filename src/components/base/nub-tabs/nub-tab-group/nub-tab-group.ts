@@ -8,7 +8,7 @@ import { getOffset } from '../../../../internal/offset';
 import { scrollIntoView } from '../../../../internal/scroll';
 import type NubTab from '../nub-tab/nub-tab';
 import type NubTabPanel from '../nub-tab-panel/nub-tab-panel';
-import '../../outline-container/outline-container';
+import '../../nub-container/nub-container';
 import componentStyles from './nub-tab-group.css.lit';
 import { MobileController } from '../../../controllers/mobile-controller';
 
@@ -388,7 +388,7 @@ export default class NubTabGroup extends OutlineElement {
     return html`${
       this.mobileController.isMobile
         ? html`<slot name="accordion-wrapper"></slot> `
-        : html`<outline-container
+        : html`<nub-container
             ><div
               part="base"
               class=${classMap({
@@ -418,9 +418,9 @@ export default class NubTabGroup extends OutlineElement {
               <div part="body" class="tab-group__body">
                 <slot @slotchange=${this.syncTabsAndPanels}></slot>
               </div></div
-          ></outline-container>`
+          ></nub-container>`
     }
-    </outline-container>`;
+    </nub-container>`;
   }
 }
 

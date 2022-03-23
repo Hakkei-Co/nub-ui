@@ -32,14 +32,14 @@
   </head>
   <body>
     <header>
-      <outline-container y-padding>
+      <nub-container y-padding>
         <nub-header level="h1" level-size="4xl" level-style="semibold"
           >Outline Consumer Test Environment</nub-header
         >
-      </outline-container>
+      </nub-container>
     </header>
     <main>
-      <outline-container>
+      <nub-container>
         <nub-alert statusType="information" size="large">
           <span slot="outline-alert--header">How this environment is used</span>
           <p>
@@ -58,9 +58,9 @@
             and thoroughly.
           </p>
         </nub-alert>
-      </outline-container>
+      </nub-container>
 
-      <outline-container y-padding>
+      <nub-container y-padding>
         <nub-header level="h2" level-size="2xl" level-style="semibold"
           >Files needed</nub-header
         >
@@ -85,81 +85,81 @@
 <!-- <script src="../dist/outline-dynamic.js" type="module"></script> -->
 <!-- Optional Dynamic Loading script that would replace using outline.js. -->
 <!-- <script src="../dist/outline-lazy.js" type="module"></script> --></outline-code-block>
-</outline-container>
+</nub-container>
 
 <a name="icons"></a>
-<outline-container y-padding>
+<nub-container y-padding>
   <nub-header level="h2" level-size="2xl" level-style="semibold"
           >Outline Icon - System Library</nub-header
         >
         <div class="flex flex-row flex-wrap">
-          <outline-icon
+          <nub-icon
             name="chevron-up"
             library="system"
             size="48px"
-          ></outline-icon>
-          <outline-icon
+          ></nub-icon>
+          <nub-icon
             name="chevron-down"
             library="system"
             size="48px"
-          ></outline-icon>
-          <outline-icon
+          ></nub-icon>
+          <nub-icon
             name="chevron-left"
             library="system"
             size="48px"
-          ></outline-icon>
-          <outline-icon
+          ></nub-icon>
+          <nub-icon
             name="chevron-right"
             library="system"
             size="48px"
-          ></outline-icon>
-          <outline-icon
+          ></nub-icon>
+          <nub-icon
             name="check-lg"
             library="system"
             size="48px"
-          ></outline-icon>
-          <outline-icon name="x" library="system" size="48px"></outline-icon>
-          <outline-icon
+          ></nub-icon>
+          <nub-icon name="x" library="system" size="48px"></nub-icon>
+          <nub-icon
             name="x-circle-fill"
             library="system"
             size="48px"
-          ></outline-icon>
+          ></nub-icon>
         </div>
-      </outline-container>
+      </nub-container>
 
-      <outline-container y-padding>
+      <nub-container y-padding>
         <nub-header level="h2" level-size="2xl" level-style="semibold"
           >Outline Icon - Custom Library</nub-header
         >
         <div class="flex flex-row flex-wrap">
-          <outline-icon
+          <nub-icon
             library="custom"
             name="calendar"
             class="mr-2"
             size="48px"
-          ></outline-icon>
-          <outline-icon
+          ></nub-icon>
+          <nub-icon
             library="custom"
             name="clock"
             class="mr-2"
             size="48px"
-          ></outline-icon>
+          ></nub-icon>
         </div>
-      </outline-container>
+      </nub-container>
 
-      <outline-container y-padding>
+      <nub-container y-padding>
         <nub-header level="h2" level-size="2xl" level-style="semibold"
           >Button Sample(s)</nub-header
         >
         <nub-button>Standard Button</nub-button>
         <nub-button
-          >This is a button!<outline-icon
+          >This is a button!<nub-icon
             name="chevron-right"
             library="system"
             label="More information"
             size="1.1rem"
             class="ml-2"
-          ></outline-icon
+          ></nub-icon
         ></nub-button>
         <nub-header
           level="h3"
@@ -171,17 +171,17 @@
 <outline-code-block language="jsx">
 <nub-button>Button w/Icon!</nub-button>
 <nub-button
-  >This is a button!<outline-icon
+  >This is a button!<nub-icon
     name="chevron-right"
     library="jam"
     label="More information"
     size="1.1rem"
     class="ml-2"
-  ></outline-icon></nub-button
+  ></nub-icon></nub-button
 ></outline-code-block>
-      </outline-container>
+      </nub-container>
 
-      <outline-container y-padding>
+      <nub-container y-padding>
         <nub-header level="h2" level-size="2xl" level-style="semibold"
           >Styled Content</nub-header
         >
@@ -614,7 +614,7 @@
             videtis.
           </p>
         </outline-styled-text>
-      </outline-container>
+      </nub-container>
     </main>
     <script>
   const header = document.createElement('nub-button');

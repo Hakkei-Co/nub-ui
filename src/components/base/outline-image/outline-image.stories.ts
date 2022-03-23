@@ -25,7 +25,7 @@ _@todo describe why this would be used instead._
         code: `
 <outline-image>
   {{ defaultSlot }}
-  <outline-container slot="caption">{{ caption }}</outline-container>
+  <nub-container slot="caption">{{ caption }}</nub-container>
 </outline-image>
         `,
       },
@@ -50,7 +50,7 @@ _@todo describe why this would be used instead._
 const Template = ({ imageUrl, caption, parallax }): TemplateResult => html`
   <outline-image parallax="${ifDefined(parallax)}">
     <img src="${imageUrl}" alt="Random Image" />
-    <outline-container slot="caption">${caption}</outline-container>
+    <nub-container slot="caption">${caption}</nub-container>
   </outline-image>
 `;
 

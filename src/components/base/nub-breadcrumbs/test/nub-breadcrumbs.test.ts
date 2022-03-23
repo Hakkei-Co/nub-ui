@@ -11,7 +11,7 @@ describe('nub-breadcrumbs', () => {
     const el = await fixture(html`<nub-breadcrumbs></nub-breadcrumbs>`);
     assert.shadowDom.equal(
       el,
-      `<section class="nub-breadcrumbs"><outline-container container-align="center"><slot></slot></outline-container></section>`
+      `<section class="nub-breadcrumbs"><nub-container container-align="center"><slot></slot></nub-container></section>`
     );
   });
 });

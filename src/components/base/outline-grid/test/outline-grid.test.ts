@@ -13,10 +13,10 @@ describe('outline-grid', () => {
     assert.shadowDom.equal(
       el,
       `
-      <outline-container container-align="center">
+      <nub-container container-align="center">
         <slot>
         </slot>
-      </outline-container>
+      </nub-container>
     `
     );
   });

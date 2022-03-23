@@ -263,10 +263,10 @@
   --fw-black: 900;
 
   /*
-   * Configuration values for `outline-container`.
+   * Configuration values for `nub-container`.
    */
-  --outline-container-padding-x: 1.5rem;
-  --outline-container-padding-y: 1.5rem;
+  --nub-container-padding-x: 1.5rem;
+  --nub-container-padding-y: 1.5rem;
 
   /*
    * Configuration values for `outline-link`.
@@ -358,7 +358,7 @@
     --nubs-septenary: #aeccf3;
     --nubs-octonary: #87ace6;
     --nubs-denary: #3d47b2;
-    --nubs-senary: #33353a;
+    --nubs-senary: #252525;
 
     /* Brand specific neutral colors & Generic tones/ */
     --neutral-transparent: transparent;
@@ -487,6 +487,8 @@
     --fw-extrabold: 800;
     --fw-black: 900;
 
+    --nubs-container-padding-x: 1.5rem;
+    --nubs-container-padding-y: 1.5rem;
 
     /* Nubs colors extends Tailwind CSS Colors converted to CSS Variables. */
     --gray-50: #d6d9e2;

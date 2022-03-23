@@ -5,7 +5,7 @@ import { argTypeSlotContent } from '../outline-element/utils/utils';
 import { AllowedHeadingLevels, HeadingSizes, HeadingStyles } from './config';
 
 import './nub-header';
-import '../outline-container/outline-container';
+import '../nub-container/nub-container';
 
 const levelOptions: AllowedHeadingLevels[] = [
   'h1',
@@ -90,7 +90,7 @@ const Template = ({
   defaultSlot,
 }): TemplateResult =>
   html`
-    <outline-container>
+    <nub-container>
       <nub-header
         level="${ifDefined(level)}"
         level-size="${ifDefined(levelSize)}"
@@ -98,7 +98,7 @@ const Template = ({
       >
         ${defaultSlot}
       </nub-header>
-    </outline-container>
+    </nub-container>
   `;
 
 export const H1HeadingBase = Template.bind({});

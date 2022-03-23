@@ -2,7 +2,7 @@ import { OutlineElement } from '../../../base/outline-element/outline-element';
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import componentStyles from './example-slot-controller-base.css.lit';
-import '../../../base/outline-container/outline-container';
+import '../../../base/nub-container/nub-container';
 
 /**
  * The Outline  Breadcrumbs component
@@ -22,7 +22,7 @@ export class ExampleSlotControllerBase extends OutlineElement {
   render(): TemplateResult {
     return html`
       <section class="example-slot-controller">
-        <outline-container>
+        <nub-container>
           <!-- A simple ShadowDOM element. -->
           <div>
             <p class="original">
@@ -39,7 +39,7 @@ export class ExampleSlotControllerBase extends OutlineElement {
           <slot name="named-slot--three"></slot>
           <slot name="named-slot--four"></slot>
           <slot name="named-slot--five"></slot>
-        </outline-container>
+        </nub-container>
       </section>
     `;
   }

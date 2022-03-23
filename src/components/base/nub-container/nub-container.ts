@@ -2,15 +2,15 @@
 import { OutlineElement } from '../outline-element/outline-element';
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import componentStyles from './outline-container.css.lit';
+import componentStyles from './nub-container.css.lit';
 import type { HorizontalAlignment } from '../outline-element/utils/types';
 
 /**
  * The Outline  Link component
  * @slot - The default, and only slot for this element.
  */
-@customElement('outline-container')
-export class OutlineContainer extends OutlineElement {
+@customElement('nub-container')
+export class NubContainer extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
 
   /**
@@ -63,6 +63,6 @@ export class OutlineContainer extends OutlineElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-container': OutlineContainer;
+    'nub-container': NubContainer;
   }
 }

@@ -115,29 +115,29 @@ export class NubAlert extends OutlineElement implements OutlineAlertInterface {
     let icon;
     switch (this.statusType) {
       case 'notice':
-        return html`<outline-icon
+        return html`<nub-icon
           name="information-circle"
           library="ionicons"
           size="24px"
-        ></outline-icon>`;
+        ></nub-icon>`;
       case 'error':
-        return html`<outline-icon
+        return html`<nub-icon
           name="alert"
           library="ionicons"
           size="24px"
-        ></outline-icon>`;
+        ></nub-icon>`;
       case 'warning':
-        return html`<outline-icon
+        return html`<nub-icon
           name="warning"
           library="ionicons"
           size="24px"
-        ></outline-icon>`;
+        ></nub-icon>`;
       case 'success':
-        return html`<outline-icon
+        return html`<nub-icon
           name="checkmark-circle"
           library="ionicons"
           size="24px"
-        ></outline-icon>`;
+        ></nub-icon>`;
       default:
         break;
     }

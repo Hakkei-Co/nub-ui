@@ -3,9 +3,9 @@ import { OutlineElement } from '../outline-element/outline-element';
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './nub-breadcrumbs.css.lit';
-import '../outline-container/outline-container';
+import '../nub-container/nub-container';
 import { SlotController } from '../../controllers/slot-controller';
-// import OutlineIcon from '../outline-icon/outline-icon';
+// import OutlineIcon from '../nub-icon/nub-icon';
 /**
  * The breadcrumbs nub
  * @element nub-breadcrumbs
@@ -26,7 +26,7 @@ export class NubBreadcrumbs extends OutlineElement {
     breadcrumbItems.forEach(item => {
       const sep: HTMLSpanElement = document.createElement('span');
       sep.classList.add('separator');
-      const newScript = document.createElement('outline-icon');
+      const newScript = document.createElement('nub-icon');
       newScript.setAttribute('name', 'chevron-right');
       newScript.setAttribute('library', 'system');
       newScript.setAttribute('size', '12px');
@@ -44,9 +44,9 @@ export class NubBreadcrumbs extends OutlineElement {
   render(): TemplateResult {
     return html`
       <section class="nub-breadcrumbs">
-        <outline-container>
+        <nub-container>
           <slot></slot>
-        </outline-container>
+        </nub-container>
       </section>
     `;
   }
