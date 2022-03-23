@@ -4,20 +4,21 @@
   /* flex and border-radius constrain the actual boundaries of the element,
    preventing literal edge cases where a user can click on the edge or corner of the button and defeat states like disabled */
   @apply inline-flex rounded-sm align-middle text-nubs-senary;
+  @apply border-none focus-within:border-blue-700 !important;
 }
 
 .btn {
-  @apply flex flex-nowrap items-center !important;
+  @apply flex resize-none flex-nowrap items-center !important;
   @apply cursor-pointer rounded-md px-4 py-2 !important;
-  @apply font-display text-neutral-grayDark shadow-lg outline-none !important;
+  @apply font-display text-neutral-grayDark outline-none !important;
   @apply transition-colors duration-75 !important;
   @apply text-sm leading-tight no-underline !important;
-  @apply font-medium !important;
+  @apply font-normal !important;
   @apply whitespace-nowrap shadow-md !important;
 
   &:hover,
   &:focus {
-    @apply shadow-lg ring-2 drop-shadow-lg !important;
+    @apply resize-none shadow-lg ring-1 drop-shadow-lg !important;
   }
 }
 
@@ -37,12 +38,12 @@
 
 .btn.info {
   @apply border-ui-infoBorder bg-ui-info !important;
-  @apply inline-block bg-gray-200 px-6 py-2 font-medium leading-tight text-gray-700 shadow-md !important;
+  @apply inline-block bg-gray-200 px-6 py-2 leading-tight text-gray-700 shadow-md !important;
   @apply border-none !important;
 
   &:hover,
   &:focus {
-    @apply shadow-lg ring-2 drop-shadow-lg !important;
+    @apply shadow-lg ring-1 drop-shadow-lg !important;
   }
 }
 
@@ -142,11 +143,11 @@
 }
 
 .btn.small {
-  @apply text-sm !important;
+  @apply text-sm font-normal !important;
 }
 
 .btn.medium {
-  @apply text-base !important;
+  @apply text-base font-medium !important;
 }
 
 .btn.large {
@@ -154,7 +155,7 @@
 }
 
 .btn.none {
-  @apply text-base font-medium text-demo-darkBlue no-underline !important;
+  @apply text-base text-demo-darkBlue no-underline !important;
   @apply shadow-sm !important;
   border: var(--ui-contrast) !important;
 
