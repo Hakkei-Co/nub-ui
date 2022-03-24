@@ -1,6 +1,6 @@
 {
   "name": "@hakkei-co/nub-ui",
-  "version": "0.2.7",
+  "version": "0.2.7-b",
   "description": "Nub Web Component Design",
   "main": "dist/nubs.js",
   "module": "dist/nubs.js",
@@ -35,7 +35,7 @@
     "prep:tailwind": "node scripts/resolve-tailwind-config.js",
     "prep:safelist": "node scripts/generate-tw-safelist.js",
     "prep:css": "node scripts/styles.js",
-    "prep:manifest": "npx custom-elements-manifest analyze --globs 'src/components/**/!(*.stories|*.lit|*.test).ts' --litelement --outdir dist/",
+    "prep:manifest": "custom-elements-manifest analyze --globs 'src/components/**/!(*.stories|*.lit|*.test).ts' --litelement --outdir dist/",
     "prebuild": "yarn prep",
     "build": "npm-run-all -s build:tsc build:rollup build:copy-manifest",
     "build:tsc": "yarn tsc",
