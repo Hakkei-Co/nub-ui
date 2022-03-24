@@ -1,6 +1,6 @@
 {
   "name": "@hakkei-co/nub-ui",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Nub Web Component Design",
   "main": "dist/nubs.js",
   "module": "dist/nubs.js",
@@ -41,7 +41,7 @@
     "build:tsc": "yarn tsc",
     "build:rollup": "yarn rollup",
     "build:watch": "npm-run-all -p -r tsc:watch rollup:watch",
-    "build:copy-manifest": "cp ./src/custom-elements.json dist/ && cp ./src/component-list.json dist/",
+    "build:copy-manifest": "cp ./src/component-list.json dist/",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch",
     "rollup": "yarn rollup:bundle",
