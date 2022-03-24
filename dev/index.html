@@ -36,6 +36,26 @@
     </style>
   </head>
   <body>
+    <script type="module">
+      // import { ts, create, litPlugin } from '@custom-element-manifest/analyzer/browser/index.js';
+      // or
+      import { ts, create, litPlugin } from 'https://unpkg.com/@custom-element-manifest/analyzer/browser/index.js';
+
+      const modules = [ts.createSourceFile(
+        'src/my-element.js',
+        'export function foo() {}',
+        ts.ScriptTarget.ES2015,
+        true,
+      )];
+
+      const manifest = create({
+        modules,
+        plugins: [...litPlugin()],
+        dev: false
+      });
+
+      console.log(manifest);
+    </script>
     <header>
       <nub-container y-padding>
         <nub-header level="h1" level-size="4xl" level-style="semibold"
