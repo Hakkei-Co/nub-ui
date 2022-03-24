@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 import './outline-video-vimeo';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import outline from '../../../../outline.config';
+import outline from '../../../../nub.config';
 
 const configuration = {
   title: 'Base Components/Vimeo Video',

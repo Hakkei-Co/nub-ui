@@ -7,7 +7,7 @@ const postcss = require('postcss');
 const fs = require('fs');
 const glob = require('glob');
 const config = require('../postcss.config');
-const outline = require('../outline.config');
+const outline = require('../nub.config');
 const components = require('../src/custom-elements.json');
 const options = yargs.option('watch', {
   type: 'boolean',

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-swatch-set.css.lit';
 import { OutlineElement } from '../outline-element/outline-element';
 import tailwindThemeConfig from '../../../resolved-tailwind-config';
-// const outline = require('../outline.config');
+// const outline = require('../nub.config');
 import '../outline-grid/outline-grid';
 import '../outline-grid/outline-column/outline-column';
 import '../outline-swatch/outline-swatch';

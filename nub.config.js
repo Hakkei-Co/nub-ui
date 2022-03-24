@@ -9,7 +9,7 @@ module.exports = {
     // This should include an array of directories under
     // src/components/ that contain component files.
     // Currently used only in `js.output.lazy` mode.
-    bundle: ['outline', 'utility', 'nubs'],
+    bundle: ['outline', 'base', 'utility'],
   },
   assets: {
     dir: ['src/assets'],
@@ -39,7 +39,7 @@ module.exports = {
     output: {
       // @see src/outline-lazy.ts
       // @status experimental
-      lazy: true,
+      lazy: false,
       // Export full library to `nubs.js`.
       // @status stable
       full: true,
@@ -89,5 +89,21 @@ module.exports = {
   splide: {
     keyboard: false,
     arrows: true,
+  },
+  entryPoints: {
+    components: [
+      './src/components/base/nub-alert/nub-alert.js',
+      './src/components/base/nub-breadcrumbs/nub-breadcrumbs.js',
+      './src/components/base/nub-button/nub-button.js',
+      './src/components/base/nub-card/nub-card.js',
+      './src/components/base/nub-container/nub-container.js',
+      './src/components/base/nub-header/nub-header.js',
+      './src/components/base/nub-icon/nub-icon.js',
+      './src/components/base/nub-tabs/nub-tabs.js',
+    ],
+    explicitSideEffects: [
+      './src/polyfills/index.js',
+      './src/polyfills/aria-reflect.js',
+    ],
   },
 };

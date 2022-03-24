@@ -2,7 +2,7 @@
   @apply block max-w-full-screen-w font-body;
   @apply max-w-screen-md;
   @apply text-sm;
-  color: var(--ui-contrast) !important;
+  color: var(--nub-text-color-default) !important;
   padding: var(--nub-container-padding-y) var(--nub-container-padding-x) !important;
 }
 

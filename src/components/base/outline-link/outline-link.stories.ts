@@ -52,7 +52,7 @@ The \`outline-link\` component allows the ultimate flexibility in how you want t
 
 The primary coloring of the \`outline-link\` component is handled by the following CSS Variables.
 
-> Any consumer application that includes \`outline.theme.css\` can simply overwrite any relevant CSS Variables in a subsequent include to affect change on the element styling.
+> Any consumer application that includes \`nub.theme.css\` can simply overwrite any relevant CSS Variables in a subsequent include to affect change on the element styling.
 
 - \`--outline-link-color-default\` The default link color
 - \`--outline-link-color-hover\` The link color when hovering on the link

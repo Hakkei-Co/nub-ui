@@ -22,4 +22,4 @@ docs/
 .docksal/
 src/.storybook/tailwind.css
 .vscode/settings.json
-outline.theme.css
+nub.theme.css

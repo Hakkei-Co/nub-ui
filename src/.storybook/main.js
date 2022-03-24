@@ -1,5 +1,5 @@
 const path = require('path');
-const outlineConfig = require('../../outline.config');
+const outlineConfig = require('../../nub.config');
 const excludedStories = outlineConfig.excludedStories;
 function getExcluded() {
   return excludedStories.join('|');

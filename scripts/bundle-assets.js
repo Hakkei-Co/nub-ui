@@ -4,7 +4,7 @@
  */
 
 const Rsync = require('rsync');
-const outline = require('../outline.config');
+const outline = require('../nub.config');
 
 function runRsync(dest) {
   const rsync = new Rsync();

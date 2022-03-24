@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const { format, resolveConfig: resolvePrettierConfig } = require('prettier');
-const outlineConfig = require('../outline.config');
+const outlineConfig = require('../nub.config');
 
 resolvePrettierConfig('.prettierrc')
   .then(options => {

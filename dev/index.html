@@ -15,7 +15,7 @@
     <link
       type="text/css"
       rel="stylesheet"
-      href="../outline.theme.css"
+      href="../dist/storybook.css"
       media="all"
     />
     <link
@@ -25,10 +25,15 @@
       media="all"
     />
 
-    <script src="../dist/outline.js" type="module"></script>
+    <script src="../dist/nubs.js" type="module"></script>
     <script src="../src/.storybook/detectColorScheme.js" type="module"></script>
     <!-- <script src="../dist/outline-dynamic.js" type="module"></script> -->
     <!-- <script src="../dist/outline-lazy.js" type="module"></script> -->
+    <style>
+      html {
+        background-color: var(--nub-bg-body-default);
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -76,7 +81,7 @@
 <link
   type="text/css"
   rel="stylesheet"
-  href="../outline.theme.css"
+  href="../nub.theme.css"
   media="all"
 />
 <!-- Default script that load the full component library via outline.js. -->

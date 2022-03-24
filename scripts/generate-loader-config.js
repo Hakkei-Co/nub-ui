@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 
 const fs = require('fs');
-const outline = require('../outline.config.js');
+const outline = require('../nub.config.js');
 const components = require('../src/custom-elements.json');
 
 // Ensure dist directory exists.
@@ -30,12 +30,12 @@ const generateComponentQuerySelector = () => {
  * @todo document this.
  */
 const generateComponentArray = () => {
-  let outlineComponents = [];
+  let nubs = [];
   if (components.tags.length) {
     components.tags.forEach(tag => {
-      outlineComponents.push(tag.name);
+      nubs.push(tag.name);
     });
-    return outlineComponents;
+    return nubs;
   }
 };
 
@@ -46,8 +46,8 @@ const generateComponentHelper = () => {
   fs.writeFile(
     'dist/outline-components.js',
     `
-export const outlineComponentSelector = '${generateComponentQuerySelector()}'
-export const outlineComponents = ${JSON.stringify(generateComponentArray())}
+export const nubComponentSelector = '${generateComponentQuerySelector()}'
+export const nubComponents = ${JSON.stringify(generateComponentArray())}
   `,
     () => true
   );

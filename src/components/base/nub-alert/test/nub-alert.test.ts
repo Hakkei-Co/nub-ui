@@ -9,7 +9,7 @@ describe(componentElementName, () => {
   const addBaseStyles = () => {
     const defaultCSS = document.createElement('link');
     defaultCSS.setAttribute('rel', 'stylesheet');
-    defaultCSS.setAttribute('href', '/outline.theme.css');
+    defaultCSS.setAttribute('href', '/nub.theme.css');
 
     document.head.append(defaultCSS);
   };
