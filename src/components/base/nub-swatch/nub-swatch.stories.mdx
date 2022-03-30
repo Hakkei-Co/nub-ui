@@ -1,11 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { html } from 'lit';
-import { OutlineSwatch } from './outline-swatch';
-import { swatchSets } from '../outline-swatch-set/outline-swatch-set';
+import { NubSwatch } from './nub-swatch';
+import { swatchSets } from '../nub-swatch-set/nub-swatch-set';
 
 <Meta
   title="Utilities/Swatch"
-  component="outline-swatch"
+  component="nub-swatch"
   argTypes={{
     set: {
       name: 'set',
@@ -21,7 +21,7 @@ import { swatchSets } from '../outline-swatch-set/outline-swatch-set';
 />
 
 export const Template = ({ set, color }) => html`
-  <outline-swatch set="${set}" color="${color}"> </outline-swatch>
+  <nub-swatch set="${set}" color="${color}"> </nub-swatch>
 `;
 
 ## Primary color

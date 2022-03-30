@@ -4,6 +4,7 @@
 
 nub-container {
   @apply grid h-full grid-cols-12;
+  color: var(--nub-text-color-default-alt) !important;
 }
 
 :host([gap-size='large']) nub-container,

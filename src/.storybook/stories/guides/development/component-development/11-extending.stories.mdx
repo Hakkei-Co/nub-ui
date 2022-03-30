@@ -22,17 +22,17 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 
 # Outline Coding Guide & Standards
 
-> This section will provide an in-depth overview of extending components with Lit and Outline. 
+> This section will provide an in-depth overview of extending components with Lit and Outline.
 > The abiilty to extend components is one of, if not the core reason we utilize Lit as the standard for Outine component development.
 
 ## Extending Components in Outline
 
-Lit gives us the ability to extend the base `LitElement` component class as well as our own custom component classes. 
-In all of the previous examples, including the one below, you will notice the sample `OutlineWidget` 
-class extends `OutlineElement` instead of `LitElement`. `OutlineElement` 
-is our custom default class that already extends `LitElement`, and provides 
-some additional structure and functionality that can be utilized by any component 
-with `OutlineElement` in its chain.
+Lit gives us the ability to extend the base `LitElement` component class as well as our own custom component classes.
+In all of the previous examples, including the one below, you will notice the sample `OutlineWidget`
+class extends `NubElement` instead of `LitElement`. `NubElement`
+is our custom default class that already extends `LitElement`, and provides
+some additional structure and functionality that can be utilized by any component
+with `NubElement` in its chain.
 
 <Story name="Extending Components">
   {() => {
@@ -41,10 +41,10 @@ with `OutlineElement` in its chain.
 ...
 /**
 * The Outline Widget component
-* @element outline-widget 
+* @element outline-widget
 */
 @customElement('outline-widget')
-export class OutlineWidget extends OutlineElement {
+export class OutlineWidget extends NubElement {
 ...
 }
 </outline-code-block>
@@ -54,7 +54,7 @@ export class OutlineWidget extends OutlineElement {
 
 ## Examples
 
-### Overriding Styles 
+### Overriding Styles
 <Story name="Overriding Styles">
   {() => {
     return html`
@@ -63,7 +63,7 @@ import componentStyles from './outline-widget.css.lit';
 ...
 /**
 * The Outline Widget component
-* @element outline-widget 
+* @element outline-widget
 */
 @customElement('outline-widget')
 export class OutlineWidget extends OutlineElement {
@@ -75,14 +75,14 @@ export class OutlineWidget extends OutlineElement {
   }}
 </Story>
 
-The above example, one we have seen previously in the styles section, 
-already provides an example of overriding an element of a superclass. 
-This example shows us how to extend a component and override the styles 
-applied to the new component. 
+The above example, one we have seen previously in the styles section,
+already provides an example of overriding an element of a superclass.
+This example shows us how to extend a component and override the styles
+applied to the new component.
 
-This scenario is common when the styling for a component is drastically different from 
-the defaults provided by the original component. Sometimes it is easier to start your 
-new components CSS from scratch, but retain all the functionality of the component. 
+This scenario is common when the styling for a component is drastically different from
+the defaults provided by the original component. Sometimes it is easier to start your
+new components CSS from scratch, but retain all the functionality of the component.
 
 <Story name="Overriding Properties">
   {() => {
@@ -90,10 +90,10 @@ new components CSS from scratch, but retain all the functionality of the compone
   }}
 </Story>
 
-### Overriding Properties 
+### Overriding Properties
 
-In this example, we will declare `OutlineWidget`, and create a property, `booleanProperty`, which defaults to `false`. 
-Then we create an `ExtendingOutlineWidget` component, and override the property by setting `booleanProperty` to `true`. 
+In this example, we will declare `OutlineWidget`, and create a property, `booleanProperty`, which defaults to `false`.
+Then we create an `ExtendingOutlineWidget` component, and override the property by setting `booleanProperty` to `true`.
 
 #### `OutlineWidget`
 
@@ -105,7 +105,7 @@ import { OutlineElement } from '../../base/outline-element/outline-element';
 ...
 /**
 * The Outline Widget component
-* @element outline-widget 
+* @element outline-widget
 */
 @customElement('outline-widget')
 export class OutlineWidget extends OutlineElement {
@@ -131,13 +131,13 @@ import { OutlineWidget } from '../../base/outline-widget/outline-widget';
 ...
 /**
 * The Extending Outline Widget component
-* @element extending-outline-widget 
+* @element extending-outline-widget
 */
 @customElement('outline-widget')
 export class ExtendingOutlineWidget extends OutlineWidget {
   /**
   * This is our new component changing the default value of a property.
-  * It was originaly false inside of OutlineWidget. 
+  * It was originaly false inside of OutlineWidget.
   */
   booleanProperty = true
   ...

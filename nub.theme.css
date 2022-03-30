@@ -111,6 +111,10 @@
   --fw-bold: 700;
   --fw-extrabold: 800;
   --fw-black: 900;
+
+
+  --nubs-container-padding-x: 1.5rem;
+  --nubs-container-padding-y: 1.5rem;
 }
 
 
@@ -254,12 +258,6 @@
   --pink-900: #de425b;
 
   /*
-   * Configuration values for `nub-container`.
-   */
-  --nub-container-padding-x: 1.5rem;
-  --nub-container-padding-y: 1.5rem;
-
-  /*
    * Configuration values for `outline-link`.
    */
   --nub-link-color-default: var(--ui-infoText);
@@ -395,8 +393,6 @@
   --screen-xxxl: 2180px; */
 
 
-    --nubs-container-padding-x: 1.5rem;
-    --nubs-container-padding-y: 1.5rem;
 
     /* Nubs colors extends Tailwind CSS Colors converted to CSS Variables. */
     --gray-50: #d6d9e2;
@@ -507,7 +503,6 @@
     --nub-breadcrumb-link-decoration-focus: underline;
 
     --nub-breadcrumb-bg-color: var(--demo-darkGray);
-    --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
     --nub-breadcrumb-separator-spacing: var(--spacing-2);
 
     --nub-bg-btn-disabled: var(--neutral-grayMedium);

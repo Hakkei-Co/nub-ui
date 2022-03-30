@@ -1,14 +1,14 @@
-import { OutlineColumn } from '../outline-column';
+import { NubColumn } from '../nub-column';
 import { assert, fixture, html } from '@open-wc/testing';
 
-describe('outline-column', () => {
+describe('nub-column', () => {
   it('is defined', () => {
-    const el = document.createElement('outline-column');
-    assert.instanceOf(el, OutlineColumn);
+    const el = document.createElement('nub-column');
+    assert.instanceOf(el, NubColumn);
   });
 
   it('renders with default values', async () => {
-    const el = await fixture(html`<outline-column></outline-column>`);
+    const el = await fixture(html`<nub-column></nub-column>`);
     assert.shadowDom.equal(
       el,
       `
@@ -20,7 +20,7 @@ describe('outline-column', () => {
 
   it('renders slotted content', async () => {
     const el = await fixture(
-      html`<outline-column><p>Testing column</p></outline-column>`
+      html`<nub-column><p>Testing column</p></nub-column>`
     );
     assert.lightDom.equal(
       el,

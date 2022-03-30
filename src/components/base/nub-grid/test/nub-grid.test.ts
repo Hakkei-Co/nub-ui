@@ -1,15 +1,15 @@
-import { OutlineGrid } from '../outline-grid';
+import { NubGrid } from '../nub-grid';
 import { assert, fixture } from '@open-wc/testing';
 import { html } from 'lit/static-html.js';
 
-describe('outline-grid', () => {
+describe('nub-grid', () => {
   it('is defined', () => {
-    const el = document.createElement('outline-grid');
-    assert.instanceOf(el, OutlineGrid);
+    const el = document.createElement('nub-grid');
+    assert.instanceOf(el, NubGrid);
   });
 
   it('renders with default values', async () => {
-    const el = await fixture(html`<outline-grid></outline-grid>`);
+    const el = await fixture(html`<nub-grid></nub-grid>`);
     assert.shadowDom.equal(
       el,
       `
@@ -23,7 +23,7 @@ describe('outline-grid', () => {
 
   it('renders slotted content', async () => {
     const el = await fixture(
-      html`<outline-grid><p>Testing the Grid</p></outline-grid>`
+      html`<nub-grid><p>Testing the Grid</p></nub-grid>`
     );
     assert.lightDom.equal(
       el,

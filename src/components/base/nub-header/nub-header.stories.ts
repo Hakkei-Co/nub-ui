@@ -1,9 +1,9 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { argTypeSlotContent } from '../nub-element/utils/utils';
-
+import { detectColorScheme } from "../../../.storybook/detectColorScheme"
 import { AllowedHeadingLevels, HeadingSizes, HeadingStyles } from './config';
-
+detectColorScheme()
 import './nub-header';
 import '../nub-container/nub-container';
 

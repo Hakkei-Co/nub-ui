@@ -1,7 +1,7 @@
 import { NubElement } from '../nub-element/nub-element';
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import componentStyles from './outline-grid.css.lit';
+import componentStyles from './nub-grid.css.lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import type { HorizontalAlignment, Size } from '../nub-element/utils/types';
 import '../nub-container/nub-container';
@@ -13,8 +13,8 @@ import '../nub-container/nub-container';
  * @attr container-align - passed to nub-container wrapper.
  * @slot - The default, and only slot for this element.
  */
-@customElement('outline-grid')
-export class OutlineGrid extends NubElement {
+@customElement('nub-grid')
+export class NubGrid extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   /**
@@ -115,6 +115,6 @@ export class OutlineGrid extends NubElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-grid': OutlineGrid;
+    'nub-grid': NubGrid;
   }
 }

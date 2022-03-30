@@ -1,11 +1,11 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import componentStyles from './outline-swatch.css.lit';
+import componentStyles from './nub-swatch.css.lit';
 import { NubElement } from '../nub-element/nub-element';
-import { SwatchSet } from '../outline-swatch-set/outline-swatch-set';
+import { SwatchSet } from '../nub-swatch-set/nub-swatch-set';
 import tailwindThemeConfig from '../../../resolved-tailwind-config';
 
-export interface OutlineSwatchInterface extends HTMLElement {
+export interface NubSwatchInterface extends HTMLElement {
   set: SwatchSet;
   color: string;
 }
@@ -13,13 +13,10 @@ export interface OutlineSwatchInterface extends HTMLElement {
 /**
  * Color swatch
  *
- * @element outline-swatch
+ * @element nub-swatch
  */
-@customElement('outline-swatch')
-export class OutlineSwatch
-  extends NubElement
-  implements OutlineSwatchInterface
-{
+@customElement('nub-swatch')
+export class NubSwatch extends NubElement implements NubSwatchInterface {
   //slottedController = new SlottedController(this);
   static styles: CSSResultGroup = [componentStyles];
 
@@ -56,6 +53,6 @@ export class OutlineSwatch
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-swatch': OutlineSwatch;
+    'nub-swatch': NubSwatch;
   }
 }

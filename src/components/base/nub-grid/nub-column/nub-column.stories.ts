@@ -9,11 +9,11 @@ import {
   argTypeVerticalAlign,
 } from '../../nub-element/utils/utils';
 
-import './outline-column';
+import './nub-column';
 
 export default {
-  title: 'Templates/Content Column',
-  component: 'outline-column',
+  title: 'Layout/Content Column',
+  component: 'nub-column',
   parameters: {
     layout: 'fullscreen',
   },
@@ -73,7 +73,7 @@ export default {
         > -->
         <h2>Responsive Grid</h2>
       </nub-container>
-      <outline-grid gap-size="small"> ${Story()} </outline-grid>
+      <nub-grid gap-size="small"> ${Story()} </nub-grid>
     `,
   ],
 };
@@ -105,7 +105,7 @@ const Template = ({
   return repeat(
     colArray,
     (): TemplateResult => html`
-      <outline-column
+      <nub-column
         content-align="${ifDefined(contentAlign)}"
         col-span-default="${colSpanDefault}"
         col-span-sm="${ifDefined(colSpanSm)}"
@@ -121,7 +121,7 @@ const Template = ({
           This is an example of a grid column layout in which the content
           doesn't expand the whole width of the container.
         </p>
-      </outline-column>
+      </nub-column>
     `
   );
 };

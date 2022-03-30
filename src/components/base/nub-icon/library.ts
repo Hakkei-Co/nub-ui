@@ -1,4 +1,4 @@
-import type OutlineIcon from './nub-icon';
+import type NubIcon from './nub-icon';
 
 import systemLibrary from './libraries/library.system';
 import bootstrapLibrary from './libraries/library.bootstrap';
@@ -37,13 +37,13 @@ let registry: IconLibrary[] = [
   uniconsLibrary,
   customLibrary,
 ];
-let watchedIcons: OutlineIcon[] = [];
+let watchedIcons: NubIcon[] = [];
 
-export function watchIcon(icon: OutlineIcon) {
+export function watchIcon(icon: NubIcon) {
   watchedIcons.push(icon);
 }
 
-export function unwatchIcon(icon: OutlineIcon) {
+export function unwatchIcon(icon: NubIcon) {
   watchedIcons = watchedIcons.filter(el => el !== icon);
 }
 

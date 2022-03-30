@@ -2,8 +2,11 @@
   @apply block max-w-full-screen-w font-body;
   @apply max-w-screen-md;
   @apply text-sm;
-  color: var(--nub-text-color-default) !important;
-  padding: var(--nub-container-padding-y) var(--nub-container-padding-x) !important;
+  color: var(--nub-text-color-default-alt) !important;
+  padding-top: var(--nubs-container-padding-y);
+  padding-right: var(--nubs-container-padding-x);
+  padding-bottom: var(--nubs-container-padding-y);
+  padding-left: var(--nubs-container-padding-x);
 }
 
 :host(:not([x-padding])) {

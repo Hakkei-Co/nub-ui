@@ -6,6 +6,19 @@ function getExcluded() {
 }
 
 module.exports = {
+  babel: async options => ({
+    ...options,
+    presets: [
+      ...options.presets,
+      [
+        '@babel/preset-react',
+        {
+          runtime: 'automatic',
+        },
+        'preset-react-jsx-transform', // Can name this anything, just an arbitrary alias to avoid duplicate presets'
+      ],
+    ],
+  }),
   // Issues still with incorporating latest Webpack.
   // Leaving here for sample of switching builders.
   core: {
@@ -35,6 +48,7 @@ module.exports = {
         },
       },
     },
+    '@etchteam/storybook-addon-css-variables-theme',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
     'storybook-dark-mode',

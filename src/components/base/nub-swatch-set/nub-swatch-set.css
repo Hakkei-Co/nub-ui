@@ -1,0 +1,11 @@
+nub-grid {
+  @apply mb-20;
+}
+
+nub-container {
+  @apply text-xs !important;
+}
+
+div.information code {
+  @apply text-xs !important;
+}

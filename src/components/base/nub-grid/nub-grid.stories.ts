@@ -3,11 +3,11 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { Size } from '../nub-element/utils/types';
 
 import { argTypeGapSize, argTypeHidden } from '../nub-element/utils/utils';
-import './outline-grid';
+import './nub-grid';
 
 export default {
-  title: 'Templates/Grid',
-  component: 'outline-grid',
+  title: 'Layout/Grid',
+  component: 'nub-grid',
   parameters: {
     layout: 'fullscreen',
   },
@@ -101,23 +101,15 @@ const Template = ({
   fullBleed,
   defaultSlot,
 }: Options): TemplateResult => html`
-  <outline-grid
-    gap-size="${ifDefined(gapSize)}"
-    gap-size-sm="${ifDefined(gapSizeSm)}"
-    gap-size-md="${ifDefined(gapSizeMd)}"
-    gap-size-lg="${ifDefined(gapSizeLg)}"
-    gap-size-xl="${ifDefined(gapSizeXl)}"
-    gap-size-xxl="${ifDefined(gapSizeXxl)}"
-    ?x-padding="${xPadding}"
-    ?y-padding="${yPadding}"
-    ?full-bleed="${fullBleed}"
-  >
+  <nub-grid gap-size="${ifDefined(gapSize)}" gap-size-sm="${ifDefined(gapSizeSm)}" gap-size-md="${ifDefined(gapSizeMd)}"
+    gap-size-lg="${ifDefined(gapSizeLg)}" gap-size-xl="${ifDefined(gapSizeXl)}" gap-size-xxl="${ifDefined(gapSizeXxl)}"
+    ?x-padding="${xPadding}" ?y-padding="${yPadding}" ?full-bleed="${fullBleed}">
     ${defaultSlot}
-  </outline-grid>
+  </nub-grid>
 `;
 
 const DefaultGridDecorators = [
-  (Story): TemplateResult => html` <div class="block py-12">${Story()}</div> `,
+  (Story): TemplateResult => html`<div class="font-body block py-12 bg-nub-bg-body-default">${Story()}</div>`,
 ];
 
 export const RowsAndColumns = Template.bind({});
@@ -125,45 +117,26 @@ RowsAndColumns.decorators = DefaultGridDecorators;
 RowsAndColumns.args = {
   gapSize: 'small',
   defaultSlot: html`
-    <outline-column col-span-default="12" content-align="middle">
+    <nub-column col-span-default="12" content-align="middle">
       <nub-header level="h2" level-style="semibold">
-        Column/Row Spanning</nub-header
-      >
-    </outline-column>
+        Column/Row Spanning</nub-header>
+    </nub-column>
 
-    <outline-column
-      col-span-default="12"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    <nub-column col-span-default="12" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This box spans 1 row and 12 columns.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="6"
-      row-span="4"
-      class="py-64 border-2 bg-demo-lightBlue border-demo-darkBlue p-8 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="6" row-span="4" class="py-64 border-2 border-ui-warning p-8 rounded-sm shadow-md">
       <p>This box spans 4 rows and 6 columns.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="6"
-      row-span="1"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="6" row-span="1" class="border-2 border-ui-warning p-8 rounded-sm shadow-md">
       <p>This box spans 6 columns and 1 row.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="6"
-      row-span="3"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="6" row-span="3" class="border-2 border-ui-warning p-8 rounded-sm shadow-md">
       <p>This box spans 6 columns and 3 rows.</p>
-    </outline-column>
-    <outline-column
-      col-span-default="12"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-default="12" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This box spans 1 row and 12 columns.</p>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -172,29 +145,19 @@ EqualColumns.decorators = DefaultGridDecorators;
 EqualColumns.args = {
   gapSize: 'small',
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Equal Column Grid</nub-header
-      >
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+        Equal Column Grid</nub-header>
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This is some text inside of a grid column.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This is some text inside of a grid column.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This is some text inside of a grid column.</p>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -204,29 +167,19 @@ FullBleed.args = {
   gapSize: 'small',
   fullBleed: true,
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Full Bleed Grid</nub-header
-      >
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+        Full Bleed Grid</nub-header>
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This is some text inside of a grid column.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This is some text inside of a grid column.</p>
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>This is some text inside of a grid column.</p>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -235,29 +188,22 @@ AsymmetricLeft.decorators = DefaultGridDecorators;
 AsymmetricLeft.args = {
   gapSize: 'small',
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Asymmetrical Grid</nub-header
-      >
-    </outline-column>
-    <outline-column
-      col-span-md="8"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+        Asymmetrical Grid</nub-header>
+    </nub-column>
+    <nub-column col-span-md="8" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>
         This is some text inside of a grid column. Because it's asymmetrical,
         This box is either twice as large or half the size of the other column.
       </p>
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>
         This is some text inside of a grid column. Because it's asymmetrical,
         This box is either twice as large or half the size of the other column.
       </p>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -266,29 +212,22 @@ AsymmetricRight.decorators = DefaultGridDecorators;
 AsymmetricRight.args = {
   gapSize: 'small',
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Asymmetrical Grid</nub-header
-      >
-    </outline-column>
-    <outline-column
-      col-span-md="4"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+        Asymmetrical Grid</nub-header>
+    </nub-column>
+    <nub-column col-span-md="4" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>
         This is some text inside of a grid column. Because it's asymmetrical,
         This box is either twice as large or half the size of the other column.
       </p>
-    </outline-column>
-    <outline-column
-      col-span-md="8"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+    </nub-column>
+    <nub-column col-span-md="8" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>
         This is some text inside of a grid column. Because it's asymmetrical,
         This box is either twice as large or half the size of the other column.
       </p>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -297,125 +236,86 @@ AsymmetricLeftWithBorder.decorators = DefaultGridDecorators;
 AsymmetricLeftWithBorder.args = {
   gapSize: '',
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Asymmetrical Grid With Divider</nub-header
-      >
-    </outline-column>
-    <outline-column col-span-default="12" class="pb-2">
+        Asymmetrical Grid With Divider</nub-header>
+    </nub-column>
+    <nub-column col-span-default="12" class="pb-2">
       <h3>Border gap size: small</h3>
-    </outline-column>
+    </nub-column>
 
-    <outline-column
-      col-span-lg="8"
-      has-right-divider=${true}
-      border-gap-size="small"
-    >
-      <div
-        class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-      >
+    <nub-column col-span-lg="8" has-right-divider=${true} border-gap-size="small">
+      <div class="border-2 bg-pink-400border-ui-warning p-8 py-16 rounded-sm shadow-md">
         <p>
           This is some text inside of a grid column. Because it's asymmetrical,
           This box is either twice as large or half the size of the other
           column.
         </p>
       </div>
-    </outline-column>
-    <outline-column
-      col-span-lg="4"
-      has-left-divider=${true}
-      border-gap-size="small"
-    >
-      <div
-        class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-      >
+    </nub-column>
+    <nub-column col-span-lg="4" has-left-divider=${true} border-gap-size="small">
+      <div class="border-2 bg-purple-500border-ui-warning p-8 py-16 rounded-sm shadow-md">
         <p>
           This is some text inside of a grid column. Because it's asymmetrical,
           This box is either twice as large or half the size of the other
           column.
         </p>
       </div>
-    </outline-column>
+    </nub-column>
 
-    <outline-column col-span-default="12" class="pb-2 border-t-2 mt-6 pt-4">
+    <nub-column col-span-default="12" class="pb-2 border-t-2 mt-6 pt-4">
       <nub-header level="h2" level-style="semibold">
-        Asymmetrical Grid With Divider</nub-header
-      >
-    </outline-column>
-    <outline-column col-span-default="12" class="pb-2">
+        Asymmetrical Grid With Divider</nub-header>
+    </nub-column>
+    <nub-column col-span-default="12" class="pb-2">
       <h3>Border gap size: medium</h3>
-    </outline-column>
+    </nub-column>
 
-    <outline-column
-      col-span-lg="8"
-      has-right-divider=${true}
-      border-gap-size="medium"
-    >
-      <div
-        class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-      >
+    <nub-column col-span-lg="8" has-right-divider=${true} border-gap-size="medium">
+      <div class="border-2 bg-indigo-500border-ui-warning p-8 py-16 rounded-sm shadow-md">
         <p>
           This is some text inside of a grid column. Because it's asymmetrical,
           This box is either twice as large or half the size of the other
           column.
         </p>
       </div>
-    </outline-column>
-    <outline-column
-      col-span-lg="4"
-      has-left-divider=${true}
-      border-gap-size="medium"
-    >
-      <div
-        class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-      >
+    </nub-column>
+    <nub-column col-span-lg="4" has-left-divider=${true} border-gap-size="medium">
+      <div class="border-2 bg-pink-600border-ui-warning p-8 py-16 rounded-sm shadow-md">
         <p>
           This is some text inside of a grid column. Because it's asymmetrical,
           This box is either twice as large or half the size of the other
           column.
         </p>
       </div>
-    </outline-column>
+    </nub-column>
 
-    <outline-column col-span-default="12" class="pb-2 border-t-2 mt-6 pt-4">
+    <nub-column col-span-default="12" class="pb-2 border-t-2 mt-6 pt-4">
       <nub-header level="h2" level-style="semibold">
-        Asymmetrical Grid With Divider</nub-header
-      >
-    </outline-column>
-    <outline-column col-span-default="12" class="pb-2">
+        Asymmetrical Grid With Divider</nub-header>
+    </nub-column>
+    <nub-column col-span-default="12" class="pb-2">
       <h3>Border gap size: large</h3>
-    </outline-column>
+    </nub-column>
 
-    <outline-column
-      col-span-lg="8"
-      has-right-divider=${true}
-      border-gap-size="large"
-    >
-      <div
-        class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-      >
+    <nub-column col-span-lg="8" has-right-divider=${true} border-gap-size="large">
+      <div class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
         <p>
           This is some text inside of a grid column. Because it's asymmetrical,
           This box is either twice as large or half the size of the other
           column.
         </p>
       </div>
-    </outline-column>
-    <outline-column
-      col-span-lg="4"
-      has-left-divider=${true}
-      border-gap-size="large"
-    >
-      <div
-        class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-      >
+    </nub-column>
+    <nub-column col-span-lg="4" has-left-divider=${true} border-gap-size="large">
+      <div class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
         <p>
           This is some text inside of a grid column. Because it's asymmetrical,
           This box is either twice as large or half the size of the other
           column.
         </p>
       </div>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -423,20 +323,16 @@ export const OffsetLeft = Template.bind({});
 OffsetLeft.decorators = DefaultGridDecorators;
 OffsetLeft.args = {
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Offset Left</nub-header
-      >
-    </outline-column>
-    <outline-column
-      col-span-default="10"
-      class="border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+        Offset Left</nub-header>
+    </nub-column>
+    <nub-column col-span-default="10" class="border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>
         This is an example of a grid column layout in which the content doesn't
         expand the whole width of the container.
       </p>
-    </outline-column>
+    </nub-column>
   `,
 };
 
@@ -444,19 +340,16 @@ export const OffsetRight = Template.bind({});
 OffsetRight.decorators = DefaultGridDecorators;
 OffsetRight.args = {
   defaultSlot: html`
-    <outline-column col-span-default="12">
+    <nub-column col-span-default="12">
       <nub-header level="h2" level-style="semibold">
-        Offset Right</nub-header
-      >
-    </outline-column>
-    <outline-column
-      col-span-default="10"
-      class="col-start-3 justify-self-end border-2 bg-demo-lightBlue border-demo-darkBlue p-8 py-16 border-dashed rounded-xl shadow-md"
-    >
+        Offset Right</nub-header>
+    </nub-column>
+    <nub-column col-span-default="10"
+      class="col-start-3 justify-self-end border-2 border-ui-warning p-8 py-16 rounded-sm shadow-md">
       <p>
         This is an example of a grid column layout in which the content doesn't
         expand the whole width of the container.
       </p>
-    </outline-column>
+    </nub-column>
   `,
 };

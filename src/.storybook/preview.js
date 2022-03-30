@@ -1,10 +1,8 @@
 import theme from './CustomTheme';
 import { addParameters } from '@storybook/web-components';
-import './storybook-styles.css';
 import { addons } from '@storybook/addons';
-
-// import { detectColorScheme } from './detectColorScheme';
-// import { FORCE_RE_RENDER} from "@storybook/core-events";
+import { DocsPage, DocsContainer } from '@storybook/addon-docs';
+import './storybook-styles.css';
 
 addParameters({
   actions: {
@@ -21,7 +19,7 @@ addParameters({
         'Design Tokens',
         'Nubs',
         'Outline',
-        'Templates',
+        'Layout',
         'Pages',
         'Code Examples',
         'Utility Components',
@@ -35,8 +33,10 @@ addParameters({
 });
 
 function docTheme() {
-  let isDarkMode = document.body.getAttribute('class') == 'dark';
-  return isDarkMode ? theme.dark : theme.light;
+  let isDarkMode =
+    document.documentElement.getAttribute('data-theme') === 'dark';
+  let bodyTheme = document.body.getAttribute('class') === 'dark';
+  return isDarkMode || bodyTheme ? theme.dark : theme.light;
 }
 
 export const globalTypes = {

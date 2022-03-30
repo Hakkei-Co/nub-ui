@@ -5,7 +5,7 @@ import { argTypeHorizontalAlign } from '../nub-element/utils/utils';
 import './nub-container';
 
 export default {
-  title: 'Templates/Container',
+  title: 'Layout/Container',
   component: 'nub-container',
   parameters: {
     layout: 'fullscreen',

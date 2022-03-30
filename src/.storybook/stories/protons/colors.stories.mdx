@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
 import tailwindThemeConfig from '../../../resolved-tailwind-config';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import '../../../components/base/outline-swatch-set/outline-swatch-set'
+import '../../../components/base/nub-swatch-set/nub-swatch-set'
 
 <Meta
   title="Design Tokens/Colors/Usage"
@@ -16,48 +16,56 @@ import '../../../components/base/outline-swatch-set/outline-swatch-set'
   }}
 />
 
-# Primary colors
-
-<outline-swatch-set set="nubs"></outline-swatch-set>
-
-# Neutral colors
-
-<outline-swatch-set set="neutral"></outline-swatch-set>
-
-# UI colors
-
-<outline-swatch-set set="ui"></outline-swatch-set>
-
-# Nub Design Color Palettes
-
-## Gray
-
-<outline-swatch-set set="gray"></outline-swatch-set>
-
-## Blue
-
-<outline-swatch-set set="blue"></outline-swatch-set>
-
-## Red
-
-<outline-swatch-set set="red"></outline-swatch-set>
-
-## Yellow
-
-<outline-swatch-set set="yellow"></outline-swatch-set>
-
-## Green
-
-<outline-swatch-set set="green"></outline-swatch-set>
-
-## Indigo
-
-<outline-swatch-set set="indigo"></outline-swatch-set>
-
-## Purple
-
-<outline-swatch-set set="purple"></outline-swatch-set>
-
-## Pink
-
-<outline-swatch-set set="pink"></outline-swatch-set>
+<Story name="Design Tokens/Colors/Usage">
+  {() => {
+    return html`
+      <nub-header level="h2" level-size="2xl" level-style="semibold">
+        Primary colors
+      </nub-header>
+      <nub-swatch-set set="nubs"></nub-swatch-set>
+      <nub-header level="h2" level-size="2xl" level-style="semibold">
+        Neutral colors
+      </nub-header>
+      <nub-swatch-set set="neutral"></nub-swatch-set>
+      <nub-header level="h2" level-size="2xl" level-style="semibold">
+        UI colors
+      </nub-header>
+      <nub-swatch-set set="ui"></nub-swatch-set>
+      <nub-header level="h2" level-size="2xl" level-style="semibold">
+        Nub Design Color Palettes
+      </nub-header>
+      <nub-header level="h4" level-size="lg" level-style="semibold">
+        Gray
+      </nub-header>
+      <nub-swatch-set set="gray"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Blue
+      </nub-header>
+      <nub-swatch-set set="blue"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Red
+      </nub-header>
+<nub-swatch-set set="red"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Yellow
+      </nub-header>
+<nub-swatch-set set="yellow"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Green
+      </nub-header>
+<nub-swatch-set set="green"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Indigo
+      </nub-header>
+<nub-swatch-set set="indigo"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Purple
+      </nub-header>
+<nub-swatch-set set="purple"></nub-swatch-set>
+        <nub-header level="h4" level-size="lg" level-style="semibold">
+        Pink
+      </nub-header>
+<nub-swatch-set set="pink"></nub-swatch-set>
+    `;
+  }}
+</Story>

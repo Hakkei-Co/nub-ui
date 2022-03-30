@@ -5,7 +5,6 @@ import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './nub-breadcrumbs.css.lit';
 import '../nub-container/nub-container';
 import { SlotController } from '../../controllers/slot-controller';
-// import OutlineIcon from '../nub-icon/nub-icon';
 /**
  * The breadcrumbs nub
  * @element nub-breadcrumbs

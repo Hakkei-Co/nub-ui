@@ -5,47 +5,77 @@
  * our overrides must include an important declaration.
  */
 .sbdocs-h1 {
-  @apply mb-4 border-none from-neutral-grayMedium font-display text-3xl text-demo-black !important;
+  @apply mb-4 border-none from-neutral-grayMedium p-2 font-display text-3xl !important;
+  color: var(--nub-text-color-default) !important;
 }
 
 .sbdocs-h2 {
-  @apply mb-4 border-none font-display text-2xl font-semibold !important;
+  @apply mb-4 border-none p-2 font-display text-2xl font-semibold !important;
+  color: var(--nub-text-color-default) !important;
+}
+
+nub-header,
+strong,
+i,
+ul,
+th,
+li,
+blockquote {
+  color: var(--nub-text-color-default) !important;
 }
 
 .sbdocs .sbdocs-content {
   max-width: 2240px;
+  color: var(--nub-text-color-default) !important;
 }
 
 .sbdocs-p {
   @apply mt-0 !important;
-  /* color: var(--nub-text-color-default) !important; */
+  color: var(--nub-text-color-default) !important;
 }
 
-.sbdocs .sbdocs-wrapper {
-  background-color: var(--nub-bg-body-default) !important;
+[data-theme='light'],
+.sbdocs .sbdocs-wrapper > div {
+  background: var(--nub-bg-body-default) !important;
+}
+
+[data-theme='dark'],
+.sbdocs .sbdocs-wrapper > * {
+  background: var(--nub-bg-body-default) !important;
 }
 
 #storybook-preview-wrapper {
-  background-color: var(--nub-bg-body-default) !important;
+  background: var(--nub-bg-body-default) !important;
 }
 
-html[data-theme='light'],
+[data-theme='light'],
+#docs-root {
+  background: var(--neutral-grayDark) !important;
+}
+
+[data-theme='light'],
 #docs-root .docs-story {
-  background-color: var(--nub-bg-body-default) !important;
-  color: var(--nub-text-color-default) !important;
+  background: var(--nub-bg-body-default) !important;
 }
 
 [data-theme='dark'],
 #docs-root {
-  background-color: var(--neutral-grayDark) !important;
-  /* color: var(--nub-text-color-default) !important; */
+  background: var(--nub-bg-body-default) !important;
+  color: var(--nub-text-color-default) !important;
 }
 
+[data-theme='dark'],
 .docs-story {
-  background-color: var(--nub-bg-body-default) !important;
-  /* color: var(--nub-text-color-default) !important; */
+  background: var(--nub-bg-body-default) !important;
+  color: var(--nub-text-color-default) !important;
 }
 
-/* .sb-main-padded .sb-show-main { */
-/* color: var(--demo-lightGray) !important; */
-/* } */
+[data-theme='dark'],
+.sbdocs.sbdocs-preview > * {
+  background: var(--nub-bg-body-default) !important;
+  color: var(--nub-text-color-default) !important;
+}
+
+.sbdocs.sbdocs-preview code > * {
+  @apply text-xs !important;
+}

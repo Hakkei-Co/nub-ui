@@ -23,7 +23,7 @@ const parser = new DOMParser();
  * @csspart base - The component's base wrapper.
  */
 @customElement('nub-icon')
-export default class OutlineIcon extends NubElement {
+export default class NubIcon extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   @state() private svg = '';
@@ -161,6 +161,6 @@ export default class OutlineIcon extends NubElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'nub-icon': OutlineIcon;
+    'nub-icon': NubIcon;
   }
 }

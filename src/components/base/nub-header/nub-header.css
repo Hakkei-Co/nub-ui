@@ -4,29 +4,27 @@
   color: var(--neutral-grayDark) !important;
 }
 
-h1 {
+:root(h1) {
   @apply text-2xl !important;
   @apply font-header !important;
   @apply font-bold !important;
   color: var(--nub-text-color-default) !important;
 }
 
-h2 {
+:root(h2) {
   @apply font-body !important;
   @apply m-0 mb-4;
   @apply font-extrabold !important;
   color: var(--nubs-senary) !important;
 }
 
-h4 {
+:root(h4) {
   @apply font-display !important;
   @apply m-0 mb-4;
   color: var(--nub-text-color-default) !important;
 }
 
-h3,
-h5,
-h6 {
+:host(h4, h5, h6) {
   @apply font-body !important;
   @apply uppercase !important;
   @apply m-0 mb-4;
