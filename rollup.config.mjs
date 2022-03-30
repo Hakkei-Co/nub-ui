@@ -6,7 +6,7 @@ import multi from '@rollup/plugin-multi-entry';
 import typescript from 'rollup-plugin-typescript2';
 import svg from 'rollup-plugin-svg';
 import json from '@rollup/plugin-json';
-const nubs = require('./nub.config');
+import nubs from './nub.config.js';
 
 const sharedConfig = {
   onwarn(warning) {
@@ -51,9 +51,9 @@ const defaultOutput = {
   },
   output: [
     {
-      // file: `${nubs.destBasePath}/nubs.js`,
       file: `${nubs.destBasePath}/nubs.js`,
-      format: 'esm',
+      format: 'es',
+      sourcemap: true,
     },
   ],
   ...sharedConfig,
