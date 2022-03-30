@@ -1,4 +1,4 @@
-import { OutlineElement } from '../../../base/outline-element/outline-element';
+import { NubElement } from '../../../base/nub-element/nub-element';
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import componentStyles from './example-slot-controller-base.css.lit';
@@ -16,7 +16,7 @@ import '../../../base/nub-container/nub-container';
  */
 
 @customElement('example-slot-controller-base')
-export class ExampleSlotControllerBase extends OutlineElement {
+export class ExampleSlotControllerBase extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   render(): TemplateResult {

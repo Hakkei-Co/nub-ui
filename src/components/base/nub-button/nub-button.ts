@@ -2,7 +2,7 @@ import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import componentStyles from './nub-button.css.lit';
 import { LinkTargetType } from '../outline-link/config';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { SlotController } from '../../controllers/slot-controller';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
@@ -31,7 +31,7 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * @todo Convert styles to utilize CSS Variables.
  */
 @customElement('nub-button')
-export class NubButton extends OutlineElement {
+export class NubButton extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   slots = new SlotController(

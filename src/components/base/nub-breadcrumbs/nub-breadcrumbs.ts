@@ -1,5 +1,5 @@
 // Our base component, which all others extend.
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './nub-breadcrumbs.css.lit';
@@ -14,7 +14,7 @@ import { SlotController } from '../../controllers/slot-controller';
  */
 
 @customElement('nub-breadcrumbs')
-export class NubBreadcrumbs extends OutlineElement {
+export class NubBreadcrumbs extends NubElement {
   slots = new SlotController(
     this, // This, the host element.
     true // To shift or not to shift LightDom nodes to ShadowDOM.

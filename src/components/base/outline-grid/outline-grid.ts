@@ -1,9 +1,9 @@
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-grid.css.lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import type { HorizontalAlignment, Size } from '../outline-element/utils/types';
+import type { HorizontalAlignment, Size } from '../nub-element/utils/types';
 import '../nub-container/nub-container';
 /**
  * The Outline Grid component
@@ -14,7 +14,7 @@ import '../nub-container/nub-container';
  * @slot - The default, and only slot for this element.
  */
 @customElement('outline-grid')
-export class OutlineGrid extends OutlineElement {
+export class OutlineGrid extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   /**

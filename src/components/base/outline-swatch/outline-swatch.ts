@@ -1,7 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-swatch.css.lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { SwatchSet } from '../outline-swatch-set/outline-swatch-set';
 import tailwindThemeConfig from '../../../resolved-tailwind-config';
 
@@ -17,7 +17,7 @@ export interface OutlineSwatchInterface extends HTMLElement {
  */
 @customElement('outline-swatch')
 export class OutlineSwatch
-  extends OutlineElement
+  extends NubElement
   implements OutlineSwatchInterface
 {
   //slottedController = new SlottedController(this);

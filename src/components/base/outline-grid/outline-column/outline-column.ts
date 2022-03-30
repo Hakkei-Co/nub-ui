@@ -1,11 +1,8 @@
-import { OutlineElement } from '../../outline-element/outline-element';
+import { NubElement } from '../../nub-element/nub-element';
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-column.css.lit';
-import type {
-  VerticalAlignment,
-  Size,
-} from '../../outline-element/utils/types';
+import type { VerticalAlignment, Size } from '../../nub-element/utils/types';
 
 type colSpanRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 type rowSpanRange = 1 | 2 | 3 | 4 | 5 | 6;
@@ -17,7 +14,7 @@ type rowSpanRange = 1 | 2 | 3 | 4 | 5 | 6;
  * @slot - The default, and only slot for this element.
  */
 @customElement('outline-column')
-export class OutlineColumn extends OutlineElement {
+export class OutlineColumn extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
   /**
    * The number of columns wide this column should be.

@@ -22,31 +22,31 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 
 # Outline Coding Guide & Standards
 
-Building web components with Outline and Lit2 is a straightforward process 
-thanks to the many tools and extensive documentation we have at the ready. 
-The following section will go over some of the basics as well as reference 
-related resources where appropriate to serve as a basis of how things are, 
-and will be built in your Outline design system. 
+Building web components with Outline and Lit2 is a straightforward process
+thanks to the many tools and extensive documentation we have at the ready.
+The following section will go over some of the basics as well as reference
+related resources where appropriate to serve as a basis of how things are,
+and will be built in your Outline design system.
 
 ## Component Best Practices & Implementation Standards
 
-> Consider this the TLDR for then entire set of documentation. 
-> The bullets below will briefly outline the best pratices gathered from 
+> Consider this the TLDR for then entire set of documentation.
+> The bullets below will briefly outline the best pratices gathered from
 > forthcoming sections of the Coding Guide & Standards
 
-- `styles` should be defined immediately following the class definition. 
+- `styles` should be defined immediately following the class definition.
 - [Reactive Controllers](https://lit.dev/docs/composition/controllers/) should be instantiated immediately below the style definition.
 
 ## Component Composition
 
-[Component composition](https://lit.dev/docs/composition/component-composition/) is the process of assembling complex components from simpler components. 
-A component can use subcomponents in its template. 
-Components can use standard DOM mechanisms to communicate: setting properties on subcomponents, 
+[Component composition](https://lit.dev/docs/composition/component-composition/) is the process of assembling complex components from simpler components.
+A component can use subcomponents in its template.
+Components can use standard DOM mechanisms to communicate: setting properties on subcomponents,
 and listening for events from subcomponents.
 
 ## Component Structure Overview
 
-The following component sample provides simple, or even empty examples of the 
+The following component sample provides simple, or even empty examples of the
 various portions of a new web component.
 
 <Story name="Component Overview">
@@ -55,17 +55,17 @@ various portions of a new web component.
 <outline-code-block language="typescript">
 import { CSSResultGroup, TemplateResult, html } from 'lit';
 import { customElement, property, query, queryAll } from 'lit/decorators.js';
-import { OutlineElement } from '../../base/outline-element/outline-element';
+import { NubElement } from '../../base/nub-element/nub-element';
 import { ReactiveController } '../controllers/ReactiveController';
 import componentStyles from './outline-widget.css.lit';
 <br/>
 /**
 * The Outline Widget component
-* @element outline-widget 
+* @element outline-widget
 * @slot default - The default slot
 */
 @customElement('outline-widget')
-export class OutlineWidget extends OutlineElement {
+export class OutlineWidget extends NubElement {
   // styles is defined directly after the class definition
   static styles: CSSResultGroup = [componentStyles];
 <br/>
@@ -75,7 +75,7 @@ export class OutlineWidget extends OutlineElement {
   // @queryAll and @query decorators
   @queryAll('li')
   listItems: HTMLElement[];
-<br/>      
+<br/>
   @query('.wrapper');
   wrapper: HTMLElement;
 <br/>

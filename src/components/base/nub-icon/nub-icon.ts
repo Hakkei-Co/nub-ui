@@ -6,7 +6,7 @@ import componentStyles from './nub-icon.css.lit';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
 import { emit } from '../../../internal/event';
 import { watch } from '../../../internal/watch';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { getIconLibrary, unwatchIcon, watchIcon } from './library';
 import { requestIcon } from './request';
 import outline from '../../../resolved-nubs-config';
@@ -23,7 +23,7 @@ const parser = new DOMParser();
  * @csspart base - The component's base wrapper.
  */
 @customElement('nub-icon')
-export default class OutlineIcon extends OutlineElement {
+export default class OutlineIcon extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   @state() private svg = '';

@@ -18,6 +18,19 @@
 */
 
 :root {
+
+  /* Utitlizing CSS properties here (screens) caused
+     the responsive tailwind classes to simply fail.
+     @todo: Make screens work with css variables. */
+  /* --screen-xs: 480px;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-xxl: 1440px;
+  --screen-xxxl: 2180px; */
+
+
   --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
   --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
   --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
@@ -28,6 +41,76 @@
   --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
   --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
   --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
+
+  --spacing-0: 0px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+  --spacing-40: 10rem;
+  --spacing-44: 11rem;
+  --spacing-48: 12rem;
+  --spacing-52: 13rem;
+  --spacing-56: 14rem;
+  --spacing-60: 15rem;
+  --spacing-64: 16rem;
+  --spacing-72: 18rem;
+  --spacing-80: 20rem;
+  --spacing-96: 24rem;
+  --spacing-px: 1px;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3.5rem;
+  --fs-6xl: 4.5rem;
+  --fs-7xl: 5.5rem;
+  --fs-8xl: 6.5rem;
+  --fs-9xl: 7.5rem;
+
+  --lh-xs: 1rem;
+  --lh-sm: 1.25rem;
+  --lh-base: 1.5rem;
+  --lh-lg: 1.75rem;
+  --lh-xl: 1.75rem;
+  --lh-2xl: 2rem;
+  --lh-3xl: 2.25rem;
+  --lh-4xl: 2.5rem;
+  --lh-5xl: 3.75rem;
+  --lh-6xl: 4.75rem;
+  --lh-7xl: 5.75rem;
+  --lh-8xl: 6.75rem;
+  --lh-9xl: 7.75rem;
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
 }
 
 
@@ -170,98 +253,6 @@
   --pink-800: #e85a79;
   --pink-900: #de425b;
 
-  /* Utitlizing CSS properties here (screens) caused
-     the responsive tailwind classes to simply fail.
-     @todo: Make screens work with css variables. */
-  /* --screen-xs: 480px;
-  --screen-sm: 640px;
-  --screen-md: 768px;
-  --screen-lg: 1024px;
-  --screen-xl: 1280px;
-  --screen-xxl: 1440px;
-  --screen-xxxl: 2180px; */
-
-  --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
-  --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-  --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
-  --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
-  --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
-  --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
-  --radial-gradient-info: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
-  --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
-  --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
-  --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
-
-  --spacing-0: 0px;
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-7: 1.75rem;
-  --spacing-8: 2rem;
-  --spacing-9: 2.25rem;
-  --spacing-10: 2.5rem;
-  --spacing-11: 2.75rem;
-  --spacing-12: 3rem;
-  --spacing-14: 3.5rem;
-  --spacing-16: 4rem;
-  --spacing-20: 5rem;
-  --spacing-24: 6rem;
-  --spacing-28: 7rem;
-  --spacing-32: 8rem;
-  --spacing-36: 9rem;
-  --spacing-40: 10rem;
-  --spacing-44: 11rem;
-  --spacing-48: 12rem;
-  --spacing-52: 13rem;
-  --spacing-56: 14rem;
-  --spacing-60: 15rem;
-  --spacing-64: 16rem;
-  --spacing-72: 18rem;
-  --spacing-80: 20rem;
-  --spacing-96: 24rem;
-  --spacing-px: 1px;
-
-  --fs-xs: 0.75rem;
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
-  --fs-lg: 1.125rem;
-  --fs-xl: 1.25rem;
-  --fs-2xl: 1.5rem;
-  --fs-3xl: 1.875rem;
-  --fs-4xl: 2.25rem;
-  --fs-5xl: 3.5rem;
-  --fs-6xl: 4.5rem;
-  --fs-7xl: 5.5rem;
-  --fs-8xl: 6.5rem;
-  --fs-9xl: 7.5rem;
-
-  --lh-xs: 1rem;
-  --lh-sm: 1.25rem;
-  --lh-base: 1.5rem;
-  --lh-lg: 1.75rem;
-  --lh-xl: 1.75rem;
-  --lh-2xl: 2rem;
-  --lh-3xl: 2.25rem;
-  --lh-4xl: 2.5rem;
-  --lh-5xl: 3.75rem;
-  --lh-6xl: 4.75rem;
-  --lh-7xl: 5.75rem;
-  --lh-8xl: 6.75rem;
-  --lh-9xl: 7.75rem;
-
-  --fw-thin: 100;
-  --fw-extralight: 200;
-  --fw-light: 300;
-  --fw-normal: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-extrabold: 800;
-  --fw-black: 900;
-
   /*
    * Configuration values for `nub-container`.
    */
@@ -271,44 +262,29 @@
   /*
    * Configuration values for `outline-link`.
    */
-  --outline-link-color-default: var(--ui-infoText);
-  --outline-link-color-hover: var(--status-info);
-  --outline-link-color-focus: var(--demo-darkGray);
-
-  /*
-   * Configuration values for `outline-breadcrumb`.
-   */
-  --outline-breadcrumb-text-color-default: var(--demo-lightGray);
-  --outline-breadcrumb-link-color-default: var(--demo-white);
-  --outline-breadcrumb-link-color-hover: var(--demo-mediumGray);
-  --outline-breadcrumb-link-color-focus: var(--demo-mediumGray);
-  --outline-breadcrumb-link-decoration-default: none;
-  --outline-breadcrumb-link-decoration-hover: "no-"+ underline;
-  --outline-breadcrumb-link-decoration-focus: underline;
-  --outline-breadcrumb-bg-color: var(--demo-darkGray);
-  --outline-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
-  --outline-breadcrumb-separator-spacing: var(--spacing-2);
+  --nub-link-color-default: var(--ui-infoText);
+  --nub-link-color-hover: var(--status-info);
+  --nub-link-color-focus: var(--demo-darkGray);
 
   /*
   * Configuration values for `outline-admin-links`.
   * This component's styles represent a standard set of administrative
   * links like one found in Drupal or other systems.
   */
-  --outline-admin-links-color-default: var(--demo-darkGray);
-  --outline-admin-links-color-hover: var(--demo-black);
-  --outline-admin-links-color-focus: var(--demo-black);
-  --outline-admin-links-color-active: var(--demo-white);
-  --outline-admin-links-bg-default: var(--demo-lightGray);
-  --outline-admin-links-bg-hover: var(--demo-mediumGray);
-  --outline-admin-links-bg-focus: var(--demo-mediumGray);
-  --outline-admin-links-bg-active: var(--demo-darkGray);
-  --outline-admin-links-y-spacing: var(--spacing-4);
-  --outline-admin-links-link-y-spacing: var(--spacing-4);
-  --outline-admin-links-link-x-spacing: var(--spacing-6);
+  --nub-admin-links-color-default: var(--demo-darkGray);
+  --nub-admin-links-color-hover: var(--demo-black);
+  --nub-admin-links-color-focus: var(--demo-black);
+  --nub-admin-links-color-active: var(--demo-white);
+  --nub-admin-links-bg-default: var(--demo-lightGray);
+  --nub-admin-links-bg-hover: var(--demo-mediumGray);
+  --nub-admin-links-bg-focus: var(--demo-mediumGray);
+  --nub-admin-links-bg-active: var(--demo-darkGray);
+  --nub-admin-links-y-spacing: var(--spacing-4);
+  --nub-admin-links-link-y-spacing: var(--spacing-4);
+  --nub-admin-links-link-x-spacing: var(--spacing-6);
 
   --nub-bg-body-default: var(--neutral-white);
   --nub-bg-tab-select-default: var(--demo-lightGray);
-
   --nub-text-color-default: var(--demo-darkGray);
   --nub-text-color-default-alt: var(--gray-700);
   --nub-text-color-secondary: var(--neutral-white);
@@ -322,6 +298,7 @@
   --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
   --nub-breadcrumb-link-color-default: var(--neutral-white);
   --nub-breadcrumb-link-color-focus: var(--demo-mediumGray);
+
   --nub-breadcrumb-link-decoration-hover: "no-"+ underline;
   --nub-breadcrumb-link-decoration-focus: underline;
   --nub-breadcrumb-link-decoration-default: none;
@@ -417,75 +394,6 @@
   --screen-xxl: 1440px;
   --screen-xxxl: 2180px; */
 
-    --spacing-0: 0px;
-    --spacing-1: 0.25rem;
-    --spacing-2: 0.5rem;
-    --spacing-3: 0.75rem;
-    --spacing-4: 1rem;
-    --spacing-5: 1.25rem;
-    --spacing-6: 1.5rem;
-    --spacing-7: 1.75rem;
-    --spacing-8: 2rem;
-    --spacing-9: 2.25rem;
-    --spacing-10: 2.5rem;
-    --spacing-11: 2.75rem;
-    --spacing-12: 3rem;
-    --spacing-14: 3.5rem;
-    --spacing-16: 4rem;
-    --spacing-20: 5rem;
-    --spacing-24: 6rem;
-    --spacing-28: 7rem;
-    --spacing-32: 8rem;
-    --spacing-36: 9rem;
-    --spacing-40: 10rem;
-    --spacing-44: 11rem;
-    --spacing-48: 12rem;
-    --spacing-52: 13rem;
-    --spacing-56: 14rem;
-    --spacing-60: 15rem;
-    --spacing-64: 16rem;
-    --spacing-72: 18rem;
-    --spacing-80: 20rem;
-    --spacing-96: 24rem;
-    --spacing-px: 1px;
-
-    --fs-xs: 0.75rem;
-    --fs-sm: 0.875rem;
-    --fs-base: 1rem;
-    --fs-lg: 1.125rem;
-    --fs-xl: 1.25rem;
-    --fs-2xl: 1.5rem;
-    --fs-3xl: 1.875rem;
-    --fs-4xl: 2.25rem;
-    --fs-5xl: 3.5rem;
-    --fs-6xl: 4.5rem;
-    --fs-7xl: 5.5rem;
-    --fs-8xl: 6.5rem;
-    --fs-9xl: 7.5rem;
-
-    --lh-xs: 1rem;
-    --lh-sm: 1.25rem;
-    --lh-base: 1.5rem;
-    --lh-lg: 1.75rem;
-    --lh-xl: 1.75rem;
-    --lh-2xl: 2rem;
-    --lh-3xl: 2.25rem;
-    --lh-4xl: 2.5rem;
-    --lh-5xl: 3.75rem;
-    --lh-6xl: 4.75rem;
-    --lh-7xl: 5.75rem;
-    --lh-8xl: 6.75rem;
-    --lh-9xl: 7.75rem;
-
-    --fw-thin: 100;
-    --fw-extralight: 200;
-    --fw-light: 300;
-    --fw-normal: 400;
-    --fw-medium: 500;
-    --fw-semibold: 600;
-    --fw-bold: 700;
-    --fw-extrabold: 800;
-    --fw-black: 900;
 
     --nubs-container-padding-x: 1.5rem;
     --nubs-container-padding-y: 1.5rem;
@@ -580,43 +488,35 @@
     --nub-text-color-secondary: var(--nubs-quaternary);
     --nub-text-color-disabled: var(--neutral-grayLight);
     --nub-text-color-disabled-secondary: var(--neutral-grayLight);
+
     --nub-breadcrumb-text-color-default: var(--neutral-grayMedium);
     --nub-breadcrumb-link-color-hover: var(--demo-mediumGray);
     --nub-breadcrumb-link-color-default: var(--neutral-white);
     --nub-breadcrumb-link-color-focus: var(--demo-mediumGray);
+
     --nub-link-color-hover: var(--neutral-grayDark);
     --nub-link-color-focus: var(--demo-mediumGray);
     --nub-link-border-color-info: var(--status-info-alt);
     --nub-link-border-color-success: var(--status-success-alt);
     --nub-link-border-color-warning: var(--status-warning-alt);
     --nub-link-border-color-danger: var(--status-error-alt);
+
     --nub-breadcrumb-link-decoration-default: none;
     --nub-breadcrumb-link-decoration--uppercase: uppercase;
-
-
     --nub-breadcrumb-link-decoration-hover: "no-"+ underline;
     --nub-breadcrumb-link-decoration-focus: underline;
+
     --nub-breadcrumb-bg-color: var(--demo-darkGray);
     --nub-breadcrumb-bg-padding: var(--spacing-4) var(--spacing-4);
     --nub-breadcrumb-separator-spacing: var(--spacing-2);
+
     --nub-bg-btn-disabled: var(--neutral-grayMedium);
     --nub-header-default: var(--nubs-septenary);
     /*
    * Configuration values for `outline-link`.
    */
-    --outline-link-color-default: var(--demo-lightGray);
-    --outline-link-color-hover: var(--demo-darkGray);
-    --outline-link-color-focus: var(--demo-mediumGray);
-
-    --radial-gradient-black: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 70%);
-    --radial-gradient-white: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-    --radial-gradient-dark: radial-gradient(circle, rgba(38, 38, 38, 0.2) 0, rgba(38, 38, 38, 0.3) 40%, rgba(38, 38, 38, 0.4) 50%, rgba(38, 38, 38, 0.5) 60%, rgba(38, 38, 38, 0) 70%);
-    --radial-gradient-light: radial-gradient(circle, rgba(251, 251, 251, 0.2) 0, rgba(251, 251, 251, 0.3) 40%, rgba(251, 251, 251, 0.4) 50%, rgba(251, 251, 251, 0.5) 60%, rgba(251, 251, 251, 0) 70%);
-    --radial-gradient-danger: radial-gradient(circle, rgba(249, 49, 84, 0.2) 0, rgba(249, 49, 84, 0.3) 40%, rgba(249, 49, 84, 0.4) 50%, rgba(249, 49, 84, 0.5) 60%, rgba(249, 49, 84, 0) 70%);
-    --radial-gradient-warning: radial-gradient(circle, rgba(255, 169, 0, 0.2) 0, rgba(255, 169, 0, 0.3) 40%, rgba(255, 169, 0, 0.4) 50%, rgba(255, 169, 0, 0.5) 60%, rgba(255, 169, 0, 0) 70%);
-    --radial-gradient-info: radial-gradient(circle, rgba(57, 192, 237, 0.2) 0, rgba(57, 192, 237, 0.3) 40%, rgba(57, 192, 237, 0.4) 50%, rgba(57, 192, 237, 0.5) 60%, rgba(57, 192, 237, 0) 70%);
-    --radial-gradient-success: radial-gradient(circle, rgba(0, 183, 74, 0.2) 0, rgba(0, 183, 74, 0.3) 40%, rgba(0, 183, 74, 0.4) 50%, rgba(0, 183, 74, 0.5) 60%, rgba(0, 183, 74, 0) 70%);
-    --radial-gradient-secondary: radial-gradient(circle, rgba(178, 60, 253, 0.2) 0, rgba(178, 60, 253, 0.3) 40%, rgba(178, 60, 253, 0.4) 50%, rgba(178, 60, 253, 0.5) 60%, rgba(178, 60, 253, 0) 70%);
-    --radial-gradient-primary: radial-gradient(circle, rgba(18, 102, 241, 0.2) 0, rgba(18, 102, 241, 0.3) 40%, rgba(18, 102, 241, 0.4) 50%, rgba(18, 102, 241, 0.5) 60%, rgba(18, 102, 241, 0) 70%);
+    --nub-link-color-default: var(--demo-lightGray);
+    --nub-link-color-hover: var(--demo-darkGray);
+    --nub-link-color-focus: var(--demo-mediumGray);
   }
 }

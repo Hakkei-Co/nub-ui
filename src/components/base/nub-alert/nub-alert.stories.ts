@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { argTypeSlotContent } from '../outline-element/utils/utils';
+import { argTypeSlotContent } from '../nub-element/utils/utils';
 import { alertSizes, alertStatusTypes, alertSpan } from './nub-alert';
 import './nub-alert';
 // import { detectColorScheme } from "../../../.storybook/detectColorScheme";

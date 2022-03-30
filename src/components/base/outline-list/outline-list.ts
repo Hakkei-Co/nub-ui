@@ -1,5 +1,5 @@
 import { CSSResultGroup, TemplateResult, html } from 'lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-list.css.lit';
 import '../outline-link/outline-link';
@@ -37,7 +37,7 @@ export type ClassInfo = { [name: string]: string | boolean | number };
  * @slot footer: for content below the default slot.
  */
 @customElement('outline-list')
-export class OutlineList extends OutlineElement {
+export class OutlineList extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   /**

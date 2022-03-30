@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { OutlineElement } from '../../outline-element/outline-element';
+import { NubElement } from '../../nub-element/nub-element';
 
 let id = 0;
 
@@ -10,7 +10,7 @@ let id = 0;
  * @csspart base - The component's base wrapper.
  */
 @customElement('nub-tab-panel')
-export default class NubTabPanel extends OutlineElement {
+export default class NubTabPanel extends NubElement {
   private componentId = `tab-panel-${++id}`;
 
   /** The tab panel's name. */

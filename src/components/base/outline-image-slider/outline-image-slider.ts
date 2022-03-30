@@ -1,5 +1,5 @@
 import { CSSResultGroup, TemplateResult, html } from 'lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { customElement, query } from 'lit/decorators.js';
 import Splide from '@splidejs/splide';
 import componentStyles from './outline-image-slider.css.lit';
@@ -10,7 +10,7 @@ import componentStyles from './outline-image-slider.css.lit';
  * @slot image-<number> - slots are generated in code, component accepts stack of desired elements to display
  */
 @customElement('outline-image-slider')
-export class OutlineImageSlider extends OutlineElement {
+export class OutlineImageSlider extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   @query('.splide')

@@ -1,5 +1,5 @@
 import { TemplateResult, html, CSSResultGroup } from 'lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { customElement } from 'lit/decorators.js';
 import componentStyles from './outline-styled-text.css.lit';
 import { SlotController } from '../../controllers/slot-controller';
@@ -11,8 +11,8 @@ import { SlotController } from '../../controllers/slot-controller';
  * @slot - default slot
  */
 @customElement('outline-styled-text')
-export class OutlineStyledText extends OutlineElement {
-  static styles: CSSResultGroup = [OutlineElement.styles, componentStyles];
+export class OutlineStyledText extends NubElement {
+  static styles: CSSResultGroup = [NubElement.styles, componentStyles];
   slots = new SlotController(
     this, // This, the host element.
     true // To shift or not to shift LightDom nodes to ShadowDOM.

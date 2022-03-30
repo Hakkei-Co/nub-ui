@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import sampleImage from '../../../.storybook/static/media/color/keyboard.png';
-import { argTypeHidden } from '../outline-element/utils/utils';
+import { argTypeHidden } from '../nub-element/utils/utils';
 import './outline-image';
 // import '../nub-header/nub-header'
 

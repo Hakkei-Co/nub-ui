@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import componentStyles from './outline-image.css.lit';
 
 /**
@@ -11,7 +11,7 @@ import componentStyles from './outline-image.css.lit';
  * @slot caption - The caption text for the image.
  */
 @customElement('outline-image')
-export class OutlineImage extends OutlineElement {
+export class OutlineImage extends NubElement {
   static styles = [componentStyles];
 
   @state()

@@ -1,7 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-video-vimeo.css.lit';
-import { OutlineElement } from '../../base/outline-element/outline-element';
+import { NubElement } from '../../base/nub-element/nub-element';
 
 export interface OutlineVideoVimeoInterface extends HTMLElement {
   videoID: string;
@@ -14,7 +14,7 @@ export interface OutlineVideoVimeoInterface extends HTMLElement {
  */
 @customElement('outline-video-vimeo')
 export class OutlineVideoVimeo
-  extends OutlineElement
+  extends NubElement
   implements OutlineVideoVimeoInterface
 {
   static styles: CSSResultGroup = [componentStyles];

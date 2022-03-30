@@ -1,5 +1,5 @@
 // Our base component, which all others extend.
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -11,7 +11,7 @@ import componentStyles from './outline-link.css.lit';
  * @slot - The default, and only slot for this element.
  */
 @customElement('outline-link')
-export class OutlineLink extends OutlineElement {
+export class OutlineLink extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   /**

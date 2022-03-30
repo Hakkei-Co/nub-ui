@@ -1,6 +1,6 @@
 import { TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import { classMap } from 'lit/directives/class-map.js';
 import {
@@ -17,7 +17,7 @@ import componentStyles from './nub-header.css.lit';
  * @slot defaultSlot
  */
 @customElement('nub-header')
-export class NubHeader extends OutlineElement {
+export class NubHeader extends NubElement {
   static styles = [componentStyles];
 
   /**

@@ -1,5 +1,5 @@
 .nub-breadcrumbs {
-  @apply space-x-1 font-header text-xs transition-colors duration-75;
+  @apply space-x-1 font-display text-xs font-medium transition-colors duration-75;
   color: var(--nub-breadcrumb-text-color-default);
   /* background: var(--nub-breadcrumb-bg-color); */
   padding: var(--nub-breadcrumb-bg-padding);
@@ -11,7 +11,7 @@ span,
 div,
 ::slotted(*) {
   @apply font-display font-medium transition-colors duration-75;
-  @apply min-w-min whitespace-nowrap;
+  @apply min-w-min whitespace-nowrap text-xs;
   text-decoration: var(--nub-breadcrumb-link-decoration-default);
   color: var(--nub-text-color-default);
 }
@@ -27,7 +27,7 @@ div,
 }
 
 :host span.last {
-  @apply font-display text-xs font-medium text-nubs-septenary transition-colors duration-75 !important;
+  @apply font-display font-medium text-nubs-septenary transition-colors duration-75 !important;
   text-decoration: var(--nub-breadcrumb-link-decoration-default);
   color: var(--nub-text-color-default) !important;
 }
@@ -45,7 +45,7 @@ div,
   @apply outline-1 ring-nubs-primary;
   text-decoration: var(--nub-breadcrumb-link-decoration-focus);
   outline: none;
-  color: var(--outline-breadcrumb-link-color-focus);
+  color: var(--nub-breadcrumb-link-color-focus);
 }
 
 .separator {

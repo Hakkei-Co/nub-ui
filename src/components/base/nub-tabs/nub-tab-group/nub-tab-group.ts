@@ -1,5 +1,5 @@
 import { CSSResultGroup, html } from 'lit';
-import { OutlineElement } from '../../outline-element/outline-element';
+import { NubElement } from '../../nub-element/nub-element';
 import { customElement, property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { emit } from '../../../../internal/event';
@@ -26,7 +26,7 @@ import { MobileController } from '../../../controllers/mobile-controller';
  * @csspart body - The tab group body where tab panels are slotted in.
  */
 @customElement('nub-tab-group')
-export default class NubTabGroup extends OutlineElement {
+export default class NubTabGroup extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   @query('.tab-group') tabGroup: HTMLElement;

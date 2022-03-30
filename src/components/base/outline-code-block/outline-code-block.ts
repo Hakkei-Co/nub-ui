@@ -1,5 +1,5 @@
 import { CSSResultGroup, TemplateResult, html } from 'lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { customElement, property, query } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 // @ts-expect-error fixes TS7016: Could not find a declaration file for module
@@ -11,7 +11,7 @@ import componentStyles from './outline-code-block.css.lit';
  * @element outline-code-block
  */
 @customElement('outline-code-block')
-export class OutlineCodeBlock extends OutlineElement {
+export class OutlineCodeBlock extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   @query('slot')

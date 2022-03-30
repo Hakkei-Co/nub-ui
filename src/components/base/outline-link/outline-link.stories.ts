@@ -54,9 +54,9 @@ The primary coloring of the \`outline-link\` component is handled by the followi
 
 > Any consumer application that includes \`nub.theme.css\` can simply overwrite any relevant CSS Variables in a subsequent include to affect change on the element styling.
 
-- \`--outline-link-color-default\` The default link color
-- \`--outline-link-color-hover\` The link color when hovering on the link
-- \`--outline-link-color-focus\` The link color when focusing on the link
+- \`--nub-link-color-default\` The default link color
+- \`--nub-link-color-hover\` The link color when hovering on the link
+- \`--nub-link-color-focus\` The link color when focusing on the link
 `,
       },
     },

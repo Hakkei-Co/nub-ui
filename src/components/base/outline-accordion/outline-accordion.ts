@@ -5,7 +5,7 @@ import {
   state,
   queryAssignedNodes,
 } from 'lit/decorators.js';
-import { OutlineElement } from '../../base/outline-element/outline-element';
+import { NubElement } from '../../base/nub-element/nub-element';
 import componentStyles from './outline-accordion.css.lit';
 import { MobileController } from '../../controllers/mobile-controller';
 
@@ -15,7 +15,7 @@ import { MobileController } from '../../controllers/mobile-controller';
  * @slot panels: For outline-accordion-panels only.
  */
 @customElement('outline-accordion')
-export class OutlineAccordion extends OutlineElement {
+export class OutlineAccordion extends NubElement {
   private mobileController = new MobileController(this);
 
   static styles: CSSResultGroup = [componentStyles];

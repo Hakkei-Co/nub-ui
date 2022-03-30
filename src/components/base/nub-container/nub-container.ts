@@ -1,16 +1,16 @@
 // Our base component, which all others extend.
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './nub-container.css.lit';
-import type { HorizontalAlignment } from '../outline-element/utils/types';
+import type { HorizontalAlignment } from '../nub-element/utils/types';
 
 /**
  * The Outline  Link component
  * @slot - The default, and only slot for this element.
  */
 @customElement('nub-container')
-export class NubContainer extends OutlineElement {
+export class NubContainer extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
 
   /**

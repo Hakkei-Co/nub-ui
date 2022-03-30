@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { classMap, ClassInfo } from 'lit/directives/class-map.js';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import componentStyles from './nub-card.css.lit';
 
 type AllowedColors =
@@ -21,7 +21,7 @@ type AllowedColors =
  * @slot footer - The footer slot.
  */
 @customElement('nub-card')
-export class NubCard extends OutlineElement {
+export class NubCard extends NubElement {
   static styles = [componentStyles];
 
   /**

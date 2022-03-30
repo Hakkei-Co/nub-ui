@@ -1,5 +1,5 @@
 import { CSSResultGroup, TemplateResult, html } from 'lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { customElement } from 'lit/decorators.js';
 import { SlotController } from '../../controllers/slot-controller';
 import componentStyles from './outline-admin-links.css.lit';
@@ -11,7 +11,7 @@ import componentStyles from './outline-admin-links.css.lit';
  * @todo: Ensure this component is more mobile friendly.
  */
 @customElement('outline-admin-links')
-export class OutlineAdminLinks extends OutlineElement {
+export class OutlineAdminLinks extends NubElement {
   slots = new SlotController(
     this, // This, the host element.
     true // To shift or not to shift LightDom nodes to ShadowDOM.

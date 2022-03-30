@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import {
   argTypeSlotContent,
-} from '../outline-element/utils/utils';
+} from '../nub-element/utils/utils';
 import { ButtonVariant, ButtonSize } from './nub-button';
 import './nub-button';
 

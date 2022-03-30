@@ -1,5 +1,5 @@
 import { CSSResultGroup, html, TemplateResult } from 'lit';
-import { OutlineElement } from '../../outline-element/outline-element';
+import { NubElement } from '../../nub-element/nub-element';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import componentStyles from './nub-tab.css.lit';
@@ -12,7 +12,7 @@ let id = 0;
  * @csspart base - The component's base wrapper.
  */
 @customElement('nub-tab')
-export default class NubTab extends OutlineElement {
+export default class NubTab extends NubElement {
   static styles: CSSResultGroup = [componentStyles];
   @state()
   hasIconSlot: boolean;

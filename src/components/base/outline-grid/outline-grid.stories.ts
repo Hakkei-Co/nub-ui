@@ -1,8 +1,8 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import { Size } from '../outline-element/utils/types';
+import { Size } from '../nub-element/utils/types';
 
-import { argTypeGapSize, argTypeHidden } from '../outline-element/utils/utils';
+import { argTypeGapSize, argTypeHidden } from '../nub-element/utils/utils';
 import './outline-grid';
 
 export default {

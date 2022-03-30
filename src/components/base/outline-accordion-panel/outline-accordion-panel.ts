@@ -1,5 +1,5 @@
 import { CSSResultGroup, TemplateResult, html } from 'lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-accordion-panel.css.lit';
 import { MobileController } from '../../controllers/mobile-controller';
@@ -12,7 +12,7 @@ import '../nub-icon/nub-icon';
  * @slot default slot: The main panel content, visible when the panel is open.
  */
 @customElement('outline-accordion-panel')
-export class OutlineAccordionPanel extends OutlineElement {
+export class OutlineAccordionPanel extends NubElement {
   private mobileController = new MobileController(this);
 
   static styles: CSSResultGroup = [componentStyles];

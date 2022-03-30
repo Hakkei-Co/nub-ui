@@ -2,10 +2,10 @@ import { CSSResultGroup, LitElement, TemplateResult } from 'lit';
 import { html, unsafeStatic } from 'lit/static-html.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { customElement } from 'lit/decorators.js';
-import componentStyles from './outline-element.base.css.lit';
+import componentStyles from './nub-element.base.css.lit';
 
-@customElement('outline-element')
-export class OutlineElement extends LitElement {
+@customElement('nub-element')
+export class NubElement extends LitElement {
   static styles: CSSResultGroup = [componentStyles];
 
   connectedCallback() {
@@ -21,7 +21,7 @@ export class OutlineElement extends LitElement {
    * Generates the slot if there is slotted content. Includes a wrapper:
    * ```
    * <div id="header">
-   *   <slot name="outline-element--header"></slot>
+   *   <slot name="nub-element--header"></slot>
    * </div>
    * ```
    */
@@ -53,6 +53,6 @@ export class OutlineElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'outline-element': OutlineElement;
+    'nub-element': NubElement;
   }
 }

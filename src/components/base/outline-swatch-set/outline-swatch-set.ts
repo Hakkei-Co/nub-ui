@@ -1,7 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-swatch-set.css.lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import tailwindThemeConfig from '../../../resolved-tailwind-config';
 // const outline = require('../nub.config');
 import '../outline-grid/outline-grid';
@@ -22,7 +22,7 @@ export interface OutlineSwatchSetInterface extends HTMLElement {
  */
 @customElement('outline-swatch-set')
 export class OutlineSwatchSet
-  extends OutlineElement
+  extends NubElement
   implements OutlineSwatchSetInterface
 {
   static styles: CSSResultGroup = [componentStyles];

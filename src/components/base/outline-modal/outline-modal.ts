@@ -1,7 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property, query, state } from 'lit/decorators.js';
 import componentStyles from './outline-modal.css.lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import { ifDefined } from 'lit/directives/if-defined.js';
 
 export const modalSizes = ['small', 'medium', 'full-screen'] as const;
@@ -39,10 +39,7 @@ const focusableElementSelector = `
  * @slot outline-modal--accessibility-description - The accessibility description which is used by screen readers.
  */
 @customElement('outline-modal')
-export class OutlineModal
-  extends OutlineElement
-  implements OutlineModalInterface
-{
+export class OutlineModal extends NubElement implements OutlineModalInterface {
   static styles: CSSResultGroup = [componentStyles];
 
   @property({ attribute: false })

@@ -1,7 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property, query } from 'lit/decorators.js';
 import componentStyles from './nub-alert.css.lit';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 export const alertSizes = ['small', 'large'] as const;
 export type AlertSize = typeof alertSizes[number];
 export const alertSpan = ['float', 'full'] as const;
@@ -36,7 +36,7 @@ export interface OutlineAlertInterface extends HTMLElement {
  * @slot nub-alert--link - The link in the alert
  */
 @customElement('nub-alert')
-export class NubAlert extends OutlineElement implements OutlineAlertInterface {
+export class NubAlert extends NubElement implements OutlineAlertInterface {
   static styles: CSSResultGroup = [componentStyles];
 
   @property({ type: String })

@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import type { HorizontalAlignment } from '../outline-element/utils/types';
-import { argTypeHorizontalAlign } from '../outline-element/utils/utils';
+import type { HorizontalAlignment } from '../nub-element/utils/types';
+import { argTypeHorizontalAlign } from '../nub-element/utils/utils';
 import './nub-container';
 
 export default {

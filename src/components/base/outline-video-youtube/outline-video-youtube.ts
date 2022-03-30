@@ -1,7 +1,7 @@
 import { html, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import componentStyles from './outline-video-youtube.css.lit';
-import { OutlineElement } from '../../base/outline-element/outline-element';
+import { NubElement } from '../../base/nub-element/nub-element';
 
 export interface OutlineVideoYoutubeInterface extends HTMLElement {
   videoID: string;
@@ -14,7 +14,7 @@ export interface OutlineVideoYoutubeInterface extends HTMLElement {
  */
 @customElement('outline-video-youtube')
 export class OutlineVideoYoutube
-  extends OutlineElement
+  extends NubElement
   implements OutlineVideoYoutubeInterface
 {
   static styles: CSSResultGroup = [componentStyles];

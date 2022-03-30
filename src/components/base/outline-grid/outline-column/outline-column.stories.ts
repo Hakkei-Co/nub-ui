@@ -7,7 +7,7 @@ import {
   argTypeColSpan,
   argTypeRowSpan,
   argTypeVerticalAlign,
-} from '../../outline-element/utils/utils';
+} from '../../nub-element/utils/utils';
 
 import './outline-column';
 

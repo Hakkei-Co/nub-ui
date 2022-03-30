@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { emit } from '../../../internal/event';
 import { watch } from '../../../internal/watch';
-import { OutlineElement } from '../outline-element/outline-element';
+import { NubElement } from '../nub-element/nub-element';
 import componentStyles from './outline-include.css.lit';
 import { requestInclude } from './request';
 
@@ -14,7 +14,7 @@ import { requestInclude } from './request';
  * @event {{ status: number }} outline-error - Emitted when the included file fails to load due to an error.
  */
 @customElement('outline-include')
-export default class OutlineInclude extends OutlineElement {
+export default class OutlineInclude extends NubElement {
   static styles = [componentStyles];
 
   /**
