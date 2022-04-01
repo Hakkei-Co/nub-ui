@@ -1,0 +1,201 @@
+/* The default is notice. */
+/* ----------------------*/
+#body {
+  @apply relative rounded-md px-8 py-4 align-middle;
+  @apply font-header text-xs font-medium leading-tight shadow-md ease-in-out;
+  @apply grid grid-flow-col gap-1 bg-ui-info duration-75;
+  grid-template-columns: 0fr 1fr;
+}
+
+#body:focus {
+  @apply border border-solid shadow-lg drop-shadow-lg transition ease-in-out;
+  @apply bg-blue-700 shadow-lg outline-none ring-0;
+}
+
+#body.nub-content--container {
+  @apply col-span-5 w-full justify-start;
+}
+
+#body #icon {
+  @apply col-span-1 row-span-2 my-2 h-full w-min align-bottom;
+}
+
+#body .float {
+  @apply flex flex-row px-8;
+  @apply shadow-md drop-shadow-sm;
+}
+
+#body .full {
+  @apply flex w-full max-w-md drop-shadow-sm;
+}
+
+#header {
+  @apply col-span-5 row-span-1 row-start-1 px-4 text-lg font-bold;
+  font-weight: 600 !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#message {
+  @apply col-span-5 row-span-2 row-start-1 justify-start px-4 text-sm;
+  @apply align-middle;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* ----------------------*/
+/* Supporting text. */
+/* ----------------------*/
+:host([spanType='float']) #message {
+  @apply pb-2 text-sm;
+  grid-template-columns: 0fr 1fr;
+}
+
+/* ----------------------*/
+/* Component body. */
+/* ----------------------*/
+
+:host([spanType='float']) #body {
+  @apply flex max-w-md justify-start px-4 drop-shadow-xl;
+}
+
+:host([spanType='full']) #body {
+  @apply w-full items-center border border-solid px-4;
+  border-color: var(--nub-link-border-color-info);
+}
+
+/* ----------------------*/
+/* Slotted and parts. */
+/* ----------------------*/
+
+:host,
+a,
+::slotted() {
+  @apply relative align-middle font-body no-underline drop-shadow-xl;
+}
+
+a:hover,
+::slotted(a:hover) {
+  @apply no-underline;
+}
+
+:host(a:focus),
+a:focus,
+::slotted(a:focus) {
+  @apply no-underline outline-none ring ring-purple-300;
+}
+
+div#alert-link {
+  @apply col-span-1 row-span-2 p-2 text-gray-900 no-underline;
+  @apply align-middle text-sm font-semibold no-underline;
+  @apply rounded-md;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+/* ----------------------*/
+/* Notice alert styles */
+/* ----------------------*/
+:host([statusType='notice']) #body {
+  @apply border border-solid drop-shadow-md;
+  border-color: var(--status-info-alt);
+  color: var(--ui-infoText);
+}
+
+:host([statusType='notice']) #body:hover {
+  @apply bg-gradient-to-br;
+  @apply opacity-95;
+  @apply drop-shadow-xl;
+  border-color: var(--status-info-alt);
+}
+
+:host([statusType='notice']) #body:focus {
+  @apply ring-4 ring-gray-300;
+  @apply opacity-80;
+  @apply drop-shadow-lg;
+}
+
+/* ----------------------*/
+/* Warning alert styles */
+/* ----------------------*/
+:host([statusType='warning']) #body {
+  @apply border border-solid bg-ui-warning text-ui-warningText shadow-md drop-shadow-none;
+  border-color: var(--status-warning-alt);
+  color: var(--ui-warningText);
+}
+
+:host([statusType='warning']) #body:hover {
+  @apply opacity-95;
+  @apply border-yellow-900;
+  @apply drop-shadow-lg;
+}
+
+:host([statusType='warning']) #body:focus {
+  @apply ring-4 ring-yellow-300;
+  @apply drop-shadow-lg;
+  border-color: var(--ui-warningBackground);
+}
+
+/* ----------------------*/
+/* Danger alert styles */
+/* ----------------------*/
+:host([statusType='error']) #body {
+  @apply border border-solid bg-ui-error text-red-900;
+  @apply opacity-100 drop-shadow-sm;
+  border-color: var(--status-error-alt);
+  color: var(--ui-errorText);
+}
+
+:host([statusType='error']) #body:hover {
+  @apply opacity-95 drop-shadow-xl;
+  @apply border-red-800;
+}
+
+:host([statusType='error']) #body:focus {
+  @apply ring-4 ring-red-300;
+  @apply opacity-90 drop-shadow-lg;
+  border-color: var(--ui-errorBackground);
+}
+
+/* ----------------------*/
+/* Success alert styles */
+/* ----------------------*/
+
+:host([statusType='success']) #body {
+  @apply border border-solid border-green-800 bg-ui-success bg-gradient-to-r from-green-400 via-green-200 to-green-300 text-ui-successText;
+  @apply drop-shadow-sm;
+  border-color: var(--status-success-alt);
+  color: var(--ui-successText);
+}
+
+:host([statusType='success']) #body:hover {
+  @apply border-green-800 opacity-90;
+  @apply drop-shadow-xl;
+}
+
+:host([statusType='success']) #body:focus {
+  @apply ring-4 ring-green-300;
+  @apply opacity-95;
+  @apply drop-shadow-lg;
+}
+
+/* ----------------------*/
+/* Headers */
+/* ----------------------*/
+
+:host([statusType='notice']) #header {
+  @apply capitalize;
+}
+
+:host([statusType='success']) #header {
+  @apply capitalize;
+}
+
+:host([statusType='warning']) #header {
+  @apply uppercase;
+}
+
+:host([statusType='error']) #header {
+  @apply uppercase;
+}

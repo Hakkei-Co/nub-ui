@@ -1,0 +1,87 @@
+:host {
+  @apply block overflow-hidden border;
+  @apply relative w-full overflow-hidden rounded-md shadow-focus-light !important;
+  color: var(--nub-text-color-default-alt) !important;
+  /* background: var(--radial-gradient-white) !important; */
+}
+
+:host::after {
+  position: absolute;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+}
+
+:host>section {
+  @apply flex flex-col overflow-hidden text-left;
+}
+
+.card-content {
+  color: var(--nub-text-color-default-alt) !important;
+}
+
+:host,
+::slotted([slot='content']) {
+  @apply m-auto;
+}
+
+:host,
+::slotted([slot='footer']) {
+  @apply m-auto flex justify-between;
+}
+
+:host,
+::slotted([slot='header']) {
+  @apply m-auto;
+}
+
+:host>p {
+  @apply mb-10;
+  color: var(--nub-text-color-default) !important;
+}
+
+section.outline-shadow {
+  @apply p-4 shadow-lg;
+  background-color: var(--nub-bg-body-default) !important;
+}
+
+section.outline-rounded-2xl {
+  @apply rounded-md;
+}
+
+.outline-bg-primary {
+  @apply z-10;
+  @apply bg-demo-darkBlue;
+}
+
+.outline-bg-secondary {
+  @apply z-10;
+  @apply bg-demo-mediumBlue;
+}
+
+.outline-bg-tertiary {
+  @apply z-10;
+  @apply bg-demo-lightBlue;
+}
+
+.outline-bg-black {
+  background-color: var(--nubs-senary);
+}
+
+.outline-bg-white {
+  @apply z-10;
+  @apply bg-neutral-white;
+}
+
+.outline-bg-gray {
+  @apply z-10;
+  @apply bg-neutral-grayMedium;
+}
+
+.outline-bg-lightgray {
+  @apply z-10;
+  @apply bg-neutral-grayLight;
+}

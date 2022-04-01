@@ -1,0 +1,55 @@
+.nub-breadcrumbs {
+  @apply space-x-1 font-display text-xs font-medium transition-colors duration-75;
+  color: var(--nub-breadcrumb-text-color-default);
+  /* background: var(--nub-breadcrumb-bg-color); */
+  padding: var(--nub-breadcrumb-bg-padding);
+}
+
+p,
+a,
+span,
+div,
+::slotted(*) {
+  @apply font-display font-medium transition-colors duration-75;
+  @apply min-w-min whitespace-nowrap text-xs;
+  text-decoration: var(--nub-breadcrumb-link-decoration-default);
+  color: var(--nub-text-color-default);
+}
+
+p,
+a,
+span,
+div,
+::slotted(*)::after {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: -1px;
+}
+
+:host span.last {
+  @apply font-display font-medium text-nubs-septenary transition-colors duration-75 !important;
+  text-decoration: var(--nub-breadcrumb-link-decoration-default);
+  color: var(--nub-text-color-default) !important;
+}
+
+*:hover,
+::slotted(*:hover) {
+  @apply font-semibold underline;
+  cursor: pointer !important;
+  text-decoration: var(--nub-breadcrumb-link-decoration-hover);
+  color: var(--nub--breadcrumb-link-color-hover);
+}
+
+*:focus,
+::slotted(*:focus) {
+  @apply outline-1 ring-nubs-primary;
+  text-decoration: var(--nub-breadcrumb-link-decoration-focus);
+  outline: none;
+  color: var(--nub-breadcrumb-link-color-focus);
+}
+
+.separator {
+  @apply align-middle !important;
+  margin-left: var(--nub-breadcrumb-separator-spacing);
+  margin-right: var(--nub-breadcrumb-separator-spacing);
+}

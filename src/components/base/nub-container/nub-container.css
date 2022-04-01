@@ -1,0 +1,35 @@
+:host {
+  @apply block max-w-full-screen-w font-body;
+  @apply max-w-screen-md;
+  @apply text-sm;
+  color: var(--nub-text-color-default-alt) !important;
+  padding-top: var(--nubs-container-padding-y);
+  padding-right: var(--nubs-container-padding-x);
+  padding-bottom: var(--nubs-container-padding-y);
+  padding-left: var(--nubs-container-padding-x);
+}
+
+:host(:not([x-padding])) {
+  @apply px-0;
+}
+
+:host(:not([y-padding])) {
+  @apply py-0;
+}
+
+:host([full-bleed]) {
+  @apply max-w-full;
+}
+
+:host([container-align]),
+:host([container-align='center']) {
+  @apply mx-auto;
+}
+
+:host([container-align='left']) {
+  @apply mx-auto ml-0;
+}
+
+:host([container-align='right']) {
+  @apply mx-auto mr-0;
+}

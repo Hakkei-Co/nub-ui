@@ -1,0 +1,196 @@
+import { html } from 'lit';
+import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
+
+<Meta
+  title="Documentation/Welcome"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: {
+        hidden: true,
+      },
+    },
+  }}
+/>
+
+> A quick note before you start:
+>
+> When I heard about micro frontends, my first thought was that this was probably an overzealous microservice fanatic trying to apply server-side architectural patterns to the frontend.  After some time, my initial frustration began to subside as I came to see how these tools could be useful in scaling sites or apps as they continue growing their userbase.  My goal is for readers to have a similar outcome as they work through the initial setup hurdles.
+
+# What is Nub UI?
+*(20-30min read)*
+
+This system is originally a fork of [Outline Components](https://github.com/phase2/outline).
+
+Nub UI is an open source design system for digital products and experiences. The foundation of this system consists of working code, design tools, resources and human interface guidelines. In order to expand, it is important that code standards and guidelines be met.
+
+### What are web components?
+
+Web components are reusable custom elements with their functionality encapsulated away from the rest of your code. They are built on Web Component standards, will work across modern browsers, and can be used with any JavaScript library or framework that works with HTML.
+
+#### Supported browsers
+
+For best performance, we recommend the last two (2) versions of these web browsers:
+
+* Chrome
+* Firefox
+* Microsoft Edge
+* Safari
+
+## Design Standards
+
+When we are working on complicated software solutions that require a lot of different projects, it is often useful to create blocks of common code between them and then share those blocks. The more code you can reuse across your project, the less time you need to spend duplicating yourself in each new one.
+
+1. Build independent apps that are self-contained and don't rely on shared state or global variables.
+1. A team should be able to choose and upgrade their stack without having to coordinate with other teams.
+1. Build a Resilient Site. Use Universal Rendering and Progressive Enhancement to improve perceived performance.
+1. Establish naming conventions.  This is important to avoid collisions and clarify ownership.
+
+
+It is for these reasons above micro codebases are better than monolithic ones.
+
+The main advantage of microservices is the ease in which they can be learned, changed, and reasoned about.
+They act as thick architectural boundaries that can be independently built and deployed with a reduced code footprint.
+
+
+# Getting Started
+
+At the time of writing, Nub Design System is not made available for public use. You will need access to our Github organization in order to install the required Node modules.
+
+```
+$ git config --global status.submoduleSummary true
+$ git config --global diff.submodule log
+```
+
+## Submodules
+
+This section is really important for anyone who wishes to contribute to the trunk repository. Please take the time to understand it.
+
+**Submodules** in Git enable you add and manage external Git repos into an existing Git repo. This is useful for example, if the current Git repo depends on or requires the source code in other Git repo.
+
+The presence of a `.gitmodules` file at the root of the repo indicates that this repo uses submodules. This file lists out the external Git repo URLs, the local path inside the repo where they will exist and their given name.
+
+#### Submodules use commits, not branches
+
+Follow these steps to checkout to another branch (with caveats):
+
+1. `git branch -avv`
+1. `git checkout -b myBranch origin/mybranch`
+
+> A submodule is always checked out as a detached HEAD (meansing at a SHA1)
+
+Remember to push your changes
+
+### Clone
+When you clone a Git repository that has submodules, the submodules are not cloned.
+
+To clone the root trunk module and all its submodules:
+
+```bash
+$ git clone --recursive git@github.com:hakkei-co/trunk-root.git
+
+# Same as
+$ git clone git@github.com:hakkei-co/trunk-root.git
+$ git submodule update --init --recursive
+```
+
+### Pull/Fetch
+
+```bash
+$ git pull --recurse-submodules=yes
+
+```
+
+To fetch changes for remotes of the main module and all remotes of the submodules:
+
+```bash
+$ git fetch --all --recurse-submodules
+```
+
+### Update a Git Submodule
+
+In some cases, you are not pulling a Git submodule but you are simply look to update your existing Git submodule in the project.
+
+In order to update an existing Git submodule, you need to execute the “git submodule update” with the "-remote" and the "-merge" option.
+
+```bash
+$ git submodule update --remote --merge
+```
+
+### Adding commits
+
+Reviewing the official documentation would be wise.  See [docs](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+
+```
+$ cd path/to/submodule
+$ git add .
+$ git commit -m "message"
+$ git push origin branchName
+$ cd ../..  # return to repo root
+$ git submodule update # update from root
+```
+
+## Using Docker
+
+```bash
+docker build --build-arg NPM_TOKEN_PRIVATE="ghp_xxxxxxxxxxxxxxxxxx" -t api:1.0.0 -f packages/www-app/Dockerfile .
+```
+
+
+# Motivating Factors
+*(5-10min read)*
+
+Micro frontend architecture - making a case for why it matters.
+
+TLDR;
+
+- Monorepo projects have been widely accepted by large companies like Google or Facebook, and they have proven monorepo can scale.
+- Backend teams are typically responsible for a single service and are no longer tripping over each other.
+- Individual microservices are lightweight, customizable, decoupled, and readily extensible.
+
+## Motivation
+
+We use `Tailwindcss` to style our web components and requires us to maintain its dependencies through `node_modules`.
+
+<img width="700" src="https://i.imgur.com/Zjp896v.png" alt="Chalk"/>
+
+Unlike React, web components require substantial configuration before development can utilize a standard CI/CD process and production. In the Nub UI repo, consider how each `node_module` has its own set of dependencies and so on.
+
+<img width="700" src="https://i.imgur.com/FDyvuSn.png" alt="Chalk2"/>
+
+### Consumer Problem
+We use Storybook to document our UI components with examples- keeping all necessary documentation in one place, and we maintain a production build in the Github private registry. Recall that the purpose of creating separate repository for sharing web components was to enable a way to define the separation of concerns between design and application logic.
+I want to clarify the misconception about the problems we have encountered. Conceptually, a micro-frontend architecture is just a bunch of smaller frontend applications snapped together.
+Nub UI is no different - it is essentially two separate applications in one repo.
+1. Storybook app
+2. Component npm package
+Storybook is dependent on a specific set of packages, while the npm package has other dependencies shared between development and production.
+
+
+**Micro frontends should be technology agnostic.**
+All code implementation can only guarantee a working build for that specific repository/setup. A monolithic frontend is often one-size-fits-all. In contrast, a micro frontend can be a targeted solution for a specific set of problems.
+
+
+
+<img width="700" src="https://i.imgur.com/tF8gpEZ.png" alt="Chalk3"/>
+
+### Frontend Architecture
+
+All frameworks/libraries fall into one of these three compositions that is beyond the scope of this documentation.
+1. **Build-time component composition**
+1. **Runtime client-side composition**
+1. **Server-side composition**
+
+> See blog post from Microsoft: [microfrontends](https://devblogs.microsoft.com/startups/building-micro-frontends-with-components/)
+
+
+To illustrate how the differences between composition strategies will affect our development workflow, imagine a scenario where we use Create React App for our base application.  (Create React apps are client side compositions.)
+To emulate a similar situation to our current development cycles, imagine an application with a 3D model in a Stencil framework; UI components in Preact; and static content written with the Gatsby framework.
+
+Among these applications, they may share similar dependencies such as PostCSS for production builds, `eslint` and `typescript` configurations for development, and so forth.
+
+<img width="700" src="https://i.imgur.com/gGINzhp.png" alt="Chalk4"/>
+
+Setting up any one of these frameworks has its challenges as we have seen with authentication with Git. In short, the goal is to solve these problems once and have the solution applicable across all application contexts.
+
+

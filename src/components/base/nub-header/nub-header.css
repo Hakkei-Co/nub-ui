@@ -1,0 +1,123 @@
+:host {
+  @apply block;
+  @apply font-body !important;
+  color: var(--neutral-grayDark) !important;
+}
+
+:root(h1) {
+  @apply text-2xl !important;
+  @apply font-header !important;
+  @apply font-bold !important;
+  color: var(--nub-text-color-default) !important;
+}
+
+:root(h2) {
+  @apply font-body !important;
+  @apply m-0 mb-4;
+  @apply font-extrabold !important;
+  color: var(--nubs-senary) !important;
+}
+
+:root(h4) {
+  @apply font-display !important;
+  @apply m-0 mb-4;
+  color: var(--nub-text-color-default) !important;
+}
+
+:host(h4, h5, h6) {
+  @apply font-body !important;
+  @apply uppercase !important;
+  @apply m-0 mb-4;
+  color: var(--nub-text-color-default) !important;
+}
+
+/* Moved to top to allow easier override */
+.nub-text,
+.nub-text--base {
+  @apply text-base;
+  color: var(--nub-text-color-default-alt) !important;
+}
+
+.nub-text--xs {
+  @apply font-display !important;
+  @apply text-xs;
+}
+
+.nub-text--sm {
+  @apply font-display !important;
+  @apply text-sm;
+}
+
+.nub-text--lg {
+  @apply font-display !important;
+  @apply text-lg;
+  color: var(--nub-text-color-default-alt) !important;
+}
+
+.nub-text--xl {
+  @apply text-xl;
+}
+
+.nub-text--2xl {
+  @apply text-2xl;
+}
+
+.nub-text--3xl {
+  @apply text-3xl;
+}
+
+.nub-text--4xl {
+  @apply text-4xl;
+}
+
+.nub-text--5xl {
+  @apply text-5xl;
+}
+
+.nub-text--6xl {
+  @apply text-6xl;
+}
+
+.nub-text--7xl {
+  @apply text-7xl;
+}
+
+.nub-text--8xl {
+  @apply text-8xl;
+}
+
+.nub-text--9xl {
+  @apply text-9xl;
+}
+
+.nub-font--thin {
+  @apply font-thin;
+}
+
+.nub-font--extralight {
+  @apply font-extralight;
+}
+
+.nub-font--light {
+  @apply font-thin;
+}
+
+.nub-font--normal {
+  @apply font-normal;
+}
+
+.nub-font--semibold {
+  @apply font-semibold;
+}
+
+.nub-font--bold {
+  @apply font-bold;
+}
+
+.nub-font--extrabold {
+  @apply font-extrabold;
+}
+
+.nub-font--black {
+  @apply font-black;
+}

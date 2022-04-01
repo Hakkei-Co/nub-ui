@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+:host {
+  /* flex and border-radius constrain the actual boundaries of the element,
+   preventing literal edge cases where a user can click on the edge or corner of the button and defeat states like disabled */
+  @apply inline-flex rounded-sm align-middle text-nubs-senary;
+  @apply border-none focus-within:border-blue-700 !important;
+}
+
+.btn {
+  @apply flex resize-none flex-nowrap items-center !important;
+  @apply cursor-pointer rounded-md px-3 py-1.5 !important;
+  @apply font-display text-neutral-grayDark outline-none !important;
+  @apply transition-all duration-150 !important;
+  @apply text-sm leading-tight no-underline !important;
+  @apply font-normal !important;
+  @apply whitespace-nowrap shadow-md !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-1 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.btn.success {
+  @apply border-ui-successBorder bg-ui-success !important;
+}
+
+.btn.success:hover,
+.btn.success:focus {
+  @apply shadow-lg outline-none ring-2 ring-inset drop-shadow-lg !important;
+  @apply transition duration-150 ease-in-out !important;
+}
+
+.btn.success:active {
+  @apply shadow-lg ring-0 transition duration-150 ease-in-out;
+}
+
+.btn.info {
+  @apply border-ui-infoBorder bg-ui-info !important;
+  @apply inline-block bg-gray-200 px-6 py-2 leading-tight text-gray-700 shadow-md !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-1 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.btn.info:active {
+  @apply shadow-lg ring-0 transition duration-150 ease-in-out;
+}
+
+.btn.dark {
+  @apply border-demo-darkGray bg-neutral-grayDark text-neutral-white ring-inset !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-2 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.btn.light {
+  @apply border-demo-darkGray bg-demo-lightBlue text-nubs-primary !important;
+  @apply border-none !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-2 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.btn.danger {
+  @apply border-red-700 !important;
+  @apply border-none !important;
+  background-color: var(--ui-errorBackground) !important;
+  color: var(--ui-errorText) !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-2 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.btn.warning {
+  @apply border-yellow-500 bg-yellow-500 !important;
+  @apply border-none !important;
+  color: var(--ui-warningText) !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-2 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.btn > * :active {
+  @apply shadow-lg ring-0 transition duration-150 ease-in-out;
+}
+
+.btn[aria-disabled='true'] {
+  @apply pointer-events-none cursor-not-allowed select-none !important;
+  @apply font-semibold shadow-none !important;
+  @apply border-none !important;
+  color: var(--nubs-tertiary) !important;
+}
+
+.btn.primary {
+  @apply border-none bg-nubs-primary text-demo-white !important;
+  @apply shadow-md !important;
+}
+
+.primary[aria-disabled='true'] {
+  @apply font-semibold opacity-90 !important;
+  color: var(--nub-text-color-disabled) !important;
+  background-color: var(--nub-bg-btn-disabled) !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-sm ring-2 ring-inset ring-demo-darkGray !important;
+  }
+}
+
+.btn.secondary {
+  @apply border-none bg-nubs-tertiary !important;
+  @apply shadow-md !important;
+  color: var(--nubs-secondary) !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none shadow-lg ring-2 ring-inset drop-shadow-lg !important;
+  }
+}
+
+.secondary[aria-disabled='true'] {
+  @apply text-demo-darkGray no-underline opacity-80 !important;
+  color: var(--nub-text-color-disabled-secondary) !important;
+
+  &:hover,
+  &:focus {
+    @apply resize-none font-medium ring-2 ring-inset ring-demo-mediumGray !important;
+  }
+}
+
+.btn.small {
+  @apply text-sm font-normal !important;
+}
+
+.btn.medium {
+  @apply text-base font-medium !important;
+}
+
+.btn.large {
+  @apply text-lg !important;
+}
+
+.btn.none {
+  @apply text-sm text-demo-darkBlue no-underline !important;
+  @apply shadow-sm ring-inset !important;
+  border: var(--ui-contrast) !important;
+
+  &:hover,
+  &:focus {
+    @apply text-demo-mediumBlue ring-inset !important;
+    @apply resize-none shadow-lg !important;
+  }
+
+  &[aria-disabled='true'] {
+    @apply font-semibold text-demo-darkGray !important;
+  }
+}

@@ -1,0 +1,73 @@
+.accordion-button {
+  @apply flex w-full items-center justify-between border-0 py-0 pl-8 pr-0 font-body text-2xl font-medium;
+}
+
+.accordion-button.mobile {
+  @apply py-0 pl-4 pr-0 text-base leading-5 !important;
+}
+
+.accordion-button.active {
+  @apply bg-demo-darkBlue text-neutral-white;
+}
+
+.accordion-button.inactive {
+  @apply bg-neutral-white text-demo-darkBlue;
+}
+
+.accordion-button.clean {
+  @apply border-b border-solid border-demo-lightGray;
+}
+
+.accordion-button.clean.active {
+  @apply bg-neutral-white text-demo-darkBlue !important;
+}
+
+.accordion-button.clean.inactive {
+  @apply text-demo-darkBlue;
+}
+
+.accordion-content {
+  @apply px-8 pt-4 text-demo-darkGray;
+}
+
+.accordion-content.mobile {
+  @apply px-4;
+}
+
+.accordion-label {
+  @apply py-4 text-left;
+  max-width: 75%;
+}
+
+.accordion-label.mobile {
+  @apply py-2;
+}
+
+.accordion-heading {
+  @apply m-0 flex;
+  min-height: 4rem;
+}
+
+.accordion-icon {
+  @apply flex h-full w-20 items-center justify-center;
+}
+
+.accordion-icon.clean {
+  @apply bg-neutral-white text-demo-darkBlue !important;
+}
+
+.accordion-icon.active {
+  @apply bg-demo-mediumBlue text-neutral-white;
+}
+
+.accordion-icon.inactive {
+  @apply bg-demo-lightBlue text-demo-darkBlue;
+}
+
+.accordion-panel {
+  @apply mb-6 flex flex-col overflow-hidden rounded-md border border-solid border-demo-lightGray;
+}
+
+.accordion-panel.clean {
+  @apply border-0;
+}

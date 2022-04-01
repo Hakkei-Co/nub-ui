@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { html } from 'lit';
+import { OutlineSwatchSet, swatchSets } from './nub-swatch-set';
+
+<Meta
+  title="Utilities/Swatch Set"
+  component="nub-swatch-set"
+  argTypes={{
+    set: {
+      name: 'set',
+      description: 'The color set.',
+      options: swatchSets,
+      control: { type: 'select' },
+    },
+  }}
+/>
+
+export const Template = ({ set }) => html`
+  <nub-swatch-set set="${set}"> </nub-swatch-set>
+`;
+
+## Primary colors
+
+<Canvas>
+  <Story
+    name="Nubs Set"
+    args={{
+      set: 'nubs',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
