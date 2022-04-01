@@ -41,11 +41,7 @@
   ],
   "exclude": [
     "./src/components/**/*.stories.ts",
-<<<<<<< HEAD
     "./src/components/**/*.lit.ts",
     "./src/components/stencil-generated/react-component-lib/utils/**/*"
-=======
-    "./src/components/**/*.lit.ts"
->>>>>>> origin/next
   ]
 }
