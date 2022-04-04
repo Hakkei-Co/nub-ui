@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
-import '../../../../../components/base/outline-code-block/outline-code-block';
+import '../../../../../components/base/nub-code-block/nub-code-block';
 
 <Meta
   title="Documentation/Guides/Component Development/Coding Guide & Standards/Slots"
@@ -32,17 +32,17 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 <Story name="JSDoc for Slots">
   {() => {
     return html`
-<outline-code-block language="jsx" class="mb-6">
+<nub-code-block language="jsx" class="mb-6">
 ...
 /**
 * The Outline Widget component
-* @element outline-widget
+* @element nub-widget
 * @slot default slot.
 * @slot heading: for content above the default slot.
 * @slot footer: for content below the default slot.
 */
 ...
-</outline-code-block>
+</nub-code-block>
     `;
   }}
 </Story>
@@ -52,13 +52,13 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 <Story name="@customElement Decorator">
   {() => {
     return html`
-<outline-code-block language="jsx" class="mb-6">
+<nub-code-block language="jsx" class="mb-6">
 ...
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class OutlineWidget extends OutlineElement {
 ...
 }
-</outline-code-block>`;
+</nub-code-block>`;
   }}
 </Story>
 
@@ -67,7 +67,7 @@ export class OutlineWidget extends OutlineElement {
 <Story name="Render method with slots">
   {() => {
     return html`
-<outline-code-block language="jsx" class="mb-6">
+<nub-code-block language="jsx" class="mb-6">
 render(): TemplateResult {
   return html\`
     <slot name="heading"></slot>
@@ -76,7 +76,7 @@ render(): TemplateResult {
     <p>"Hard coded" element inside the component's ShadowDOM.</p>
   \`
 }
-</outline-code-block>`;
+</nub-code-block>`;
   }}
 </Story>
 
@@ -85,7 +85,7 @@ render(): TemplateResult {
 <Story name="Slots with default content">
   {() => {
     return html`
-<outline-code-block language="jsx" class="mb-6">
+<nub-code-block language="jsx" class="mb-6">
 render(): TemplateResult {
   return html\`
     <slot name="heading">Default header content</slot>
@@ -93,7 +93,7 @@ render(): TemplateResult {
     <slot name="footer">default content for the footer slot</slot>
   \`
 }
-</outline-code-block>`;
+</nub-code-block>`;
   }}
 </Story>
 
@@ -104,20 +104,20 @@ render(): TemplateResult {
 <Story name="Using Slots">
   {() => {
     return html`
-<outline-code-block language="html" class="mb-6">
+<nub-code-block language="html" class="mb-6">
 <!-- An example of passing content to the default slot. -->
-<outline-widget>
+<nub-widget>
   <p>This paragraph is content that will be passed to the default slot in the component.</p>
-</outline-widget>
-</outline-code-block>
+</nub-widget>
+</nub-code-block>
 <hr />
-<outline-code-block language="html" class="mb-6">
+<nub-code-block language="html" class="mb-6">
 <!-- An example of passing content to the default slot and named slots. -->
-<outline-widget>
+<nub-widget>
   <p slot="heading">This is passed to the heading slot.</p>
   <p>This is passed to the default slot.</p>
   <p slot="footer">This is passed to the footer slot.</p>
-</outline-widget>
-</outline-code-block>`;
+</nub-widget>
+</nub-code-block>`;
   }}
 </Story>

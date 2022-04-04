@@ -1,4 +1,4 @@
-import { requestInclude } from '../outline-include/request';
+import { requestInclude } from '../nub-include/request';
 
 type IconFile =
   | {

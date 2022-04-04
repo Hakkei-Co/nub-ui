@@ -1,0 +1,20 @@
+:host,
+a,
+::slotted(a) {
+  @apply font-urbanist no-underline transition-colors duration-75;
+  color: var(--nub-link-color-default);
+}
+
+:host(:hover),
+a:hover,
+::slotted(a:hover) {
+  @apply no-underline opacity-90;
+  /* color: var(--nub-link-color-hover) !important; */
+}
+
+:host(:focus),
+a:focus,
+::slotted(a:focus) {
+  @apply no-underline outline-none;
+  color: var(--nub-link-color-focus) !important;
+}

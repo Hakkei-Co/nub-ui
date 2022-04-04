@@ -168,7 +168,7 @@ Small.args = {
 export const HeaderInfo = Template.bind({});
 HeaderInfo.args = {
   headerSlot: html`
-    <span slot="outline-alert--header">
+    <span slot="nub-alert--header">
       Here is an alert with a custom header.
     </span>
   `,
@@ -187,7 +187,7 @@ NoIcon.args = {
 export const InteractiveAlert = Template.bind({});
 InteractiveAlert.args = {
   defaultSlot: html`Here is an alert with an interaction.`,
-  linkSlot: html`<outline-link link-href="#" slot="nub-alert--link">Click here</outline-link>`,
+  linkSlot: html`<nub-link link-href="#" slot="nub-alert--link">Click here</nub-link>`,
   isInteractive: true,
   statusType: 'notice',
 };
