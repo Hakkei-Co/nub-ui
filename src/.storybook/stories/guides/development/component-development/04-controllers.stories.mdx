@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
-import '../../../../../components/base/outline-code-block/outline-code-block';
+import '../../../../../components/base/nub-code-block/nub-code-block';
 
 <Meta
   title="Documentation/Guides/Component Development/Coding Guide & Standards/Controllers"
@@ -33,20 +33,20 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 <Story name="Controllers">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
+<nub-code-block language="typescript" class="mb-6">
 import { reactiveController } from '../../controllers/reactive-controller';
 ...
 /**
 * The Outline Widget component
-* @element outline-widget 
+* @element nub-widget
 */
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class OutlineWidget extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
   const reactiveController = new ReactiveController(this);
   ...
 }
 ...
-</outline-code-block>`;
+</nub-code-block>`;
   }}
 </Story>

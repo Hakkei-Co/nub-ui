@@ -3,7 +3,7 @@ import './nub-tab-group';
 import '../nub-tab/nub-tab';
 import '../nub-tab-panel/nub-tab-panel';
 import '../../nub-header/nub-header';
-import '../../outline-accordion/outline-accordion';
+import '../../nub-accordion/nub-accordion';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 const tabControlPosition: string[] = ['top', 'start'];
@@ -78,17 +78,17 @@ const Template = ({ placement }): TemplateResult =>
         </nub-tab-panel> `;
     })}
     <div slot="accordion-wrapper">
-      <outline-accordion ?clean=${true} ?single-panel=${true}>
+      <nub-accordion ?clean=${true} ?single-panel=${true}>
         ${tabData.map(panel => {
-          return html` <outline-accordion-panel
+          return html` <nub-accordion-panel
             ?disabled=${panel.disabled}
             slot="panels"
           >
             <h5 slot="heading">${panel.title}</h5>
             ${unsafeHTML(`${panel.content}`)}
-          </outline-accordion-panel>`;
+          </nub-accordion-panel>`;
         })}
-      </outline-accordion>
+      </nub-accordion>
     </div>
   </nub-tab-group> `;
 

@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
-import '../../../../../components/base/outline-code-block/outline-code-block';
+import '../../../../../components/base/nub-code-block/nub-code-block';
 
 <Meta
   title="Documentation/Guides/Component Development/Coding Guide & Standards/Extending Components"
@@ -37,17 +37,17 @@ with `NubElement` in its chain.
 <Story name="Extending Components">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
+<nub-code-block language="typescript" class="mb-6">
 ...
 /**
 * The Outline Widget component
-* @element outline-widget
+* @element nub-widget
 */
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class OutlineWidget extends NubElement {
 ...
 }
-</outline-code-block>
+</nub-code-block>
     `;
   }}
 </Story>
@@ -58,19 +58,19 @@ export class OutlineWidget extends NubElement {
 <Story name="Overriding Styles">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
-import componentStyles from './outline-widget.css.lit';
+<nub-code-block language="typescript" class="mb-6">
+import componentStyles from './nub-widget.css.lit';
 ...
 /**
 * The Outline Widget component
-* @element outline-widget
+* @element nub-widget
 */
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class OutlineWidget extends OutlineElement {
   static styles: CSSResultGroup = [componentStyles];
   ...
 }
-</outline-code-block>
+</nub-code-block>
     `;
   }}
 </Story>
@@ -100,14 +100,14 @@ Then we create an `ExtendingOutlineWidget` component, and override the property 
 <Story name="-- OutlineWidget">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
-import { OutlineElement } from '../../base/outline-element/outline-element';
+<nub-code-block language="typescript" class="mb-6">
+import { OutlineElement } from '../../base/nub-element/nub-element';
 ...
 /**
 * The Outline Widget component
-* @element outline-widget
+* @element nub-widget
 */
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class OutlineWidget extends OutlineElement {
   /**
   * This is our boolean property in our new component.
@@ -116,7 +116,7 @@ export class OutlineWidget extends OutlineElement {
   booleanProperty = false
   ...
 }
-</outline-code-block>
+</nub-code-block>
     `;
   }}
 </Story>
@@ -126,14 +126,14 @@ export class OutlineWidget extends OutlineElement {
 <Story name="-- ExtendingOutlineWidget">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
-import { OutlineWidget } from '../../base/outline-widget/outline-widget';
+<nub-code-block language="typescript" class="mb-6">
+import { OutlineWidget } from '../../base/nub-widget/nub-widget';
 ...
 /**
 * The Extending Outline Widget component
-* @element extending-outline-widget
+* @element extending-nub-widget
 */
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class ExtendingOutlineWidget extends OutlineWidget {
   /**
   * This is our new component changing the default value of a property.
@@ -142,7 +142,7 @@ export class ExtendingOutlineWidget extends OutlineWidget {
   booleanProperty = true
   ...
 }
-</outline-code-block>
+</nub-code-block>
     `;
   }}
 </Story>

@@ -114,9 +114,9 @@ CardWithImageHeader.args = {
   cardHeader: html`
     <div slot="header">
       <div class="max-h-80 overflow-hidden object-cover">
-        <outline-image>
+        <nub-image>
           <img slot="multimedia" src=${sampleImage1} alt="Random Image" />
-        </outline-image>
+        </nub-image>
       </div>
     </div>
   `,
@@ -124,7 +124,7 @@ CardWithImageHeader.args = {
     <div slot="footer" class="p-4 flex justify-between">
       <p class="font-semibold">02/2020</p>
       <p class="font-semibold text-blue-500 hover:text-blue-900">
-        <outline-link link-href="#">Read More</outline-link>
+        <nub-link link-href="#">Read More</nub-link>
       </p>
     </div>
   `,
@@ -202,7 +202,7 @@ const cleanTemplate = (): TemplateResult =>
         <div slot="footer" class="p-4 flex justify-between text-xs">
           <p class="font-semibold">02/2020</p>
           <p class="font-semibold text-blue-500 hover:text-blue-900">
-          <outline-link link-href="#">Read More</outline-link>
+          <nub-link link-href="#">Read More</nub-link>
           </p>
         </div>
       </nub-card>
@@ -218,7 +218,7 @@ export const CardWithHeader = Template.bind({});
 CardWithHeader.args = {
   cardHeader: html`
     <div slot="header" class="p-4">
-      <outline-header>Generic Header</outline-header>
+      <nub-header>Generic Header</nub-header>
     </div>
   `,
 };
@@ -227,7 +227,7 @@ export const CardWithFooter = Template.bind({});
 CardWithFooter.args = {
   cardFooter: html`
     <div slot="footer" class="p-4">
-      <outline-header>Generic Footer</outline-header>
+      <nub-header>Generic Footer</nub-header>
     </div>
   `,
 };
@@ -236,12 +236,12 @@ export const CardWithHeaderAndFooter = Template.bind({});
 CardWithHeaderAndFooter.args = {
   cardHeader: html`
     <div slot="header" class="p-4">
-      <outline-header>Generic Header</outline-header>
+      <nub-header>Generic Header</nub-header>
     </div>
   `,
   cardFooter: html`
     <div slot="footer" class="p-4">
-      <outline-header>Generic Footer</outline-header>
+      <nub-header>Generic Footer</nub-header>
     </div>
   `,
 };

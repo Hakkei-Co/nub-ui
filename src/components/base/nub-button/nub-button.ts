@@ -1,7 +1,7 @@
 import { CSSResultGroup, html, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import componentStyles from './nub-button.css.lit';
-import { LinkTargetType } from '../outline-link/config';
+import { LinkTargetType } from '../nub-link/config';
 import { NubElement } from '../nub-element/nub-element';
 import { SlotController } from '../../controllers/slot-controller';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -36,7 +36,7 @@ export class NubButton extends NubElement {
 
   slots = new SlotController(
     this, // This, the host element.
-    false // To shift or not to shift LightDom nodes to ShadowDOM.
+    false // To shift or not to shift xDom nodes to ShadowDOM.
   );
   /**
    * The url to use for a link. This will render an anchor element.
@@ -99,7 +99,7 @@ export class NubButton extends NubElement {
   /**
    * Component render function
    * @returns TemplateResult
-   * @todo This should utilize `outline-link` component.
+   * @todo This should utilize `nub-link` component.
    */
   render(): TemplateResult {
     return this.buttonUrl

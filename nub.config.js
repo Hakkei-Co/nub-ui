@@ -83,7 +83,7 @@ module.exports = {
   },
   // Exclude stories by adding the directory they can be found in
   // ex ['nub-button'] this excludes any story in this directory
-  excludedStories: ['outline-video-vimeo', 'outline-video-youtube'],
+  excludedStories: ['nub-video-vimeo', 'nub-video-youtube'],
   // @see https://splidejs.com/guides/options
   // @todo: Ensure this config is utilized.
   splide: {
