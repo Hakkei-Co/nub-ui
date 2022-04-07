@@ -14662,7 +14662,7 @@ rollup-plugin-filesize@^9.0.2:
     pacote "^11.2.7"
     terser "^5.6.0"
 
-rollup-plugin-summary@1.4.0:
+rollup-plugin-summary@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-summary/-/rollup-plugin-summary-1.4.0.tgz#3796cdfea9bff9f269be74a1acd2046a4f5fe1a9"
   integrity sha512-o4wOuyOBlrUbXkAG2siWfjj5QURVkzLc/UZZarWSfgku21EpAoyq2EdGxaFqv165QyYaxz2L+41mv7tvucLWuQ==
