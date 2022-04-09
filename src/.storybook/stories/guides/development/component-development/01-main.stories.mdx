@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
-import '../../../../../components/base/outline-code-block/outline-code-block';
+import '../../../../../components/base/nub-code-block/nub-code-block';
 
 <Meta
   title="Documentation/Guides/Component Development/Coding Guide & Standards"
@@ -52,19 +52,19 @@ various portions of a new web component.
 <Story name="Component Overview">
   {() => {
     return html`
-<outline-code-block language="typescript">
+<nub-code-block language="typescript">
 import { CSSResultGroup, TemplateResult, html } from 'lit';
 import { customElement, property, query, queryAll } from 'lit/decorators.js';
 import { NubElement } from '../../base/nub-element/nub-element';
 import { ReactiveController } '../controllers/ReactiveController';
-import componentStyles from './outline-widget.css.lit';
+import componentStyles from './nub-widget.css.lit';
 <br/>
 /**
 * The Outline Widget component
-* @element outline-widget
+* @element nub-widget
 * @slot default - The default slot
 */
-@customElement('outline-widget')
+@customElement('nub-widget')
 export class OutlineWidget extends NubElement {
   // styles is defined directly after the class definition
   static styles: CSSResultGroup = [componentStyles];
@@ -153,7 +153,7 @@ export class OutlineWidget extends NubElement {
     console.log('event handler fired')
   }
 }
-      </outline-code-block>
+      </nub-code-block>
     `;
   }}
 </Story>

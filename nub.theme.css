@@ -258,14 +258,14 @@
   --pink-900: #de425b;
 
   /*
-   * Configuration values for `outline-link`.
+   * Configuration values for `nub-link`.
    */
   --nub-link-color-default: var(--ui-infoText);
   --nub-link-color-hover: var(--status-info);
   --nub-link-color-focus: var(--demo-darkGray);
 
   /*
-  * Configuration values for `outline-admin-links`.
+  * Configuration values for `nub-admin-links`.
   * This component's styles represent a standard set of administrative
   * links like one found in Drupal or other systems.
   */
@@ -508,7 +508,7 @@
     --nub-bg-btn-disabled: var(--neutral-grayMedium);
     --nub-header-default: var(--nubs-septenary);
     /*
-   * Configuration values for `outline-link`.
+   * Configuration values for `nub-link`.
    */
     --nub-link-color-default: var(--demo-lightGray);
     --nub-link-color-hover: var(--demo-darkGray);

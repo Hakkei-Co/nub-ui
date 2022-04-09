@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
-import '../../../../../components/base/outline-code-block/outline-code-block';
+import '../../../../../components/base/nub-code-block/nub-code-block';
 
 <Meta
   title="Documentation/Guides/Component Development/Coding Guide & Standards/Event Handlers"
@@ -23,12 +23,12 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 <Story name="Event Handlers">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
+<nub-code-block language="typescript" class="mb-6">
 eventHandler = (e: Event) => {
   e.preventDefault()
   console.log('event handler fired')
 }
-</outline-code-block>
+</nub-code-block>
     `;
   }}
 </Story>

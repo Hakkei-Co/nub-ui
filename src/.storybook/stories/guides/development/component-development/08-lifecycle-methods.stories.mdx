@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs';
-import '../../../../../components/base/outline-code-block/outline-code-block';
+import '../../../../../components/base/nub-code-block/nub-code-block';
 
 <Meta
   title="Documentation/Guides/Component Development/Coding Guide & Standards/Lifecycle"
@@ -29,9 +29,9 @@ import '../../../../../components/base/outline-code-block/outline-code-block';
 <Story name="Lifecycle Methods">
   {() => {
     return html`
-<outline-code-block language="typescript" class="mb-6">
+<nub-code-block language="typescript" class="mb-6">
 // Called when an element is created. Also, it’s invoked when an existing
-// element is upgraded, which happens when the definition for a custom 
+// element is upgraded, which happens when the definition for a custom
 // element is loaded after the element is already in the DOM.
 constructor() {
   super();
@@ -48,7 +48,7 @@ shouldUpdate(){};
 // Called before update() to compute values needed during the update.
 willUpdate(){};
 <br/>
-// Called after the component's DOM has been updated the first time, 
+// Called after the component's DOM has been updated the first time,
 // immediately before updated() is called.
 firstUpdated(){};
 <br/>
@@ -64,10 +64,10 @@ updated(){};
 disconnectedCallback() {
   super.disconnectedCallback()
 };
-// Called by update() and should be implemented to return a renderable result 
+// Called by update() and should be implemented to return a renderable result
 // (such as a TemplateResult) used to render the component's DOM.
 render() {};
-</outline-code-block>`;
+</nub-code-block>`;
   }}
 </Story>
 

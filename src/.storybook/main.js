@@ -30,6 +30,8 @@ module.exports = {
     './stories/guides/01-welcome.stories.mdx',
     './stories/guides/02-welcome.stories.mdx',
     // Intentionally order the Code Style Guide pages.
+    './stories/guides/welcome.stories.mdx',
+    // // Intentionally order the Code Style Guide pages.
     './stories/guides/development/component-development/01-main.stories.mdx',
     './stories/guides/development/component-development/stories.@(js|ts|mdx)',
     // Other stories in the .storybook directory.
@@ -40,6 +42,10 @@ module.exports = {
       : [`../components/**/*.stories.@(js|ts|mdx)`]),
   ],
   addons: [
+    {
+      name: '@storybook/addon-docs',
+      options: { configureJSX: true },
+    },
     '@storybook/addon-essentials',
     {
       name: '@storybook/addon-postcss',
