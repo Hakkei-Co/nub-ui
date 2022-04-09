@@ -1,7 +1,6 @@
 import theme from './CustomTheme';
 import { addParameters } from '@storybook/web-components';
 import { addons } from '@storybook/addons';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import './storybook-styles.css';
 
 addParameters({
@@ -32,7 +31,7 @@ addParameters({
   },
 });
 
-function docTheme() {
+export function docTheme() {
   let isDarkMode =
     document.documentElement.getAttribute('data-theme') === 'dark';
   let bodyTheme = document.body.getAttribute('class') === 'dark';

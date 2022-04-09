@@ -1,7 +1,18 @@
 :host {
   @apply block overflow-hidden border;
-  @apply relative w-full overflow-hidden rounded-md shadow-lg !important;
+  @apply relative w-full overflow-hidden rounded-md shadow-focus-light !important;
   color: var(--nub-text-color-default-alt) !important;
+  /* background: var(--radial-gradient-white) !important; */
+}
+
+:host::after {
+  position: absolute;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
 }
 
 :host > section {

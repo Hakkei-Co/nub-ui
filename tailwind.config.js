@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const screenSizes = {
@@ -244,6 +246,7 @@ module.exports = {
         'focus': '0 0 0 1px rgb(33, 74, 222)',
         'focus-2': '0 0 0 2px rgb(33, 74, 222)',
         'focus-error': '0 0 0 1px rgb(225, 9, 9)',
+        'focus-light': '0 1px 3px 0 rgb(0 0 0 / 10%)',
       },
       gradient: {
         gradientBlack: 'var(--radial-gradient-black)',
