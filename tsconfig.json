@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["es2017", "dom", "dom.iterable"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -36,9 +32,7 @@
         "strict": true
       }
     ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
     "./src/components/**/*.ts",
