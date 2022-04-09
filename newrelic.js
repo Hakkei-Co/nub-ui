@@ -1,4 +1,3 @@
-
 /**
  * New Relic agent configuration.
  *
@@ -11,21 +10,21 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : [config.get('newrelic:appName')],
+  app_name: [config.get('newrelic:appName')],
 
   /**
    * Your New Relic license key.
    */
-  license_key : config.get('newrelic:licensekey'),
-  
-  logging : {
+  license_key: config.get('newrelic:licensekey'),
+
+  logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
      * issues with the agent, 'info' and higher will impose the least overhead on
      * production applications.
      */
-    level : 'info',
-    filepath : config.get('newrelic:logFilePath') || null
+    level: 'info',
+    filepath: config.get('newrelic:logFilePath') || null,
   },
-  agent_enabled : process.env.NEW_RELIC_ENABLED
+  agent_enabled: process.env.NEW_RELIC_ENABLED,
 };
