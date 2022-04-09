@@ -20,7 +20,7 @@
   },
   "license": "BSD-3-Clause",
   "publishConfig": {
-    "@hakkei-co/registry": "https://regstry.npmjs.org/@hakkei/nub-ui",
+    "@hakkei-co/registry": "https://registry.npmjs.org/@hakkei/nub-ui",
     "tag": "v1-latest"
   },
   "sbport": 6042,
