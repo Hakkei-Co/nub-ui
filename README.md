@@ -1,5 +1,6 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
 
+
 For quick browser-based development, open this project in Gitpod. It will automatically build an environment and run Storybook.
 
 ![alt text](https://i.imgur.com/4t7Svqk.png "Title")
@@ -54,52 +55,6 @@ If you need to update your node version, see the [usage documentation](https://g
 ```bash
 yarn install
 ```
-
-### To use nubs in another project
-
-Fill in values for `NPM_TOKEN_PRIVATE` and `NPM_TOKEN_DEFAULT` in the file `.env`.
-
-```bash
-# .env
-NPM_TOKEN_PRIVATE=xxxxxxxxxxxxxxxx
-NPM_TOKEN_DEFAULT=yyyyyyyyyyyyyyyy
-```
-
-Create an `.npmrc` file using the following details.
-
-```bash
-@hakkei-co:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NPM_TOKEN_PRIVATE}
-//registry.npmjs.org/:_authToken=${NPM_TOKEN_DEFAULT}
-```
-
-Install in an external project like so:
-
-```bash
-$ yarn add @hakkei-co/nub-ui@latest
-```
-
-## Managing Registries
-
-Point registry to Github registry
-
-```bash
-$ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
-```
-
-Login using the access tokens provided for you. You can verify which registry you are using by running
-```
-$ yarn config list
-
-# or for npm
-$ npm config list
-
-# you will need to manually specify which registry you are installing packages from if you override the default npm registry
-$ npm i <some-package> --registry=https://npm.pkg.github.com
-```
-
-
-
 
 ---
 
