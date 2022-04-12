@@ -1,0 +1,15 @@
+.menu {
+    @apply bg-demo-white rounded w-full max-w-sm flex-1 overflow-hidden inline-flex shadow;
+}
+
+::slotted(*) {
+    @apply flex-1 w-full
+}
+
+/*:host {*/
+/*    @apply overflow-hidden;*/
+/*    !*position: absolute;*!*/
+/*    !*top: 0;*!*/
+/*    !*left: 0;*!*/
+/*    !*display: inline-flex;*!*/
+/*}*/

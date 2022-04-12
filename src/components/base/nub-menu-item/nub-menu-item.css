@@ -1,0 +1,15 @@
+.menu-item {
+    @apply py-3 px-5 w-full flex-1 cursor-pointer text-gray-500 text-base bg-demo-white select-none
+}
+
+.menu-item:hover {
+    @apply  bg-gray-50 bg-opacity-50 text-gray-500
+}
+
+slot[name=header]::slotted(div) {
+    @apply flex justify-between items-center
+}
+
+/*:host(:hover) {*/
+/*    @apply bg-gray-200;*/
+/*}*/
