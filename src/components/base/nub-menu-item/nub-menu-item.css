@@ -6,8 +6,16 @@
     @apply  bg-gray-50 bg-opacity-50 text-gray-500
 }
 
-slot[name=header]::slotted(div) {
+.menu-item-wrapper {
     @apply flex justify-between items-center
+}
+
+.menu-item[data-active=true] slot[name=header]::slotted(div) {
+    display: none;
+}
+
+.menu-item[data-active=false] slot[name=content]::slotted(div) {
+    display: none;
 }
 
 /*:host(:hover) {*/

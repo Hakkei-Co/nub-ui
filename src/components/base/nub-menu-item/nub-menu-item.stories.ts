@@ -13,14 +13,12 @@ const Template = (): TemplateResult =>
     html`
     <nub-menu-item>
        <div slot="header">
-           Test Slot
-
-           <nub-icon
-                   name="fas-chevron-right"
-                   library="fa"
-                   size="18px"
-           ></nub-icon>
+           Menu Item
        </div>
+
+        <div slot="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eget hendrerit enim. Cras lacus est, venenatis vestibulum auctor sit amet, interdum eu mi. Suspendisse potenti. Etiam sit amet erat arcu. Mauris bibendum auctor ante, at commodo quam lacinia in. Duis nulla augue, malesuada in arcu eu, rutrum auctor ex. Pellentesque sed tristique massa. Fusce mattis blandit aliquam. Nunc et accumsan ligula.
+        </div>
     </nub-menu-item>
   `;
 

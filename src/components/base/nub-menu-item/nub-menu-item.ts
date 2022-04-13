@@ -31,6 +31,18 @@ export class NubMenu extends NubElement {
 
   // Implement `render` to define a template for your element.
   render(): TemplateResult {
+    let icon;
+
+    if (this.active) {
+      icon = html`
+        <nub-icon name="fas-times" library="fa" size="18px"></nub-icon>
+      `;
+    } else {
+      icon = html`
+        <nub-icon name="fas-chevron-right" library="fa" size="18px"></nub-icon>
+      `;
+    }
+
     return html`
       <div
         class="menu-item"
@@ -39,7 +51,12 @@ export class NubMenu extends NubElement {
         aria-expanded=${this.active}
         @click="${this.handleClick}"
       >
-        <slot name="header"></slot>
+        <div class="menu-item-wrapper">
+          <slot name="header"></slot>
+          <slot name="content"></slot>
+
+          ${icon}
+        </div>
       </div>
     `;
   }
@@ -48,7 +65,9 @@ export class NubMenu extends NubElement {
    * @returns void
    * To expend menu item
    */
-  handleClick = () => {};
+  handleClick = () => {
+    this.active = !this.active;
+  };
 
   /**
    * @returns string | null
