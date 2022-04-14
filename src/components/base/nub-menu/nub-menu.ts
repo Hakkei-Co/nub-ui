@@ -1,5 +1,10 @@
 import { CSSResultGroup, html, TemplateResult } from 'lit';
-import { customElement, queryAssignedNodes, property } from 'lit/decorators.js';
+import {
+  customElement,
+  queryAssignedNodes,
+  property,
+  state,
+} from 'lit/decorators.js';
 import { NubElement } from '../nub-element/nub-element';
 import componentStyles from './nub-menu.css.lit';
 import { MobileController } from '../../controllers/mobile-controller';
@@ -23,6 +28,11 @@ export class NubMenu extends NubElement {
   position: 'left' | 'right' = 'left';
 
   /**
+   * Array of active/open panels.
+   */
+  @state() active: string = '';
+
+  /**
    * ref to <nub-menu> in panels slot.
    */
   @queryAssignedNodes('panels', true)
@@ -32,11 +42,44 @@ export class NubMenu extends NubElement {
   render(): TemplateResult {
     return html`
       <div class="menu" data-postion="${this.position}">
-        <slot name="panels"></slot>
+        <div class="menu-wrapper" @click="${this.setActive}">
+          <slot name="panels"></slot>
+        </div>
       </div>
     `;
   }
-  updated() {}
+
+  /**
+   * Takes the element id of content <div>
+   * to maintain state list of active/open panels.
+   */
+  setActive(e: PointerEvent) {
+    const element = e?.target as HTMLElement;
+    const contentId = element.id;
+
+    if (this.active === contentId) {
+      return (this.active = '');
+    }
+    return (this.active = contentId);
+  }
+
+  updated() {
+    this.panels.map(panel => {
+      if (this.active === panel.id) {
+        panel.setAttribute('active', 'true');
+        // panel.removeAttribute('hide')
+      } else {
+        panel.removeAttribute('active');
+        // panel.setAttribute('hide', 'true')
+      }
+
+      if (this.active.length && this.active !== panel.id) {
+        panel.setAttribute('hide', 'true');
+      } else {
+        panel.removeAttribute('hide');
+      }
+    });
+  }
 
   /**
    * @returns string | null

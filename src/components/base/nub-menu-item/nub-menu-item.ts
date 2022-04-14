@@ -23,6 +23,13 @@ export class NubMenu extends NubElement {
   active = false;
 
   /**
+   * Weather the panel is hidden/visible.
+   * Controlled by parent menu component.
+   */
+  @property({ type: Boolean })
+  hide = false;
+
+  /**
    * Used to provided a unique ID
    * for accordion component and accessibility purposes.
    */
@@ -32,6 +39,8 @@ export class NubMenu extends NubElement {
   // Implement `render` to define a template for your element.
   render(): TemplateResult {
     let icon;
+    const isActive = this.active ? true : false;
+    const isHide = this.hide ? true : false;
 
     if (this.active) {
       icon = html`
@@ -46,10 +55,10 @@ export class NubMenu extends NubElement {
     return html`
       <div
         class="menu-item"
-        data-active=${this.active}
+        data-active=${isActive}
         id="${this.id}-menu-item"
-        aria-expanded=${this.active}
-        @click="${this.handleClick}"
+        aria-expanded=${isActive}
+        data-hide=${isHide}
       >
         <div class="menu-item-wrapper">
           <slot name="header"></slot>
@@ -60,14 +69,6 @@ export class NubMenu extends NubElement {
       </div>
     `;
   }
-
-  /**
-   * @returns void
-   * To expend menu item
-   */
-  handleClick = () => {
-    this.active = !this.active;
-  };
 
   /**
    * @returns string | null

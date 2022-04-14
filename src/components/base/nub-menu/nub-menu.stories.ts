@@ -31,7 +31,7 @@ const MENU_ITEMS: MenuData[] = [
 
 const itemsHTML = MENU_ITEMS.map(item => {
     return `
-                 <nub-menu-item>
+                 <nub-menu-item slot="panels">
                     <div slot="header">
                         ${item.title}
                     </div>
@@ -55,9 +55,7 @@ export default {
 const Template = ({ItemsSlotContent}): TemplateResult =>
     html`
     <nub-menu>
-        <div slot="panels">
-            ${unsafeHTML(`${ItemsSlotContent}`)}
-        </div>
+        ${unsafeHTML(`${ItemsSlotContent}`)}
     </nub-menu>
   `;
 

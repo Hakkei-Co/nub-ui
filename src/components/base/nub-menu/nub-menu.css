@@ -1,5 +1,10 @@
 .menu {
     @apply bg-demo-white rounded w-full max-w-sm flex-1 overflow-hidden inline-flex shadow;
+    min-height: 100vh;
+}
+
+.menu-wrapper {
+    @apply w-full
 }
 
 ::slotted(*) {
