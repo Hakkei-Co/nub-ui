@@ -1,25 +1,25 @@
 .menu-item {
-    @apply py-3 px-5 w-full flex-1 cursor-pointer text-gray-500 text-base bg-demo-white select-none border-0 border-b border-gray-200 border-solid;
+  @apply w-full flex-1 cursor-pointer select-none border-0 border-b border-solid border-gray-200 bg-demo-white py-3 px-5 text-base text-gray-500;
 }
 
 .menu-item:hover {
-    @apply  bg-gray-50 bg-opacity-50 text-gray-500
+  @apply bg-gray-50 bg-opacity-50 text-gray-500;
 }
 
 .menu-item-wrapper {
-    @apply flex justify-between items-center
+  @apply flex items-center justify-between;
 }
 
-.menu-item[data-active=true] slot[name=header]::slotted(div) {
-    display: none;
+.menu-item[data-active='true'] slot[name='header']::slotted(div) {
+  display: none;
 }
 
-.menu-item[data-active=false] slot[name=content]::slotted(div) {
-    display: none;
+.menu-item[data-active='false'] slot[name='content']::slotted(div) {
+  display: none;
 }
 
-.menu-item[data-hide=true] {
-    display: none;
+.menu-item[data-hide='true'] {
+  display: none;
 }
 
 /*:host(:hover) {*/
