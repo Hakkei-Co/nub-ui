@@ -3,6 +3,7 @@ import { addParameters } from '@storybook/web-components';
 import { addons } from '@storybook/addons';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs';
 import './storybook-styles.css';
+import '@ionic/core/css/core.css';
 
 addParameters({
   actions: {
