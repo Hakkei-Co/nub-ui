@@ -1,0 +1,12 @@
+.menu {
+  @apply inline-flex w-full max-w-sm flex-1 overflow-hidden rounded bg-demo-white shadow;
+  min-height: 100vh;
+}
+
+.menu-wrapper {
+  @apply w-full;
+}
+
+::slotted(*) {
+  @apply w-full flex-1;
+}

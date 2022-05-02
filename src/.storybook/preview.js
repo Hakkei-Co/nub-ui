@@ -2,6 +2,7 @@ import theme from './CustomTheme';
 import { addParameters } from '@storybook/web-components';
 import { addons } from '@storybook/addons';
 import './storybook-styles.css';
+import '@ionic/core/css/core.css';
 
 addParameters({
   actions: {

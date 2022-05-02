@@ -91,8 +91,10 @@
     "lit"
   ],
   "dependencies": {
+    "@ionic/core": "^6.1.2",
     "@splidejs/splide": "^3.2.1",
     "@storybook/storybook-deployer": "^2.8.11",
+    "i": "^0.3.7",
     "lit": "^2.0.0",
     "yargs": "17.4.0"
   },
